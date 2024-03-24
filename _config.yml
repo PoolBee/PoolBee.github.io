@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 我的博客
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
+title: PoolBee的博客
+subtitle: '来了呀'
+description: '欢迎访问'
+keywords: 博客,PoolBee,记录
+author: PoolBee
+language: zh-CN
 timezone: ''
 
 # URL
