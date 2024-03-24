@@ -106,4 +106,4 @@ theme: butterfly
 deploy:
   type: git
   repo:
-    github: git@github.com:PoolBee/PoolBee.github.io.git,master
+    github: git@github.com:PoolBee/PoolBee.github.io.git,main
