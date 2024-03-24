@@ -1,0 +1,14 @@
+#忽略不需要上传到远程仓库的文件
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+.vscode/
+.idea/
+/idea/
+.deploy_git*/
+.idea
+themes/butterfly/.git
