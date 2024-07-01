@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>OpenCV中对图像噪声处理的常用形态学操作 | PoolBee的博客</title><meta name="author" content="PoolBee"><meta name="copyright" content="PoolBee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。  一、噪声处理的基本操作1.腐蚀让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。     在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV中对图像噪声处理的常用形态学操作">
+<meta property="og:url" content="http://example.com/2023/11/06/OpenCV%E4%B8%AD%E5%AF%B9%E5%9B%BE%E5%83%8F%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="PoolBee的博客">
+<meta property="og:description" content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。  一、噪声处理的基本操作1.腐蚀让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。     在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png">
+<meta property="article:published_time" content="2023-11-06T13:14:39.000Z">
+<meta property="article:modified_time" content="2024-03-25T01:30:03.714Z">
+<meta property="article:author" content="PoolBee">
+<meta property="article:tag" content="博客,PoolBee,记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/11/06/OpenCV%E4%B8%AD%E5%AF%B9%E5%9B%BE%E5%83%8F%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"本文已经有","messageNext":"天了，如想获取最新的消息，请以近期的文章为准。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":250},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: PoolBee","link":"链接: ","source":"来源: PoolBee的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OpenCV中对图像噪声处理的常用形态学操作',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-03-25 09:30:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/icat.css"><link rel="stylesheet" href="https://cdn2.codesign.qq.com/icons/XMx86jzlQw0brz3/latest/iconfont.css"><link rel="stylesheet" href="/css/rightmenu.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/107682184?s=400&amp;u=86f94b69ccc395c6671feb9b6c8a034ef8814752&amp;v=4&quot;" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">60</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 足迹</span></a></div></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 标签</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/index-3"><i class="fa-fw fas fa-tags"></i><span> OpenCV</span></a></li><li><a class="site-page child" href="/tags/index-1"><i class="fa-fw fas fa-tags"></i><span> PoolBee标签页</span></a></li></ul></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https:/cdn.jsdelivr.net/gh/bee-line/Image_Hosting_Service/background.jpg')"><nav id="nav"><div id="nav-group"><span id="blog-info"><a href="/" title="回到主页"><img class="site-icon" src="https://picsum.photos/50/50"/><span class="site-name"></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 足迹</span></a></div></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 标签</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/index-3"><i class="fa-fw fas fa-tags"></i><span> OpenCV</span></a></li><li><a class="site-page child" href="/tags/index-1"><i class="fa-fw fas fa-tags"></i><span> PoolBee标签页</span></a></li></ul></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div></div><div class="menus_item"><div class="icat_menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="nav-right"><div id="travellings"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.cn/go.html" title="随机前往一个开往项目网站"><i class="iconfont icat-subway"></i></a></div><div id="random"><a class="site-page" href="javascript:toRandomPost()" title="随机前往一个文章"><i class="iconfont icat-random"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="搜索本站文章"><i class="iconfont icat-bars"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">OpenCV中对图像噪声处理的常用形态学操作<a class="post-edit-link" href="https://blog.csdn.net/weixin_59786087/article/details/134252714_posts/OpenCV中对图像噪声处理的常用形态学操作.md" title="编辑" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-06T13:14:39.000Z" title="发表于 2023-11-06 21:14:39">2023-11-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-25T01:30:03.714Z" title="更新于 2024-03-25 09:30:03">2024-03-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OpenCV中对图像噪声处理的常用形态学操作"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p> 介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。</p>
+</blockquote>
+<h1 id="一、噪声处理的基本操作"><a href="#一、噪声处理的基本操作" class="headerlink" title="一、噪声处理的基本操作"></a>一、噪声处理的基本操作</h1><h2 id="1-腐蚀"><a href="#1-腐蚀" class="headerlink" title="1.腐蚀"></a>1.腐蚀</h2><p>让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。</p>
+<blockquote>
+<pre><code>   在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。
+</code></pre>
+</blockquote>
+<h3 id="例子一、消除仙人掌的刺"><a href="#例子一、消除仙人掌的刺" class="headerlink" title="例子一、消除仙人掌的刺"></a>例子一、消除仙人掌的刺</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img =cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&quot;</span>)</span><br><span class="line">k=np.ones((<span class="number">3</span>,<span class="number">3</span>),np.uint8)<span class="comment">#3*3矩阵定义核的大小</span></span><br><span class="line">cv2.imshow( <span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">dst=cv2.erode(img,k)<span class="comment">#腐蚀</span></span><br><span class="line">cv2.imshow(<span class="string">&quot;dst&quot;</span>,dst)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllwindows( )</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数说明:<br>src原始图像<br>kernel腐蚀使用的核<br>anchor可选参数  核的锚点位置<br>iterations可选参数  腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认</p>
+</blockquote>
+<h2 id="2-膨胀"><a href="#2-膨胀" class="headerlink" title="2.膨胀"></a>2.膨胀</h2><blockquote>
+<pre><code>   膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。
+</code></pre>
+</blockquote>
+<blockquote>
+<pre><code>  同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素
+</code></pre>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&quot;</span>)</span><br><span class="line">k=np.ones((<span class="number">9</span>,<span class="number">9</span>),np.uint8)</span><br><span class="line">cv2.imshow( <span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">dst=cv2.dilate(img, k)</span><br><span class="line">cv2.imshow( <span class="string">&quot;dst&quot;</span>,dst)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllwindows()</span><br><span class="line"></span><br><span class="line">```Python</span><br><span class="line">dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\</span><br></pre></td></tr></table></figure>
+<p>参数说明如下</p>
+<blockquote>
+<p>src原始图像<br>kernel膨胀使用的核<br>anchor可选参数核的锚点位置<br>iterations可选参数膨胀操作的迭代次数  后面两个为可选参数建议取默认值</p>
+</blockquote>
+<p>膨胀可以产生一种“近视眼”的效果。</p>
+<h2 id="3-开运算"><a href="#3-开运算" class="headerlink" title="3.开运算"></a>3.开运算</h2><blockquote>
+<pre><code>   开运算是将图像先进行腐蚀操作，再进行膨胀操作。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>开运算可以用来抹除图像<strong>外部</strong>的细节。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开运算</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\tzzy.png&quot;</span>)</span><br><span class="line">k=np.ones((<span class="number">6</span>,<span class="number">6</span>),np.uint8)<span class="comment">#创建5*5的核</span></span><br><span class="line">cv2.imshow( <span class="string">&quot;img &quot;</span> ,img)</span><br><span class="line">dst=cv2.erode(img,k)<span class="comment">#腐蚀操作</span></span><br><span class="line">dst=cv2.dilate(dst,k)<span class="comment">#膨胀操作</span></span><br><span class="line">cv2.imshow( <span class="string">&quot;dst&quot;</span>,dst)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="4-闭运算"><a href="#4-闭运算" class="headerlink" title="4.闭运算"></a>4.闭运算</h2><blockquote>
+<pre><code>   闭运算是将图像先进行膨胀操作，再进行腐蚀操作。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>闭运算可以抹除图像<strong>内部</strong>的细节。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#闭运算</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img = cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&quot;</span>)</span><br><span class="line">img = cv2.resize(img, (<span class="number">900</span>, <span class="number">900</span>))</span><br><span class="line">k = np.ones((<span class="number">9</span>,<span class="number">9</span>),np.uint8)</span><br><span class="line">cv2.imshow(<span class="string">&quot;img&quot;</span>,img)</span><br><span class="line">dst = cv2.dilate(img,k)</span><br><span class="line">dst = cv2.erode(dst,k)</span><br><span class="line">cv2.imshow(<span class="string">&quot;dst2&quot;</span>,dst)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="二、形态学其他方法："><a href="#二、形态学其他方法：" class="headerlink" title="二、形态学其他方法："></a>二、形态学其他方法：</h1><blockquote>
+<pre><code>   腐蚀和膨胀都是形态学的基础操作，开运算和闭运算是两种方法的运用。除了这两种方法外，形态学还有集中比较有特点的运算，OpenCV提供了一个morphologyEx方法
+</code></pre>
+</blockquote>
+<blockquote>
+<p>英 [mɔːˈfɒlədʒi]<br>美 [mɔːrˈfɑːlədʒi]</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">morphologyEx(src,op,kernel,anchor)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>src 原始图像</p>
+</blockquote>
+<blockquote>
+<p>op 操作类型</p>
+</blockquote>
+<blockquote>
+<p>kernel 操作过程中使用的核</p>
+</blockquote>
+<blockquote>
+<p>anchor 核锚点的位置</p>
+</blockquote>
+<p>操作类型如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数值</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">cv2.MORPH_ERODE</td>
+<td align="center">腐蚀操作</td>
+</tr>
+<tr>
+<td align="center">cv2.MORPH_DILATE</td>
+<td align="center">膨胀操作</td>
+</tr>
+<tr>
+<td align="center">cv2.MORPH_OPEN</td>
+<td align="center">开运算，先腐蚀后膨胀</td>
+</tr>
+<tr>
+<td align="center">cv2.MORPH_CLOSE</td>
+<td align="center">闭运算，先膨胀后腐蚀</td>
+</tr>
+<tr>
+<td align="center">cv2.MORPH_GRADIENT</td>
+<td align="center">梯度运算，膨胀图减腐蚀图</td>
+</tr>
+<tr>
+<td align="center">cv2.MORPH_TOPHAT</td>
+<td align="center">顶帽运算，原始图减开运算图</td>
+</tr>
+<tr>
+<td align="center">cv2.MORPH_BLACKHAT</td>
+<td align="center">黑帽运算，闭运算图减原始图</td>
+</tr>
+</tbody></table>
+<h2 id="1-梯度运算"><a href="#1-梯度运算" class="headerlink" title="1.梯度运算"></a>1.梯度运算</h2><blockquote>
+<pre><code>   梯度是指图像梯度，可以简单理解为像素的变化程度。几个连续的像素，像素的跨度值越大，梯度值就越大。
+</code></pre>
+</blockquote>
+<blockquote>
+<pre><code>   梯度运算就是，膨胀图减去腐蚀图，就是将扩张的膨胀图挖去收缩过的腐蚀图。
+</code></pre>
+</blockquote>
+<p>梯度运算可以得到原图的轮廓。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#梯度运算，得到简笔画的轮廓</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&quot;</span>)</span><br><span class="line">img = cv2.resize(img,(<span class="number">600</span>,<span class="number">600</span>))</span><br><span class="line">k=np.ones((<span class="number">5</span>,<span class="number">5</span>),np.uint8)<span class="comment">#创建5*5的核</span></span><br><span class="line">cv2.imshow( <span class="string">&quot;img&quot;</span> ,img)</span><br><span class="line"><span class="comment">#进行梯度运算</span></span><br><span class="line">dst=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,k)</span><br><span class="line">cv2.imshow( <span class="string">&quot;dst&quot;</span> ,dst)<span class="comment">#显示梯度运算结果</span></span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllwindows( )</span><br></pre></td></tr></table></figure>
+
+<p>兔子为实心线条，膨胀-腐蚀后，所以会在兔子周围形成两条线。</p>
+<h3 id="2-顶帽运算"><a href="#2-顶帽运算" class="headerlink" title="2.顶帽运算"></a>2.顶帽运算</h3><blockquote>
+<pre><code>   原图减去原图的开运算图，就是用有细节的原图挖去去除外部细节的开运算图。也就是只剩下外部细节的图。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>顶帽运算&#x3D;原图-开运算图形&#x3D;外部细节图</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#顶帽运算，原图减开运算图</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&quot;</span>)</span><br><span class="line">k=np.ones((<span class="number">10</span>,<span class="number">10</span>),np.uint8)</span><br><span class="line">cv2.imshow( <span class="string">&quot;img&quot;</span> ,img)</span><br><span class="line">dst=cv2.morphologyEx(img,cv2.MORPH_TOPHAT,k)</span><br><span class="line">cv2.imshow( <span class="string">&quot;dst&quot;</span> ,dst)</span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllwindows()</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-黑帽运算"><a href="#3-黑帽运算" class="headerlink" title="3.黑帽运算"></a>3.黑帽运算</h2><blockquote>
+<pre><code>   原图的闭运算减去原图，也就是去除内部细节的图挖去有内部细节的原图，只剩内部细节。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>黑帽运算&#x3D;原图像-闭运算图像&#x3D;内部细节图</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#黑帽运算</span></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">img=cv2.imread(<span class="string">r&quot;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&quot;</span>)</span><br><span class="line">img = cv2.resize(img,(<span class="number">600</span>,<span class="number">600</span>))</span><br><span class="line">k=np.ones((<span class="number">3</span>,<span class="number">3</span>),np.uint8)<span class="comment">#创建5*5的核</span></span><br><span class="line">cv2.imshow( <span class="string">&quot;img&quot;</span> ,img)</span><br><span class="line"><span class="comment">#进行黑帽运算</span></span><br><span class="line">dst=cv2.morphologyEx(img, cv2.MORPH_BLACKHAT,k)</span><br><span class="line">cv2.imshow( <span class="string">&quot;dst&quot;</span>,dst)<span class="comment">#显示黑帽运算结果</span></span><br><span class="line">cv2.waitKey()</span><br><span class="line">cv2.destroyAllwindows()</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h1><p>腐蚀操作：通过核来缩小图像中的对象，用于去除小细节或分离连接的对象。</p>
+<p>膨胀操作：通过核来扩大图像中的对象，用于填充空洞或连接对象。</p>
+<p>开运算：先腐蚀后膨胀，用于去除小物体，平滑边界，分离物体。</p>
+<p>闭运算：先膨胀后腐蚀，用于填充小孔，连接物体。</p>
+<p>梯度运算：膨胀图减腐蚀图，用于提取物体的边界。</p>
+<p>顶帽运算：原图减开运算图，用于提取图像中的细节。</p>
+<p>黑帽运算：闭运算图减原图，用于提取图像中的内部细节。</p>
+<blockquote>
+<pre><code>   这些形态学操作可以用于图像增强、去噪、分割和特征提取等应用。通过适当选择和组合这些操作，可以实现多种图像处理效果。
+</code></pre>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">PoolBee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/11/06/OpenCV%E4%B8%AD%E5%AF%B9%E5%9B%BE%E5%83%8F%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/">http://example.com/2023/11/06/OpenCV%E4%B8%AD%E5%AF%B9%E5%9B%BE%E5%83%8F%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E6%80%81%E5%AD%A6%E6%93%8D%E4%BD%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">PoolBee的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/03/25/%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81-Markdown%E8%AF%AD%E6%B3%95%E5%AE%9E%E8%B7%B5/" title="Markdown语法实践"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Markdown语法实践</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/29/hello-world/" title="Hello World"><img class="cover" src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/107682184?s=400&amp;u=86f94b69ccc395c6671feb9b6c8a034ef8814752&amp;v=4&quot;" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">PoolBee</div><div class="author-info__description">欢迎访问</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">60</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/poolbee/"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/poolbee" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:Dr8462643@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://www.hbfu.edu.cn/" target="_blank" title="我的学校"><i class="fa-solid fa-school"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">睡好，才有精力工作。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%99%AA%E5%A3%B0%E5%A4%84%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">一、噪声处理的基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%85%90%E8%9A%80"><span class="toc-number">1.1.</span> <span class="toc-text">1.腐蚀</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%E4%B8%80%E3%80%81%E6%B6%88%E9%99%A4%E4%BB%99%E4%BA%BA%E6%8E%8C%E7%9A%84%E5%88%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text">例子一、消除仙人掌的刺</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%86%A8%E8%83%80"><span class="toc-number">1.2.</span> <span class="toc-text">2.膨胀</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BC%80%E8%BF%90%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">3.开运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%97%AD%E8%BF%90%E7%AE%97"><span class="toc-number">1.4.</span> <span class="toc-text">4.闭运算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BD%A2%E6%80%81%E5%AD%A6%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二、形态学其他方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A2%AF%E5%BA%A6%E8%BF%90%E7%AE%97"><span class="toc-number">2.1.</span> <span class="toc-text">1.梯度运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B6%E5%B8%BD%E8%BF%90%E7%AE%97"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.顶帽运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%BB%91%E5%B8%BD%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.</span> <span class="toc-text">3.黑帽运算</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">三、总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/06/30/%E5%A6%82%E4%BD%95%E8%B7%B3%E5%87%BA%E5%B1%80%E9%83%A8%E6%9E%81%E5%80%BC/" title="无题"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/06/30/%E5%A6%82%E4%BD%95%E8%B7%B3%E5%87%BA%E5%B1%80%E9%83%A8%E6%9E%81%E5%80%BC/" title="无题">无题</a><time datetime="2024-06-30T00:27:51.710Z" title="发表于 2024-06-30 08:27:51">2024-06-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/27/NAN%E5%92%8C%E4%BB%BB%E4%BD%95%E6%95%B0%E5%AD%97%E6%AF%94%E8%BE%83%E4%B8%BAflase/" title="无题"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/06/27/NAN%E5%92%8C%E4%BB%BB%E4%BD%95%E6%95%B0%E5%AD%97%E6%AF%94%E8%BE%83%E4%B8%BAflase/" title="无题">无题</a><time datetime="2024-06-27T12:43:58.918Z" title="发表于 2024-06-27 20:43:58">2024-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/27/%E4%BD%BF%E7%94%A8conda%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%9C%80%E8%A6%81%E5%85%88%E8%BF%9B%E8%A1%8C%E6%BF%80%E6%B4%BB%EF%BC%9A/" title="无题"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/06/27/%E4%BD%BF%E7%94%A8conda%E7%8E%AF%E5%A2%83%EF%BC%8C%E9%9C%80%E8%A6%81%E5%85%88%E8%BF%9B%E8%A1%8C%E6%BF%80%E6%B4%BB%EF%BC%9A/" title="无题">无题</a><time datetime="2024-06-27T10:01:42.683Z" title="发表于 2024-06-27 18:01:42">2024-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/23/KNN/" title="无题"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/06/23/KNN/" title="无题">无题</a><time datetime="2024-06-23T01:02:43.555Z" title="发表于 2024-06-23 09:02:43">2024-06-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/22/%E8%AE%BA%E6%96%87-%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A/" title="无题"><img src="https://jsd.012700.xyz/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/06/22/%E8%AE%BA%E6%96%87-%E5%BC%80%E9%A2%98%E6%8A%A5%E5%91%8A/" title="无题">无题</a><time datetime="2024-06-22T00:20:38.524Z" title="发表于 2024-06-22 08:20:38">2024-06-22</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https:/cdn.jsdelivr.net/gh/bee-line/Image_Hosting_Service/background.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By PoolBee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><div>你好呀🤣 <a target="_blank" rel="noopener" href="https://www.poolbee.top">友情链接</a>!</div><div>GOOD</div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><script type="text/javascript" src="/js/rightmenu.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="iconfont icat-angle-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="iconfont icat-angle-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="iconfont icat-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="iconfont icat-changing-over"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="iconfont icat-copy-paste"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="iconfont icat-baidu"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="iconfont icat-jump-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="iconfont icat-copy-paste"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="iconfont icat-copy-paste"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="iconfont icat-new-window"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="iconfont icat-jump-link"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="iconfont icat-copy-paste"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="iconfont icat-download-save"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="iconfont icat-new-window"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()"><i class="iconfont icat-full-screen"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="iconfont icat-copy-paste"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()"><i class="iconfont icat-random"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.translate();"><i class="iconfont icat-simple-complex"></i><span>繁简转换</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:pjax.loadUrl(&quot;/privacy/&quot;);"><i class="iconfont icat-conceal"></i><span>隐私协议</span></a><a class="rightMenu-item" href="javascript:pjax.loadUrl(&quot;/cc/&quot;);"><i class="iconfont icat-cc"></i><span>版权协议</span></a></div></div></body></html>
