@@ -21,6 +21,14 @@ git push
 
 完成！
 
+如果失败
+
+git config --global http.proxy git 
+
+git config --global https.proxy git 
+
+取消代理试试
+
 $ git push To https://github.com/poolbee/PoolBee.github.io ! [rejected]        main -> main (fetch first) error: failed to push some refs to 'https://github.com/poolbee/PoolBee.github.io ' hint: Updates were rejected because the remote contains work that you do hint: not have locally. This is usually caused by another repository pushing hint: to the same ref. You may want to first integrate the remote changes hint: (e.g., 'git pull ...') before pushing again. hint: See the 'Note about fast-forwards' in 'git push --help' for details. g
 
 
