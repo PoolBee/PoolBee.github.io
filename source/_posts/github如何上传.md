@@ -7,6 +7,20 @@ git push
 # 将改动推送到 GitHub
 ```
 
+git push会出问题
+
+表明远**程仓库包含了你本地没有的提交**，因此无法直接推送你的更改。这通常发生在**其他人或者其他仓库已经向相同的分支推送了新的更改**，**而你的本地仓库没有更新到这些更改的最新状态。**
+
+需要：
+
+git pull origin main
+
+然后再
+
+git push
+
+完成！
+
 $ git push To https://github.com/poolbee/PoolBee.github.io ! [rejected]        main -> main (fetch first) error: failed to push some refs to 'https://github.com/poolbee/PoolBee.github.io ' hint: Updates were rejected because the remote contains work that you do hint: not have locally. This is usually caused by another repository pushing hint: to the same ref. You may want to first integrate the remote changes hint: (e.g., 'git pull ...') before pushing again. hint: See the 'Note about fast-forwards' in 'git push --help' for details. g
 
 
