@@ -2,7 +2,8 @@
 title: OpenCV中对图像噪声处理的常用形态学操作
 date: 2023-11-06 21:14:39
 tags:
-cover: https:/cdn.jsdelivr.net/gh/bee-line/Image_Hosting_Service
+top_img: https:/cdn.jsdelivr.net/gh/bee-line/Image_Hosting_Service/background.jpg
+
 ---
 >
 >  介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。
