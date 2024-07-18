@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://PoolBee.github.io/categories/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>https://PoolBee.github.io/</loc>
+    <loc>http://localhost:1313/post/opencv-1/</loc>
+    <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>https://PoolBee.github.io/post/</loc>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>https://PoolBee.github.io/tags/</loc>
+    <loc>http://localhost:1313/post/test/</loc>
   </url><url>
-    <loc>https://PoolBee.github.io/post/my-first-blog/</loc>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/post/my-first-blog/</loc>
   </url>
 </urlset>

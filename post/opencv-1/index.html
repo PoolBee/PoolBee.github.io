@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
+<title>OpenCV中对图像噪声处理的常用形态学操作</title>
+
+<link rel='canonical' href='http://localhost:1313/post/opencv-1/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
+<meta property='og:description' content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
+<meta property='og:url' content='http://localhost:1313/post/opencv-1/'>
+<meta property='og:site_name' content='My New Hugo Site'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-11-06T21:14:39&#43;00:00'/><meta property='article:modified_time' content='2023-11-06T21:14:39&#43;00:00'/>
+<meta name="twitter:title" content="OpenCV中对图像噪声处理的常用形态学操作">
+<meta name="twitter:description" content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">My New Hugo Site</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/opencv-1/">OpenCV中对图像噪声处理的常用形态学操作</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 06, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    2 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。</p>
+</blockquote>
+<h1 id="一噪声处理的基本操作">一、噪声处理的基本操作
+</h1><h2 id="1腐蚀">1.腐蚀
+</h2><p>让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。</p>
+<blockquote>
+<pre><code>   在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。
+</code></pre>
+</blockquote>
+<h3 id="例子一消除仙人掌的刺">例子一、消除仙人掌的刺
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&#34;</span>)
+</span></span><span style="display:flex;"><span>k<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>),np<span style="color:#f92672">.</span>uint8)<span style="color:#75715e">#3*3矩阵定义核的大小</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;img&#34;</span>,img)
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>erode(img,k)<span style="color:#75715e">#腐蚀</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;dst&#34;</span>,dst)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllwindows( )
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>erode(src,kernel,anchor,iterations,borderType,borderValue)
+</span></span></code></pre></div><blockquote>
+<p>参数说明:
+src原始图像
+kernel腐蚀使用的核
+anchor可选参数  核的锚点位置
+iterations可选参数  腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认</p>
+</blockquote>
+<h2 id="2膨胀">2.膨胀
+</h2><blockquote>
+<pre><code>   膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。
+</code></pre>
+</blockquote>
+<blockquote>
+<pre><code>  同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素
+</code></pre>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&#34;</span>)
+</span></span><span style="display:flex;"><span>k<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">9</span>),np<span style="color:#f92672">.</span>uint8)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;img&#34;</span>,img)
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>dilate(img, k)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;dst&#34;</span>,dst)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllwindows()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>Python
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>dilate(src,kernel,anchor,iterations,borderType,borderValue)\
+</span></span></code></pre></div><p>参数说明如下</p>
+<blockquote>
+<p>src原始图像
+kernel膨胀使用的核
+anchor可选参数核的锚点位置
+iterations可选参数膨胀操作的迭代次数  后面两个为可选参数建议取默认值</p>
+</blockquote>
+<p>膨胀可以产生一种“近视眼”的效果。</p>
+<h2 id="3开运算">3.开运算
+</h2><blockquote>
+<pre><code>   开运算是将图像先进行腐蚀操作，再进行膨胀操作。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>开运算可以用来抹除图像<strong>外部</strong>的细节。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e">#开运算</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\tzzy.png&#34;</span>)
+</span></span><span style="display:flex;"><span>k<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">6</span>),np<span style="color:#f92672">.</span>uint8)<span style="color:#75715e">#创建5*5的核</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;img &#34;</span> ,img)
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>erode(img,k)<span style="color:#75715e">#腐蚀操作</span>
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>dilate(dst,k)<span style="color:#75715e">#膨胀操作</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;dst&#34;</span>,dst)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllWindows()
+</span></span></code></pre></div><h2 id="4闭运算">4.闭运算
+</h2><blockquote>
+<pre><code>   闭运算是将图像先进行膨胀操作，再进行腐蚀操作。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>闭运算可以抹除图像<strong>内部</strong>的细节。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PYTHON" data-lang="PYTHON"><span style="display:flex;"><span><span style="color:#75715e">#闭运算</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&#34;</span>)
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>resize(img, (<span style="color:#ae81ff">900</span>, <span style="color:#ae81ff">900</span>))
+</span></span><span style="display:flex;"><span>k <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">9</span>),np<span style="color:#f92672">.</span>uint8)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;img&#34;</span>,img)
+</span></span><span style="display:flex;"><span>dst <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>dilate(img,k)
+</span></span><span style="display:flex;"><span>dst <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>erode(dst,k)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow(<span style="color:#e6db74">&#34;dst2&#34;</span>,dst)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllWindows()
+</span></span></code></pre></div><hr>
+<h1 id="二形态学其他方法">二、形态学其他方法：
+</h1><blockquote>
+<pre><code>   腐蚀和膨胀都是形态学的基础操作，开运算和闭运算是两种方法的运用。除了这两种方法外，形态学还有集中比较有特点的运算，OpenCV提供了一个morphologyEx方法
+</code></pre>
+</blockquote>
+<blockquote>
+<p>英 [mɔːˈfɒlədʒi]
+美 [mɔːrˈfɑːlədʒi]</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>morphologyEx(src,op,kernel,anchor)
+</span></span></code></pre></div><blockquote>
+<p>src 原始图像</p>
+</blockquote>
+<blockquote>
+<p>op 操作类型</p>
+</blockquote>
+<blockquote>
+<p>kernel 操作过程中使用的核</p>
+</blockquote>
+<blockquote>
+<p>anchor 核锚点的位置</p>
+</blockquote>
+<p>操作类型如下：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:center">参数值</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cv2.MORPH_ERODE</td>
+<td style="text-align:center">腐蚀操作</td>
+</tr>
+<tr>
+<td style="text-align:center">cv2.MORPH_DILATE</td>
+<td style="text-align:center">膨胀操作</td>
+</tr>
+<tr>
+<td style="text-align:center">cv2.MORPH_OPEN</td>
+<td style="text-align:center">开运算，先腐蚀后膨胀</td>
+</tr>
+<tr>
+<td style="text-align:center">cv2.MORPH_CLOSE</td>
+<td style="text-align:center">闭运算，先膨胀后腐蚀</td>
+</tr>
+<tr>
+<td style="text-align:center">cv2.MORPH_GRADIENT</td>
+<td style="text-align:center">梯度运算，膨胀图减腐蚀图</td>
+</tr>
+<tr>
+<td style="text-align:center">cv2.MORPH_TOPHAT</td>
+<td style="text-align:center">顶帽运算，原始图减开运算图</td>
+</tr>
+<tr>
+<td style="text-align:center">cv2.MORPH_BLACKHAT</td>
+<td style="text-align:center">黑帽运算，闭运算图减原始图</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="1梯度运算">1.梯度运算
+</h2><blockquote>
+<pre><code>   梯度是指图像梯度，可以简单理解为像素的变化程度。几个连续的像素，像素的跨度值越大，梯度值就越大。
+</code></pre>
+</blockquote>
+<blockquote>
+<pre><code>   梯度运算就是，膨胀图减去腐蚀图，就是将扩张的膨胀图挖去收缩过的腐蚀图。
+</code></pre>
+</blockquote>
+<p>梯度运算可以得到原图的轮廓。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PYTHON" data-lang="PYTHON"><span style="display:flex;"><span><span style="color:#75715e">#梯度运算，得到简笔画的轮廓</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&#34;</span>)
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>resize(img,(<span style="color:#ae81ff">600</span>,<span style="color:#ae81ff">600</span>))
+</span></span><span style="display:flex;"><span>k<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">5</span>),np<span style="color:#f92672">.</span>uint8)<span style="color:#75715e">#创建5*5的核</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;img&#34;</span> ,img)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#进行梯度运算</span>
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>morphologyEx(img,cv2<span style="color:#f92672">.</span>MORPH_GRADIENT,k)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;dst&#34;</span> ,dst)<span style="color:#75715e">#显示梯度运算结果</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllwindows( )
+</span></span></code></pre></div><p>兔子为实心线条，膨胀-腐蚀后，所以会在兔子周围形成两条线。</p>
+<h3 id="2顶帽运算">2.顶帽运算
+</h3><blockquote>
+<pre><code>   原图减去原图的开运算图，就是用有细节的原图挖去去除外部细节的开运算图。也就是只剩下外部细节的图。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>顶帽运算=原图-开运算图形=外部细节图</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PYTHON" data-lang="PYTHON"><span style="display:flex;"><span><span style="color:#75715e">#顶帽运算，原图减开运算图</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&#34;</span>)
+</span></span><span style="display:flex;"><span>k<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">10</span>),np<span style="color:#f92672">.</span>uint8)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;img&#34;</span> ,img)
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>morphologyEx(img,cv2<span style="color:#f92672">.</span>MORPH_TOPHAT,k)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;dst&#34;</span> ,dst)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllwindows()
+</span></span></code></pre></div><h2 id="3黑帽运算">3.黑帽运算
+</h2><blockquote>
+<pre><code>   原图的闭运算减去原图，也就是去除内部细节的图挖去有内部细节的原图，只剩内部细节。
+</code></pre>
+</blockquote>
+<blockquote>
+<p>黑帽运算=原图像-闭运算图像=内部细节图</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PYTHON" data-lang="PYTHON"><span style="display:flex;"><span><span style="color:#75715e">#黑帽运算</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cv2
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>img<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>imread(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&#34;</span>)
+</span></span><span style="display:flex;"><span>img <span style="color:#f92672">=</span> cv2<span style="color:#f92672">.</span>resize(img,(<span style="color:#ae81ff">600</span>,<span style="color:#ae81ff">600</span>))
+</span></span><span style="display:flex;"><span>k<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>ones((<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>),np<span style="color:#f92672">.</span>uint8)<span style="color:#75715e">#创建5*5的核</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;img&#34;</span> ,img)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#进行黑帽运算</span>
+</span></span><span style="display:flex;"><span>dst<span style="color:#f92672">=</span>cv2<span style="color:#f92672">.</span>morphologyEx(img, cv2<span style="color:#f92672">.</span>MORPH_BLACKHAT,k)
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>imshow( <span style="color:#e6db74">&#34;dst&#34;</span>,dst)<span style="color:#75715e">#显示黑帽运算结果</span>
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>waitKey()
+</span></span><span style="display:flex;"><span>cv2<span style="color:#f92672">.</span>destroyAllwindows()
+</span></span></code></pre></div><hr>
+<h1 id="三总结">三、总结
+</h1><p>腐蚀操作：通过核来缩小图像中的对象，用于去除小细节或分离连接的对象。</p>
+<p>膨胀操作：通过核来扩大图像中的对象，用于填充空洞或连接对象。</p>
+<p>开运算：先腐蚀后膨胀，用于去除小物体，平滑边界，分离物体。</p>
+<p>闭运算：先膨胀后腐蚀，用于填充小孔，连接物体。</p>
+<p>梯度运算：膨胀图减腐蚀图，用于提取物体的边界。</p>
+<p>顶帽运算：原图减开运算图，用于提取图像中的细节。</p>
+<p>黑帽运算：闭运算图减原图，用于提取图像中的内部细节。</p>
+<blockquote>
+<pre><code>   这些形态学操作可以用于图像增强、去噪、分割和特征提取等应用。通过适当选择和组合这些操作，可以实现多种图像处理效果。
+</code></pre>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 My New Hugo Site
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
