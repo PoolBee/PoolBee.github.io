@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/my-first-blog/'>
 
-<link rel="stylesheet" href="/scss/style.min.0e6c839f24939a3e160659ea3690dfd0c4f388530a5ec83af22b2470aef227f2.css"><meta property='og:title' content="流操作和函数式编程">
+<link rel="stylesheet" href="/scss/style.min.966399f45a2a5d8bd607481e38c521ef9d951e7672001191891e3eeb8abfd769.css"><meta property='og:title' content="流操作和函数式编程">
 <meta property='og:description' content="date: 2024-03-28 11:08:00 流操作 是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。 例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。 例如：能用max()和min()对流操作找到流中的最大元素。 [参数:可用Comparator接口自定义比较的逻辑] import java.util.Arrays; import java.util.Optional; import java.util.Comparator; public class StreamExample { public static void main(String[] args) { Integer[] numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5}; // 使用默认比较器找到最大元素 Optional&lt;Integer&gt; max = Arrays.stream(numbers).max(); max.ifPresent(System.out::println); // 输出：9 // 使用默认比较器找到最小元素 Optional&lt;Integer&gt; min = Arrays.stream(numbers).min(); min.ifPresent(System.out::println); // 输出：1 // 使用自定义比较器找到最大元素（基于绝对值） Optional&lt;Integer&gt; maxAbs = Arrays.stream(numbers).max(Comparator.comparingInt(Math::abs)); maxAbs.ifPresent(System.out::println); // 输出：9 或 -5取决于绝对值的比较 } } 其中Optional">
 <meta property='og:url' content='http://localhost:1313/post/my-first-blog/'>
 <meta property='og:site_name' content='My New Hugo Site'>
@@ -78,9 +78,14 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                
+                
+                
+                
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -91,20 +96,16 @@
 
 
 
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="http://localhost:1313/zh-cn/" >简体中文</option>
-                                
-                                    <option value="http://localhost:1313/" selected></option>
-                                
-                            </select>
-                        </li>
-                    
+                    <a href="http://localhost:1313/zh-cn/">
+                        简体中文
+                    </a>
+                </li>
                 
-
                 
-                    <li id="dark-mode-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -112,7 +113,7 @@
 
 
 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -120,8 +121,8 @@
 
 
 
-                        <span>Dark Mode</span>
-                    </li>
+                    <span>Dark Mode</span>
+                </li>
                 
             </ol>
         </li>
