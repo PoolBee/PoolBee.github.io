@@ -5,7 +5,7 @@
     <loc>http://localhost:1313/zh-cn/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="http://localhost:1313/categories/"
                 />
     <xhtml:link
@@ -17,7 +17,7 @@
     <loc>http://localhost:1313/zh-cn/tags/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="http://localhost:1313/tags/"
                 />
     <xhtml:link
@@ -29,7 +29,7 @@
     <loc>http://localhost:1313/zh-cn/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en-us"
+                hreflang="zh-cn"
                 href="http://localhost:1313/"
                 />
     <xhtml:link

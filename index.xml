@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>My New Hugo Site</title>
+        <title>123</title>
         <link>http://localhost:1313/</link>
-        <description>Recent content on My New Hugo Site</description>
+        <description>Recent content on 123</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>zh-cn</language>
         <lastBuildDate>Mon, 06 Nov 2023 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
         <link>http://localhost:1313/post/opencv-1/</link>
@@ -252,7 +252,7 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
         <guid>http://localhost:1313/post/test/</guid>
-        <description>&lt;p&gt;12312312312312&lt;/p&gt;
+        <description>&lt;p&gt;12312312312312123&lt;/p&gt;
 </description>
         </item>
         <item>
