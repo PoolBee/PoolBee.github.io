@@ -247,12 +247,13 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
 </description>
         </item>
         <item>
-        <title></title>
+        <title>测试</title>
         <link>http://localhost:1313/post/test/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
         <guid>http://localhost:1313/post/test/</guid>
-        <description></description>
+        <description>&lt;p&gt;123123&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>流操作和函数式编程</title>
