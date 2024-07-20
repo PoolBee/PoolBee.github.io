@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/zh-cn/categories/'>
 
-<link rel="stylesheet" href="/scss/style.min.0e6c839f24939a3e160659ea3690dfd0c4f388530a5ec83af22b2470aef227f2.css"><meta property='og:title' content="Categories">
+<link rel="stylesheet" href="/scss/style.min.49e215a679c41df0cfb1dd1526166af71e01eb00b3c0fb04b82dc023f48b149e.css"><meta property='og:title' content="Categories">
 <meta property='og:description' content="">
 <meta property='og:url' content='http://localhost:1313/zh-cn/categories/'>
 <meta property='og:site_name' content='项目文档'>
@@ -57,9 +57,14 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+                
+                
+                
+                
+                
+                <li id="i18n-switch">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M4 5h7" />
   <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
@@ -70,17 +75,13 @@
 
 
 
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="http://localhost:1313/zh-cn/" selected>简体中文</option>
-                                
-                                    <option value="http://localhost:1313/" ></option>
-                                
-                            </select>
-                        </li>
-                    
+                    <a href="http://localhost:1313/">
+                        
+                    </a>
+                </li>
                 
-
+                
+        
                 
             </ol>
         </li>
@@ -88,6 +89,7 @@
 </aside>
 
     
+
 
             <main class="main full-width">
     <header>
@@ -118,10 +120,48 @@
     </section>
     
     <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+         <br />
+        
     </section>
+    
+    <section class="count_info">
+        <div>
+            本博客已稳定运行
+            <span id="ds" class="running-days"></span>
+            天
+            <span id="hs" class="running-days"></span>
+            小时
+            <span id="ms" class="running-days"></span>
+            分钟
+        </div>
+        <div>
+            
+            
+             
+             
+            共发表 0 篇文章 · 总计 0.00 k 字
+        </div>
+        <div>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+        </div>
+    </section>
+
+    
+    <script>
+        let s1 = '2023-6-18'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+    </script>
 </footer>
+
 
 
             </main>

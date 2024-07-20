@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/opencv-1/'>
 
-<link rel="stylesheet" href="/scss/style.min.f10bd51a1bec31b61f4726c98b5b03d2cb07d9547035cf31567477121f0ee284.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
+<link rel="stylesheet" href="/scss/style.min.49e215a679c41df0cfb1dd1526166af71e01eb00b3c0fb04b82dc023f48b149e.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
 <meta property='og:description' content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
 <meta property='og:url' content='http://localhost:1313/post/opencv-1/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -524,8 +524,6 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         
     </section>
     
-
-
     <section class="count_info">
         <div>
             This blog has been running stably for
@@ -539,37 +537,37 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         <div>
             
             
+                
             
+                
             
+                
             
-            
-            
-            
+             
+             
             Published 3 articles in total · totaling 0.53 k words
         </div>
         <div>
             <span id="busuanzi_container_site_pv">The total number of visits to this site is<span id="busuanzi_value_site_pv"></span>times</span>
         </div>
-</section>
+    </section>
 
+    
+    <script>
+        let s1 = '2023-6-18'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
 
-<script>
-    let s1 = '2023-6-18'; 
-    s1 = new Date(s1.replace(/-/g, "/"));
-    let s2 = new Date();
-    let timeDifference = s2.getTime() - s1.getTime();
-
-    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById('ds').innerHTML = days;
-    document.getElementById('hs').innerHTML = hours;
-    document.getElementById('ms').innerHTML = minutes;
-
-</script>
-
-
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+    </script>
 </footer>
+
 
 
     
