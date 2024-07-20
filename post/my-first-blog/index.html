@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/my-first-blog/'>
 
-<link rel="stylesheet" href="/scss/style.min.80d24f7fe44a1ceb3c890458a32e34fb7eaccd9bdc0e6ededbd7edf9d7122618.css"><meta property='og:title' content="流操作和函数式编程">
+<link rel="stylesheet" href="/scss/style.min.36c0343f80bccd92030bd9191b83035cbda4a0fc9d6dafaf5b1a366fc8fec479.css"><meta property='og:title' content="流操作和函数式编程">
 <meta property='og:description' content="date: 2024-03-28 11:08:00 流操作 是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。 例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。 例如：能用max()和min()对流操作找到流中的最大元素。 [参数:可用Comparator接口自定义比较的逻辑] import java.util.Arrays; import java.util.Optional; import java.util.Comparator; public class StreamExample { public static void main(String[] args) { Integer[] numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5}; // 使用默认比较器找到最大元素 Optional&lt;Integer&gt; max = Arrays.stream(numbers).max(); max.ifPresent(System.out::println); // 输出：9 // 使用默认比较器找到最小元素 Optional&lt;Integer&gt; min = Arrays.stream(numbers).min(); min.ifPresent(System.out::println); // 输出：1 // 使用自定义比较器找到最大元素（基于绝对值） Optional&lt;Integer&gt; maxAbs = Arrays.stream(numbers).max(Comparator.comparingInt(Math::abs)); maxAbs.ifPresent(System.out::println); // 输出：9 或 -5取决于绝对值的比较 } } 其中Optional">
 <meta property='og:url' content='http://localhost:1313/post/my-first-blog/'>
 <meta property='og:site_name' content='PoolBee的博客'>
