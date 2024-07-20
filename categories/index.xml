@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>OpenCV on PoolBee的博客</title>
+        <title>Categories on PoolBee的博客</title>
         <link>http://localhost:1313/categories/</link>
-        <description>Recent content in OpenCV on PoolBee的博客</description>
+        <description>Recent content in Categories on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 06 Nov 2023 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>随笔</title>
+        <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Python</title>
         <link>http://localhost:1313/categories/python/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/python/</guid>
-        <description></description>
+        <description>&lt;img src="http://localhost:1313/categories/python/archives-python.png" alt="Featured image of post Python" /&gt;</description>
         </item>
         <item>
         <title>Java</title>
@@ -20,7 +28,23 @@
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/java/</guid>
-        <description></description>
+        <description>&lt;img src="http://localhost:1313/categories/java/archives-java.png" alt="Featured image of post Java" /&gt;</description>
+        </item>
+        <item>
+        <title>OpenCV</title>
+        <link>http://localhost:1313/categories/opencv/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/opencv/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/opencv/archives-opencv.png" alt="Featured image of post OpenCV" /&gt;</description>
+        </item>
+        <item>
+        <title>随笔</title>
+        <link>http://localhost:1313/categories/essay/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/essay/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/essay/archives-essay.png" alt="Featured image of post 随笔" /&gt;</description>
         </item>
         
     </channel>

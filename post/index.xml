@@ -6,20 +6,36 @@
         <description>Recent content in Posts on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 06 Nov 2023 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>随笔</title>
+        <link>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</guid>
+        <description>&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
+&lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
+&lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧&lt;/p&gt;
+&lt;h2 id=&#34;2-服务器&#34;&gt;2. 服务器
+&lt;/h2&gt;&lt;p&gt;腾讯云服务器，40G, 1M带宽，1核2G内存。&lt;/p&gt;
+&lt;h2 id=&#34;3-博客框架&#34;&gt;3. 博客框架
+&lt;/h2&gt;&lt;h3 id=&#34;31-博客框架&#34;&gt;3.1 博客框架
+&lt;/h3&gt;&lt;h3 id=&#34;32-博客主题&#34;&gt;3.2 博客主题
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
         <link>http://localhost:1313/post/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
         <guid>http://localhost:1313/post/opencv/</guid>
-        <description>&lt;img src="http://localhost:1313/tag-opencv.png" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+        <description>&lt;img src="http://localhost:1313/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
 &lt;img src=&#34;http://localhost:1313/tag-opencv.jpg&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;Logo&#34;
+		alt=&#34;OpenCV的Logo&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -255,15 +271,6 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
 &lt;pre&gt;&lt;code&gt;   这些形态学操作可以用于图像增强、去噪、分割和特征提取等应用。通过适当选择和组合这些操作，可以实现多种图像处理效果。
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
-</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>http://localhost:1313/post/test/</link>
-        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/post/test/</guid>
-        <description>&lt;p&gt;12312312312312123123123123123123123123&lt;/p&gt;
 </description>
         </item>
         <item>
