@@ -56,6 +56,9 @@
     <loc>http://localhost:1313/tags/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/opencv/</loc>
+    <lastmod>2023-11-06T21:14:39+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/post/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
@@ -101,8 +104,6 @@
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/page/links/</loc>
-  </url><url>
-    <loc>http://localhost:1313/categories/opencv/</loc>
   </url><url>
     <loc>http://localhost:1313/page/search/</loc>
   </url><url>

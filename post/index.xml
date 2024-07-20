@@ -18,9 +18,15 @@
 &lt;h2 id=&#34;2-服务器&#34;&gt;2. 服务器
 &lt;/h2&gt;&lt;p&gt;腾讯云服务器，40G, 1M带宽，1核2G内存。&lt;/p&gt;
 &lt;h2 id=&#34;3-博客框架&#34;&gt;3. 博客框架
-&lt;/h2&gt;&lt;h3 id=&#34;31-博客框架&#34;&gt;3.1 博客框架
-&lt;/h3&gt;&lt;h3 id=&#34;32-博客主题&#34;&gt;3.2 博客主题
-&lt;/h3&gt;</description>
+&lt;/h2&gt;&lt;p&gt;暂时用的Hugo，建站很快。&lt;/p&gt;
+&lt;h4 id=&#34;历程&#34;&gt;历程
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;框架选来选去，之前用过Hexo主题,但是时间过于久远。这次想在云服务器上运行，遂重新开始。框架从Hexo到Halo到Hugo。&lt;/li&gt;
+&lt;li&gt;原本在Linux上安装Hexo得心应手，但这次在CentOS7.6并不支持Nodejs8,支持不了最新的Hexo主题,又转为Halo，&lt;/li&gt;
+&lt;li&gt;Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。&lt;/li&gt;
+&lt;li&gt;现在网站搭起来了，后续慢慢再更新文章~~。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>

@@ -15,6 +15,14 @@
         <description></description>
         </item>
         <item>
+        <title>OpenCV</title>
+        <link>http://localhost:1313/categories/opencv/</link>
+        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/opencv/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/opencv/archives-opencv.png" alt="Featured image of post OpenCV" /&gt;</description>
+        </item>
+        <item>
         <title>Python</title>
         <link>http://localhost:1313/categories/python/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
@@ -29,14 +37,6 @@
         
         <guid>http://localhost:1313/categories/java/</guid>
         <description>&lt;img src="http://localhost:1313/categories/java/archives-java.png" alt="Featured image of post Java" /&gt;</description>
-        </item>
-        <item>
-        <title>OpenCV</title>
-        <link>http://localhost:1313/categories/opencv/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/opencv/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/opencv/archives-opencv.png" alt="Featured image of post OpenCV" /&gt;</description>
         </item>
         <item>
         <title>随笔</title>
