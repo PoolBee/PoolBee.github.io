@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/opencv-1/'>
 
-<link rel="stylesheet" href="/scss/style.min.49e215a679c41df0cfb1dd1526166af71e01eb00b3c0fb04b82dc023f48b149e.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
+<link rel="stylesheet" href="/scss/style.min.00d9a3e6980a341628484ff8f321c231af08ece117143076572003174acd0f7f.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
 <meta property='og:description' content="介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
 <meta property='og:url' content='http://localhost:1313/post/opencv-1/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -94,7 +94,7 @@
             
                 <li>
                     <a 
-                        href='https://mail.163.com'
+                        href='mailto:Cr8462643@163.com'
                         target="_blank"
                         title="Email"
                         rel="me"
@@ -200,10 +200,6 @@
         
             
                 
-            
-        
-            
-                
     <section class="widget archives">
         <div class="widget-icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -248,9 +244,18 @@
         
             
                 
+<a id="back-to-top" href="#">
+    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M1024 0H0v64h512L0 576h320v448h377.6V576H1024L512 64h512z" /></svg>
+</a>
+
+            
+        
+            
+                
             
         
         <div style="height: 30%;width: 30%">
+            
             <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=vWVduL3EI8o8M2YkHMyY1dtYyf7vfgNKC8KQ1ugXVMw"></script>
         </div>
     </aside>
@@ -740,7 +745,7 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.js" defer></script><script type="text/javascript" src="/ts/custom.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
