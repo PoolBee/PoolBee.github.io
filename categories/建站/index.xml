@@ -6,12 +6,12 @@
         <description>Recent content in 建站 on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo主题配置记录-7月21日博客更新日志</title>
-        <link>http://localhost:1313/post/%E9%9A%8F%E7%AC%941/</link>
-        <pubDate>Sat, 20 Jul 2024 21:14:39 +0000</pubDate>
+        <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%99/</link>
+        <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/%E9%9A%8F%E7%AC%941/</guid>
+        <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%99/</guid>
         <description>&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
 &lt;/h1&gt;&lt;h1 id=&#34;1引入busuanzi插件进行字数访问量统计&#34;&gt;1.引入busuanzi插件进行字数、访问量统计。
 &lt;/h1&gt;&lt;ul&gt;
@@ -144,8 +144,8 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.iconfont.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;iconfont-阿里巴巴矢量图标库&lt;/a&gt;
 下载svg格式的图标，然后记住颜色代码，编辑搜索将颜色代码替换为currentColor就能实现颜色随暗色模式切换变化。&lt;/p&gt;
-&lt;h1 id=&#34;参考链接&#34;&gt;参考链接：
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;h1 id=&#34;链接&#34;&gt;链接：
+&lt;/h1&gt;</description>
         </item>
         
     </channel>
