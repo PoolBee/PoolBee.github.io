@@ -34,9 +34,10 @@
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
         
         <guid>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</guid>
-        <description>&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
+        <description>&lt;p&gt;Hugo主题配置记录&lt;/p&gt;
+&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
 &lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
-&lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧1111&lt;/p&gt;
 &lt;h2 id=&#34;2-服务器&#34;&gt;2. 服务器
 &lt;/h2&gt;&lt;p&gt;腾讯云服务器，40G, 1M带宽，1核2G内存。&lt;/p&gt;
 &lt;h2 id=&#34;3-博客框架&#34;&gt;3. 博客框架

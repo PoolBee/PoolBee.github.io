@@ -6,7 +6,15 @@
         <description>Recent content in Categories on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>建站</title>
+        <link>http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/</link>
+        <pubDate>Sat, 20 Jul 2024 21:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/archives-jianzhan.png" alt="Featured image of post 建站" /&gt;</description>
+        </item>
+        <item>
         <title>随笔</title>
         <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
