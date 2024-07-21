@@ -8,6 +8,28 @@
         <language>zh-cn</language>
         <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>随笔</title>
+        <link>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</guid>
+        <description>&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
+&lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
+&lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧&lt;/p&gt;
+&lt;h2 id=&#34;2-服务器&#34;&gt;2. 服务器
+&lt;/h2&gt;&lt;p&gt;腾讯云服务器，40G, 1M带宽，1核2G内存。&lt;/p&gt;
+&lt;h2 id=&#34;3-博客框架&#34;&gt;3. 博客框架
+&lt;/h2&gt;&lt;p&gt;暂时用的Hugo，建站很快。&lt;/p&gt;
+&lt;h4 id=&#34;历程&#34;&gt;历程
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;框架选来选去，之前用过Hexo主题,但是时间过于久远。这次想在云服务器上运行，遂重新开始。框架从Hexo到Halo到Hugo。&lt;/li&gt;
+&lt;li&gt;原本在Linux上安装Hexo得心应手，但这次在CentOS7.6并不支持Nodejs8,支持不了最新的Hexo主题,又转为Halo，&lt;/li&gt;
+&lt;li&gt;Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。&lt;/li&gt;
+&lt;li&gt;现在网站搭起来了，后续慢慢再更新文章~~。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>随笔</title>
         <link>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</link>
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
         
@@ -26,6 +48,2065 @@
 &lt;li&gt;Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。&lt;/li&gt;
 &lt;li&gt;现在网站搭起来了，后续慢慢再更新文章~~。&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Stable Diffusion笔记</title>
+        <link>http://localhost:1313/post/sd/</link>
+        <pubDate>Mon, 01 Jul 2024 11:54:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/sd/</guid>
+        <description>&lt;img src="http://localhost:1313/tag-opencv.jpg" alt="Featured image of post Stable Diffusion笔记" /&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184336146.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184336146&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184445492.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184445492&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;check point 就是菜单——选择不同的模型&lt;/p&gt;
+&lt;p&gt;lora更精确的人物或画风，更可控&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184615859.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184615859&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184628145.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184628145&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184732610.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184732610&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;图生图&lt;/p&gt;
+&lt;p&gt;上传&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184803838.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184803838&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;描述图片&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184832014.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184832014&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184852610.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184852610&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;AI摄影&lt;/p&gt;
+&lt;p&gt;lora炼丹&lt;/p&gt;
+&lt;p&gt;七天免费试用领取&lt;/p&gt;
+&lt;p&gt;聚焦剪裁、中央剪裁、无需剪裁、&lt;/p&gt;
+&lt;p&gt;使用deepbooru算法反推标注。0.6 系数越小越精细&lt;/p&gt;
+&lt;p&gt;日志看loss值，数值降低大概率没什么问题&lt;/p&gt;
+&lt;h1 id=&#34;一提示词prompt&#34;&gt;一、提示词prompt
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194636624.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607194636624&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;类别&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194655106.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607194655106&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其他提示词：画质等&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194743238.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607194743238&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194753742.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607194753742&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194818438.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607194818438&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;但是真实系的操作是更依赖真实的模型&lt;/p&gt;
+&lt;h2 id=&#34;1prompt模板&#34;&gt;1.prompt模板:
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194914970.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607194914970&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;具体的直接使用即可&#34;&gt;具体的直接使用即可
+&lt;/h3&gt;&lt;h2 id=&#34;2提示词权重分配-增强减弱&#34;&gt;2.提示词权重分配 增强减弱(){}	[]
+&lt;/h2&gt;&lt;p&gt;安全范围1+-0.5，单个的&lt;/p&gt;
+&lt;p&gt;():1.1倍，1.331倍&lt;/p&gt;
+&lt;p&gt;{}&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002312274.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608002312274&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;1进阶语法-坑&#34;&gt;[1]进阶语法-坑
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002405145.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608002405145&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;不想出现就是负向提示词&#34;&gt;不想出现就是负向提示词
+&lt;/h2&gt;&lt;p&gt;单色风格的画作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002513577.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608002513577&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3采样迭代步数&#34;&gt;3.采样迭代步数
+&lt;/h2&gt;&lt;p&gt;加噪点——去除噪点&lt;/p&gt;
+&lt;p&gt;闪一次，就步数&amp;gt;20后意义不大&lt;/p&gt;
+&lt;p&gt;最低不要低于10&lt;/p&gt;
+&lt;h3 id=&#34;采样方法&#34;&gt;采样方法
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002724513.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608002724513&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;带有++号的是改进的算法，最好使用比较稳定。&lt;/p&gt;
+&lt;p&gt;分辨率过高容易出现多人，多手。&lt;/p&gt;
+&lt;h4 id=&#34;一般低分辨率绘制然后hires-fix-来放大-高清修复&#34;&gt;一般低分辨率绘制，然后hires fix 来放大 高清修复、
+&lt;/h4&gt;&lt;p&gt;面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用&lt;/p&gt;
+&lt;p&gt;7-12相关性一般&lt;/p&gt;
+&lt;p&gt;批次和数量&lt;/p&gt;
+&lt;p&gt;批次是格子预览图。每次批次数量不宜过高，容易爆显存。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002856328.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608002856328&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4写提示词方法&#34;&gt;4.写提示词方法
+&lt;/h2&gt;&lt;h3 id=&#34;1翻译描述确切场景然后直接让词组翻译为英文&#34;&gt;1.翻译、描述确切场景，然后直接让词组翻译为英文
+&lt;/h3&gt;&lt;h3 id=&#34;2功能插件翻译的插件国内有sd也有&#34;&gt;2.功能插件、翻译的插件——国内有——SD也有
+&lt;/h3&gt;&lt;h3 id=&#34;3更好书写提示词网站ai词汇加速器&#34;&gt;3.更好书写提示词网站：AI词汇加速器
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003420900.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608003420900&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003430396.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608003430396&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;提示词网站：&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003513343.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608003513343&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;二次元和亚洲面孔多：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003519995.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608003519995&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;人物、&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003544952.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608003544952&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;画风、质感：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003559712.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608003559712&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二图生图&#34;&gt;二、图生图
+&lt;/h1&gt;&lt;p&gt;原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。&lt;/p&gt;
+&lt;h2 id=&#34;1上传图片导入到sd里&#34;&gt;1.上传图片、导入到SD里
+&lt;/h2&gt;&lt;h2 id=&#34;2提示词书写&#34;&gt;2.提示词书写
+&lt;/h2&gt;&lt;p&gt;1man,1girl&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004301173.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608004301173&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004314355.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608004314355&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3参数设置&#34;&gt;3.参数设置
+&lt;/h2&gt;&lt;p&gt;重绘幅度0.6-0.8&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004053399.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608004053399&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;分辨率设置，原始尺寸一样最好&lt;/p&gt;
+&lt;p&gt;按长宽比例一致生成、&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004426686.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608004426686&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1随机种子&#34;&gt;[1]随机种子
+&lt;/h2&gt;&lt;p&gt;xxx in backgroud&lt;/p&gt;
+&lt;p&gt;景深depth of field&lt;/p&gt;
+&lt;h3 id=&#34;如果要保留生成的原本的元素的样子只改动背景不改动人物风格呢&#34;&gt;如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？
+&lt;/h3&gt;&lt;h4 id=&#34;同一个随机种子同一套随机种子&#34;&gt;同一个随机种子、同一套随机种子、
+&lt;/h4&gt;&lt;p&gt;骰子：-1是随机，循环按钮是上一次的种子。&lt;/p&gt;
+&lt;p&gt;图库浏览器中以前生成的图片，里面有种子。&lt;/p&gt;
+&lt;h5 id=&#34;种子加上需要的背景提示词&#34;&gt;种子加上+需要的背景提示词。
+&lt;/h5&gt;&lt;h4 id=&#34;不像人物的物品的拟人化静物或者墙角的旮旯来想象抖音评论区中有&#34;&gt;不像人物的物品的拟人化、静物或者墙角的旮旯来想象。——抖音评论区中有
+&lt;/h4&gt;&lt;h2 id=&#34;2图生图的风格迁移&#34;&gt;[2]图生图的风格迁移：
+&lt;/h2&gt;&lt;p&gt;游戏中的卡通形象到真实的现实中、可以输入提示词、更加精确的需要lora模型。&lt;/p&gt;
+&lt;h2 id=&#34;3photoshop中搭建图像框架sd生成图片炫酷的效果&#34;&gt;[3]photoshop中搭建图像框架+SD生成图片——炫酷的效果。
+&lt;/h2&gt;&lt;p&gt;画布&lt;/p&gt;
+&lt;p&gt;画图中&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005226877.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608005226877&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005235034.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608005235034&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;然后场景插画就完成了&#34;&gt;然后场景插画就完成了！
+&lt;/h5&gt;&lt;h1 id=&#34;三画风&#34;&gt;三、画风
+&lt;/h1&gt;&lt;h2 id=&#34;1checkpoint&#34;&gt;1.Checkpoint
+&lt;/h2&gt;&lt;p&gt;模型信息：&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005330230.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608005330230&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005338545.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608005338545&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;下载的模型放入这里就能加载。&lt;/p&gt;
+&lt;p&gt;所以就叫关键点、存档。&lt;/p&gt;
+&lt;p&gt;所以这些检查点，这些模型就能有迭代、更新的能力，AOM3A3深橘色。&lt;/p&gt;
+&lt;h2 id=&#34;2-ckpt文件&#34;&gt;2. .ckpt文件
+&lt;/h2&gt;&lt;p&gt;几个G的叫大模型&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005522688.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608005522688&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-safetensors&#34;&gt;3. .safetensors
+&lt;/h2&gt;&lt;p&gt;训练者让模型更加可靠高效来使用的一种格式。&lt;/p&gt;
+&lt;p&gt;点击刷星按钮&lt;/p&gt;
+&lt;p&gt;命令行中跳出提示才算成功&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005650275.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608005650275&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;秋叶的启动器能对管理下载&lt;/p&gt;
+&lt;h2 id=&#34;4-vae&#34;&gt;4. VAE
+&lt;/h2&gt;&lt;h2 id=&#34;vae选项变分自解码器variational-autp-encoder&#34;&gt;VAE选项[变分自解码器Variational Autp Encoder]
+&lt;/h2&gt;&lt;p&gt;负责将加噪后的潜空间数据转化为正常图像。&lt;/p&gt;
+&lt;h3 id=&#34;ai绘图的调色滤镜直接表现是影响色彩质感&#34;&gt;AI绘图的调色滤镜，直接表现是影响色彩质感。——
+&lt;/h3&gt;&lt;p&gt;一般checkpoint里包含了VAE但是也有没有到——图片会发灰，发白&lt;/p&gt;
+&lt;p&gt;会推荐使用一些VAE&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;也有适用于大多数checkpoint的VAE：kl-f8-anime2.ckpt&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;也有safetensors的VAE&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608010147671.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608010147671&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1自动的适配vae方法&#34;&gt;[1]自动的适配VAE方法
+&lt;/h2&gt;&lt;p&gt;改为和模型一样的名字&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608010220572.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608010220572&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;三-进阶&#34;&gt;三-进阶
+&lt;/h1&gt;&lt;h2 id=&#34;1hypernetwork超网络模型&#34;&gt;{1}Hypernetwork超网络模型
+&lt;/h2&gt;&lt;p&gt;画面微调&lt;/p&gt;
+&lt;p&gt;作用：和Lora差不多的，也可以让AI学习一些原本不存在它世界里的东西，&lt;/p&gt;
+&lt;p&gt;不像Lora是彩卡插画。那么它像一张小名片&lt;/p&gt;
+&lt;h3 id=&#34;hypernetwork一般用于改善画面的整体风格&#34;&gt;Hypernetwork一般用于改善画面的整体风格
+&lt;/h3&gt;&lt;h4 id=&#34;这种画风区别不是二次元真实感那种区别而像梵高和莫奈那种小区别&#34;&gt;这种画风区别：不是二次元真实感那种区别，而像梵高和莫奈那种小区别
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024013352.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024013352&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024017643.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024017643&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;hYPERNETwORK路径&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024028127.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024028127&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;绕：设置中找到附加网络&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024057849.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024057849&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;在这里也可以添加lora坑但是lora会有更方便的应用形式&#34;&gt;在这里也可以添加Lora,【坑】但是Lora会有更方便的应用形式
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024209242.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024209242&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024238437.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024238437&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;正方形、就可以得到Q版&lt;/p&gt;
+&lt;p&gt;多数研究者对于Hypernetwork在图像生成方面的评价并不好，&lt;/p&gt;
+&lt;p&gt;至少不如lora和embaddings好，&lt;/p&gt;
+&lt;p&gt;也有部分Lora对训练样本的把控实现了对画风的塑造植入。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024428375.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024428375&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024432575.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024432575&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024436066.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024436066&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024441820.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024441820&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;尽管如此，超网络在实现特定的风格时，仍然会提供不少的帮助&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024550112.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024550112&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024554587.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024554587&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024600531.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024600531&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2embeddings嵌入式向量&#34;&gt;{2}embeddings嵌入式向量
+&lt;/h2&gt;&lt;p&gt;优化画风&lt;/p&gt;
+&lt;p&gt;.pt&lt;/p&gt;
+&lt;p&gt;翻译为：&lt;strong&gt;文本嵌入&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020907845.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020907845&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;有时候网站上叫&lt;strong&gt;Textual&lt;/strong&gt; &lt;strong&gt;Inversion&lt;/strong&gt;文本倒置&lt;/p&gt;
+&lt;h3 id=&#34;很小的文件相当于大模型中的书签指向特定的形象嵌入式向量&#34;&gt;&lt;strong&gt;很小的&lt;/strong&gt;文件——相当于大模型中的书签，指向特定的形象——&lt;strong&gt;嵌入式向量&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021147938.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021147938&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;与VAE一样&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021231381.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021231381&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;使用只要在输入中输入书签翻字典的过程&#34;&gt;使用：只要在输入中输入书签翻字典的过程。
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021251130.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021251130&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;举例&#34;&gt;举例：
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021448522.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021448522&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021504260.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021504260&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;固定随机种子+embadding的固定咒语——&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021538979.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021538979&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;更像D.VA——加入描述她身上本身有的东西&lt;/p&gt;
+&lt;h4 id=&#34;1技巧反推提示词&#34;&gt;[1]技巧反推提示词
+&lt;/h4&gt;&lt;p&gt;Dva的一张图片导入_图生图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021712452.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021712452&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;识别东西，然后转化为AI中的东西DB更具优势。&lt;/p&gt;
+&lt;p&gt;每次识别的再筛选——删除降低权重&lt;/p&gt;
+&lt;h5 id=&#34;生成图片不可能完全一致因为embeddings到头是个几十kb的小文件&#34;&gt;**生成图片不可能完全一致，**因为embeddings到头是个几十kb的小文件
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021917876.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608021917876&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;只是按图索骥而已。&lt;/p&gt;
+&lt;h5 id=&#34;所以embaddings适用于一些广泛容错率高的形象的概念表现会好很多&#34;&gt;所以embaddings适用于一些&lt;strong&gt;广泛、容错率高&lt;/strong&gt;的形象的概念，表现会好很多。
+&lt;/h5&gt;&lt;h5 id=&#34;而特定的人物更多的用lora&#34;&gt;而特定的人物更多的用Lora
+&lt;/h5&gt;&lt;h4 id=&#34;坑charturner-embaddings三视图&#34;&gt;[坑]CharTurner-embaddings三视图
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022141243.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022141243&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;真NB啊&lt;/p&gt;
+&lt;h4 id=&#34;使用方法&#34;&gt;使用方法：
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022305838.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022305838&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022352184.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022352184&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022358152.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022358152&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022403226.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022403226&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022406949.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022406949&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022418228.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022418228&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022430581.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022430581&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;eva的和charturner两个embaddings使用化学反应自己观察&#34;&gt;Eva的和charturner两个embaddings使用——化学反应自己观察
+&lt;/h4&gt;&lt;p&gt;开启高清修复&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022444186.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022444186&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2embaddings解决手等的问题&#34;&gt;[2]embaddings&lt;strong&gt;解决手等的问题&lt;/strong&gt;
+&lt;/h4&gt;&lt;h5 id=&#34;只要避开错误案例就可以了&#34;&gt;&lt;strong&gt;只要避开错误案例就可以了&lt;/strong&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;EasyNegative&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022644934.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022644934&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022654146.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022654146&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;放入负面提示词里&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022738614.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022738614&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;就修复了&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;综合的、全方位的基于负面样本的提炼&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;灰度，多人、等等&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022911783.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608022911783&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3lora&#34;&gt;{3}LoRa
+&lt;/h2&gt;&lt;h2 id=&#34;低秩适应模型&#34;&gt;低秩适应模型
+&lt;/h2&gt;&lt;p&gt;固定特定人物角色特征&lt;/p&gt;
+&lt;h3 id=&#34;作用有助于向ai传递描述某一个特征准确主体清晰的形象&#34;&gt;作用：有助于向Ai传递/描述某一个特征准确/主体清晰的形象
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;夹在书中的彩页&lt;/strong&gt;100-200M&lt;/p&gt;
+&lt;p&gt;各方各个方面的素材、角度、画风等&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023127368.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608023127368&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;有些模型会提供触发提示词——训练过程中有基于这个提示词反复强化过AI认知&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023151179.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608023151179&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;也可以加入进行强化效果&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023404073.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608023404073&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1lora会出现一些小问题&#34;&gt;[1]lora会出现一些小问题
+&lt;/h4&gt;&lt;p&gt;因为它的训练图源复杂、&lt;/p&gt;
+&lt;p&gt;所以一般也会对画风进行影响&lt;/p&gt;
+&lt;p&gt;权重减小&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023545687.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608023545687&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;坑-深入有专门为lora的插件应用&#34;&gt;[坑-深入]有专门为Lora的插件应用。
+&lt;/h4&gt;&lt;h2 id=&#34;5模型下载渠道&#34;&gt;5.模型下载渠道
+&lt;/h2&gt;&lt;h5 id=&#34;midjourney的提供的模型数量有限&#34;&gt;midjourney的提供的模型数量有限
+&lt;/h5&gt;&lt;p&gt;默认的模型也能实现挺好的效果，&lt;/p&gt;
+&lt;h5 id=&#34;sd官方也有1420等开源模型&#34;&gt;SD官方也有1.4、2.0等开源模型
+&lt;/h5&gt;&lt;h5 id=&#34;官方的炉在版权和尺度有限制&#34;&gt;官方的炉在版权和尺度有限制
+&lt;/h5&gt;&lt;h3 id=&#34;0个人训练发布并分享的模型-大多数是私炉模型&#34;&gt;0.个人训练发布并分享的模型 大多数是“私炉模型”
+&lt;/h3&gt;&lt;h3 id=&#34;1hugging-face使用方法&#34;&gt;1.Hugging face使用方法
+&lt;/h3&gt;&lt;p&gt;允许用户共享AI学习模型和数据集的平台&lt;/p&gt;
+&lt;h5 id=&#34;搜索栏中搜索stable-diffusion中可以下载&#34;&gt;搜索栏中搜索stable diffusion中可以下载
+&lt;/h5&gt;&lt;p&gt;筛选栏中可以找到&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;WaifuDiffusion&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Anything&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;DreamShop&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;files-and-version中看源代码&#34;&gt;files and version中看源代码
+&lt;/h5&gt;&lt;h4 id=&#34;--大模型在safey_checker找&#34;&gt;- 大模型在Safey_checker找
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608011402645.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608011402645&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;--vae就在vae中找&#34;&gt;- vae就在vae中找
+&lt;/h5&gt;&lt;h5 id=&#34;community可以交流&#34;&gt;community可以交流
+&lt;/h5&gt;&lt;h3 id=&#34;2c站&#34;&gt;2.C站
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;iativic.com&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不注册可使用，火热的模型&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608011810142.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608011810142&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;trained的模型&#34;&gt;trained的模型
+&lt;/h4&gt;&lt;p&gt;根据图像一点点训练出来的，一手的丹。&lt;/p&gt;
+&lt;h4 id=&#34;merged融合模型&#34;&gt;Merged融合模型
+&lt;/h4&gt;&lt;p&gt;几个模型融合到一起创造出来的。一般叫xxxMIx&lt;/p&gt;
+&lt;h4 id=&#34;坑base-model&#34;&gt;【坑】Base model
+&lt;/h4&gt;&lt;p&gt;模型训练过程中的底模&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012033203.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608012033203&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;四模型的类目及推荐&#34;&gt;四、模型的类目及推荐
+&lt;/h1&gt;&lt;h2 id=&#34;1漫画插画风二次元&#34;&gt;1.漫画/插画风：二次元
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Anything、Counterfeit、Dreamlike Diffusion等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2真实系&#34;&gt;2.真实系
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Deliberate、Realistic Vision、LOFI等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;325d风&#34;&gt;3.2.5D风
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;NeverEnding Dream、Protogen、国风V3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;mdash;- 质感类似于建模软件出来的三维渲染图，不如平面那么平，也不如真实那么真。&lt;/p&gt;
+&lt;p&gt;很接近一些游戏和3D动画的想象&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012652918.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608012652918&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012729191.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608012729191&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;counterfeit&#34;&gt;Counterfeit
+&lt;/h5&gt;&lt;p&gt;细节感、精致感、各种复杂室内外场景&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012757564.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608012757564&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;dreamlike-diffusion&#34;&gt;Dreamlike Diffusion
+&lt;/h5&gt;&lt;p&gt;漫画插画风&lt;/p&gt;
+&lt;p&gt;幻想的超现实魔幻作品&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012945130.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608012945130&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;deliberate&#34;&gt;Deliberate
+&lt;/h5&gt;&lt;p&gt;真实系的,自由度非常高&lt;/p&gt;
+&lt;h5 id=&#34;realistic-vision&#34;&gt;Realistic Vision
+&lt;/h5&gt;&lt;p&gt;朴素踏实、有整活空间的写实模型。&lt;/p&gt;
+&lt;p&gt;事物、动物图片等&lt;/p&gt;
+&lt;h5 id=&#34;lofi-融合模型&#34;&gt;LOFI-融合模型
+&lt;/h5&gt;&lt;p&gt;人物面部处理精致&lt;/p&gt;
+&lt;h5 id=&#34;ned模型&#34;&gt;NED模型
+&lt;/h5&gt;&lt;p&gt;造人的方面有一股特殊&lt;/p&gt;
+&lt;h5 id=&#34;protogen&#34;&gt;Protogen
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013223551.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608013223551&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013237249.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608013237249&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;国风3&lt;/p&gt;
+&lt;p&gt;结合其他lora模型能创作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013326172.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608013326172&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013333408.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608013333408&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4小类模型&#34;&gt;4.小类模型
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;魔幻感场景&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014358134.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014358134&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;现代建筑&#34;&gt;现代建筑
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014341690.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014341690&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;高级感的平面设计&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014413594.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014413594&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014423313.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014423313&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;高清&#34;&gt;高清
+&lt;/h1&gt;&lt;h2 id=&#34;1hi-res-fix&#34;&gt;1.Hi-Res Fix
+&lt;/h2&gt;&lt;p&gt;高清修复/高分辨率修复/&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014526472.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014526472&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;皮肤分辨率太低人物皮肤模糊人物面部不真实&#34;&gt;皮肤分辨率太低人物皮肤模糊、人物面部不真实——
+&lt;/h3&gt;&lt;h3 id=&#34;如果用大分辨率的会有缺点&#34;&gt;如果用大分辨率的会有缺点
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014719973.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014719973&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1采样次数&#34;&gt;1.采样次数：
+&lt;/h3&gt;&lt;p&gt;高清修复需要经过一次重绘、因此需要设置采样步数、保持默认0数值、它会和我们设置的采样次数(20)一致&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014859182.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608014859182&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;高清修勾，无法突破显存限制。&lt;/p&gt;
+&lt;p&gt;[1]低分抽卡+固定种子+高清修复&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;加戏，降低重绘幅度可以消除。&lt;/p&gt;
+&lt;p&gt;繁纷复杂的花、多出的戒指等等&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只是高清：0.3-0.5即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;0.5-0.7——AI重绘空间&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2放大算法&#34;&gt;2.放大算法
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015301468.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608015301468&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015313901.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608015313901&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;感觉差不多，没有大到感觉很多区别&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;带有GAN的算法，重绘的细节保留更加准确&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;同行无脑方法&lt;/strong&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015513614.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608015513614&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015437826.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608015437826&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;无脑R-ESRGAN 4x+&lt;/p&gt;
+&lt;p&gt;二次元第二个&lt;/p&gt;
+&lt;p&gt;看模型的制作者推荐、或者自己试试。&lt;/p&gt;
+&lt;h3 id=&#34;小技巧-简便高清方法&#34;&gt;小技巧-简便高清方法
+&lt;/h3&gt;&lt;p&gt;图库浏览器中，点击已经号的图片，再点击图生图。&lt;/p&gt;
+&lt;p&gt;会自动填写信息&lt;/p&gt;
+&lt;h3 id=&#34;3放大算法设置&#34;&gt;3.放大算法设置
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015744098.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608015744098&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;设置-放大-图生图算法设置&lt;/p&gt;
+&lt;h2 id=&#34;2upscale放大脚本_sd放大&#34;&gt;2.Upscale放大脚本_SD放大
+&lt;/h2&gt;&lt;p&gt;简便方法-&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020022144.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020022144&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020028472.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020028472&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;图块重叠像素64——起到四张图片融合的缓冲带的作用&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;高度-宽度分别增加64&lt;/strong&gt;，&lt;/p&gt;
+&lt;p&gt;然后开始。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020221435.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020221435&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020255533.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020255533&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;画面会混乱&lt;/p&gt;
+&lt;h3 id=&#34;1如果脸在切割的地方&#34;&gt;[1]如果脸在切割的地方
+&lt;/h3&gt;&lt;p&gt;-降低重绘幅度-增大图块重叠度&lt;/p&gt;
+&lt;h3 id=&#34;3附加功能放大&#34;&gt;3.附加功能放大
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020438866.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020438866&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;人工智能算法修复&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一般成品的算法修复&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020531338.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020531338&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020539180.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608020539180&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;也可以不选Upscaler 2&lt;/p&gt;
+&lt;h3 id=&#34;2&#34;&gt;[2
+&lt;/h3&gt;&lt;h3 id=&#34;坑下面的三个比较复杂&#34;&gt;[坑]下面的三个比较复杂
+&lt;/h3&gt;&lt;h1 id=&#34;局部重绘&#34;&gt;局部重绘
+&lt;/h1&gt;&lt;p&gt;1.随机种子+咒语修改的问题&lt;/p&gt;
+&lt;p&gt;即使随机种子一致，但是咒语还是修改了，出现了画面不可控的样子&lt;/p&gt;
+&lt;p&gt;所以会有，不同姿势等问题&lt;/p&gt;
+&lt;p&gt;如果是已经经过了高清修复和放大，那么要耗费的时间就更长了&lt;/p&gt;
+&lt;h3 id=&#34;99都是满意的1&#34;&gt;99%都是满意的，1%
+&lt;/h3&gt;&lt;h3 id=&#34;直接点击-局部重绘其他素材图片也可以&#34;&gt;直接点击-局部重绘，其他素材图片也可以
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024948878.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024948878&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025001368.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025001368&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024955419.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608024955419&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;修改咒语+重绘幅度修改&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025145554.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025145554&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;会出现笔尖，涂抹好重绘区域&lt;/p&gt;
+&lt;p&gt;下方参数设置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025205286.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025205286&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;重绘过程：整个图片经历了重新加噪然后去噪的过程。&lt;/p&gt;
+&lt;p&gt;眼睛部分被强调了，最后的效果是只针对这个区域的重绘了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025422845.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025422845&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;局部修复参数image-20240608025445349cusersanymoreappdataroamingtyporatypora-user-imagesimage-20240608025445349png&#34;&gt;局部修复参数&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025445349.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025445349&#34;
+	
+	
+&gt;
+&lt;/h2&gt;&lt;h4 id=&#34;1蒙版&#34;&gt;1.蒙版：
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025541157.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025541157&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;可以写填充&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025547167.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025547167&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;坑潜变量噪声潜变量数值零&#34;&gt;【坑】潜变量噪声、潜变量数值零
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;简答说：图生图的过程进一步复杂化、加入加噪、去噪的过程。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;理论上对图像的改变会更显著&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025805857.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025805857&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2.全图、3.仅蒙版&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025831746.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025831746&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2全图&#34;&gt;2.全图：
+&lt;/h4&gt;&lt;p&gt;基于新的要求（提示词、参数）把图重新画一遍【我觉得受到重绘幅度的影响】，尽管没涂的部分修改很小，但是还是有点点点点&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025841974.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608025841974&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最后只保留你涂的部分拼回去&lt;/p&gt;
+&lt;h4 id=&#34;3仅蒙版&#34;&gt;3.仅蒙版:
+&lt;/h4&gt;&lt;p&gt;就是只画框选出来的区域附近，速度快，但是没有基于图像全貌画。然后再拼回去。把这一小块当做一幅画来画。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608030516917.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608030516917&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;坑针对性强的修改反而需要修改图片的尺幅降低重绘幅度避免变形并对提示词净化处理&#34;&gt;&lt;strong&gt;[坑]针对性强的修改、反而需要修改图片的尺幅：降低重绘幅度避免变形&lt;/strong&gt;，并对提示词净化处理。
+&lt;/h5&gt;&lt;h5 id=&#34;1仅蒙版模式的边缘预留像素&#34;&gt;1.仅蒙版模式的边缘预留像素
+&lt;/h5&gt;&lt;h4 id=&#34;4蒙版模糊类似羽化&#34;&gt;4.蒙版模糊——&lt;strong&gt;类似羽化&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;消除硬接触的边缘&lt;/p&gt;
+&lt;p&gt;10以下比较好&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608030910718.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608030910718&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608030952522.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608030952522&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;太大会影响区域的读取或影响周边其他区域&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031043864.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031043864&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;区域大可以增大，区域小可以缩小。&lt;/p&gt;
+&lt;h3 id=&#34;局部重绘进阶&#34;&gt;局部重绘进阶
+&lt;/h3&gt;&lt;h4 id=&#34;1inpaintsketch手涂蒙版&#34;&gt;[1]inPaintSketch（手涂蒙版）
+&lt;/h4&gt;&lt;p&gt;调色盘按钮&lt;/p&gt;
+&lt;h4 id=&#34;修复的坏的手等&#34;&gt;修复的坏的手等
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031222384.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031222384&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;加蓝色爱心口罩&#34;&gt;加蓝色爱心口罩
+&lt;/h4&gt;&lt;p&gt;调色盘按钮—选黑色—画口罩——&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031407948.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031407948&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031428491.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031428491&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;重绘幅度可以稍大&lt;/p&gt;
+&lt;p&gt;蓝色&lt;/p&gt;
+&lt;p&gt;咒语中权重降低了，因为咒语的东西复杂了，让它更稳定的产出&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031524981.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031524981&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031533215.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031533215&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031625831.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031625831&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;玩法无限可能性大&#34;&gt;玩法无限可能性大
+&lt;/h5&gt;&lt;p&gt;吸管吸取背景，覆盖手的颜色，然后用肉色把手勾勒出来。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031815036.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031815036&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;正向提示词用上，击掌等&lt;/p&gt;
+&lt;p&gt;负面提示词中用Negative Embeddings&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031832010.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031832010&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031918786.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608031918786&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;1蒙版透明度&#34;&gt;1.蒙版透明度
+&lt;/h5&gt;&lt;p&gt;颜色映在图片上的透明度&lt;/p&gt;
+&lt;p&gt;降低重绘幅度——因为太大了会让手部线条模糊+蒙版模糊也不宜过大&lt;/p&gt;
+&lt;p&gt;如果不满意，那么随机种子多试试。&lt;/p&gt;
+&lt;h2 id=&#34;单独使用sketch绘图&#34;&gt;单独使用Sketch（绘图）
+&lt;/h2&gt;&lt;p&gt;直接使用Sketch&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608032306898.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608032306898&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后重新对整个图进做一个完整的图生图，肯定会对原图有影响。&lt;/p&gt;
+&lt;h3 id=&#34;灵魂画手功能的实现可以用这个&#34;&gt;——灵魂画手功能的实现可以用这个
+&lt;/h3&gt;&lt;h4 id=&#34;不想影响就用局部修复即可&#34;&gt;不想影响就用局部修复即可
+&lt;/h4&gt;&lt;h4 id=&#34;2上传蒙版功能应用&#34;&gt;[2]上传蒙版功能应用
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608032708812.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608032708812&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;上传蒙版区域&lt;/p&gt;
+&lt;p&gt;PS主体的对象选择工具，框选工具，会自动框选出来，然后套索工具-alt-ctrl-可以增加减少&lt;/p&gt;
+&lt;p&gt;然后再&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608032957611.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608032957611&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033009061.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033009061&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;先定义为白色&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033024541.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033024541&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后选中填充的图层复制一个&lt;/p&gt;
+&lt;p&gt;然后双击该图层前面的小白方块、填充颜色改为黑&lt;/p&gt;
+&lt;p&gt;单机长方形&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033139847.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033139847&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这个长方形就是PS的蒙版了&lt;/p&gt;
+&lt;p&gt;选中ctrl+I交换蒙版区域，就黑白换过来了。&lt;/p&gt;
+&lt;p&gt;就导出来PNG、jpg就可了。&lt;/p&gt;
+&lt;p&gt;人为代替了蒙版选择的了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033313482.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033313482&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;坑其他软件进行关联无穷的潜力挖掘&#34;&gt;[坑]其他软件进行关联，无穷的潜力挖掘
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033407765.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033407765&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033414055.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033414055&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033422690.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033422690&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033434707.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240608033434707&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;更为精确的手部修复。&lt;/p&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结
+&lt;/h1&gt;&lt;p&gt;1.&lt;strong&gt;SD（Stable Diffusion）基本操作&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用菜单选择不同的模型（Checkpoint）。&lt;/li&gt;
+&lt;li&gt;包括 Lora 模型，提供更精确的人物或画风控制。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.图生成图&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;上传图片并描述，使用 DeepBooru 算法反推标注。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;调整重绘幅度和分辨率，生成无缝贴图。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;包括聚焦剪裁、中央剪裁等操作，通过观察损失值调整训练过程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3.Prompt模板和提示词&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设计提示词模板，权重分配和增强减弱方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4.VAE（Variational Auto Encoder）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用加噪和去噪处理转换潜空间数据为正常图像。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5.Hypernetwork超网络模型&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改进画面整体风格，与Lora类似但更适合创造新元素。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;.6Embeddings嵌入式向量&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;优化画风，通过小文件链接到特定形象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;7.LoRa低秩适应模型&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;固定特定人物角色特征，更清晰地表达形象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;8.模型下载渠道&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hugging Face、C站等平台获取和共享模型和数据集。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>OpenCV中对图像噪声处理的常用形态学操作</title>
+        <link>http://localhost:1313/post1/opencv/</link>
+        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post1/opencv/</guid>
+        <description>&lt;img src="http://localhost:1313/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+&lt;img src=&#34;http://localhost:1313/tag-opencv.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;OpenCV的Logo&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;一噪声处理的基本操作&#34;&gt;一、噪声处理的基本操作
+&lt;/h1&gt;&lt;h2 id=&#34;1腐蚀&#34;&gt;1.腐蚀
+&lt;/h2&gt;&lt;p&gt;让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;例子一消除仙人掌的刺&#34;&gt;例子一、消除仙人掌的刺
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)&lt;span style=&#34;color:#75715e&#34;&gt;#3*3矩阵定义核的大小&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt;,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;erode(img,k)&lt;span style=&#34;color:#75715e&#34;&gt;#腐蚀&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst&amp;#34;&lt;/span&gt;,dst)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllwindows( )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;erode(src,kernel,anchor,iterations,borderType,borderValue)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;参数说明:
+src原始图像
+kernel腐蚀使用的核
+anchor可选参数  核的锚点位置
+iterations可选参数  腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;2膨胀&#34;&gt;2.膨胀
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;  同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt;,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dilate(img, k)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst&amp;#34;&lt;/span&gt;,dst)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllwindows()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;```&lt;/span&gt;Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dilate(src,kernel,anchor,iterations,borderType,borderValue)\
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参数说明如下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;src原始图像
+kernel膨胀使用的核
+anchor可选参数核的锚点位置
+iterations可选参数膨胀操作的迭代次数  后面两个为可选参数建议取默认值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;膨胀可以产生一种“近视眼”的效果。&lt;/p&gt;
+&lt;h2 id=&#34;3开运算&#34;&gt;3.开运算
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   开运算是将图像先进行腐蚀操作，再进行膨胀操作。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;开运算可以用来抹除图像&lt;strong&gt;外部&lt;/strong&gt;的细节。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#开运算&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\tzzy.png&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)&lt;span style=&#34;color:#75715e&#34;&gt;#创建5*5的核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img &amp;#34;&lt;/span&gt; ,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;erode(img,k)&lt;span style=&#34;color:#75715e&#34;&gt;#腐蚀操作&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dilate(dst,k)&lt;span style=&#34;color:#75715e&#34;&gt;#膨胀操作&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst&amp;#34;&lt;/span&gt;,dst)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllWindows()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;4闭运算&#34;&gt;4.闭运算
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   闭运算是将图像先进行膨胀操作，再进行腐蚀操作。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;闭运算可以抹除图像&lt;strong&gt;内部&lt;/strong&gt;的细节。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PYTHON&#34; data-lang=&#34;PYTHON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#闭运算&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resize(img, (&lt;span style=&#34;color:#ae81ff&#34;&gt;900&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;900&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt;,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dilate(img,k)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;erode(dst,k)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst2&amp;#34;&lt;/span&gt;,dst)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllWindows()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;二形态学其他方法&#34;&gt;二、形态学其他方法：
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   腐蚀和膨胀都是形态学的基础操作，开运算和闭运算是两种方法的运用。除了这两种方法外，形态学还有集中比较有特点的运算，OpenCV提供了一个morphologyEx方法
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;英 [mɔːˈfɒlədʒi]
+美 [mɔːrˈfɑːlədʒi]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;morphologyEx(src,op,kernel,anchor)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;src 原始图像&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;op 操作类型&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;kernel 操作过程中使用的核&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;anchor 核锚点的位置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;操作类型如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;参数值&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_ERODE&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;腐蚀操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_DILATE&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;膨胀操作&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_OPEN&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;开运算，先腐蚀后膨胀&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_CLOSE&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;闭运算，先膨胀后腐蚀&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_GRADIENT&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;梯度运算，膨胀图减腐蚀图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_TOPHAT&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;顶帽运算，原始图减开运算图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;cv2.MORPH_BLACKHAT&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;黑帽运算，闭运算图减原始图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;1梯度运算&#34;&gt;1.梯度运算
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   梯度是指图像梯度，可以简单理解为像素的变化程度。几个连续的像素，像素的跨度值越大，梯度值就越大。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   梯度运算就是，膨胀图减去腐蚀图，就是将扩张的膨胀图挖去收缩过的腐蚀图。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;梯度运算可以得到原图的轮廓。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PYTHON&#34; data-lang=&#34;PYTHON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#梯度运算，得到简笔画的轮廓&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resize(img,(&lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)&lt;span style=&#34;color:#75715e&#34;&gt;#创建5*5的核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt; ,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#进行梯度运算&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;morphologyEx(img,cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MORPH_GRADIENT,k)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst&amp;#34;&lt;/span&gt; ,dst)&lt;span style=&#34;color:#75715e&#34;&gt;#显示梯度运算结果&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllwindows( )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;兔子为实心线条，膨胀-腐蚀后，所以会在兔子周围形成两条线。&lt;/p&gt;
+&lt;h3 id=&#34;2顶帽运算&#34;&gt;2.顶帽运算
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   原图减去原图的开运算图，就是用有细节的原图挖去去除外部细节的开运算图。也就是只剩下外部细节的图。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;顶帽运算=原图-开运算图形=外部细节图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PYTHON&#34; data-lang=&#34;PYTHON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#顶帽运算，原图减开运算图&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\xtz.png&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt; ,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;morphologyEx(img,cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MORPH_TOPHAT,k)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst&amp;#34;&lt;/span&gt; ,dst)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllwindows()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3黑帽运算&#34;&gt;3.黑帽运算
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   原图的闭运算减去原图，也就是去除内部细节的图挖去有内部细节的原图，只剩内部细节。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;黑帽运算=原图像-闭运算图像=内部细节图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PYTHON&#34; data-lang=&#34;PYTHON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#黑帽运算&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; cv2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; numpy &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; np
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imread(&lt;span style=&#34;color:#e6db74&#34;&gt;r&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;D:\Program Files (x86)\PyCharmProject\pythonProject\video-face\rabbit.jpg&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;img &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;resize(img,(&lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;k&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ones((&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;),np&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;uint8)&lt;span style=&#34;color:#75715e&#34;&gt;#创建5*5的核&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;img&amp;#34;&lt;/span&gt; ,img)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#进行黑帽运算&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;morphologyEx(img, cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;MORPH_BLACKHAT,k)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;imshow( &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dst&amp;#34;&lt;/span&gt;,dst)&lt;span style=&#34;color:#75715e&#34;&gt;#显示黑帽运算结果&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllwindows()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id=&#34;三总结&#34;&gt;三、总结
+&lt;/h1&gt;&lt;p&gt;腐蚀操作：通过核来缩小图像中的对象，用于去除小细节或分离连接的对象。&lt;/p&gt;
+&lt;p&gt;膨胀操作：通过核来扩大图像中的对象，用于填充空洞或连接对象。&lt;/p&gt;
+&lt;p&gt;开运算：先腐蚀后膨胀，用于去除小物体，平滑边界，分离物体。&lt;/p&gt;
+&lt;p&gt;闭运算：先膨胀后腐蚀，用于填充小孔，连接物体。&lt;/p&gt;
+&lt;p&gt;梯度运算：膨胀图减腐蚀图，用于提取物体的边界。&lt;/p&gt;
+&lt;p&gt;顶帽运算：原图减开运算图，用于提取图像中的细节。&lt;/p&gt;
+&lt;p&gt;黑帽运算：闭运算图减原图，用于提取图像中的内部细节。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;   这些形态学操作可以用于图像增强、去噪、分割和特征提取等应用。通过适当选择和组合这些操作，可以实现多种图像处理效果。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
 </description>
         </item>
         <item>
@@ -295,6 +2376,128 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         
         <guid>http://localhost:1313/page/archives/</guid>
         <description></description>
+        </item>
+        <item>
+        <title>流操作和函数式编程</title>
+        <link>http://localhost:1313/post1/java/</link>
+        <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post1/java/</guid>
+        <description>&lt;img src="http://localhost:1313/java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
+&lt;/h1&gt;&lt;p&gt;是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。&lt;/p&gt;
+&lt;p&gt;例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。&lt;/p&gt;
+&lt;p&gt;例如：能用max()和min()对流操作找到流中的最大元素。&lt;/p&gt;
+&lt;p&gt;[参数:可用Comparator接口自定义比较的逻辑]&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Arrays;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Optional;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Comparator;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;StreamExample&lt;/span&gt; {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Integer&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; numbers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {3, 1, 4, 1, 5, 9, 2, 6, 5};  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 使用默认比较器找到最大元素  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Optional&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; max &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Arrays.&lt;span style=&#34;color:#a6e22e&#34;&gt;stream&lt;/span&gt;(numbers).&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;();  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        max.&lt;span style=&#34;color:#a6e22e&#34;&gt;ifPresent&lt;/span&gt;(System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;::println); &lt;span style=&#34;color:#75715e&#34;&gt;// 输出：9  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 使用默认比较器找到最小元素  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Optional&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; min &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Arrays.&lt;span style=&#34;color:#a6e22e&#34;&gt;stream&lt;/span&gt;(numbers).&lt;span style=&#34;color:#a6e22e&#34;&gt;min&lt;/span&gt;();  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        min.&lt;span style=&#34;color:#a6e22e&#34;&gt;ifPresent&lt;/span&gt;(System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;::println); &lt;span style=&#34;color:#75715e&#34;&gt;// 输出：1  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 使用自定义比较器找到最大元素（基于绝对值）  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Optional&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; maxAbs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Arrays.&lt;span style=&#34;color:#a6e22e&#34;&gt;stream&lt;/span&gt;(numbers).&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;(Comparator.&lt;span style=&#34;color:#a6e22e&#34;&gt;comparingInt&lt;/span&gt;(Math::abs));  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        maxAbs.&lt;span style=&#34;color:#a6e22e&#34;&gt;ifPresent&lt;/span&gt;(System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;::println); &lt;span style=&#34;color:#75715e&#34;&gt;// 输出：9 或 -5取决于绝对值的比较  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中Optional&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Optional是Java8中引入的容器类，可以包含Integer对象或不含任何对象(空)。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;程序员可以避免在代码中出现大量的空值判断，从而减少了if-else控制判断的使用，提高了代码的健壮性和可读性。&lt;/p&gt;
+&lt;p&gt;避免NullPointerException&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;流操作的主要目的是简化数据处理和提高代码的可读性。通过使用流，程序员可以&lt;strong&gt;链式地&lt;/strong&gt;应用一系列的操作，&lt;/p&gt;
+&lt;p&gt;如&lt;strong&gt;过滤、映射、归约&lt;/strong&gt;等，以实现对数据的转换和聚合。流操作还支持&lt;strong&gt;并行处理&lt;/strong&gt;，可以&lt;strong&gt;充分利用多核处理器的优势，提高数据处理的速度&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;函数式编程&#34;&gt;函数式编程
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Arrays;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.List;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.stream.Collectors;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;FunctionalOperationExample&lt;/span&gt; {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 创建一个整数列表  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        List&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; numbers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Arrays.&lt;span style=&#34;color:#a6e22e&#34;&gt;asList&lt;/span&gt;(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 使用Stream API进行函数式操作  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        List&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Integer&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; squaredEvenNumbers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; numbers.&lt;span style=&#34;color:#a6e22e&#34;&gt;stream&lt;/span&gt;() &lt;span style=&#34;color:#75715e&#34;&gt;// 将列表转换为流  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                .&lt;span style=&#34;color:#a6e22e&#34;&gt;filter&lt;/span&gt;(n &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; n &lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt; 2 &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; 0) &lt;span style=&#34;color:#75715e&#34;&gt;// 过滤出偶数  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                .&lt;span style=&#34;color:#a6e22e&#34;&gt;map&lt;/span&gt;(n &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; n &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; n) &lt;span style=&#34;color:#75715e&#34;&gt;// 将每个偶数平方  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                .&lt;span style=&#34;color:#a6e22e&#34;&gt;collect&lt;/span&gt;(Collectors.&lt;span style=&#34;color:#a6e22e&#34;&gt;toList&lt;/span&gt;()); &lt;span style=&#34;color:#75715e&#34;&gt;// 收集结果到新的列表  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 输出结果  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        squaredEvenNumbers.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;(System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;::println);  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;整个操作链以&lt;strong&gt;声明性&lt;/strong&gt;的方式描述了我们的意图：找到所有偶数并将它们平方。&lt;/p&gt;
+&lt;p&gt;我们不需要&lt;strong&gt;显式地编写循环或条件语句&lt;/strong&gt;，函数式操作提供了一种更加简洁、高效和可维护的编程方式。&lt;/p&gt;
+&lt;p&gt;流式编程的声明性主要体现在其通过一系列的操作来定义数据的转换和聚合过程，而无需显式地编写复杂的控制流代码。这使得代码更加简洁、易于理解，并且关注点更集中于数据的处理逻辑，而非流程控制。&lt;/p&gt;
+&lt;p&gt;下面是一个使用Java 8 Stream API进行流式编程的示例，该示例体现了流式编程的声明性：&lt;/p&gt;
+&lt;p&gt;假设我们有一个包含员工信息的列表，每个员工都有姓名（String）和薪水（double）两个属性。我们想要找出薪水最高的员工。&lt;/p&gt;
+&lt;p&gt;首先，我们定义一个简单的&lt;code&gt;Employee&lt;/code&gt;类：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Employee&lt;/span&gt; {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; String name;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; salary;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Employee&lt;/span&gt;(String name, &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; salary) {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; name;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;salary&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; salary;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; String &lt;span style=&#34;color:#a6e22e&#34;&gt;getName&lt;/span&gt;() {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; name;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getSalary&lt;/span&gt;() {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; salary;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;@Override&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; String &lt;span style=&#34;color:#a6e22e&#34;&gt;toString&lt;/span&gt;() {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Employee{&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;name=&amp;#39;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; name &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\&amp;#39;&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;, salary=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; salary &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;}&amp;#39;&lt;/span&gt;;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来，我们创建一个包含多个&lt;code&gt;Employee&lt;/code&gt;对象的列表，并使用流式编程找出薪水最高的员工：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Arrays;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.List;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; java.util.Optional;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;DeclarativeStreamingExample&lt;/span&gt; {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 创建一个员工列表  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        List&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Employee&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; employees &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Arrays.&lt;span style=&#34;color:#a6e22e&#34;&gt;asList&lt;/span&gt;(  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Employee(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Alice&amp;#34;&lt;/span&gt;, 50000),  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Employee(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Bob&amp;#34;&lt;/span&gt;, 60000),  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Employee(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Charlie&amp;#34;&lt;/span&gt;, 45000),  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Employee(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;David&amp;#34;&lt;/span&gt;, 70000)  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        );  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 使用流式编程找出薪水最高的员工  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Optional&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;Employee&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; highestPaidEmployee &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; employees.&lt;span style=&#34;color:#a6e22e&#34;&gt;stream&lt;/span&gt;() &lt;span style=&#34;color:#75715e&#34;&gt;// 转换为流  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                .&lt;span style=&#34;color:#a6e22e&#34;&gt;max&lt;/span&gt;((e1, e2) &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; Double.&lt;span style=&#34;color:#a6e22e&#34;&gt;compare&lt;/span&gt;(e1.&lt;span style=&#34;color:#a6e22e&#34;&gt;getSalary&lt;/span&gt;(), e2.&lt;span style=&#34;color:#a6e22e&#34;&gt;getSalary&lt;/span&gt;())); &lt;span style=&#34;color:#75715e&#34;&gt;// 根据薪水比较员工  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// 处理结果  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        highestPaidEmployee.&lt;span style=&#34;color:#a6e22e&#34;&gt;ifPresent&lt;/span&gt;(emp &lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt; {  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Highest paid employee is: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; emp);  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        });  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这个例子中，我们使用了&lt;code&gt;stream()&lt;/code&gt;方法将员工列表转换为一个流。然后，我们调用了&lt;code&gt;max()&lt;/code&gt;方法，并传入了一个lambda表达式作为比较器，用于比较两个员工的薪水。&lt;code&gt;max()&lt;/code&gt;方法会返回一个&lt;code&gt;Optional&lt;/code&gt;对象，它可能包含薪水最高的员工（如果存在的话）。最后，我们使用&lt;code&gt;ifPresent()&lt;/code&gt;方法来处理找到的员工（如果存在）。&lt;/p&gt;
+&lt;p&gt;这个例子体现了流式编程的声明性，因为我们没有编写显式的循环或条件语句来遍历列表和比较元素。相反，我们通过调用一系列的方法（&lt;code&gt;stream()&lt;/code&gt;, &lt;code&gt;max()&lt;/code&gt;, &lt;code&gt;ifPresent()&lt;/code&gt;）并传入必要的函数式接口实例（lambda表达式）来声明我们的意图。这种方式使得代码更加简洁和易于理解，同时也更容易进行扩展和修改。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>流操作和函数式编程</title>

@@ -8,6 +8,9 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/post1/</loc>
+    <lastmod>2024-07-19T21:14:39+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/post/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
@@ -20,6 +23,9 @@
     <loc>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2024-07-19T21:14:39+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
@@ -27,6 +33,9 @@
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/opencv/</loc>
+    <lastmod>2023-11-06T21:14:39+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post1/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/opencv/</loc>
@@ -48,6 +57,9 @@
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2023-03-28T11:08:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post1/java/</loc>
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/java/</loc>

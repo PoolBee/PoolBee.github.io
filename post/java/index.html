@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/java/'>
 
-<link rel="stylesheet" href="/scss/style.min.1e4508cf8173a1587cca8f4cb87b71249bc121180b44ec3214f4fe28a7a5dbb1.css"><meta property='og:title' content="流操作和函数式编程">
+<link rel="stylesheet" href="/scss/style.min.a100cbd8cef8db4d20c79553a0fcbb82ca48e284079baa14404d86940177cfc1.css"><meta property='og:title' content="流操作和函数式编程">
 <meta property='og:description' content="流操作 是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。 例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。 例如：能用max()和min()对流操作找到流中的最大元素。 [参数:可用Comparator接口自定义比较的逻辑] import java.util.Arrays; import java.util.Optional; import java.util.Comparator; public class StreamExample { public static void main(String[] args) { Integer[] numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5}; // 使用默认比较器找到最大元素 Optional&lt;Integer&gt; max = Arrays.stream(numbers).max(); max.ifPresent(System.out::println); // 输出：9 // 使用默认比较器找到最小元素 Optional&lt;Integer&gt; min = Arrays.stream(numbers).min(); min.ifPresent(System.out::println); // 输出：1 // 使用自定义比较器找到最大元素（基于绝对值） Optional&lt;Integer&gt; maxAbs = Arrays.stream(numbers).max(Comparator.comparingInt(Math::abs)); maxAbs.ifPresent(System.out::println); // 输出：9 或 -5取决于绝对值的比较 } } 其中Optional">
 <meta property='og:url' content='http://localhost:1313/post/java/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -575,6 +575,34 @@
 
     
 
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/post1/java/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/java.png" loading="lazy" data-key="Java" data-hash="/java.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">流操作和函数式编程</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
      
     
         
@@ -624,12 +652,20 @@
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
              
              
           
             
        
-            共发表 3 篇文章 · 总计 0.60 k 字
+            共发表 4 篇文章 · 总计 1.51 k 字
         </div> 
 
     
