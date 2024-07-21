@@ -17,7 +17,7 @@
         <item>
         <title>AIGC</title>
         <link>http://localhost:1313/categories/aigc/</link>
-        <pubDate>Mon, 01 Jul 2024 11:54:39 +0000</pubDate>
+        <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
         
         <guid>http://localhost:1313/categories/aigc/</guid>
         <description>&lt;img src="http://localhost:1313/categories/aigc/archives-aigc.png" alt="Featured image of post AIGC" /&gt;</description>
@@ -45,14 +45,6 @@
         
         <guid>http://localhost:1313/categories/java/</guid>
         <description>&lt;img src="http://localhost:1313/categories/java/archives-java.png" alt="Featured image of post Java" /&gt;</description>
-        </item>
-        <item>
-        <title>SD</title>
-        <link>http://localhost:1313/categories/sd/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/sd/</guid>
-        <description></description>
         </item>
         <item>
         <title>随笔</title>
