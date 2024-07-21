@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post1/opencv/'>
 
-<link rel="stylesheet" href="/scss/style.min.a100cbd8cef8db4d20c79553a0fcbb82ca48e284079baa14404d86940177cfc1.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
+<link rel="stylesheet" href="/scss/style.min.fd0d40e1661f1893e9fe1761c6cbca6d3e0e0550a64379f4020ea327ea1d205c.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
 <meta property='og:description' content="Typlog 的相册语法 介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
 <meta property='og:url' content='http://localhost:1313/post1/opencv/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -75,7 +75,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">PoolBee的博客</a></h1>
-            <h2 class="site-description">热爱生活,忠于记录</h2>
+            <h2 class="site-description">热爱生活，忠于记录</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -353,7 +353,7 @@
             
                 
 <a id="back-to-top" href="#">
-    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M1024 0H0v64h512L0 576h320v448h377.6V576H1024L512 64h512z" /></svg>
+    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="48px" height="48.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M526.848 202.24A20.48 20.48 0 0 0 512 196.096a19.68 19.68 0 0 0-14.848 6.144l-155.136 154.624a21.632 21.632 0 0 0 0 30.208 21.632 21.632 0 0 0 30.208 0L512 247.296l139.776 139.776a21.376 21.376 0 0 0 14.848 6.144 20.48 20.48 0 0 0 14.848-6.144 21.632 21.632 0 0 0 0-30.208L526.848 202.24zM116.224 595.968h90.624v231.936h42.496v-231.936h90.624v-42.496H115.712v42.496h0.512z m458.24-42.496h-112.64c-13.824 0-27.136 5.12-37.376 15.36-10.24 10.24-15.36 24.064-15.36 37.376v168.448c0 13.824 5.12 27.136 15.36 37.376 10.24 10.24 24.064 15.36 37.376 15.36h112.64c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-168.448c0-13.824-5.12-27.136-15.36-37.376-10.24-10.24-23.552-15.36-37.376-15.36z m10.752 221.696c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-112.64a10.688 10.688 0 0 1-7.68-3.072 10.688 10.688 0 0 1-3.072-7.68V606.72c0-2.048 0.512-5.12 3.072-7.68a10.688 10.688 0 0 1 7.68-3.072h112.64c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v168.448z m307.2-205.824a53.12 53.12 0 0 0-37.376-15.36h-145.408v274.432h42.496v-120.32h102.912c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-48.128c0-14.336-5.12-27.648-15.36-37.888z m-27.136 84.992c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-103.424v-69.12h103.936c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v47.616h-0.512z"  /></svg>
 </a>
 
             
