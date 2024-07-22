@@ -6,13 +6,25 @@
         <description>Recent content in Pages on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 12:58:23 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于我 About me</title>
         <link>http://localhost:1313/page/about/</link>
-        <pubDate>Sat, 20 Jul 2024 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 20 Jul 2024 12:58:23 +0000</pubDate>
         
         <guid>http://localhost:1313/page/about/</guid>
-        <description>&lt;p&gt;我是&lt;/p&gt;
+        <description>&lt;h3 id=&#34;近况&#34;&gt;近况：
+&lt;/h3&gt;&lt;p&gt;​	中国北方&amp;amp;南方都待过，现居河北，个人喜欢北方。现大四，现正在考研。&lt;/p&gt;
+&lt;h3 id=&#34;博客介绍&#34;&gt;博客介绍：
+&lt;/h3&gt;&lt;p&gt;​	写博客目的是记录自己的编程学习记录，主要是在基础方面：C语言、Python的基本库、分享深度学习基础算法讲解、Tenslflow、大模型方面的知识，也会做一些AI模型的应用。工作目标从事深度学习（CNN, RNN）／计算机视觉／图像视频处理或大模型工程师。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当然完全凭个人兴趣，不是固定更新，想到分享就写什么。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​    &lt;strong&gt;最最最大的目的是个人记录，如果在此期间能遇到对此方向感兴趣的朋友也欢迎交流。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;——年轻在于折腾，相信抓住未来趋势，深耕就能找到方向。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;兴趣&#34;&gt;兴趣：
+&lt;/h3&gt;&lt;p&gt;网上冲浪&lt;/p&gt;
+&lt;h3 id=&#34;爱好&#34;&gt;爱好：
+&lt;/h3&gt;&lt;p&gt;拍照、运动、攒一些小玩意，偶尔用lr、ps、sketchup搞点东西。&lt;/p&gt;
 </description>
         </item>
         <item>
