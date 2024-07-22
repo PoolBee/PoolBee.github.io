@@ -85,9 +85,9 @@
   </url><url>
     <loc>http://localhost:1313/page/links/</loc>
   </url><url>
-    <loc>http://localhost:1313/page/soft/</loc>
-  </url><url>
     <loc>http://localhost:1313/page/share/</loc>
+  </url><url>
+    <loc>http://localhost:1313/page/soft/</loc>
   </url><url>
     <loc>http://localhost:1313/page/search/</loc>
   </url><url>

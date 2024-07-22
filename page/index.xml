@@ -45,21 +45,22 @@
 </description>
         </item>
         <item>
-        <title>链接</title>
-        <link>http://localhost:1313/page/soft/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/page/soft/</guid>
-        <description>&lt;p&gt;&lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>日常分享</title>
         <link>http://localhost:1313/page/share/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>http://localhost:1313/page/share/</guid>
         <description>&lt;p&gt;测试123
+&lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>软件&amp;网站</title>
+        <link>http://localhost:1313/page/soft/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/page/soft/</guid>
+        <description>&lt;p&gt;这是软件&amp;amp;网站页面
 &lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
