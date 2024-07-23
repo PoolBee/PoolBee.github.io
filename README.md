@@ -1,3 +1,38 @@
+# Personal Blog README
+
+Welcome to my personal blog!
+
+## About Me
+
+I'm a senior in college and I'm currently going to graduate school. I have a strong interest in computer science, especially deep learning and big model engineering. A native of the north, currently living in Hebei. I like to challenge myself and pursue the depth and breadth of technology, and I hope to find my career direction in the field of deep learning, computer vision or image video processing in the future.
+
+## Blog Content
+
+This blog mainly records some of my experiences and insights during my programming learning process. Topics of interest to me include:
+
+- Learning and application of basic C and Python libraries
+- Explanation and implementation of basic deep learning algorithms
+- Tips on using TensorFlow and other big model tools
+- Exploration and application of AI models in real-world applications
+
+These contents are not only technical sharing, but also a record of my personal learning and growth. I hope to communicate and share my experience with friends who are also interested in these fields through the blog.
+
+## Hobbies
+
+Besides programming and technology, I also like to:
+
+- Surfing the internet, keeping up with the latest news in technology and society.
+- Taking photos to record the beautiful moments in life
+- Exercise to keep fit and energetic
+- Collecting gadgets, enjoying decorating and designing.
+- Occasionally use tools like lr, ps, sketchup, etc. to create some interesting works.
+
+## Final Words
+
+Thank you for visiting my blog! I hope you found some useful information or inspiration here. If you have any questions, suggestions or just want to connect, feel free to contact me. Together we can explore the future of technology and progress together!
+
+[PoolBee's blog](https://poolbee.github.io/)
+
 # 个人博客 README
 
 欢迎来到我的个人博客！
