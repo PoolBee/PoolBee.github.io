@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on PoolBee的博客</title>
-        <link>http://localhost:1313/post/</link>
+        <link>http://localhost:49160/post/</link>
         <description>Recent content in Posts on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:49160/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo主题配置记录-7月21日博客更新日志</title>
-        <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%99/</link>
+        <link>http://localhost:49160/post/%E5%BB%BA%E7%AB%99/</link>
         <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%99/</guid>
+        <guid>http://localhost:49160/post/%E5%BB%BA%E7%AB%99/</guid>
         <description>&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
 &lt;/h1&gt;&lt;h1 id=&#34;1引入busuanzi插件进行字数访问量统计&#34;&gt;1.引入busuanzi插件进行字数、访问量统计。
 &lt;/h1&gt;&lt;ul&gt;
@@ -149,10 +149,10 @@
         </item>
         <item>
         <title>随笔</title>
-        <link>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</link>
+        <link>http://localhost:49160/post/%E9%9A%8F%E7%AC%94/</link>
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</guid>
+        <guid>http://localhost:49160/post/%E9%9A%8F%E7%AC%94/</guid>
         <description>&lt;p&gt;Hugo主题配置记录&lt;/p&gt;
 &lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
 &lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
@@ -172,11 +172,11 @@
         </item>
         <item>
         <title>Stable Diffusion笔记</title>
-        <link>http://localhost:1313/post/sd/</link>
+        <link>http://localhost:49160/post/sd/</link>
         <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/sd/</guid>
-        <description>&lt;img src="http://localhost:1313/tag-opencv.jpg" alt="Featured image of post Stable Diffusion笔记" /&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184336146.png&#34;
+        <guid>http://localhost:49160/post/sd/</guid>
+        <description>&lt;img src="http://localhost:49160/tag-opencv.jpg" alt="Featured image of post Stable Diffusion笔记" /&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184336146.png&#34;
 	
 	
 	
@@ -1980,12 +1980,12 @@
         </item>
         <item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
-        <link>http://localhost:1313/post/opencv/</link>
+        <link>http://localhost:49160/post/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/opencv/</guid>
-        <description>&lt;img src="http://localhost:1313/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
-&lt;img src=&#34;http://localhost:1313/tag-opencv.jpg&#34;
+        <guid>http://localhost:49160/post/opencv/</guid>
+        <description>&lt;img src="http://localhost:49160/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+&lt;img src=&#34;http://localhost:49160/tag-opencv.jpg&#34;
 	
 	
 	
@@ -2231,11 +2231,11 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         </item>
         <item>
         <title>流操作和函数式编程</title>
-        <link>http://localhost:1313/post/java/</link>
+        <link>http://localhost:49160/post/java/</link>
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/java/</guid>
-        <description>&lt;img src="http://localhost:1313/java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
+        <guid>http://localhost:49160/post/java/</guid>
+        <description>&lt;img src="http://localhost:49160/java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
 &lt;/h1&gt;&lt;p&gt;是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。&lt;/p&gt;
 &lt;p&gt;例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。&lt;/p&gt;
 &lt;p&gt;例如：能用max()和min()对流操作找到流中的最大元素。&lt;/p&gt;
