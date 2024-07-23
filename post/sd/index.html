@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=51120&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58853&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。">
 <title>Stable Diffusion笔记</title>
 
-<link rel='canonical' href='http://localhost:51120/post/sd/'>
+<link rel='canonical' href='http://localhost:58853/post/sd/'>
 
 <link rel="stylesheet" href="/scss/style.min.fd0d40e1661f1893e9fe1761c6cbca6d3e0e0550a64379f4020ea327ea1d205c.css"><meta property='og:title' content="Stable Diffusion笔记">
 <meta property='og:description' content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。">
-<meta property='og:url' content='http://localhost:51120/post/sd/'>
+<meta property='og:url' content='http://localhost:58853/post/sd/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Stable Diffusion' /><meta property='article:published_time' content='2024-06-09T11:54:39&#43;00:00'/><meta property='article:modified_time' content='2024-06-09T11:54:39&#43;00:00'/><meta property='og:image' content='http://localhost:51120/tag-opencv.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Stable Diffusion' /><meta property='article:published_time' content='2024-06-09T11:54:39&#43;00:00'/><meta property='article:modified_time' content='2024-06-09T11:54:39&#43;00:00'/>
 <meta name="twitter:site" content="@PoolBee">
     <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Stable Diffusion笔记">
-<meta name="twitter:description" content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:51120/tag-opencv.jpg' />
+<meta name="twitter:description" content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。">
   
 
 
@@ -449,7 +448,7 @@
         <li><a href="#直接点击-局部重绘其他素材图片也可以">直接点击-局部重绘，其他素材图片也可以</a></li>
       </ul>
     </li>
-    <li><a href="#局部修复参数image-20240608025445349cusersanymoreappdataroamingtyporatypora-user-imagesimage-20240608025445349png">局部修复参数<img src="C:%5CUsers%5Canymore%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240608025445349.png" alt="image-20240608025445349"></a>
+    <li><a href="#局部修复参数image-20240608025445349postimage-20240608025445349png">局部修复参数<img src="/post/image-20240608025445349.png" alt="image-20240608025445349"></a>
       <ul>
         <li></li>
         <li><a href="#局部重绘进阶">局部重绘进阶</a></li>
@@ -504,12 +503,16 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
         <div class="article-image">
             <a href="/post/sd/">
-                
-                    <img src="/tag-opencv.jpg" loading="lazy" alt="Featured image of post Stable Diffusion笔记" />
+                <img src="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png"
+                        srcset="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png 800w, /img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="119" 
+                        loading="lazy"
+                        alt="Featured image of post Stable Diffusion笔记" />
                 
             </a>
         </div>
@@ -580,7 +583,7 @@
     <section class="article-content">
     
     
-    <p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184336146.png"
+    <p><img src="/post/before/image-20240607184336146.png"
 	
 	
 	
@@ -590,7 +593,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184445492.png"
+<p><img src="/post/image-20240607184445492.png"
 	
 	
 	
@@ -602,7 +605,7 @@
 ></p>
 <p>check point 就是菜单——选择不同的模型</p>
 <p>lora更精确的人物或画风，更可控</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184615859.png"
+<p><img src="/post/image-20240607184615859.png"
 	
 	
 	
@@ -612,7 +615,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184628145.png"
+<p><img src="/post/image-20240607184628145.png"
 	
 	
 	
@@ -622,7 +625,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184732610.png"
+<p><img src="/post/image-20240607184732610.png"
 	
 	
 	
@@ -634,7 +637,7 @@
 ></p>
 <p>图生图</p>
 <p>上传</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184803838.png"
+<p><img src="/post/image-20240607184803838.png"
 	
 	
 	
@@ -645,7 +648,7 @@
 	
 ></p>
 <p>描述图片</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184832014.png"
+<p><img src="/post/image-20240607184832014.png"
 	
 	
 	
@@ -655,7 +658,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184852610.png"
+<p><img src="/post/image-20240607184852610.png"
 	
 	
 	
@@ -672,7 +675,7 @@
 <p>使用deepbooru算法反推标注。0.6 系数越小越精细</p>
 <p>日志看loss值，数值降低大概率没什么问题</p>
 <h1 id="一提示词prompt">一、提示词prompt
-</h1><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194636624.png"
+</h1><p><img src="/post/image-20240607194636624.png"
 	
 	
 	
@@ -683,7 +686,7 @@
 	
 ></p>
 <p>类别</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194655106.png"
+<p><img src="/post/image-20240607194655106.png"
 	
 	
 	
@@ -694,7 +697,7 @@
 	
 ></p>
 <p>其他提示词：画质等</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194743238.png"
+<p><img src="/post/image-20240607194743238.png"
 	
 	
 	
@@ -704,7 +707,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194753742.png"
+<p><img src="/post/image-20240607194753742.png"
 	
 	
 	
@@ -714,7 +717,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194818438.png"
+<p><img src="/post/image-20240607194818438.png"
 	
 	
 	
@@ -726,7 +729,7 @@
 ></p>
 <p>但是真实系的操作是更依赖真实的模型</p>
 <h2 id="1prompt模板">1.prompt模板:
-</h2><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607194914970.png"
+</h2><p><img src="/post/image-20240607194914970.png"
 	
 	
 	
@@ -741,7 +744,7 @@
 </h2><p>安全范围1+-0.5，单个的</p>
 <p>():1.1倍，1.331倍</p>
 <p>{}</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002312274.png"
+<p><img src="/post/image-20240608002312274.png"
 	
 	
 	
@@ -752,7 +755,7 @@
 	
 ></p>
 <h1 id="1进阶语法-坑">[1]进阶语法-坑
-</h1><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002405145.png"
+</h1><p><img src="/post/image-20240608002405145.png"
 	
 	
 	
@@ -764,7 +767,7 @@
 ></p>
 <h2 id="不想出现就是负向提示词">不想出现就是负向提示词
 </h2><p>单色风格的画作</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002513577.png"
+<p><img src="/post/image-20240608002513577.png"
 	
 	
 	
@@ -779,7 +782,7 @@
 <p>闪一次，就步数&gt;20后意义不大</p>
 <p>最低不要低于10</p>
 <h3 id="采样方法">采样方法
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002724513.png"
+</h3><p><img src="/post/image-20240608002724513.png"
 	
 	
 	
@@ -796,7 +799,7 @@
 <p>7-12相关性一般</p>
 <p>批次和数量</p>
 <p>批次是格子预览图。每次批次数量不宜过高，容易爆显存。</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608002856328.png"
+<p><img src="/post/image-20240608002856328.png"
 	
 	
 	
@@ -810,7 +813,7 @@
 </h2><h3 id="1翻译描述确切场景然后直接让词组翻译为英文">1.翻译、描述确切场景，然后直接让词组翻译为英文
 </h3><h3 id="2功能插件翻译的插件国内有sd也有">2.功能插件、翻译的插件——国内有——SD也有
 </h3><h3 id="3更好书写提示词网站ai词汇加速器">3.更好书写提示词网站：AI词汇加速器
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003420900.png"
+</h3><p><img src="/post/image-20240608003420900.png"
 	
 	
 	
@@ -820,7 +823,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003430396.png"
+<p><img src="/post/image-20240608003430396.png"
 	
 	
 	
@@ -830,7 +833,7 @@
 	
 	
 ></p>
-<p>提示词网站：<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003513343.png"
+<p>提示词网站：<img src="/post/image-20240608003513343.png"
 	
 	
 	
@@ -841,7 +844,7 @@
 	
 ></p>
 <p>二次元和亚洲面孔多：</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003519995.png"
+<p><img src="/post/image-20240608003519995.png"
 	
 	
 	
@@ -852,7 +855,7 @@
 	
 ></p>
 <p>人物、</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003544952.png"
+<p><img src="/post/image-20240608003544952.png"
 	
 	
 	
@@ -863,7 +866,7 @@
 	
 ></p>
 <p>画风、质感：</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608003559712.png"
+<p><img src="/post/image-20240608003559712.png"
 	
 	
 	
@@ -878,7 +881,7 @@
 <h2 id="1上传图片导入到sd里">1.上传图片、导入到SD里
 </h2><h2 id="2提示词书写">2.提示词书写
 </h2><p>1man,1girl</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004301173.png"
+<p><img src="/post/image-20240608004301173.png"
 	
 	
 	
@@ -888,7 +891,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004314355.png"
+<p><img src="/post/image-20240608004314355.png"
 	
 	
 	
@@ -900,7 +903,7 @@
 ></p>
 <h2 id="3参数设置">3.参数设置
 </h2><p>重绘幅度0.6-0.8</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004053399.png"
+<p><img src="/post/image-20240608004053399.png"
 	
 	
 	
@@ -912,7 +915,7 @@
 ></p>
 <p>分辨率设置，原始尺寸一样最好</p>
 <p>按长宽比例一致生成、</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608004426686.png"
+<p><img src="/post/image-20240608004426686.png"
 	
 	
 	
@@ -936,7 +939,7 @@
 <h2 id="3photoshop中搭建图像框架sd生成图片炫酷的效果">[3]photoshop中搭建图像框架+SD生成图片——炫酷的效果。
 </h2><p>画布</p>
 <p>画图中</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005226877.png"
+<p><img src="/post/image-20240608005226877.png"
 	
 	
 	
@@ -946,7 +949,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005235034.png"
+<p><img src="/post/image-20240608005235034.png"
 	
 	
 	
@@ -959,7 +962,7 @@
 <h5 id="然后场景插画就完成了">然后场景插画就完成了！
 </h5><h1 id="三画风">三、画风
 </h1><h2 id="1checkpoint">1.Checkpoint
-</h2><p>模型信息：<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005330230.png"
+</h2><p>模型信息：<img src="/post/image-20240608005330230.png"
 	
 	
 	
@@ -969,7 +972,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005338545.png"
+<p><img src="/post/image-20240608005338545.png"
 	
 	
 	
@@ -983,7 +986,7 @@
 <p>所以就叫关键点、存档。</p>
 <p>所以这些检查点，这些模型就能有迭代、更新的能力，AOM3A3深橘色。</p>
 <h2 id="2-ckpt文件">2. .ckpt文件
-</h2><p>几个G的叫大模型<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005522688.png"
+</h2><p>几个G的叫大模型<img src="/post/image-20240608005522688.png"
 	
 	
 	
@@ -997,7 +1000,7 @@
 </h2><p>训练者让模型更加可靠高效来使用的一种格式。</p>
 <p>点击刷星按钮</p>
 <p>命令行中跳出提示才算成功</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608005650275.png"
+<p><img src="/post/image-20240608005650275.png"
 	
 	
 	
@@ -1016,7 +1019,7 @@
 <p>会推荐使用一些VAE</p>
 <p><strong>也有适用于大多数checkpoint的VAE：kl-f8-anime2.ckpt</strong></p>
 <p>也有safetensors的VAE</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608010147671.png"
+<p><img src="/post/image-20240608010147671.png"
 	
 	
 	
@@ -1028,7 +1031,7 @@
 ></p>
 <h2 id="1自动的适配vae方法">[1]自动的适配VAE方法
 </h2><p>改为和模型一样的名字</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608010220572.png"
+<p><img src="/post/image-20240608010220572.png"
 	
 	
 	
@@ -1045,7 +1048,7 @@
 <p>不像Lora是彩卡插画。那么它像一张小名片</p>
 <h3 id="hypernetwork一般用于改善画面的整体风格">Hypernetwork一般用于改善画面的整体风格
 </h3><h4 id="这种画风区别不是二次元真实感那种区别而像梵高和莫奈那种小区别">这种画风区别：不是二次元真实感那种区别，而像梵高和莫奈那种小区别
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024013352.png"
+</h4><p><img src="/post/image-20240608024013352.png"
 	
 	
 	
@@ -1055,7 +1058,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024017643.png"
+<p><img src="/post/image-20240608024017643.png"
 	
 	
 	
@@ -1066,7 +1069,7 @@
 	
 ></p>
 <p>hYPERNETwORK路径</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024028127.png"
+<p><img src="/post/image-20240608024028127.png"
 	
 	
 	
@@ -1077,7 +1080,7 @@
 	
 ></p>
 <p>绕：设置中找到附加网络</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024057849.png"
+<p><img src="/post/image-20240608024057849.png"
 	
 	
 	
@@ -1088,7 +1091,7 @@
 	
 ></p>
 <h5 id="在这里也可以添加lora坑但是lora会有更方便的应用形式">在这里也可以添加Lora,【坑】但是Lora会有更方便的应用形式
-</h5><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024209242.png"
+</h5><p><img src="/post/image-20240608024209242.png"
 	
 	
 	
@@ -1098,7 +1101,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024238437.png"
+<p><img src="/post/image-20240608024238437.png"
 	
 	
 	
@@ -1112,7 +1115,7 @@
 <p>多数研究者对于Hypernetwork在图像生成方面的评价并不好，</p>
 <p>至少不如lora和embaddings好，</p>
 <p>也有部分Lora对训练样本的把控实现了对画风的塑造植入。</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024428375.png"
+<p><img src="/post/image-20240608024428375.png"
 	
 	
 	
@@ -1122,7 +1125,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024432575.png"
+<p><img src="/post/image-20240608024432575.png"
 	
 	
 	
@@ -1132,7 +1135,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024436066.png"
+<p><img src="/post/image-20240608024436066.png"
 	
 	
 	
@@ -1142,7 +1145,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024441820.png"
+<p><img src="/post/image-20240608024441820.png"
 	
 	
 	
@@ -1153,7 +1156,7 @@
 	
 ></p>
 <p>尽管如此，超网络在实现特定的风格时，仍然会提供不少的帮助</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024550112.png"
+<p><img src="/post/image-20240608024550112.png"
 	
 	
 	
@@ -1163,7 +1166,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024554587.png"
+<p><img src="/post/image-20240608024554587.png"
 	
 	
 	
@@ -1173,7 +1176,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024600531.png"
+<p><img src="/post/image-20240608024600531.png"
 	
 	
 	
@@ -1187,7 +1190,7 @@
 </h2><p>优化画风</p>
 <p>.pt</p>
 <p>翻译为：<strong>文本嵌入</strong></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020907845.png"
+<p><img src="/post/image-20240608020907845.png"
 	
 	
 	
@@ -1199,7 +1202,7 @@
 ></p>
 <p>有时候网站上叫<strong>Textual</strong> <strong>Inversion</strong>文本倒置</p>
 <h3 id="很小的文件相当于大模型中的书签指向特定的形象嵌入式向量"><strong>很小的</strong>文件——相当于大模型中的书签，指向特定的形象——<strong>嵌入式向量</strong>
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021147938.png"
+</h3><p><img src="/post/image-20240608021147938.png"
 	
 	
 	
@@ -1210,7 +1213,7 @@
 	
 ></p>
 <p>与VAE一样</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021231381.png"
+<p><img src="/post/image-20240608021231381.png"
 	
 	
 	
@@ -1221,7 +1224,7 @@
 	
 ></p>
 <h3 id="使用只要在输入中输入书签翻字典的过程">使用：只要在输入中输入书签翻字典的过程。
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021251130.png"
+</h3><p><img src="/post/image-20240608021251130.png"
 	
 	
 	
@@ -1232,7 +1235,7 @@
 	
 ></p>
 <h4 id="举例">举例：
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021448522.png"
+</h4><p><img src="/post/image-20240608021448522.png"
 	
 	
 	
@@ -1242,7 +1245,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021504260.png"
+<p><img src="/post/image-20240608021504260.png"
 	
 	
 	
@@ -1252,7 +1255,7 @@
 	
 	
 ></p>
-<p>固定随机种子+embadding的固定咒语——<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021538979.png"
+<p>固定随机种子+embadding的固定咒语——<img src="/post/image-20240608021538979.png"
 	
 	
 	
@@ -1265,7 +1268,7 @@
 <p>更像D.VA——加入描述她身上本身有的东西</p>
 <h4 id="1技巧反推提示词">[1]技巧反推提示词
 </h4><p>Dva的一张图片导入_图生图</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021712452.png"
+<p><img src="/post/image-20240608021712452.png"
 	
 	
 	
@@ -1278,7 +1281,7 @@
 <p>识别东西，然后转化为AI中的东西DB更具优势。</p>
 <p>每次识别的再筛选——删除降低权重</p>
 <h5 id="生成图片不可能完全一致因为embeddings到头是个几十kb的小文件">**生成图片不可能完全一致，**因为embeddings到头是个几十kb的小文件
-</h5><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608021917876.png"
+</h5><p><img src="/post/image-20240608021917876.png"
 	
 	
 	
@@ -1292,7 +1295,7 @@
 <h5 id="所以embaddings适用于一些广泛容错率高的形象的概念表现会好很多">所以embaddings适用于一些<strong>广泛、容错率高</strong>的形象的概念，表现会好很多。
 </h5><h5 id="而特定的人物更多的用lora">而特定的人物更多的用Lora
 </h5><h4 id="坑charturner-embaddings三视图">[坑]CharTurner-embaddings三视图
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022141243.png"
+</h4><p><img src="/post/image-20240608022141243.png"
 	
 	
 	
@@ -1304,7 +1307,7 @@
 ></p>
 <p>真NB啊</p>
 <h4 id="使用方法">使用方法：
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022305838.png"
+</h4><p><img src="/post/image-20240608022305838.png"
 	
 	
 	
@@ -1314,7 +1317,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022352184.png"
+<p><img src="/post/image-20240608022352184.png"
 	
 	
 	
@@ -1324,7 +1327,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022358152.png"
+<p><img src="/post/image-20240608022358152.png"
 	
 	
 	
@@ -1334,7 +1337,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022403226.png"
+<p><img src="/post/image-20240608022403226.png"
 	
 	
 	
@@ -1344,7 +1347,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022406949.png"
+<p><img src="/post/image-20240608022406949.png"
 	
 	
 	
@@ -1354,7 +1357,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022418228.png"
+<p><img src="/post/image-20240608022418228.png"
 	
 	
 	
@@ -1364,7 +1367,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022430581.png"
+<p><img src="/post/image-20240608022430581.png"
 	
 	
 	
@@ -1376,7 +1379,7 @@
 ></p>
 <h4 id="eva的和charturner两个embaddings使用化学反应自己观察">Eva的和charturner两个embaddings使用——化学反应自己观察
 </h4><p>开启高清修复</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022444186.png"
+<p><img src="/post/image-20240608022444186.png"
 	
 	
 	
@@ -1389,7 +1392,7 @@
 <h4 id="2embaddings解决手等的问题">[2]embaddings<strong>解决手等的问题</strong>
 </h4><h5 id="只要避开错误案例就可以了"><strong>只要避开错误案例就可以了</strong>
 </h5><p><strong>EasyNegative</strong></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022644934.png"
+<p><img src="/post/image-20240608022644934.png"
 	
 	
 	
@@ -1399,7 +1402,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022654146.png"
+<p><img src="/post/image-20240608022654146.png"
 	
 	
 	
@@ -1410,7 +1413,7 @@
 	
 ></p>
 <p>放入负面提示词里</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022738614.png"
+<p><img src="/post/image-20240608022738614.png"
 	
 	
 	
@@ -1423,7 +1426,7 @@
 <p>就修复了</p>
 <p><strong>综合的、全方位的基于负面样本的提炼</strong></p>
 <p>灰度，多人、等等</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608022911783.png"
+<p><img src="/post/image-20240608022911783.png"
 	
 	
 	
@@ -1439,7 +1442,7 @@
 <h3 id="作用有助于向ai传递描述某一个特征准确主体清晰的形象">作用：有助于向Ai传递/描述某一个特征准确/主体清晰的形象
 </h3><p><strong>夹在书中的彩页</strong>100-200M</p>
 <p>各方各个方面的素材、角度、画风等</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023127368.png"
+<p><img src="/post/image-20240608023127368.png"
 	
 	
 	
@@ -1450,7 +1453,7 @@
 	
 ></p>
 <p>有些模型会提供触发提示词——训练过程中有基于这个提示词反复强化过AI认知</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023151179.png"
+<p><img src="/post/image-20240608023151179.png"
 	
 	
 	
@@ -1461,7 +1464,7 @@
 	
 ></p>
 <p>也可以加入进行强化效果</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023404073.png"
+<p><img src="/post/image-20240608023404073.png"
 	
 	
 	
@@ -1475,7 +1478,7 @@
 </h4><p>因为它的训练图源复杂、</p>
 <p>所以一般也会对画风进行影响</p>
 <p>权重减小</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608023545687.png"
+<p><img src="/post/image-20240608023545687.png"
 	
 	
 	
@@ -1519,7 +1522,7 @@
 </table></div>
 <h5 id="files-and-version中看源代码">files and version中看源代码
 </h5><h4 id="--大模型在safey_checker找">- 大模型在Safey_checker找
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608011402645.png"
+</h4><p><img src="/post/image-20240608011402645.png"
 	
 	
 	
@@ -1534,7 +1537,7 @@
 </h5><h3 id="2c站">2.C站
 </h3><p><strong>iativic.com</strong></p>
 <p>不注册可使用，火热的模型</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608011810142.png"
+<p><img src="/post/image-20240608011810142.png"
 	
 	
 	
@@ -1550,7 +1553,7 @@
 </h4><p>几个模型融合到一起创造出来的。一般叫xxxMIx</p>
 <h4 id="坑base-model">【坑】Base model
 </h4><p>模型训练过程中的底模</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012033203.png"
+<p><img src="/post/image-20240608012033203.png"
 	
 	
 	
@@ -1575,7 +1578,7 @@
 </ul>
 <p>&mdash;- 质感类似于建模软件出来的三维渲染图，不如平面那么平，也不如真实那么真。</p>
 <p>很接近一些游戏和3D动画的想象</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012652918.png"
+<p><img src="/post/image-20240608012652918.png"
 	
 	
 	
@@ -1585,7 +1588,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012729191.png"
+<p><img src="/post/image-20240608012729191.png"
 	
 	
 	
@@ -1597,7 +1600,7 @@
 ></p>
 <h5 id="counterfeit">Counterfeit
 </h5><p>细节感、精致感、各种复杂室内外场景</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012757564.png"
+<p><img src="/post/image-20240608012757564.png"
 	
 	
 	
@@ -1610,7 +1613,7 @@
 <h5 id="dreamlike-diffusion">Dreamlike Diffusion
 </h5><p>漫画插画风</p>
 <p>幻想的超现实魔幻作品</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608012945130.png"
+<p><img src="/post/image-20240608012945130.png"
 	
 	
 	
@@ -1630,7 +1633,7 @@
 <h5 id="ned模型">NED模型
 </h5><p>造人的方面有一股特殊</p>
 <h5 id="protogen">Protogen
-</h5><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013223551.png"
+</h5><p><img src="/post/image-20240608013223551.png"
 	
 	
 	
@@ -1640,7 +1643,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013237249.png"
+<p><img src="/post/image-20240608013237249.png"
 	
 	
 	
@@ -1652,7 +1655,7 @@
 ></p>
 <p>国风3</p>
 <p>结合其他lora模型能创作</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013326172.png"
+<p><img src="/post/image-20240608013326172.png"
 	
 	
 	
@@ -1662,7 +1665,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608013333408.png"
+<p><img src="/post/image-20240608013333408.png"
 	
 	
 	
@@ -1674,7 +1677,7 @@
 ></p>
 <h2 id="4小类模型">4.小类模型
 </h2><p><strong>魔幻感场景</strong></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014358134.png"
+<p><img src="/post/image-20240608014358134.png"
 	
 	
 	
@@ -1685,7 +1688,7 @@
 	
 ></p>
 <h5 id="现代建筑">现代建筑
-</h5><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014341690.png"
+</h5><p><img src="/post/image-20240608014341690.png"
 	
 	
 	
@@ -1696,7 +1699,7 @@
 	
 ></p>
 <p><strong>高级感的平面设计</strong></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014413594.png"
+<p><img src="/post/image-20240608014413594.png"
 	
 	
 	
@@ -1706,7 +1709,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014423313.png"
+<p><img src="/post/image-20240608014423313.png"
 	
 	
 	
@@ -1719,7 +1722,7 @@
 <h1 id="高清">高清
 </h1><h2 id="1hi-res-fix">1.Hi-Res Fix
 </h2><p>高清修复/高分辨率修复/</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014526472.png"
+<p><img src="/post/image-20240608014526472.png"
 	
 	
 	
@@ -1731,7 +1734,7 @@
 ></p>
 <h3 id="皮肤分辨率太低人物皮肤模糊人物面部不真实">皮肤分辨率太低人物皮肤模糊、人物面部不真实——
 </h3><h3 id="如果用大分辨率的会有缺点">如果用大分辨率的会有缺点
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014719973.png"
+</h3><p><img src="/post/image-20240608014719973.png"
 	
 	
 	
@@ -1743,7 +1746,7 @@
 ></p>
 <h3 id="1采样次数">1.采样次数：
 </h3><p>高清修复需要经过一次重绘、因此需要设置采样步数、保持默认0数值、它会和我们设置的采样次数(20)一致</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608014859182.png"
+<p><img src="/post/image-20240608014859182.png"
 	
 	
 	
@@ -1768,7 +1771,7 @@
 </li>
 </ul>
 <h3 id="2放大算法">2.放大算法
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015301468.png"
+</h3><p><img src="/post/image-20240608015301468.png"
 	
 	
 	
@@ -1778,7 +1781,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015313901.png"
+<p><img src="/post/image-20240608015313901.png"
 	
 	
 	
@@ -1790,7 +1793,7 @@
 ></p>
 <p>感觉差不多，没有大到感觉很多区别</p>
 <p><strong>带有GAN的算法，重绘的细节保留更加准确</strong></p>
-<p><strong>同行无脑方法</strong><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015513614.png"
+<p><strong>同行无脑方法</strong><img src="/post/image-20240608015513614.png"
 	
 	
 	
@@ -1800,7 +1803,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015437826.png"
+<p><img src="/post/image-20240608015437826.png"
 	
 	
 	
@@ -1817,7 +1820,7 @@
 </h3><p>图库浏览器中，点击已经号的图片，再点击图生图。</p>
 <p>会自动填写信息</p>
 <h3 id="3放大算法设置">3.放大算法设置
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608015744098.png"
+</h3><p><img src="/post/image-20240608015744098.png"
 	
 	
 	
@@ -1830,7 +1833,7 @@
 <p>设置-放大-图生图算法设置</p>
 <h2 id="2upscale放大脚本_sd放大">2.Upscale放大脚本_SD放大
 </h2><p>简便方法-</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020022144.png"
+<p><img src="/post/image-20240608020022144.png"
 	
 	
 	
@@ -1840,7 +1843,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020028472.png"
+<p><img src="/post/image-20240608020028472.png"
 	
 	
 	
@@ -1853,7 +1856,7 @@
 <p>图块重叠像素64——起到四张图片融合的缓冲带的作用</p>
 <p><strong>高度-宽度分别增加64</strong>，</p>
 <p>然后开始。</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020221435.png"
+<p><img src="/post/image-20240608020221435.png"
 	
 	
 	
@@ -1863,7 +1866,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020255533.png"
+<p><img src="/post/image-20240608020255533.png"
 	
 	
 	
@@ -1877,7 +1880,7 @@
 <h3 id="1如果脸在切割的地方">[1]如果脸在切割的地方
 </h3><p>-降低重绘幅度-增大图块重叠度</p>
 <h3 id="3附加功能放大">3.附加功能放大
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020438866.png"
+</h3><p><img src="/post/image-20240608020438866.png"
 	
 	
 	
@@ -1889,7 +1892,7 @@
 ></p>
 <p>人工智能算法修复</p>
 <p><strong>一般成品的算法修复</strong></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020531338.png"
+<p><img src="/post/image-20240608020531338.png"
 	
 	
 	
@@ -1899,7 +1902,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608020539180.png"
+<p><img src="/post/image-20240608020539180.png"
 	
 	
 	
@@ -1919,7 +1922,7 @@
 <p>如果是已经经过了高清修复和放大，那么要耗费的时间就更长了</p>
 <h3 id="99都是满意的1">99%都是满意的，1%
 </h3><h3 id="直接点击-局部重绘其他素材图片也可以">直接点击-局部重绘，其他素材图片也可以
-</h3><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024948878.png"
+</h3><p><img src="/post/image-20240608024948878.png"
 	
 	
 	
@@ -1929,7 +1932,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025001368.png"
+<p><img src="/post/image-20240608025001368.png"
 	
 	
 	
@@ -1939,7 +1942,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608024955419.png"
+<p><img src="/post/image-20240608024955419.png"
 	
 	
 	
@@ -1950,7 +1953,7 @@
 	
 ></p>
 <p>修改咒语+重绘幅度修改</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025145554.png"
+<p><img src="/post/image-20240608025145554.png"
 	
 	
 	
@@ -1962,7 +1965,7 @@
 ></p>
 <p>会出现笔尖，涂抹好重绘区域</p>
 <p>下方参数设置</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025205286.png"
+<p><img src="/post/image-20240608025205286.png"
 	
 	
 	
@@ -1974,7 +1977,7 @@
 ></p>
 <p>重绘过程：整个图片经历了重新加噪然后去噪的过程。</p>
 <p>眼睛部分被强调了，最后的效果是只针对这个区域的重绘了</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025422845.png"
+<p><img src="/post/image-20240608025422845.png"
 	
 	
 	
@@ -1984,7 +1987,7 @@
 	
 	
 ></p>
-<h2 id="局部修复参数image-20240608025445349cusersanymoreappdataroamingtyporatypora-user-imagesimage-20240608025445349png">局部修复参数<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025445349.png"
+<h2 id="局部修复参数image-20240608025445349postimage-20240608025445349png">局部修复参数<img src="/post/image-20240608025445349.png"
 	
 	
 	
@@ -1995,7 +1998,7 @@
 	
 >
 </h2><h4 id="1蒙版">1.蒙版：
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025541157.png"
+</h4><p><img src="/post/image-20240608025541157.png"
 	
 	
 	
@@ -2006,7 +2009,7 @@
 	
 ></p>
 <p>可以写填充</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025547167.png"
+<p><img src="/post/image-20240608025547167.png"
 	
 	
 	
@@ -2019,7 +2022,7 @@
 <h5 id="坑潜变量噪声潜变量数值零">【坑】潜变量噪声、潜变量数值零
 </h5><p><strong>简答说：图生图的过程进一步复杂化、加入加噪、去噪的过程。</strong></p>
 <p><strong>理论上对图像的改变会更显著</strong></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025805857.png"
+<p><img src="/post/image-20240608025805857.png"
 	
 	
 	
@@ -2030,7 +2033,7 @@
 	
 ></p>
 <p>2.全图、3.仅蒙版</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025831746.png"
+<p><img src="/post/image-20240608025831746.png"
 	
 	
 	
@@ -2042,7 +2045,7 @@
 ></p>
 <h4 id="2全图">2.全图：
 </h4><p>基于新的要求（提示词、参数）把图重新画一遍【我觉得受到重绘幅度的影响】，尽管没涂的部分修改很小，但是还是有点点点点</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608025841974.png"
+<p><img src="/post/image-20240608025841974.png"
 	
 	
 	
@@ -2055,7 +2058,7 @@
 <p>最后只保留你涂的部分拼回去</p>
 <h4 id="3仅蒙版">3.仅蒙版:
 </h4><p>就是只画框选出来的区域附近，速度快，但是没有基于图像全貌画。然后再拼回去。把这一小块当做一幅画来画。</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608030516917.png"
+<p><img src="/post/image-20240608030516917.png"
 	
 	
 	
@@ -2070,7 +2073,7 @@
 </h5><h4 id="4蒙版模糊类似羽化">4.蒙版模糊——<strong>类似羽化</strong>
 </h4><p>消除硬接触的边缘</p>
 <p>10以下比较好</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608030910718.png"
+<p><img src="/post/image-20240608030910718.png"
 	
 	
 	
@@ -2080,7 +2083,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608030952522.png"
+<p><img src="/post/image-20240608030952522.png"
 	
 	
 	
@@ -2091,7 +2094,7 @@
 	
 ></p>
 <p>太大会影响区域的读取或影响周边其他区域</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031043864.png"
+<p><img src="/post/image-20240608031043864.png"
 	
 	
 	
@@ -2106,7 +2109,7 @@
 </h3><h4 id="1inpaintsketch手涂蒙版">[1]inPaintSketch（手涂蒙版）
 </h4><p>调色盘按钮</p>
 <h4 id="修复的坏的手等">修复的坏的手等
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031222384.png"
+</h4><p><img src="/post/image-20240608031222384.png"
 	
 	
 	
@@ -2118,7 +2121,7 @@
 ></p>
 <h4 id="加蓝色爱心口罩">加蓝色爱心口罩
 </h4><p>调色盘按钮—选黑色—画口罩——</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031407948.png"
+<p><img src="/post/image-20240608031407948.png"
 	
 	
 	
@@ -2128,7 +2131,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031428491.png"
+<p><img src="/post/image-20240608031428491.png"
 	
 	
 	
@@ -2141,7 +2144,7 @@
 <p>重绘幅度可以稍大</p>
 <p>蓝色</p>
 <p>咒语中权重降低了，因为咒语的东西复杂了，让它更稳定的产出</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031524981.png"
+<p><img src="/post/image-20240608031524981.png"
 	
 	
 	
@@ -2151,7 +2154,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031533215.png"
+<p><img src="/post/image-20240608031533215.png"
 	
 	
 	
@@ -2161,7 +2164,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031625831.png"
+<p><img src="/post/image-20240608031625831.png"
 	
 	
 	
@@ -2173,7 +2176,7 @@
 ></p>
 <h5 id="玩法无限可能性大">玩法无限可能性大
 </h5><p>吸管吸取背景，覆盖手的颜色，然后用肉色把手勾勒出来。</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031815036.png"
+<p><img src="/post/image-20240608031815036.png"
 	
 	
 	
@@ -2185,7 +2188,7 @@
 ></p>
 <p>正向提示词用上，击掌等</p>
 <p>负面提示词中用Negative Embeddings</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031832010.png"
+<p><img src="/post/image-20240608031832010.png"
 	
 	
 	
@@ -2195,7 +2198,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608031918786.png"
+<p><img src="/post/image-20240608031918786.png"
 	
 	
 	
@@ -2211,7 +2214,7 @@
 <p>如果不满意，那么随机种子多试试。</p>
 <h2 id="单独使用sketch绘图">单独使用Sketch（绘图）
 </h2><p>直接使用Sketch</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608032306898.png"
+<p><img src="/post/image-20240608032306898.png"
 	
 	
 	
@@ -2225,7 +2228,7 @@
 <h3 id="灵魂画手功能的实现可以用这个">——灵魂画手功能的实现可以用这个
 </h3><h4 id="不想影响就用局部修复即可">不想影响就用局部修复即可
 </h4><h4 id="2上传蒙版功能应用">[2]上传蒙版功能应用
-</h4><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608032708812.png"
+</h4><p><img src="/post/image-20240608032708812.png"
 	
 	
 	
@@ -2238,7 +2241,7 @@
 <p>上传蒙版区域</p>
 <p>PS主体的对象选择工具，框选工具，会自动框选出来，然后套索工具-alt-ctrl-可以增加减少</p>
 <p>然后再</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608032957611.png"
+<p><img src="/post/image-20240608032957611.png"
 	
 	
 	
@@ -2248,7 +2251,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033009061.png"
+<p><img src="/post/image-20240608033009061.png"
 	
 	
 	
@@ -2259,7 +2262,7 @@
 	
 ></p>
 <p>先定义为白色</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033024541.png"
+<p><img src="/post/image-20240608033024541.png"
 	
 	
 	
@@ -2272,7 +2275,7 @@
 <p>然后选中填充的图层复制一个</p>
 <p>然后双击该图层前面的小白方块、填充颜色改为黑</p>
 <p>单机长方形</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033139847.png"
+<p><img src="/post/image-20240608033139847.png"
 	
 	
 	
@@ -2286,7 +2289,7 @@
 <p>选中ctrl+I交换蒙版区域，就黑白换过来了。</p>
 <p>就导出来PNG、jpg就可了。</p>
 <p>人为代替了蒙版选择的了</p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033313482.png"
+<p><img src="/post/image-20240608033313482.png"
 	
 	
 	
@@ -2297,7 +2300,7 @@
 	
 ></p>
 <h5 id="坑其他软件进行关联无穷的潜力挖掘">[坑]其他软件进行关联，无穷的潜力挖掘
-</h5><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033407765.png"
+</h5><p><img src="/post/image-20240608033407765.png"
 	
 	
 	
@@ -2307,7 +2310,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033414055.png"
+<p><img src="/post/image-20240608033414055.png"
 	
 	
 	
@@ -2317,7 +2320,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033422690.png"
+<p><img src="/post/image-20240608033422690.png"
 	
 	
 	
@@ -2327,7 +2330,7 @@
 	
 	
 ></p>
-<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240608033434707.png"
+<p><img src="/post/image-20240608033434707.png"
 	
 	
 	

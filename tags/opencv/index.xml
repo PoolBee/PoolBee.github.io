@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>OpenCV on PoolBee的博客</title>
-        <link>http://localhost:51120/tags/opencv/</link>
+        <link>http://localhost:58853/tags/opencv/</link>
         <description>Recent content in OpenCV on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 06 Nov 2023 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:51120/tags/opencv/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 Nov 2023 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:58853/tags/opencv/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
-        <link>http://localhost:51120/post1/opencv/</link>
+        <link>http://localhost:58853/post1/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:51120/post1/opencv/</guid>
-        <description>&lt;img src="http://localhost:51120/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
-&lt;img src=&#34;http://localhost:51120/tag-opencv.jpg&#34;
+        <guid>http://localhost:58853/post1/opencv/</guid>
+        <description>&lt;img src="http://localhost:58853/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+&lt;img src=&#34;http://localhost:58853/tag-opencv.jpg&#34;
 	
 	
 	
@@ -259,12 +259,12 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         </item>
         <item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
-        <link>http://localhost:51120/post/opencv/</link>
+        <link>http://localhost:58853/post/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:51120/post/opencv/</guid>
-        <description>&lt;img src="http://localhost:51120/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
-&lt;img src=&#34;http://localhost:51120/tag-opencv.jpg&#34;
+        <guid>http://localhost:58853/post/opencv/</guid>
+        <description>&lt;img src="http://localhost:58853/post/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+&lt;img src=&#34;http://localhost:58853/post/tag-opencv.jpg&#34;
 	
 	
 	

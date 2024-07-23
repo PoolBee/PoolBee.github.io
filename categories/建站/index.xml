@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>建站 on PoolBee的博客</title>
-        <link>http://localhost:51120/categories/%E5%BB%BA%E7%AB%99/</link>
+        <link>http://localhost:58853/categories/%E5%BB%BA%E7%AB%99/</link>
         <description>Recent content in 建站 on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:51120/categories/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:58853/categories/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo主题配置记录-7月21日博客更新日志</title>
-        <link>http://localhost:51120/post/%E5%BB%BA%E7%AB%99/</link>
+        <link>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</link>
         <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:51120/post/%E5%BB%BA%E7%AB%99/</guid>
-        <description>&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
+        <guid>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</guid>
+        <description>&lt;img src="http://localhost:58853/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
 &lt;/h1&gt;&lt;h1 id=&#34;1引入busuanzi插件进行字数访问量统计&#34;&gt;1.引入busuanzi插件进行字数、访问量统计。
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;

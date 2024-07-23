@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>建站1 on PoolBee的博客</title>
+        <link>http://localhost:58550/categories/%E5%BB%BA%E7%AB%991/</link>
+        <description>Recent content in 建站1 on PoolBee的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Mon, 22 Jul 2024 15:41:33 +0000</lastBuildDate><atom:link href="http://localhost:58550/categories/%E5%BB%BA%E7%AB%991/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo主题配置记录-7月23日博客更新日志</title>
+        <link>http://localhost:58550/post/%E5%BB%BA%E7%AB%99/</link>
+        <pubDate>Mon, 22 Jul 2024 15:41:33 +0000</pubDate>
+        
+        <guid>http://localhost:58550/post/%E5%BB%BA%E7%AB%99/</guid>
+        <description>&lt;p&gt;解决了一些小问题，之前建站留下的小问题&lt;/p&gt;
+&lt;h1 id=&#34;一左侧栏的正确跳转&#34;&gt;一、左侧栏的正确跳转
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击图标后跳转到链接栏中有二维码&lt;/p&gt;
+&lt;p&gt;config.yaml中修改跳转链接到/post/link即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击&amp;quot;链接&amp;quot;后出现二维码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;二文章图片的正确插入&#34;&gt;二、文章图片的正确插入
+&lt;/h1&gt;&lt;h2 id=&#34;1文章封面图片&#34;&gt;1.文章封面图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;\content\post中的文章
+##Front Matter图片插入记得要添加/post/路径
+**例如：**image: /post/123.png&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
+title: 文章标题
+date: 2024-07-23 10:00:00
+tags:
+  - 标签1
+  - 标签2
+categories:
+  - 分类1
+  - 分类2
+#这里的就是文章封面图片  
+image: /post/stack-logo-128.png
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;这里注意\content\page\中的文章&lt;/p&gt;
+&lt;p&gt;在文章内部的时候，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:58550/123.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图片&#34;
+	
+	
+&gt;不需要添加/post/路径&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2文章内部图片&#34;&gt;2.文章内部图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;\content\post\中需要添加多个图片&lt;/p&gt;
+&lt;p&gt;可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】&lt;/p&gt;
+&lt;p&gt;例如：&lt;img src=&#34;http://localhost:58550/post/123.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184445492&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:58550/post/%e6%96%87%e4%bb%b6%e5%a4%b9/123.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240607184336146&#34;
+	
+	
+&gt;这样详细写明最好，实现图片的插入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
