@@ -2,17 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on PoolBee的博客</title>
-        <link>http://localhost:58853/post/</link>
+        <link>http://localhost:61723/post/</link>
         <description>Recent content in Posts on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 23 Jul 2024 20:02:49 +0000</lastBuildDate><atom:link href="http://localhost:58853/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Jul 2024 15:41:48 +0000</lastBuildDate><atom:link href="http://localhost:61723/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo主题配置记录-7月23日博客更新日志</title>
+        <link>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</link>
+        <pubDate>Mon, 22 Jul 2024 15:41:48 +0000</pubDate>
+        
+        <guid>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</guid>
+        <description>&lt;img src="http://localhost:61723/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月23日博客更新日志" /&gt;&lt;p&gt;解决了一些小问题，之前建站留下的小问题&lt;/p&gt;
+&lt;h1 id=&#34;一左侧栏的正确跳转&#34;&gt;一、左侧栏的正确跳转
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击图标后跳转到链接栏中有二维码&lt;/p&gt;
+&lt;p&gt;config.yaml中修改跳转链接到/post/link即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击&amp;quot;链接&amp;quot;后出现二维码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;二文章图片的正确插入&#34;&gt;二、文章图片的正确插入
+&lt;/h1&gt;&lt;h2 id=&#34;1文章封面图片&#34;&gt;1.文章封面图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;\content\post中的文章
+##Front Matter图片插入记得要添加/post/路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;例如：&lt;/strong&gt; image: /post/123.png&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: 文章标题
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date: 2024-07-23 10:00:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 标签1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 标签2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;categories:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 分类1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 分类2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#这里的就是文章封面图片  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;image: /post/stack-logo-128.png
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;这里注意\content\page\中的文章&lt;/p&gt;
+&lt;p&gt;在文章内部的时候，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![图片](123.jpg)不需要添加/post/路径&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2文章内部图片&#34;&gt;2.文章内部图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;\content\post\中需要添加多个图片&lt;/p&gt;
+&lt;p&gt;可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】&lt;/p&gt;
+&lt;p&gt;例如：&lt;code&gt;![image-20240607184445492](/post/123.png)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![image-20240607184336146](/post/文件夹/123.png)&lt;/code&gt;这样详细写明最好，实现图片的插入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。&lt;/p&gt;
+&lt;p&gt;最后：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Front Matter中的links项的路径也一样需要加post，从post路径开始必须指定路径清晰到文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-MD&#34; data-lang=&#34;MD&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;links:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; \- title: Bilibili
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  description: bilibili是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。大家可以在这里找到许多欢乐。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  website: https://www.bilibili.com/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  image: /post/logo/Bilibili_Logo_Blue.svg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Hugo主题配置记录-7月21日博客更新日志</title>
-        <link>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</link>
+        <link>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</link>
         <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</guid>
-        <description>&lt;img src="http://localhost:58853/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
+        <guid>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</guid>
+        <description>&lt;img src="http://localhost:61723/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
 &lt;/h1&gt;&lt;h1 id=&#34;1引入busuanzi插件进行字数访问量统计&#34;&gt;1.引入busuanzi插件进行字数、访问量统计。
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -149,10 +217,10 @@
         </item>
         <item>
         <title>随笔</title>
-        <link>http://localhost:58853/post/%E9%9A%8F%E7%AC%94/</link>
+        <link>http://localhost:61723/post/%E9%9A%8F%E7%AC%94/</link>
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:58853/post/%E9%9A%8F%E7%AC%94/</guid>
+        <guid>http://localhost:61723/post/%E9%9A%8F%E7%AC%94/</guid>
         <description>&lt;p&gt;Hugo主题配置记录&lt;/p&gt;
 &lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
 &lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
@@ -172,11 +240,11 @@
         </item>
         <item>
         <title>Stable Diffusion笔记</title>
-        <link>http://localhost:58853/post/sd/</link>
+        <link>http://localhost:61723/post/sd/</link>
         <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
         
-        <guid>http://localhost:58853/post/sd/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/before/image-20240607184336146.png&#34;
+        <guid>http://localhost:61723/post/sd/</guid>
+        <description>&lt;img src="http://localhost:61723/post/before/image-20240607184336146.png" alt="Featured image of post Stable Diffusion笔记" /&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/before/image-20240607184336146.png&#34;
 	
 	
 	
@@ -186,7 +254,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184445492.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184445492.png&#34;
 	
 	
 	
@@ -198,7 +266,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;check point 就是菜单——选择不同的模型&lt;/p&gt;
 &lt;p&gt;lora更精确的人物或画风，更可控&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184615859.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184615859.png&#34;
 	
 	
 	
@@ -208,7 +276,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184628145.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184628145.png&#34;
 	
 	
 	
@@ -218,7 +286,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184732610.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184732610.png&#34;
 	
 	
 	
@@ -230,7 +298,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;图生图&lt;/p&gt;
 &lt;p&gt;上传&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184803838.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184803838.png&#34;
 	
 	
 	
@@ -241,7 +309,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;描述图片&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184832014.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184832014.png&#34;
 	
 	
 	
@@ -251,7 +319,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607184852610.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607184852610.png&#34;
 	
 	
 	
@@ -268,7 +336,7 @@
 &lt;p&gt;使用deepbooru算法反推标注。0.6 系数越小越精细&lt;/p&gt;
 &lt;p&gt;日志看loss值，数值降低大概率没什么问题&lt;/p&gt;
 &lt;h1 id=&#34;一提示词prompt&#34;&gt;一、提示词prompt
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607194636624.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607194636624.png&#34;
 	
 	
 	
@@ -279,7 +347,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;类别&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607194655106.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607194655106.png&#34;
 	
 	
 	
@@ -290,7 +358,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;其他提示词：画质等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607194743238.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607194743238.png&#34;
 	
 	
 	
@@ -300,7 +368,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607194753742.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607194753742.png&#34;
 	
 	
 	
@@ -310,7 +378,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607194818438.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607194818438.png&#34;
 	
 	
 	
@@ -322,7 +390,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;但是真实系的操作是更依赖真实的模型&lt;/p&gt;
 &lt;h2 id=&#34;1prompt模板&#34;&gt;1.prompt模板:
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240607194914970.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240607194914970.png&#34;
 	
 	
 	
@@ -337,7 +405,7 @@
 &lt;/h2&gt;&lt;p&gt;安全范围1+-0.5，单个的&lt;/p&gt;
 &lt;p&gt;():1.1倍，1.331倍&lt;/p&gt;
 &lt;p&gt;{}&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608002312274.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608002312274.png&#34;
 	
 	
 	
@@ -348,7 +416,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h1 id=&#34;1进阶语法-坑&#34;&gt;[1]进阶语法-坑
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608002405145.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608002405145.png&#34;
 	
 	
 	
@@ -360,7 +428,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;不想出现就是负向提示词&#34;&gt;不想出现就是负向提示词
 &lt;/h2&gt;&lt;p&gt;单色风格的画作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608002513577.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608002513577.png&#34;
 	
 	
 	
@@ -375,7 +443,7 @@
 &lt;p&gt;闪一次，就步数&amp;gt;20后意义不大&lt;/p&gt;
 &lt;p&gt;最低不要低于10&lt;/p&gt;
 &lt;h3 id=&#34;采样方法&#34;&gt;采样方法
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608002724513.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608002724513.png&#34;
 	
 	
 	
@@ -392,7 +460,7 @@
 &lt;p&gt;7-12相关性一般&lt;/p&gt;
 &lt;p&gt;批次和数量&lt;/p&gt;
 &lt;p&gt;批次是格子预览图。每次批次数量不宜过高，容易爆显存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608002856328.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608002856328.png&#34;
 	
 	
 	
@@ -406,7 +474,7 @@
 &lt;/h2&gt;&lt;h3 id=&#34;1翻译描述确切场景然后直接让词组翻译为英文&#34;&gt;1.翻译、描述确切场景，然后直接让词组翻译为英文
 &lt;/h3&gt;&lt;h3 id=&#34;2功能插件翻译的插件国内有sd也有&#34;&gt;2.功能插件、翻译的插件——国内有——SD也有
 &lt;/h3&gt;&lt;h3 id=&#34;3更好书写提示词网站ai词汇加速器&#34;&gt;3.更好书写提示词网站：AI词汇加速器
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608003420900.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608003420900.png&#34;
 	
 	
 	
@@ -416,7 +484,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608003430396.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608003430396.png&#34;
 	
 	
 	
@@ -426,7 +494,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;提示词网站：&lt;img src=&#34;http://localhost:58853/post/image-20240608003513343.png&#34;
+&lt;p&gt;提示词网站：&lt;img src=&#34;http://localhost:61723/post/image-20240608003513343.png&#34;
 	
 	
 	
@@ -437,7 +505,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;二次元和亚洲面孔多：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608003519995.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608003519995.png&#34;
 	
 	
 	
@@ -448,7 +516,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;人物、&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608003544952.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608003544952.png&#34;
 	
 	
 	
@@ -459,7 +527,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;画风、质感：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608003559712.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608003559712.png&#34;
 	
 	
 	
@@ -474,7 +542,7 @@
 &lt;h2 id=&#34;1上传图片导入到sd里&#34;&gt;1.上传图片、导入到SD里
 &lt;/h2&gt;&lt;h2 id=&#34;2提示词书写&#34;&gt;2.提示词书写
 &lt;/h2&gt;&lt;p&gt;1man,1girl&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608004301173.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608004301173.png&#34;
 	
 	
 	
@@ -484,7 +552,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608004314355.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608004314355.png&#34;
 	
 	
 	
@@ -496,7 +564,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;3参数设置&#34;&gt;3.参数设置
 &lt;/h2&gt;&lt;p&gt;重绘幅度0.6-0.8&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608004053399.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608004053399.png&#34;
 	
 	
 	
@@ -508,7 +576,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;分辨率设置，原始尺寸一样最好&lt;/p&gt;
 &lt;p&gt;按长宽比例一致生成、&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608004426686.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608004426686.png&#34;
 	
 	
 	
@@ -532,7 +600,7 @@
 &lt;h2 id=&#34;3photoshop中搭建图像框架sd生成图片炫酷的效果&#34;&gt;[3]photoshop中搭建图像框架+SD生成图片——炫酷的效果。
 &lt;/h2&gt;&lt;p&gt;画布&lt;/p&gt;
 &lt;p&gt;画图中&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608005226877.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608005226877.png&#34;
 	
 	
 	
@@ -542,7 +610,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608005235034.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608005235034.png&#34;
 	
 	
 	
@@ -555,7 +623,7 @@
 &lt;h5 id=&#34;然后场景插画就完成了&#34;&gt;然后场景插画就完成了！
 &lt;/h5&gt;&lt;h1 id=&#34;三画风&#34;&gt;三、画风
 &lt;/h1&gt;&lt;h2 id=&#34;1checkpoint&#34;&gt;1.Checkpoint
-&lt;/h2&gt;&lt;p&gt;模型信息：&lt;img src=&#34;http://localhost:58853/post/image-20240608005330230.png&#34;
+&lt;/h2&gt;&lt;p&gt;模型信息：&lt;img src=&#34;http://localhost:61723/post/image-20240608005330230.png&#34;
 	
 	
 	
@@ -565,7 +633,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608005338545.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608005338545.png&#34;
 	
 	
 	
@@ -579,7 +647,7 @@
 &lt;p&gt;所以就叫关键点、存档。&lt;/p&gt;
 &lt;p&gt;所以这些检查点，这些模型就能有迭代、更新的能力，AOM3A3深橘色。&lt;/p&gt;
 &lt;h2 id=&#34;2-ckpt文件&#34;&gt;2. .ckpt文件
-&lt;/h2&gt;&lt;p&gt;几个G的叫大模型&lt;img src=&#34;http://localhost:58853/post/image-20240608005522688.png&#34;
+&lt;/h2&gt;&lt;p&gt;几个G的叫大模型&lt;img src=&#34;http://localhost:61723/post/image-20240608005522688.png&#34;
 	
 	
 	
@@ -593,7 +661,7 @@
 &lt;/h2&gt;&lt;p&gt;训练者让模型更加可靠高效来使用的一种格式。&lt;/p&gt;
 &lt;p&gt;点击刷星按钮&lt;/p&gt;
 &lt;p&gt;命令行中跳出提示才算成功&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608005650275.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608005650275.png&#34;
 	
 	
 	
@@ -612,7 +680,7 @@
 &lt;p&gt;会推荐使用一些VAE&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;也有适用于大多数checkpoint的VAE：kl-f8-anime2.ckpt&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;也有safetensors的VAE&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608010147671.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608010147671.png&#34;
 	
 	
 	
@@ -624,7 +692,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;1自动的适配vae方法&#34;&gt;[1]自动的适配VAE方法
 &lt;/h2&gt;&lt;p&gt;改为和模型一样的名字&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608010220572.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608010220572.png&#34;
 	
 	
 	
@@ -641,7 +709,7 @@
 &lt;p&gt;不像Lora是彩卡插画。那么它像一张小名片&lt;/p&gt;
 &lt;h3 id=&#34;hypernetwork一般用于改善画面的整体风格&#34;&gt;Hypernetwork一般用于改善画面的整体风格
 &lt;/h3&gt;&lt;h4 id=&#34;这种画风区别不是二次元真实感那种区别而像梵高和莫奈那种小区别&#34;&gt;这种画风区别：不是二次元真实感那种区别，而像梵高和莫奈那种小区别
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024013352.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024013352.png&#34;
 	
 	
 	
@@ -651,7 +719,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024017643.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024017643.png&#34;
 	
 	
 	
@@ -662,7 +730,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;hYPERNETwORK路径&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024028127.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024028127.png&#34;
 	
 	
 	
@@ -673,7 +741,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;绕：设置中找到附加网络&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024057849.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024057849.png&#34;
 	
 	
 	
@@ -684,7 +752,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;在这里也可以添加lora坑但是lora会有更方便的应用形式&#34;&gt;在这里也可以添加Lora,【坑】但是Lora会有更方便的应用形式
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024209242.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024209242.png&#34;
 	
 	
 	
@@ -694,7 +762,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024238437.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024238437.png&#34;
 	
 	
 	
@@ -708,7 +776,7 @@
 &lt;p&gt;多数研究者对于Hypernetwork在图像生成方面的评价并不好，&lt;/p&gt;
 &lt;p&gt;至少不如lora和embaddings好，&lt;/p&gt;
 &lt;p&gt;也有部分Lora对训练样本的把控实现了对画风的塑造植入。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024428375.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024428375.png&#34;
 	
 	
 	
@@ -718,7 +786,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024432575.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024432575.png&#34;
 	
 	
 	
@@ -728,7 +796,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024436066.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024436066.png&#34;
 	
 	
 	
@@ -738,7 +806,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024441820.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024441820.png&#34;
 	
 	
 	
@@ -749,7 +817,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;尽管如此，超网络在实现特定的风格时，仍然会提供不少的帮助&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024550112.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024550112.png&#34;
 	
 	
 	
@@ -759,7 +827,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024554587.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024554587.png&#34;
 	
 	
 	
@@ -769,7 +837,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024600531.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024600531.png&#34;
 	
 	
 	
@@ -783,7 +851,7 @@
 &lt;/h2&gt;&lt;p&gt;优化画风&lt;/p&gt;
 &lt;p&gt;.pt&lt;/p&gt;
 &lt;p&gt;翻译为：&lt;strong&gt;文本嵌入&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020907845.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020907845.png&#34;
 	
 	
 	
@@ -795,7 +863,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;有时候网站上叫&lt;strong&gt;Textual&lt;/strong&gt; &lt;strong&gt;Inversion&lt;/strong&gt;文本倒置&lt;/p&gt;
 &lt;h3 id=&#34;很小的文件相当于大模型中的书签指向特定的形象嵌入式向量&#34;&gt;&lt;strong&gt;很小的&lt;/strong&gt;文件——相当于大模型中的书签，指向特定的形象——&lt;strong&gt;嵌入式向量&lt;/strong&gt;
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021147938.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021147938.png&#34;
 	
 	
 	
@@ -806,7 +874,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;与VAE一样&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021231381.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021231381.png&#34;
 	
 	
 	
@@ -817,7 +885,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;使用只要在输入中输入书签翻字典的过程&#34;&gt;使用：只要在输入中输入书签翻字典的过程。
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021251130.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021251130.png&#34;
 	
 	
 	
@@ -828,7 +896,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;举例&#34;&gt;举例：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021448522.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021448522.png&#34;
 	
 	
 	
@@ -838,7 +906,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021504260.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021504260.png&#34;
 	
 	
 	
@@ -848,7 +916,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;固定随机种子+embadding的固定咒语——&lt;img src=&#34;http://localhost:58853/post/image-20240608021538979.png&#34;
+&lt;p&gt;固定随机种子+embadding的固定咒语——&lt;img src=&#34;http://localhost:61723/post/image-20240608021538979.png&#34;
 	
 	
 	
@@ -861,7 +929,7 @@
 &lt;p&gt;更像D.VA——加入描述她身上本身有的东西&lt;/p&gt;
 &lt;h4 id=&#34;1技巧反推提示词&#34;&gt;[1]技巧反推提示词
 &lt;/h4&gt;&lt;p&gt;Dva的一张图片导入_图生图&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021712452.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021712452.png&#34;
 	
 	
 	
@@ -874,7 +942,7 @@
 &lt;p&gt;识别东西，然后转化为AI中的东西DB更具优势。&lt;/p&gt;
 &lt;p&gt;每次识别的再筛选——删除降低权重&lt;/p&gt;
 &lt;h5 id=&#34;生成图片不可能完全一致因为embeddings到头是个几十kb的小文件&#34;&gt;**生成图片不可能完全一致，**因为embeddings到头是个几十kb的小文件
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608021917876.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608021917876.png&#34;
 	
 	
 	
@@ -888,7 +956,7 @@
 &lt;h5 id=&#34;所以embaddings适用于一些广泛容错率高的形象的概念表现会好很多&#34;&gt;所以embaddings适用于一些&lt;strong&gt;广泛、容错率高&lt;/strong&gt;的形象的概念，表现会好很多。
 &lt;/h5&gt;&lt;h5 id=&#34;而特定的人物更多的用lora&#34;&gt;而特定的人物更多的用Lora
 &lt;/h5&gt;&lt;h4 id=&#34;坑charturner-embaddings三视图&#34;&gt;[坑]CharTurner-embaddings三视图
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022141243.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022141243.png&#34;
 	
 	
 	
@@ -900,7 +968,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;真NB啊&lt;/p&gt;
 &lt;h4 id=&#34;使用方法&#34;&gt;使用方法：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022305838.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022305838.png&#34;
 	
 	
 	
@@ -910,7 +978,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022352184.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022352184.png&#34;
 	
 	
 	
@@ -920,7 +988,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022358152.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022358152.png&#34;
 	
 	
 	
@@ -930,7 +998,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022403226.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022403226.png&#34;
 	
 	
 	
@@ -940,7 +1008,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022406949.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022406949.png&#34;
 	
 	
 	
@@ -950,7 +1018,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022418228.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022418228.png&#34;
 	
 	
 	
@@ -960,7 +1028,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022430581.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022430581.png&#34;
 	
 	
 	
@@ -972,7 +1040,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;eva的和charturner两个embaddings使用化学反应自己观察&#34;&gt;Eva的和charturner两个embaddings使用——化学反应自己观察
 &lt;/h4&gt;&lt;p&gt;开启高清修复&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022444186.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022444186.png&#34;
 	
 	
 	
@@ -985,7 +1053,7 @@
 &lt;h4 id=&#34;2embaddings解决手等的问题&#34;&gt;[2]embaddings&lt;strong&gt;解决手等的问题&lt;/strong&gt;
 &lt;/h4&gt;&lt;h5 id=&#34;只要避开错误案例就可以了&#34;&gt;&lt;strong&gt;只要避开错误案例就可以了&lt;/strong&gt;
 &lt;/h5&gt;&lt;p&gt;&lt;strong&gt;EasyNegative&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022644934.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022644934.png&#34;
 	
 	
 	
@@ -995,7 +1063,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022654146.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022654146.png&#34;
 	
 	
 	
@@ -1006,7 +1074,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;放入负面提示词里&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022738614.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022738614.png&#34;
 	
 	
 	
@@ -1019,7 +1087,7 @@
 &lt;p&gt;就修复了&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;综合的、全方位的基于负面样本的提炼&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;灰度，多人、等等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608022911783.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608022911783.png&#34;
 	
 	
 	
@@ -1035,7 +1103,7 @@
 &lt;h3 id=&#34;作用有助于向ai传递描述某一个特征准确主体清晰的形象&#34;&gt;作用：有助于向Ai传递/描述某一个特征准确/主体清晰的形象
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;夹在书中的彩页&lt;/strong&gt;100-200M&lt;/p&gt;
 &lt;p&gt;各方各个方面的素材、角度、画风等&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608023127368.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608023127368.png&#34;
 	
 	
 	
@@ -1046,7 +1114,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;有些模型会提供触发提示词——训练过程中有基于这个提示词反复强化过AI认知&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608023151179.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608023151179.png&#34;
 	
 	
 	
@@ -1057,7 +1125,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;也可以加入进行强化效果&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608023404073.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608023404073.png&#34;
 	
 	
 	
@@ -1071,7 +1139,7 @@
 &lt;/h4&gt;&lt;p&gt;因为它的训练图源复杂、&lt;/p&gt;
 &lt;p&gt;所以一般也会对画风进行影响&lt;/p&gt;
 &lt;p&gt;权重减小&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608023545687.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608023545687.png&#34;
 	
 	
 	
@@ -1115,7 +1183,7 @@
 &lt;/table&gt;
 &lt;h5 id=&#34;files-and-version中看源代码&#34;&gt;files and version中看源代码
 &lt;/h5&gt;&lt;h4 id=&#34;--大模型在safey_checker找&#34;&gt;- 大模型在Safey_checker找
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608011402645.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608011402645.png&#34;
 	
 	
 	
@@ -1130,7 +1198,7 @@
 &lt;/h5&gt;&lt;h3 id=&#34;2c站&#34;&gt;2.C站
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;iativic.com&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;不注册可使用，火热的模型&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608011810142.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608011810142.png&#34;
 	
 	
 	
@@ -1146,7 +1214,7 @@
 &lt;/h4&gt;&lt;p&gt;几个模型融合到一起创造出来的。一般叫xxxMIx&lt;/p&gt;
 &lt;h4 id=&#34;坑base-model&#34;&gt;【坑】Base model
 &lt;/h4&gt;&lt;p&gt;模型训练过程中的底模&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608012033203.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608012033203.png&#34;
 	
 	
 	
@@ -1171,7 +1239,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&amp;mdash;- 质感类似于建模软件出来的三维渲染图，不如平面那么平，也不如真实那么真。&lt;/p&gt;
 &lt;p&gt;很接近一些游戏和3D动画的想象&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608012652918.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608012652918.png&#34;
 	
 	
 	
@@ -1181,7 +1249,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608012729191.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608012729191.png&#34;
 	
 	
 	
@@ -1193,7 +1261,7 @@
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;counterfeit&#34;&gt;Counterfeit
 &lt;/h5&gt;&lt;p&gt;细节感、精致感、各种复杂室内外场景&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608012757564.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608012757564.png&#34;
 	
 	
 	
@@ -1206,7 +1274,7 @@
 &lt;h5 id=&#34;dreamlike-diffusion&#34;&gt;Dreamlike Diffusion
 &lt;/h5&gt;&lt;p&gt;漫画插画风&lt;/p&gt;
 &lt;p&gt;幻想的超现实魔幻作品&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608012945130.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608012945130.png&#34;
 	
 	
 	
@@ -1226,7 +1294,7 @@
 &lt;h5 id=&#34;ned模型&#34;&gt;NED模型
 &lt;/h5&gt;&lt;p&gt;造人的方面有一股特殊&lt;/p&gt;
 &lt;h5 id=&#34;protogen&#34;&gt;Protogen
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608013223551.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608013223551.png&#34;
 	
 	
 	
@@ -1236,7 +1304,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608013237249.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608013237249.png&#34;
 	
 	
 	
@@ -1248,7 +1316,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;国风3&lt;/p&gt;
 &lt;p&gt;结合其他lora模型能创作&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608013326172.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608013326172.png&#34;
 	
 	
 	
@@ -1258,7 +1326,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608013333408.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608013333408.png&#34;
 	
 	
 	
@@ -1270,7 +1338,7 @@
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;4小类模型&#34;&gt;4.小类模型
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;魔幻感场景&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014358134.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014358134.png&#34;
 	
 	
 	
@@ -1281,7 +1349,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;现代建筑&#34;&gt;现代建筑
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014341690.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014341690.png&#34;
 	
 	
 	
@@ -1292,7 +1360,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;高级感的平面设计&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014413594.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014413594.png&#34;
 	
 	
 	
@@ -1302,7 +1370,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014423313.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014423313.png&#34;
 	
 	
 	
@@ -1315,7 +1383,7 @@
 &lt;h1 id=&#34;高清&#34;&gt;高清
 &lt;/h1&gt;&lt;h2 id=&#34;1hi-res-fix&#34;&gt;1.Hi-Res Fix
 &lt;/h2&gt;&lt;p&gt;高清修复/高分辨率修复/&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014526472.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014526472.png&#34;
 	
 	
 	
@@ -1327,7 +1395,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;皮肤分辨率太低人物皮肤模糊人物面部不真实&#34;&gt;皮肤分辨率太低人物皮肤模糊、人物面部不真实——
 &lt;/h3&gt;&lt;h3 id=&#34;如果用大分辨率的会有缺点&#34;&gt;如果用大分辨率的会有缺点
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014719973.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014719973.png&#34;
 	
 	
 	
@@ -1339,7 +1407,7 @@
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;1采样次数&#34;&gt;1.采样次数：
 &lt;/h3&gt;&lt;p&gt;高清修复需要经过一次重绘、因此需要设置采样步数、保持默认0数值、它会和我们设置的采样次数(20)一致&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608014859182.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608014859182.png&#34;
 	
 	
 	
@@ -1364,7 +1432,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2放大算法&#34;&gt;2.放大算法
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608015301468.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608015301468.png&#34;
 	
 	
 	
@@ -1374,7 +1442,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608015313901.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608015313901.png&#34;
 	
 	
 	
@@ -1386,7 +1454,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;感觉差不多，没有大到感觉很多区别&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;带有GAN的算法，重绘的细节保留更加准确&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;同行无脑方法&lt;/strong&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608015513614.png&#34;
+&lt;p&gt;&lt;strong&gt;同行无脑方法&lt;/strong&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608015513614.png&#34;
 	
 	
 	
@@ -1396,7 +1464,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608015437826.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608015437826.png&#34;
 	
 	
 	
@@ -1413,7 +1481,7 @@
 &lt;/h3&gt;&lt;p&gt;图库浏览器中，点击已经号的图片，再点击图生图。&lt;/p&gt;
 &lt;p&gt;会自动填写信息&lt;/p&gt;
 &lt;h3 id=&#34;3放大算法设置&#34;&gt;3.放大算法设置
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608015744098.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608015744098.png&#34;
 	
 	
 	
@@ -1426,7 +1494,7 @@
 &lt;p&gt;设置-放大-图生图算法设置&lt;/p&gt;
 &lt;h2 id=&#34;2upscale放大脚本_sd放大&#34;&gt;2.Upscale放大脚本_SD放大
 &lt;/h2&gt;&lt;p&gt;简便方法-&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020022144.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020022144.png&#34;
 	
 	
 	
@@ -1436,7 +1504,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020028472.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020028472.png&#34;
 	
 	
 	
@@ -1449,7 +1517,7 @@
 &lt;p&gt;图块重叠像素64——起到四张图片融合的缓冲带的作用&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;高度-宽度分别增加64&lt;/strong&gt;，&lt;/p&gt;
 &lt;p&gt;然后开始。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020221435.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020221435.png&#34;
 	
 	
 	
@@ -1459,7 +1527,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020255533.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020255533.png&#34;
 	
 	
 	
@@ -1473,7 +1541,7 @@
 &lt;h3 id=&#34;1如果脸在切割的地方&#34;&gt;[1]如果脸在切割的地方
 &lt;/h3&gt;&lt;p&gt;-降低重绘幅度-增大图块重叠度&lt;/p&gt;
 &lt;h3 id=&#34;3附加功能放大&#34;&gt;3.附加功能放大
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020438866.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020438866.png&#34;
 	
 	
 	
@@ -1485,7 +1553,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;人工智能算法修复&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;一般成品的算法修复&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020531338.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020531338.png&#34;
 	
 	
 	
@@ -1495,7 +1563,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608020539180.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608020539180.png&#34;
 	
 	
 	
@@ -1515,7 +1583,7 @@
 &lt;p&gt;如果是已经经过了高清修复和放大，那么要耗费的时间就更长了&lt;/p&gt;
 &lt;h3 id=&#34;99都是满意的1&#34;&gt;99%都是满意的，1%
 &lt;/h3&gt;&lt;h3 id=&#34;直接点击-局部重绘其他素材图片也可以&#34;&gt;直接点击-局部重绘，其他素材图片也可以
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024948878.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024948878.png&#34;
 	
 	
 	
@@ -1525,7 +1593,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025001368.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025001368.png&#34;
 	
 	
 	
@@ -1535,7 +1603,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608024955419.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608024955419.png&#34;
 	
 	
 	
@@ -1546,7 +1614,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;修改咒语+重绘幅度修改&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025145554.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025145554.png&#34;
 	
 	
 	
@@ -1558,7 +1626,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;会出现笔尖，涂抹好重绘区域&lt;/p&gt;
 &lt;p&gt;下方参数设置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025205286.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025205286.png&#34;
 	
 	
 	
@@ -1570,7 +1638,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;重绘过程：整个图片经历了重新加噪然后去噪的过程。&lt;/p&gt;
 &lt;p&gt;眼睛部分被强调了，最后的效果是只针对这个区域的重绘了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025422845.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025422845.png&#34;
 	
 	
 	
@@ -1580,7 +1648,8 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;局部修复参数image-20240608025445349postimage-20240608025445349png&#34;&gt;局部修复参数&lt;img src=&#34;http://localhost:58853/post/image-20240608025445349.png&#34;
+&lt;h2 id=&#34;局部修复参数&#34;&gt;局部修复参数
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025445349.png&#34;
 	
 	
 	
@@ -1589,9 +1658,9 @@
 		alt=&#34;image-20240608025445349&#34;
 	
 	
-&gt;
-&lt;/h2&gt;&lt;h4 id=&#34;1蒙版&#34;&gt;1.蒙版：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025541157.png&#34;
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1蒙版&#34;&gt;1.蒙版：
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025541157.png&#34;
 	
 	
 	
@@ -1602,7 +1671,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以写填充&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025547167.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025547167.png&#34;
 	
 	
 	
@@ -1615,7 +1684,7 @@
 &lt;h5 id=&#34;坑潜变量噪声潜变量数值零&#34;&gt;【坑】潜变量噪声、潜变量数值零
 &lt;/h5&gt;&lt;p&gt;&lt;strong&gt;简答说：图生图的过程进一步复杂化、加入加噪、去噪的过程。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;理论上对图像的改变会更显著&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025805857.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025805857.png&#34;
 	
 	
 	
@@ -1626,7 +1695,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;2.全图、3.仅蒙版&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025831746.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025831746.png&#34;
 	
 	
 	
@@ -1638,7 +1707,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;2全图&#34;&gt;2.全图：
 &lt;/h4&gt;&lt;p&gt;基于新的要求（提示词、参数）把图重新画一遍【我觉得受到重绘幅度的影响】，尽管没涂的部分修改很小，但是还是有点点点点&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608025841974.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608025841974.png&#34;
 	
 	
 	
@@ -1651,7 +1720,7 @@
 &lt;p&gt;最后只保留你涂的部分拼回去&lt;/p&gt;
 &lt;h4 id=&#34;3仅蒙版&#34;&gt;3.仅蒙版:
 &lt;/h4&gt;&lt;p&gt;就是只画框选出来的区域附近，速度快，但是没有基于图像全貌画。然后再拼回去。把这一小块当做一幅画来画。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608030516917.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608030516917.png&#34;
 	
 	
 	
@@ -1666,7 +1735,7 @@
 &lt;/h5&gt;&lt;h4 id=&#34;4蒙版模糊类似羽化&#34;&gt;4.蒙版模糊——&lt;strong&gt;类似羽化&lt;/strong&gt;
 &lt;/h4&gt;&lt;p&gt;消除硬接触的边缘&lt;/p&gt;
 &lt;p&gt;10以下比较好&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608030910718.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608030910718.png&#34;
 	
 	
 	
@@ -1676,7 +1745,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608030952522.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608030952522.png&#34;
 	
 	
 	
@@ -1687,7 +1756,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;太大会影响区域的读取或影响周边其他区域&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031043864.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031043864.png&#34;
 	
 	
 	
@@ -1702,7 +1771,7 @@
 &lt;/h3&gt;&lt;h4 id=&#34;1inpaintsketch手涂蒙版&#34;&gt;[1]inPaintSketch（手涂蒙版）
 &lt;/h4&gt;&lt;p&gt;调色盘按钮&lt;/p&gt;
 &lt;h4 id=&#34;修复的坏的手等&#34;&gt;修复的坏的手等
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031222384.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031222384.png&#34;
 	
 	
 	
@@ -1714,7 +1783,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;加蓝色爱心口罩&#34;&gt;加蓝色爱心口罩
 &lt;/h4&gt;&lt;p&gt;调色盘按钮—选黑色—画口罩——&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031407948.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031407948.png&#34;
 	
 	
 	
@@ -1724,7 +1793,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031428491.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031428491.png&#34;
 	
 	
 	
@@ -1737,7 +1806,7 @@
 &lt;p&gt;重绘幅度可以稍大&lt;/p&gt;
 &lt;p&gt;蓝色&lt;/p&gt;
 &lt;p&gt;咒语中权重降低了，因为咒语的东西复杂了，让它更稳定的产出&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031524981.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031524981.png&#34;
 	
 	
 	
@@ -1747,7 +1816,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031533215.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031533215.png&#34;
 	
 	
 	
@@ -1757,7 +1826,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031625831.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031625831.png&#34;
 	
 	
 	
@@ -1769,7 +1838,7 @@
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;玩法无限可能性大&#34;&gt;玩法无限可能性大
 &lt;/h5&gt;&lt;p&gt;吸管吸取背景，覆盖手的颜色，然后用肉色把手勾勒出来。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031815036.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031815036.png&#34;
 	
 	
 	
@@ -1781,7 +1850,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;正向提示词用上，击掌等&lt;/p&gt;
 &lt;p&gt;负面提示词中用Negative Embeddings&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031832010.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031832010.png&#34;
 	
 	
 	
@@ -1791,7 +1860,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608031918786.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608031918786.png&#34;
 	
 	
 	
@@ -1807,7 +1876,7 @@
 &lt;p&gt;如果不满意，那么随机种子多试试。&lt;/p&gt;
 &lt;h2 id=&#34;单独使用sketch绘图&#34;&gt;单独使用Sketch（绘图）
 &lt;/h2&gt;&lt;p&gt;直接使用Sketch&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608032306898.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608032306898.png&#34;
 	
 	
 	
@@ -1821,7 +1890,7 @@
 &lt;h3 id=&#34;灵魂画手功能的实现可以用这个&#34;&gt;——灵魂画手功能的实现可以用这个
 &lt;/h3&gt;&lt;h4 id=&#34;不想影响就用局部修复即可&#34;&gt;不想影响就用局部修复即可
 &lt;/h4&gt;&lt;h4 id=&#34;2上传蒙版功能应用&#34;&gt;[2]上传蒙版功能应用
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608032708812.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608032708812.png&#34;
 	
 	
 	
@@ -1834,7 +1903,7 @@
 &lt;p&gt;上传蒙版区域&lt;/p&gt;
 &lt;p&gt;PS主体的对象选择工具，框选工具，会自动框选出来，然后套索工具-alt-ctrl-可以增加减少&lt;/p&gt;
 &lt;p&gt;然后再&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608032957611.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608032957611.png&#34;
 	
 	
 	
@@ -1844,7 +1913,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033009061.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033009061.png&#34;
 	
 	
 	
@@ -1855,7 +1924,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;先定义为白色&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033024541.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033024541.png&#34;
 	
 	
 	
@@ -1868,7 +1937,7 @@
 &lt;p&gt;然后选中填充的图层复制一个&lt;/p&gt;
 &lt;p&gt;然后双击该图层前面的小白方块、填充颜色改为黑&lt;/p&gt;
 &lt;p&gt;单机长方形&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033139847.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033139847.png&#34;
 	
 	
 	
@@ -1882,7 +1951,7 @@
 &lt;p&gt;选中ctrl+I交换蒙版区域，就黑白换过来了。&lt;/p&gt;
 &lt;p&gt;就导出来PNG、jpg就可了。&lt;/p&gt;
 &lt;p&gt;人为代替了蒙版选择的了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033313482.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033313482.png&#34;
 	
 	
 	
@@ -1893,7 +1962,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;坑其他软件进行关联无穷的潜力挖掘&#34;&gt;[坑]其他软件进行关联，无穷的潜力挖掘
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033407765.png&#34;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033407765.png&#34;
 	
 	
 	
@@ -1903,7 +1972,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033414055.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033414055.png&#34;
 	
 	
 	
@@ -1913,7 +1982,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033422690.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033422690.png&#34;
 	
 	
 	
@@ -1923,7 +1992,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:58853/post/image-20240608033434707.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:61723/post/image-20240608033434707.png&#34;
 	
 	
 	
@@ -1980,12 +2049,12 @@
         </item>
         <item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
-        <link>http://localhost:58853/post/opencv/</link>
+        <link>http://localhost:61723/post/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:58853/post/opencv/</guid>
-        <description>&lt;img src="http://localhost:58853/post/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
-&lt;img src=&#34;http://localhost:58853/post/tag-opencv.jpg&#34;
+        <guid>http://localhost:61723/post/opencv/</guid>
+        <description>&lt;img src="http://localhost:61723/post/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+&lt;img src=&#34;http://localhost:61723/post/tag-opencv.jpg&#34;
 	
 	
 	
@@ -2231,12 +2300,11 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         </item>
         <item>
         <title>流操作和函数式编程</title>
-        <link>http://localhost:58853/post/java/</link>
+        <link>http://localhost:61723/post/java/</link>
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
         
-        <guid>http://localhost:58853/post/java/</guid>
-        <description>&lt;img src="http://localhost:58853/post/archives-java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;p&gt;w&lt;/p&gt;
-&lt;h1 id=&#34;流操作&#34;&gt;流操作
+        <guid>http://localhost:61723/post/java/</guid>
+        <description>&lt;img src="http://localhost:61723/post/archives-java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
 &lt;/h1&gt;&lt;p&gt;是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。&lt;/p&gt;
 &lt;p&gt;例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。&lt;/p&gt;
 &lt;p&gt;例如：能用max()和min()对流操作找到流中的最大元素。&lt;/p&gt;

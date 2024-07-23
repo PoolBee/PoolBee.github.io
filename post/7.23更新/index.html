@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=55340&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="title: Hugo主题配置记录-7月23日博客更新日志 links: title: iconfont description: 阿里巴巴矢量图标库 website: https://www.iconfont.cn/ image: iconfont-logo-128.jpg title: 不蒜子 description: 极简网页计数器 website: https://busuanzi.ibruce.info/ image: busuanzi-logo-128.png title: Hugo主题Stack description: 中文版 website: https://stack-docs.netlify.app/zh/ image: stack-logo-128.png date: 2024-07-20 20:01:49 slug: 建站 image: /post/stack-logo-128.png categories: - 建站 #这样添加tag可以在文章的末尾显示标签 tags: - Hugo">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=59134&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="title: Hugo主题配置记录-7月23日博客更新日志 links: date: 2024-07-23 15:41:49 slug: 建站 image: /post/stack-logo-128.png categories: - 建站 tags: - Hugo 解决了一些小问题，之前建站留下的小问题 一、左侧栏的正确跳转 点击图标后跳转到链接栏中有二维码 config.yaml中修改跳转链接到/post/link即可 点击&quot;链接&quot;后出现二维码 二、文章图片的正确插入 1.文章封面图片 \\content\\post中的文章 ##Front Matter图片插入记得要添加/post/路径 **例如：**image: /post/123.png ---\rtitle: 文章标题\rdate: 2024-07-23 10:00:00\rtags:\r- 标签1\r- 标签2\rcategories:\r- 分类1\r- 分类2\r#这里的就是文章封面图片 image: /post/stack-logo-128.png\r--- 这里注意\\content\\page\\中的文章 在文章内部的时候， 不需要添加/post/路径 2.文章内部图片 \\content\\post\\中需要添加多个图片 可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】 例如： 这样详细写明最好，实现图片的插入。 其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。 不要写未来日期 ">
 <title></title>
 
-<link rel='canonical' href='http://localhost:55340/post/7.23%E6%9B%B4%E6%96%B0/'>
+<link rel='canonical' href='http://localhost:59134/post/7.23%E6%9B%B4%E6%96%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.fd0d40e1661f1893e9fe1761c6cbca6d3e0e0550a64379f4020ea327ea1d205c.css"><meta property='og:title' content="">
-<meta property='og:description' content="title: Hugo主题配置记录-7月23日博客更新日志 links: title: iconfont description: 阿里巴巴矢量图标库 website: https://www.iconfont.cn/ image: iconfont-logo-128.jpg title: 不蒜子 description: 极简网页计数器 website: https://busuanzi.ibruce.info/ image: busuanzi-logo-128.png title: Hugo主题Stack description: 中文版 website: https://stack-docs.netlify.app/zh/ image: stack-logo-128.png date: 2024-07-20 20:01:49 slug: 建站 image: /post/stack-logo-128.png categories: - 建站 #这样添加tag可以在文章的末尾显示标签 tags: - Hugo">
-<meta property='og:url' content='http://localhost:55340/post/7.23%E6%9B%B4%E6%96%B0/'>
+<meta property='og:description' content="title: Hugo主题配置记录-7月23日博客更新日志 links: date: 2024-07-23 15:41:49 slug: 建站 image: /post/stack-logo-128.png categories: - 建站 tags: - Hugo 解决了一些小问题，之前建站留下的小问题 一、左侧栏的正确跳转 点击图标后跳转到链接栏中有二维码 config.yaml中修改跳转链接到/post/link即可 点击&quot;链接&quot;后出现二维码 二、文章图片的正确插入 1.文章封面图片 \\content\\post中的文章 ##Front Matter图片插入记得要添加/post/路径 **例如：**image: /post/123.png ---\rtitle: 文章标题\rdate: 2024-07-23 10:00:00\rtags:\r- 标签1\r- 标签2\rcategories:\r- 分类1\r- 分类2\r#这里的就是文章封面图片 image: /post/stack-logo-128.png\r--- 这里注意\\content\\page\\中的文章 在文章内部的时候， 不需要添加/post/路径 2.文章内部图片 \\content\\post\\中需要添加多个图片 可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】 例如： 这样详细写明最好，实现图片的插入。 其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。 不要写未来日期 ">
+<meta property='og:url' content='http://localhost:59134/post/7.23%E6%9B%B4%E6%96%B0/'>
 <meta property='og:site_name' content='PoolBee的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:site" content="@PoolBee">
     <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="">
-<meta name="twitter:description" content="title: Hugo主题配置记录-7月23日博客更新日志 links: title: iconfont description: 阿里巴巴矢量图标库 website: https://www.iconfont.cn/ image: iconfont-logo-128.jpg title: 不蒜子 description: 极简网页计数器 website: https://busuanzi.ibruce.info/ image: busuanzi-logo-128.png title: Hugo主题Stack description: 中文版 website: https://stack-docs.netlify.app/zh/ image: stack-logo-128.png date: 2024-07-20 20:01:49 slug: 建站 image: /post/stack-logo-128.png categories: - 建站 #这样添加tag可以在文章的末尾显示标签 tags: - Hugo">
+<meta name="twitter:description" content="title: Hugo主题配置记录-7月23日博客更新日志 links: date: 2024-07-23 15:41:49 slug: 建站 image: /post/stack-logo-128.png categories: - 建站 tags: - Hugo 解决了一些小问题，之前建站留下的小问题 一、左侧栏的正确跳转 点击图标后跳转到链接栏中有二维码 config.yaml中修改跳转链接到/post/link即可 点击&quot;链接&quot;后出现二维码 二、文章图片的正确插入 1.文章封面图片 \\content\\post中的文章 ##Front Matter图片插入记得要添加/post/路径 **例如：**image: /post/123.png ---\rtitle: 文章标题\rdate: 2024-07-23 10:00:00\rtags:\r- 标签1\r- 标签2\rcategories:\r- 分类1\r- 分类2\r#这里的就是文章封面图片 image: /post/stack-logo-128.png\r--- 这里注意\\content\\page\\中的文章 在文章内部的时候， 不需要添加/post/路径 2.文章内部图片 \\content\\post\\中需要添加多个图片 可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】 例如： 这样详细写明最好，实现图片的插入。 其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。 不要写未来日期 ">
   
 
 
@@ -305,6 +305,43 @@
         
             
                 
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#--hugo">title: Hugo主题配置记录-7月23日博客更新日志
+links:
+date: 2024-07-23 15:41:49
+slug: 建站
+image: /post/stack-logo-128.png
+categories:
+- 建站
+tags:
+- Hugo</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1文章封面图片">1.文章封面图片</a></li>
+    <li><a href="#2文章内部图片">2.文章内部图片</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
             
         
             
@@ -403,34 +440,91 @@
     <section class="article-content">
     
     
-    <p>title: Hugo主题配置记录-7月23日博客更新日志
-links:</p>
-<ul>
-<li>title: iconfont
-description: 阿里巴巴矢量图标库
-website: <a class="link" href="https://www.iconfont.cn/"  target="_blank" rel="noopener"
-    >https://www.iconfont.cn/</a>
-image: iconfont-logo-128.jpg</li>
-<li>title: 不蒜子
-description: 极简网页计数器
-website: <a class="link" href="https://busuanzi.ibruce.info/"  target="_blank" rel="noopener"
-    >https://busuanzi.ibruce.info/</a>
-image: busuanzi-logo-128.png</li>
-<li>title: Hugo主题Stack
-description: 中文版
-website: <a class="link" href="https://stack-docs.netlify.app/zh/"  target="_blank" rel="noopener"
-    >https://stack-docs.netlify.app/zh/</a>
-image: stack-logo-128.png</li>
-</ul>
-<p>date: 2024-07-20 20:01:49
+    <h2 id="--hugo">title: Hugo主题配置记录-7月23日博客更新日志
+links:
+date: 2024-07-23 15:41:49
 slug: 建站
 image: /post/stack-logo-128.png
 categories:
 - 建站
-#这样添加tag可以在文章的末尾显示标签
 tags:
-- Hugo</p>
-
+- Hugo
+</h2><p>解决了一些小问题，之前建站留下的小问题</p>
+<h1 id="一左侧栏的正确跳转">一、左侧栏的正确跳转
+</h1><ul>
+<li>
+<p>点击图标后跳转到链接栏中有二维码</p>
+<p>config.yaml中修改跳转链接到/post/link即可</p>
+</li>
+<li>
+<p>点击&quot;链接&quot;后出现二维码</p>
+</li>
+</ul>
+<h1 id="二文章图片的正确插入">二、文章图片的正确插入
+</h1><h2 id="1文章封面图片">1.文章封面图片
+</h2><ul>
+<li>\content\post中的文章
+##Front Matter图片插入记得要添加/post/路径
+**例如：**image: /post/123.png</li>
+</ul>
+<pre tabindex="0"><code>---
+title: 文章标题
+date: 2024-07-23 10:00:00
+tags:
+  - 标签1
+  - 标签2
+categories:
+  - 分类1
+  - 分类2
+#这里的就是文章封面图片  
+image: /post/stack-logo-128.png
+---
+</code></pre><ul>
+<li>
+<p>这里注意\content\page\中的文章</p>
+<p>在文章内部的时候，</p>
+<p><img src="/123.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="图片"
+	
+	
+>不需要添加/post/路径</p>
+</li>
+</ul>
+<h2 id="2文章内部图片">2.文章内部图片
+</h2><ul>
+<li>
+<p>\content\post\中需要添加多个图片</p>
+<p>可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】</p>
+<p>例如：<img src="/post/123.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240607184445492"
+	
+	
+></p>
+<p><img src="/post/%e6%96%87%e4%bb%b6%e5%a4%b9/123.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240607184336146"
+	
+	
+>这样详细写明最好，实现图片的插入。</p>
+</li>
+</ul>
+<p>其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。</p>
+<h1 id="不要写未来日期">不要写未来日期
+</h1>
 
 
     
@@ -551,7 +645,7 @@ tags:
           
             
        
-            共发表 6 篇文章 · 总计 1.80 k 字
+            共发表 6 篇文章 · 总计 1.82 k 字
         </div> 
 
     

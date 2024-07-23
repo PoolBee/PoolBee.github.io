@@ -2,17 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hugo on PoolBee的博客</title>
-        <link>http://localhost:58853/tags/hugo/</link>
+        <link>http://localhost:61723/tags/hugo/</link>
         <description>Recent content in Hugo on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:58853/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Jul 2024 15:41:48 +0000</lastBuildDate><atom:link href="http://localhost:61723/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo主题配置记录-7月23日博客更新日志</title>
+        <link>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</link>
+        <pubDate>Mon, 22 Jul 2024 15:41:48 +0000</pubDate>
+        
+        <guid>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</guid>
+        <description>&lt;img src="http://localhost:61723/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月23日博客更新日志" /&gt;&lt;p&gt;解决了一些小问题，之前建站留下的小问题&lt;/p&gt;
+&lt;h1 id=&#34;一左侧栏的正确跳转&#34;&gt;一、左侧栏的正确跳转
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;点击图标后跳转到链接栏中有二维码&lt;/p&gt;
+&lt;p&gt;config.yaml中修改跳转链接到/post/link即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击&amp;quot;链接&amp;quot;后出现二维码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;二文章图片的正确插入&#34;&gt;二、文章图片的正确插入
+&lt;/h1&gt;&lt;h2 id=&#34;1文章封面图片&#34;&gt;1.文章封面图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;\content\post中的文章
+##Front Matter图片插入记得要添加/post/路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;例如：&lt;/strong&gt; image: /post/123.png&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: 文章标题
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date: 2024-07-23 10:00:00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 标签1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 标签2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;categories:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 分类1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; 分类2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#这里的就是文章封面图片  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;image: /post/stack-logo-128.png
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;这里注意\content\page\中的文章&lt;/p&gt;
+&lt;p&gt;在文章内部的时候，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![图片](123.jpg)不需要添加/post/路径&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2文章内部图片&#34;&gt;2.文章内部图片
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;\content\post\中需要添加多个图片&lt;/p&gt;
+&lt;p&gt;可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】&lt;/p&gt;
+&lt;p&gt;例如：&lt;code&gt;![image-20240607184445492](/post/123.png)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![image-20240607184336146](/post/文件夹/123.png)&lt;/code&gt;这样详细写明最好，实现图片的插入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Hugo主题配置记录-7月21日博客更新日志</title>
-        <link>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</link>
+        <link>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</link>
         <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</guid>
-        <description>&lt;img src="http://localhost:58853/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
+        <guid>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</guid>
+        <description>&lt;img src="http://localhost:61723/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
 &lt;/h1&gt;&lt;h1 id=&#34;1引入busuanzi插件进行字数访问量统计&#34;&gt;1.引入busuanzi插件进行字数、访问量统计。
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;

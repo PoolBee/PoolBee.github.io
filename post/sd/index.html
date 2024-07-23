@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58853&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=61723&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。">
 <title>Stable Diffusion笔记</title>
 
-<link rel='canonical' href='http://localhost:58853/post/sd/'>
+<link rel='canonical' href='http://localhost:61723/post/sd/'>
 
 <link rel="stylesheet" href="/scss/style.min.fd0d40e1661f1893e9fe1761c6cbca6d3e0e0550a64379f4020ea327ea1d205c.css"><meta property='og:title' content="Stable Diffusion笔记">
 <meta property='og:description' content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。">
-<meta property='og:url' content='http://localhost:58853/post/sd/'>
+<meta property='og:url' content='http://localhost:61723/post/sd/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Stable Diffusion' /><meta property='article:published_time' content='2024-06-09T11:54:39&#43;00:00'/><meta property='article:modified_time' content='2024-06-09T11:54:39&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Stable Diffusion' /><meta property='article:published_time' content='2024-06-09T11:54:39&#43;00:00'/><meta property='article:modified_time' content='2024-06-09T11:54:39&#43;00:00'/><meta property='og:image' content='http://localhost:61723/post/before/image-20240607184336146.png' />
 <meta name="twitter:site" content="@PoolBee">
     <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Stable Diffusion笔记">
-<meta name="twitter:description" content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。">
+<meta name="twitter:description" content="check point 就是菜单——选择不同的模型 lora更精确的人物或画风，更可控 图生图 上传 描述图片 AI摄影 lora炼丹 七天免费试用领取 聚焦剪裁、中央剪裁、无需剪裁、 使用deepbooru算法反推标注。0.6 系数越小越精细 日志看loss值，数值降低大概率没什么问题 一、提示词prompt 类别 其他提示词：画质等 但是真实系的操作是更依赖真实的模型 1.prompt模板: 具体的直接使用即可 2.提示词权重分配 增强减弱(){}\t[] 安全范围1+-0.5，单个的 ():1.1倍，1.331倍 {} [1]进阶语法-坑 不想出现就是负向提示词 单色风格的画作 3.采样迭代步数 加噪点——去除噪点 闪一次，就步数&gt;20后意义不大 最低不要低于10 采样方法 带有++号的是改进的算法，最好使用比较稳定。 分辨率过高容易出现多人，多手。 一般低分辨率绘制，然后hires fix 来放大 高清修复、 面部修复、平铺/分块：生成无缝贴满整个屏幕的纹理性图片的；一般不用 7-12相关性一般 批次和数量 批次是格子预览图。每次批次数量不宜过高，容易爆显存。 4.写提示词方法 1.翻译、描述确切场景，然后直接让词组翻译为英文 2.功能插件、翻译的插件——国内有——SD也有 3.更好书写提示词网站：AI词汇加速器 提示词网站： 二次元和亚洲面孔多： 人物、 画风、质感： 二、图生图 原理：原本提醒上记录的像素信息会在加噪和去噪的过程中、被作为一种特征反应到生成的图片上。 1.上传图片、导入到SD里 2.提示词书写 1man,1girl 3.参数设置 重绘幅度0.6-0.8 分辨率设置，原始尺寸一样最好 按长宽比例一致生成、 [1]随机种子 xxx in backgroud 景深depth of field 如果要保留生成的原本的元素的样子，只改动背景，不改动人物风格呢？ 同一个随机种子、同一套随机种子、 骰子：-1是随机，循环按钮是上一次的种子。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:61723/post/before/image-20240607184336146.png' />
   
 
 
@@ -448,7 +449,7 @@
         <li><a href="#直接点击-局部重绘其他素材图片也可以">直接点击-局部重绘，其他素材图片也可以</a></li>
       </ul>
     </li>
-    <li><a href="#局部修复参数image-20240608025445349postimage-20240608025445349png">局部修复参数<img src="/post/image-20240608025445349.png" alt="image-20240608025445349"></a>
+    <li><a href="#局部修复参数">局部修复参数</a>
       <ul>
         <li></li>
         <li><a href="#局部重绘进阶">局部重绘进阶</a></li>
@@ -503,16 +504,12 @@
 
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
             <a href="/post/sd/">
-                <img src="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png"
-                        srcset="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png 800w, /img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_1600x0_resize_box_3.png 1600w"
-                        width="800" 
-                        height="119" 
-                        loading="lazy"
-                        alt="Featured image of post Stable Diffusion笔记" />
+                
+                    <img src="/post/before/image-20240607184336146.png" loading="lazy" alt="Featured image of post Stable Diffusion笔记" />
                 
             </a>
         </div>
@@ -1987,7 +1984,8 @@
 	
 	
 ></p>
-<h2 id="局部修复参数image-20240608025445349postimage-20240608025445349png">局部修复参数<img src="/post/image-20240608025445349.png"
+<h2 id="局部修复参数">局部修复参数
+</h2><p><img src="/post/image-20240608025445349.png"
 	
 	
 	
@@ -1996,8 +1994,8 @@
 		alt="image-20240608025445349"
 	
 	
->
-</h2><h4 id="1蒙版">1.蒙版：
+></p>
+<h4 id="1蒙版">1.蒙版：
 </h4><p><img src="/post/image-20240608025541157.png"
 	
 	
@@ -2418,6 +2416,31 @@
 </article>
 
     
+        <div class="article-list--compact links">
+    
+        <article>
+            <a href="https://www.bilibili.com/" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">Bilibili</h2>
+                    <footer class="article-time">
+                        
+                            bilibili是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。大家可以在这里找到许多欢乐。
+                        
+                    </footer>
+                </div>
+        
+                
+                    
+                    
+                    <div class="article-image">
+                        <img src="/post/logo/Bilibili_Logo_Blue.svg" loading="lazy">
+                    </div>
+                
+            </a>
+        </article>
+    
+</div>
+    
 
     
 
@@ -2503,12 +2526,14 @@
                 
             
                 
+            
+                
              
              
           
             
        
-            共发表 5 篇文章 · 总计 1.76 k 字
+            共发表 6 篇文章 · 总计 1.81 k 字
         </div> 
 
     

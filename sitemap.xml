@@ -2,95 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:58853/</loc>
-    <lastmod>2024-07-23T20:02:49+00:00</lastmod>
+    <loc>http://localhost:61723/categories/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post/</loc>
-    <lastmod>2024-07-23T20:02:49+00:00</lastmod>
+    <loc>http://localhost:61723/tags/hugo/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/categories/</loc>
+    <loc>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:61723/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:61723/post/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:61723/tags/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:61723/categories/%E5%BB%BA%E7%AB%99/</loc>
+    <lastmod>2024-07-22T15:41:48+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</loc>
     <lastmod>2024-07-20T20:01:49+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/tags/hugo/</loc>
-    <lastmod>2024-07-20T20:01:49+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:58853/post/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2024-07-20T20:01:49+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:58853/tags/</loc>
-    <lastmod>2024-07-20T20:01:49+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:58853/categories/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2024-07-20T20:01:49+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:58853/page/</loc>
+    <loc>http://localhost:61723/page/</loc>
     <lastmod>2024-07-21T18:31:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/page/about/</loc>
+    <loc>http://localhost:61723/page/about/</loc>
     <lastmod>2024-07-21T18:31:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post1/</loc>
+    <loc>http://localhost:61723/post1/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://localhost:61723/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://localhost:61723/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post1/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://localhost:61723/post1/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>http://localhost:61723/post/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2024-07-19T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/categories/aigc/</loc>
+    <loc>http://localhost:61723/categories/aigc/</loc>
     <lastmod>2024-06-09T11:54:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/tags/stable-diffusion/</loc>
+    <loc>http://localhost:61723/tags/stable-diffusion/</loc>
     <lastmod>2024-06-09T11:54:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post/sd/</loc>
+    <loc>http://localhost:61723/post/sd/</loc>
     <lastmod>2024-06-09T11:54:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/tags/opencv/</loc>
+    <loc>http://localhost:61723/tags/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/categories/opencv/</loc>
+    <loc>http://localhost:61723/categories/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post1/opencv/</loc>
+    <loc>http://localhost:61723/post1/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post/opencv/</loc>
+    <loc>http://localhost:61723/post/opencv/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/categories/python/</loc>
+    <loc>http://localhost:61723/categories/python/</loc>
     <lastmod>2023-11-06T21:14:39+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/page/archives/</loc>
+    <loc>http://localhost:61723/page/archives/</loc>
     <lastmod>2023-06-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/categories/java/</loc>
+    <loc>http://localhost:61723/categories/java/</loc>
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/tags/java%E5%85%B6%E4%BB%96/</loc>
+    <loc>http://localhost:61723/tags/java%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post1/java/</loc>
+    <loc>http://localhost:61723/post1/java/</loc>
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/post/java/</loc>
+    <loc>http://localhost:61723/post/java/</loc>
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:58853/page/links/</loc>
+    <loc>http://localhost:61723/page/links/</loc>
   </url><url>
-    <loc>http://localhost:58853/page/share/</loc>
+    <loc>http://localhost:61723/page/share/</loc>
   </url><url>
-    <loc>http://localhost:58853/page/soft/</loc>
+    <loc>http://localhost:61723/page/soft/</loc>
   </url><url>
-    <loc>http://localhost:58853/page/search/</loc>
+    <loc>http://localhost:61723/page/search/</loc>
   </url><url>
-    <loc>http://localhost:58853/categories/essay/</loc>
+    <loc>http://localhost:61723/categories/essay/</loc>
   </url>
 </urlset>

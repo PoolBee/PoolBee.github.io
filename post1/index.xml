@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Post1s on PoolBee的博客</title>
-        <link>http://localhost:58853/post1/</link>
+        <link>http://localhost:61723/post1/</link>
         <description>Recent content in Post1s on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:58853/post1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:61723/post1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>随笔</title>
-        <link>http://localhost:58853/post1/%E9%9A%8F%E7%AC%94/</link>
+        <link>http://localhost:61723/post1/%E9%9A%8F%E7%AC%94/</link>
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:58853/post1/%E9%9A%8F%E7%AC%94/</guid>
+        <guid>http://localhost:61723/post1/%E9%9A%8F%E7%AC%94/</guid>
         <description>&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
 &lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
 &lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧&lt;/p&gt;
@@ -30,12 +30,12 @@
         </item>
         <item>
         <title>OpenCV中对图像噪声处理的常用形态学操作</title>
-        <link>http://localhost:58853/post1/opencv/</link>
+        <link>http://localhost:61723/post1/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:58853/post1/opencv/</guid>
-        <description>&lt;img src="http://localhost:58853/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
-&lt;img src=&#34;http://localhost:58853/tag-opencv.jpg&#34;
+        <guid>http://localhost:61723/post1/opencv/</guid>
+        <description>&lt;img src="http://localhost:61723/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+&lt;img src=&#34;http://localhost:61723/tag-opencv.jpg&#34;
 	
 	
 	
@@ -281,11 +281,11 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         </item>
         <item>
         <title>流操作和函数式编程</title>
-        <link>http://localhost:58853/post1/java/</link>
+        <link>http://localhost:61723/post1/java/</link>
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
         
-        <guid>http://localhost:58853/post1/java/</guid>
-        <description>&lt;img src="http://localhost:58853/java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
+        <guid>http://localhost:61723/post1/java/</guid>
+        <description>&lt;img src="http://localhost:61723/java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
 &lt;/h1&gt;&lt;p&gt;是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。&lt;/p&gt;
 &lt;p&gt;例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。&lt;/p&gt;
 &lt;p&gt;例如：能用max()和min()对流操作找到流中的最大元素。&lt;/p&gt;
