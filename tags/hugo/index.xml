@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hugo on PoolBee的博客</title>
-        <link>http://localhost:61723/tags/hugo/</link>
+        <link>http://localhost:1313/tags/hugo/</link>
         <description>Recent content in Hugo on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 22 Jul 2024 15:41:48 +0000</lastBuildDate><atom:link href="http://localhost:61723/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 22 Jul 2024 15:41:48 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo主题配置记录-7月23日博客更新日志</title>
-        <link>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</link>
+        <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.23/</link>
         <pubDate>Mon, 22 Jul 2024 15:41:48 +0000</pubDate>
         
-        <guid>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.23/</guid>
-        <description>&lt;img src="http://localhost:61723/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月23日博客更新日志" /&gt;&lt;p&gt;解决了一些小问题，之前建站留下的小问题&lt;/p&gt;
+        <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.23/</guid>
+        <description>&lt;img src="http://localhost:1313/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月23日博客更新日志" /&gt;&lt;p&gt;解决了一些小问题，之前建站留下的小问题&lt;/p&gt;
 &lt;h1 id=&#34;一左侧栏的正确跳转&#34;&gt;一、左侧栏的正确跳转
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -59,15 +59,28 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。&lt;/p&gt;
-</description>
+&lt;p&gt;最后：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Front Matter中的links项的路径也一样需要加post，从post路径开始必须指定路径清晰到文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-MD&#34; data-lang=&#34;MD&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;links:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; \- title: Bilibili
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  description: bilibili是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。大家可以在这里找到许多欢乐。
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  website: https://www.bilibili.com/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  image: /post/logo/Bilibili_Logo_Blue.svg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>Hugo主题配置记录-7月21日博客更新日志</title>
-        <link>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</link>
+        <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.21/</link>
         <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:61723/post/%E5%BB%BA%E7%AB%992024.07.21/</guid>
-        <description>&lt;img src="http://localhost:61723/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
+        <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.21/</guid>
+        <description>&lt;img src="http://localhost:1313/post/stack-logo-128.png" alt="Featured image of post Hugo主题配置记录-7月21日博客更新日志" /&gt;&lt;h1 id=&#34;hugo主题配置记录&#34;&gt;&lt;strong&gt;Hugo主题配置记录&lt;/strong&gt;
 &lt;/h1&gt;&lt;h1 id=&#34;1引入busuanzi插件进行字数访问量统计&#34;&gt;1.引入busuanzi插件进行字数、访问量统计。
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
