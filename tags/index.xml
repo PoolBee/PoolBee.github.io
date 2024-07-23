@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on PoolBee的博客</title>
-        <link>http://localhost:49160/tags/</link>
+        <link>http://localhost:51120/tags/</link>
         <description>Recent content in Tags on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:49160/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:51120/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo</title>
-        <link>http://localhost:49160/tags/hugo/</link>
+        <link>http://localhost:51120/tags/hugo/</link>
         <pubDate>Sat, 20 Jul 2024 20:01:49 +0000</pubDate>
         
-        <guid>http://localhost:49160/tags/hugo/</guid>
+        <guid>http://localhost:51120/tags/hugo/</guid>
         <description></description>
         </item>
         <item>
         <title>随笔</title>
-        <link>http://localhost:49160/tags/%E9%9A%8F%E7%AC%94/</link>
+        <link>http://localhost:51120/tags/%E9%9A%8F%E7%AC%94/</link>
         <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:49160/tags/%E9%9A%8F%E7%AC%94/</guid>
+        <guid>http://localhost:51120/tags/%E9%9A%8F%E7%AC%94/</guid>
         <description></description>
         </item>
         <item>
         <title>Stable Diffusion</title>
-        <link>http://localhost:49160/tags/stable-diffusion/</link>
+        <link>http://localhost:51120/tags/stable-diffusion/</link>
         <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
         
-        <guid>http://localhost:49160/tags/stable-diffusion/</guid>
+        <guid>http://localhost:51120/tags/stable-diffusion/</guid>
         <description></description>
         </item>
         <item>
         <title>OpenCV</title>
-        <link>http://localhost:49160/tags/opencv/</link>
+        <link>http://localhost:51120/tags/opencv/</link>
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
-        <guid>http://localhost:49160/tags/opencv/</guid>
+        <guid>http://localhost:51120/tags/opencv/</guid>
         <description></description>
         </item>
         <item>
         <title>Java其他</title>
-        <link>http://localhost:49160/tags/java%E5%85%B6%E4%BB%96/</link>
+        <link>http://localhost:51120/tags/java%E5%85%B6%E4%BB%96/</link>
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
         
-        <guid>http://localhost:49160/tags/java%E5%85%B6%E4%BB%96/</guid>
+        <guid>http://localhost:51120/tags/java%E5%85%B6%E4%BB%96/</guid>
         <description></description>
         </item>
         

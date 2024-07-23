@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>AIGC on PoolBee的博客</title>
-        <link>http://localhost:49160/categories/aigc/</link>
+        <link>http://localhost:51120/categories/aigc/</link>
         <description>Recent content in AIGC on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 09 Jun 2024 11:54:39 +0000</lastBuildDate><atom:link href="http://localhost:49160/categories/aigc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Jun 2024 11:54:39 +0000</lastBuildDate><atom:link href="http://localhost:51120/categories/aigc/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Stable Diffusion笔记</title>
-        <link>http://localhost:49160/post/sd/</link>
+        <link>http://localhost:51120/post/sd/</link>
         <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
         
-        <guid>http://localhost:49160/post/sd/</guid>
-        <description>&lt;img src="http://localhost:49160/tag-opencv.jpg" alt="Featured image of post Stable Diffusion笔记" /&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184336146.png&#34;
+        <guid>http://localhost:51120/post/sd/</guid>
+        <description>&lt;img src="http://localhost:51120/tag-opencv.jpg" alt="Featured image of post Stable Diffusion笔记" /&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240607184336146.png&#34;
 	
 	
 	

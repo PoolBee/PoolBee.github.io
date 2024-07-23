@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on PoolBee的博客</title>
-        <link>http://localhost:49160/page/</link>
+        <link>http://localhost:51120/page/</link>
         <description>Recent content in Pages on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 12:58:23 +0000</lastBuildDate><atom:link href="http://localhost:49160/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 20 Jul 2024 12:58:23 +0000</lastBuildDate><atom:link href="http://localhost:51120/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于我 About me</title>
-        <link>http://localhost:49160/page/about/</link>
+        <link>http://localhost:51120/page/about/</link>
         <pubDate>Sat, 20 Jul 2024 12:58:23 +0000</pubDate>
         
-        <guid>http://localhost:49160/page/about/</guid>
+        <guid>http://localhost:51120/page/about/</guid>
         <description>&lt;h3 id=&#34;近况&#34;&gt;近况：
 &lt;/h3&gt;&lt;p&gt;​	  中国北方&amp;amp;南方都待过，现居河北，个人喜欢北方。现大四，正在考研。&lt;/p&gt;
 &lt;h3 id=&#34;博客介绍&#34;&gt;博客介绍：
@@ -29,47 +29,61 @@
         </item>
         <item>
         <title>分类</title>
-        <link>http://localhost:49160/page/archives/</link>
+        <link>http://localhost:51120/page/archives/</link>
         <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:49160/page/archives/</guid>
+        <guid>http://localhost:51120/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>链接</title>
-        <link>http://localhost:49160/page/links/</link>
+        <link>http://localhost:51120/page/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:49160/page/links/</guid>
-        <description>&lt;p&gt;&lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
+        <guid>http://localhost:51120/page/links/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:51120/page/links/qrcode.jpg&#34;
+	width=&#34;344&#34;
+	height=&#34;344&#34;
+	srcset=&#34;http://localhost:51120/page/links/qrcode_hu7e8d3aafd6ec4675a8f79c8dd2f97a6d_8558_480x0_resize_q75_box.jpg 480w, http://localhost:51120/page/links/qrcode_hu7e8d3aafd6ec4675a8f79c8dd2f97a6d_8558_1024x0_resize_q75_box.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240723144103333&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
+&gt;
+&lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>日常分享</title>
-        <link>http://localhost:49160/page/share/</link>
+        <link>http://localhost:51120/page/share/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:49160/page/share/</guid>
+        <guid>http://localhost:51120/page/share/</guid>
         <description>&lt;p&gt;测试123
 &lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>软件&amp;网站</title>
-        <link>http://localhost:49160/page/soft/</link>
+        <link>http://localhost:51120/page/soft/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:49160/page/soft/</guid>
+        <guid>http://localhost:51120/page/soft/</guid>
         <description>&lt;p&gt;这是软件&amp;amp;网站页面
 &lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:49160/page/search/</link>
+        <link>http://localhost:51120/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:49160/page/search/</guid>
+        <guid>http://localhost:51120/page/search/</guid>
         <description></description>
         </item>
         
