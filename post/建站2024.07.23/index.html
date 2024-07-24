@@ -10,7 +10,7 @@
 
 <link rel="stylesheet" href="/scss/partials/navbar.scss"> 
 
-<link rel="stylesheet" href="/scss/style.min.c90361352d8363f3b4e431ffc00031924a0dc7795afff9fe9470e563f9b7314a.css"><meta property='og:title' content="Hugo主题配置记录-7月23日博客更新日志">
+<link rel="stylesheet" href="/scss/style.min.1e4b57892b37a1414440c81190fecdae0bf34edbdc9c70fa63f7c23ff4099b42.css"><meta property='og:title' content="Hugo主题配置记录-7月23日博客更新日志">
 <meta property='og:description' content="解决了一些小问题，之前建站留下的小问题 一、左侧栏的正确跳转 点击图标后跳转到链接栏中有二维码 config.yaml中修改跳转链接到/post/link即可 点击&quot;链接&quot;后出现二维码 二、文章图片的正确插入 1.文章封面图片 \\content\\post中的文章 ##Front Matter图片插入记得要添加/post/路径 例如： image: /post/123.png --- title: 文章标题 date: 2024-07-23 10:00:00 tags: - 标签1 - 标签2 categories: - 分类1 - 分类2 #这里的就是文章封面图片 image: /post/stack-logo-128.png --- 这里注意\\content\\page\\中的文章 在文章内部的时候， ![图片](123.jpg)不需要添加/post/路径 2.文章内部图片 \\content\\post\\中需要添加多个图片 可以放入文件夹中，避免多个md文件和多个图片堆在一起。【注意：可以不写明在哪个文件夹，直接写/post/文件名即可】 例如：![image-20240607184445492](/post/123.png) ![image-20240607184336146](/post/文件夹/123.png)这样详细写明最好，实现图片的插入。 其实在/post目录中用/post/123.png这样的方式，会自动搜寻/post目录下的123.png文件，（自我理解）所以不用写明中间的/before文件夹。 最后： Front Matter中的links项的路径也一样需要加post，从post路径开始必须指定路径清晰到文件 links: \\- title: Bilibili description: bilibili是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。大家可以在这里找到许多欢乐。 website: https://www.bilibili.com/ image: /post/logo/Bilibili_Logo_Blue.svg ">
 <meta property='og:url' content='http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.23/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -49,16 +49,16 @@
     })();
 </script>
 
-        
-<nav id="navbar" class="navbar--fixed-top">
+        <nav id="navbar" class="navbar--fixed-top">
     <div class="container">
         <a href="/" class="navbar-brand">
-            <img src="/path/to/logo.png" alt="Logo" class="logo"> 
+            <img src="/page/nav-img/." alt="Logo" class="logo"> 
         </a>
         <ul class="navbar-nav">
+
             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/page/test/" class="nav-link">测试页面</a></li>
         </ul>
     </div>
 </nav>
@@ -76,6 +76,18 @@
             navbar.classList.remove('navbar--hidden');
         }
         lastScrollY = window.scrollY;
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === path) {
+                link.parentElement.classList.add('active'); 
+            }
+        });
     });
 </script>
  
@@ -670,6 +682,8 @@
     
         <div>
             
+            
+                
             
                 
             

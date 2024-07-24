@@ -479,11 +479,17 @@
             }, 1e3);
           }).catch((err) => {
             alert(err);
-            console.log("Something went wrong", err);
+            console.log("\u53D1\u751F\u9519\u8BEF", err);
           });
         });
       });
-      new colorScheme_default(document.getElementById("dark-mode-toggle"));
+      const colorSchemeToggler = new colorScheme_default(document.getElementById("dark-mode-toggle"));
+      const darkModeToggleButton = document.getElementById("dark-mode-toggle");
+      if (darkModeToggleButton) {
+        darkModeToggleButton.addEventListener("click", () => {
+          document.body.classList.toggle("dark-mode");
+        });
+      }
     }
   };
   window.addEventListener("load", () => {
@@ -495,9 +501,9 @@
   window.createElement = createElement_default;
 })();
 /*!
-*   Hugo Theme Stack
-*
-*   @author: Jimmy Cai
-*   @website: https://jimmycai.com
-*   @link: https://github.com/CaiJimmy/hugo-theme-stack
-*/
+ *   Hugo Theme Stack
+ *
+ *   @author: Jimmy Cai
+ *   @website: https://jimmycai.com
+ *   @link: https://github.com/CaiJimmy/hugo-theme-stack
+ */

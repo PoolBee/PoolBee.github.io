@@ -10,11 +10,11 @@
 
 <link rel="stylesheet" href="/scss/partials/navbar.scss"> 
 
-<link rel="stylesheet" href="/scss/style.min.c90361352d8363f3b4e431ffc00031924a0dc7795afff9fe9470e563f9b7314a.css"><meta property='og:title' content="Post1s">
+<link rel="stylesheet" href="/scss/style.min.1e4b57892b37a1414440c81190fecdae0bf34edbdc9c70fa63f7c23ff4099b42.css"><meta property='og:title' content="Post1s">
 <meta property='og:description' content="热爱生活，忠于记录">
 <meta property='og:url' content='http://localhost:1313/post1/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-07-22T15:41:48&#43;00:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-07-23T12:03:58&#43;00:00 '/>
 <meta name="twitter:site" content="@PoolBee">
     <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Post1s">
 <meta name="twitter:description" content="热爱生活，忠于记录"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/post1/index.xml">
@@ -46,16 +46,16 @@
     })();
 </script>
 
-        
-<nav id="navbar" class="navbar--fixed-top">
+        <nav id="navbar" class="navbar--fixed-top">
     <div class="container">
         <a href="/" class="navbar-brand">
-            <img src="/path/to/logo.png" alt="Logo" class="logo"> 
+            <img src="/page/nav-img/." alt="Logo" class="logo"> 
         </a>
         <ul class="navbar-nav">
+
             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/page/test/" class="nav-link">测试页面</a></li>
         </ul>
     </div>
 </nav>
@@ -73,6 +73,18 @@
             navbar.classList.remove('navbar--hidden');
         }
         lastScrollY = window.scrollY;
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === path) {
+                link.parentElement.classList.add('active'); 
+            }
+        });
     });
 </script>
  
@@ -603,6 +615,8 @@
     
         <div>
             
+            
+                
             
                 
             
