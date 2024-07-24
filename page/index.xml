@@ -6,7 +6,17 @@
         <description>Recent content in Pages on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 20 Jul 2024 12:58:23 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Jul 2024 12:03:58 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>测试页面1</title>
+        <link>http://localhost:1313/page/test/test/</link>
+        <pubDate>Tue, 23 Jul 2024 12:03:58 +0000</pubDate>
+        
+        <guid>http://localhost:1313/page/test/test/</guid>
+        <description>&lt;h1 id=&#34;这是测试页面&#34;&gt;这是测试页面
+&lt;/h1&gt;&lt;p&gt;这是测试页面的内容。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>关于我 About me</title>
         <link>http://localhost:1313/page/about/</link>
         <pubDate>Sat, 20 Jul 2024 12:58:23 +0000</pubDate>

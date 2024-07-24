@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="测试123 链接">
 <title>日常分享</title>
 
 <link rel='canonical' href='http://localhost:1313/page/share/'>
 
-<link rel="stylesheet" href="/scss/style.min.483389bdb9f3a83638275f77df1c3bbb8e71eddc822c03ca3189ce2c692d088c.css"><meta property='og:title' content="日常分享">
+
+<link rel="stylesheet" href="/scss/partials/navbar.scss"> 
+
+<link rel="stylesheet" href="/scss/style.min.9de30025eadd2ce2160b6844b45c7a91aee5377ddf7ac522546c648554ab43c9.css"><meta property='og:title' content="日常分享">
 <meta property='og:description' content="测试123 链接">
 <meta property='og:url' content='http://localhost:1313/page/share/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -43,7 +47,51 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky compact">
+
+        <nav id="navbar" class="navbar--fixed-top">
+    <div class="container">
+        <a href="/" class="navbar-brand">
+            <img src="/static/favicon.ico" alt="Logo" class="logo"> 
+        </a>
+        <ul class="navbar-nav">
+
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/page/test/" class="nav-link">测试页面</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    let lastScrollY = window.scrollY;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            
+            navbar.classList.add('navbar--hidden');
+        } else {
+            
+            navbar.classList.remove('navbar--hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === path) {
+                link.parentElement.classList.add('active'); 
+            }
+        });
+    });
+</script>
+ 
+
+        <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky compact">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -524,6 +572,8 @@
     
         <div>
             
+            
+                
             
                 
             
