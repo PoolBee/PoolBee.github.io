@@ -1,32 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="热爱生活，忠于记录">
+
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<meta name='description' content="热爱生活，忠于记录">
+
+
+
 <title>Categories</title>
+
 
 <link rel='canonical' href='http://localhost:1313/categories/'>
 
 
-<link rel="stylesheet" href="/scss/partials/navbar.scss"> 
+                                                          
+<link rel="stylesheet" href="/scss/partials/navbar.scss">
 
-<link rel="stylesheet" href="/scss/style.min.1e4b57892b37a1414440c81190fecdae0bf34edbdc9c70fa63f7c23ff4099b42.css"><meta property='og:title' content="Categories">
+
+<link rel="stylesheet" href="/scss/style.min.57a5a55ee12704ef8c6be288551a77b21ae4a0657989bb9fcca4c2463b36573c.css"><meta property='og:title' content="Categories">
 <meta property='og:description' content="热爱生活，忠于记录">
 <meta property='og:url' content='http://localhost:1313/categories/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-07-23T12:03:58&#43;00:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-07-25T00:00:00&#43;00:00 '/>
 <meta name="twitter:site" content="@PoolBee">
     <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="热爱生活，忠于记录"><link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/categories/index.xml">
+<meta name="twitter:description" content="热爱生活，忠于记录">
+    <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/categories/index.xml">
+    
   
 
 
-    </head>
-    <body class="">
+
+
+    
+</head>
+
+<body class="">
+    
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
+                
                 localStorage.setItem(colorSchemeKey, "auto");
             }
         })();
@@ -34,28 +53,33 @@
     (function() {
         const colorSchemeKey = 'StackColorScheme';
         const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        
         const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+        
 
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
             document.documentElement.dataset.scheme = 'dark';
+            
         } else {
             document.documentElement.dataset.scheme = 'light';
+            
         }
     })();
 </script>
 
-        <nav id="navbar" class="navbar--fixed-top">
+
+    <nav id="navbar" class="navbar--fixed-top">
     <div class="container">
         <a href="/" class="navbar-brand">
             <img src="/page/nav-img/." alt="Logo" class="logo"> 
         </a>
         <ul class="navbar-nav">
-
+            
             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="/page/about/" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/page/test/" class="nav-link">测试页面</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link" target="_blank">About</a></li>
+            <li class="nav-item"><a href="/page/daily_info/" class="nav-link" target="_blank">走走停停</a></li>
         </ul>
     </div>
 </nav>
@@ -87,9 +111,11 @@
         });
     });
 </script>
- 
 
-        <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky compact">
+    
+
+    <div class="container main-container flex on-phone--column extended">
+        <aside class="sidebar left-sidebar sticky compact">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -514,7 +540,11 @@
 
 
 
-            <main class="main full-width">
+        
+
+
+
+        <main class="main full-width">
     <header>
         <h3 class="section-title">
             
@@ -733,6 +763,8 @@
                 
             
                 
+            
+                
              
              
           
@@ -776,9 +808,12 @@
 }
 </style>
 
-            </main>
-        </div>
-        <script 
+            
+        </main>
+        
+    </div>
+
+    <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
@@ -816,5 +851,118 @@
     });
 </script>
 
-    </body>
+    
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 PoolBee的博客
+    </section>
+    
+    
+    <a href="https://github.com/PoolBee/PoolBee.github.io" target="_blank">
+        <img src="https://ghchart.rshah.org/poolbee" />
+    </a>
+    
+
+    <section class="powerby">
+         <br />
+        
+    </section>
+
+
+    <section class="count_info">
+    
+        <div>
+            在漫长的
+            <span id="ds" class="running-days"></span>
+            天
+            <span id="hs" class="running-days"></span>
+            小时
+            <span id="ms" class="running-days"></span>
+            分钟中
+        </div>
+
+    
+        <div>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+             
+             
+          
+            
+       
+            · 写下 6 篇文章、总计 1.81 k 字
+        </div> 
+
+    
+        <div>
+            <span id="busuanzi_container_site_pv">· 迎接<span id="busuanzi_value_site_pv"></span>次不期而遇。</span>
+        </div>
+        
+    </section>
+    
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        let s1 = '2023-6-09'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+        
+    </script>
+    
+</footer>
+<style>
+     
+.site-footer {
+    text-align: center;
+}
+</style>
+</body>
 </html>

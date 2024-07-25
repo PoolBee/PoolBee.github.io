@@ -1,16 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Typlog 的相册语法 介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
+
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<meta name='description' content="Typlog 的相册语法 介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
+
+
+
 <title>OpenCV中对图像噪声处理的常用形态学操作</title>
+
 
 <link rel='canonical' href='http://localhost:1313/post1/opencv/'>
 
 
-<link rel="stylesheet" href="/scss/partials/navbar.scss"> 
+                                                          
+<link rel="stylesheet" href="/scss/partials/navbar.scss">
 
-<link rel="stylesheet" href="/scss/style.min.1e4b57892b37a1414440c81190fecdae0bf34edbdc9c70fa63f7c23ff4099b42.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
+
+<link rel="stylesheet" href="/scss/style.min.57a5a55ee12704ef8c6be288551a77b21ae4a0657989bb9fcca4c2463b36573c.css"><meta property='og:title' content="OpenCV中对图像噪声处理的常用形态学操作">
 <meta property='og:description' content="Typlog 的相册语法 介绍了图像处理中的形态学操作，以及如何使用OpenCV库来执行这些操作。括腐蚀、膨胀、开运算、闭运算、梯度运算、顶帽运算和黑帽运算。每种操作都有不同的效果和应用。 一、噪声处理的基本操作 1.腐蚀 让图像沿着自己边界向内收缩，OpenCV通过核（kernel）来实现收缩计算。 在形态学中，可以理解为由N个像素组成的像素块，（每一个像素块，包含一个核（kernel））在图像的边缘移动，移动的过程中，核将会在图像的边缘抹除图像和核（kernel）重合但又没有越过核心（kernel）的像素点抹除。\r例子一、消除仙人掌的刺 import cv2 import numpy as np img =cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((3,3),np.uint8)#3*3矩阵定义核的大小 cv2.imshow( &#34;img&#34;,img) dst=cv2.erode(img,k)#腐蚀 cv2.imshow(&#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows( ) dst=cv2.erode(src,kernel,anchor,iterations,borderType,borderValue) 参数说明: src原始图像 kernel腐蚀使用的核 anchor可选参数 核的锚点位置 iterations可选参数 腐蚀操作的迭代次数，默认值为1，后面两个参数建议采用默认 2.膨胀 膨胀操作与腐蚀操作相反，膨胀操作可以让图像沿着自己的边界向内扩张。\r同样是通过核来计，当核在图像的边缘移动时，核会将图像边缘填补新的像素\rimport cv2 import numpy as np img=cv2.imread(r&#34;D:\\Program Files (x86)\\PyCharmProject\\pythonProject\\video-face\\xtz.png&#34;) k=np.ones((9,9),np.uint8) cv2.imshow( &#34;img&#34;,img) dst=cv2.dilate(img, k) cv2.imshow( &#34;dst&#34;,dst) cv2.waitKey() cv2.destroyAllwindows() ```Python dst=cv2.dilate(src,kernel,anchor,iterations,borderType,borderValue)\\ 参数说明如下 src原始图像 kernel膨胀使用的核 anchor可选参数核的锚点位置 iterations可选参数膨胀操作的迭代次数 后面两个为可选参数建议取默认值 膨胀可以产生一种“近视眼”的效果。 3.开运算 开运算是将图像先进行腐蚀操作，再进行膨胀操作。\r开运算可以用来抹除图像外部的细节。 #开运算 import cv2 import numpy as np img=cv2.">
 <meta property='og:url' content='http://localhost:1313/post1/opencv/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -22,14 +33,20 @@
   
 
 
-    </head>
-    <body class="
+
+
+    
+</head>
+
+<body class="
     article-page
     ">
+    
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
             if(!localStorage.getItem(colorSchemeKey)){
+                
                 localStorage.setItem(colorSchemeKey, "auto");
             }
         })();
@@ -37,28 +54,33 @@
     (function() {
         const colorSchemeKey = 'StackColorScheme';
         const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        
         const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+        
 
         if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
             
 
             document.documentElement.dataset.scheme = 'dark';
+            
         } else {
             document.documentElement.dataset.scheme = 'light';
+            
         }
     })();
 </script>
 
-        <nav id="navbar" class="navbar--fixed-top">
+
+    <nav id="navbar" class="navbar--fixed-top">
     <div class="container">
         <a href="/" class="navbar-brand">
             <img src="/page/nav-img/." alt="Logo" class="logo"> 
         </a>
         <ul class="navbar-nav">
-
+            
             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="/page/about/" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="/page/test/" class="nav-link">测试页面</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link" target="_blank">About</a></li>
+            <li class="nav-item"><a href="/page/daily_info/" class="nav-link" target="_blank">走走停停</a></li>
         </ul>
     </div>
 </nav>
@@ -90,9 +112,11 @@
         });
     });
 </script>
- 
 
-        <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky compact">
+    
+
+    <div class="container main-container flex on-phone--column extended">
+        <aside class="sidebar left-sidebar sticky compact">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -434,7 +458,11 @@
 
 
 
-            <main class="main full-width">
+        
+
+
+
+        <main class="main full-width">
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
@@ -916,6 +944,8 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
                 
             
                 
+            
+                
              
              
           
@@ -1037,9 +1067,12 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
                 href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
             >
 
-            </main>
-        </div>
-        <script 
+            
+        </main>
+        
+    </div>
+
+    <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
@@ -1077,5 +1110,118 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
     });
 </script>
 
-    </body>
+    
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 PoolBee的博客
+    </section>
+    
+    
+    <a href="https://github.com/PoolBee/PoolBee.github.io" target="_blank">
+        <img src="https://ghchart.rshah.org/poolbee" />
+    </a>
+    
+
+    <section class="powerby">
+         <br />
+        
+    </section>
+
+
+    <section class="count_info">
+    
+        <div>
+            在漫长的
+            <span id="ds" class="running-days"></span>
+            天
+            <span id="hs" class="running-days"></span>
+            小时
+            <span id="ms" class="running-days"></span>
+            分钟中
+        </div>
+
+    
+        <div>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+             
+             
+          
+            
+       
+            · 写下 6 篇文章、总计 1.81 k 字
+        </div> 
+
+    
+        <div>
+            <span id="busuanzi_container_site_pv">· 迎接<span id="busuanzi_value_site_pv"></span>次不期而遇。</span>
+        </div>
+        
+    </section>
+    
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        let s1 = '2023-6-09'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+        
+    </script>
+    
+</footer>
+<style>
+     
+.site-footer {
+    text-align: center;
+}
+</style>
+</body>
 </html>
