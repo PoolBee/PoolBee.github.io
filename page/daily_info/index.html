@@ -21,7 +21,7 @@
 <link rel="stylesheet" href="/scss/partials/navbar.scss">
 
 
-<link rel="stylesheet" href="/scss/style.min.57a5a55ee12704ef8c6be288551a77b21ae4a0657989bb9fcca4c2463b36573c.css"><meta property='og:title' content="走走停停">
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="走走停停">
 <meta property='og:description' content="">
 <meta property='og:url' content='http://localhost:1313/page/daily_info/'>
 <meta property='og:site_name' content='PoolBee的博客'>
@@ -71,12 +71,12 @@
     <nav id="navbar" class="navbar--fixed-top">
     <div class="container">
         <a href="/" class="navbar-brand">
-            <img src="/page/nav-img/." alt="Logo" class="logo"> 
+            
         </a>
         <ul class="navbar-nav">
             
             <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="/page/about/" class="nav-link" target="_blank">About</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link" target="_blank">关于我</a></li>
             <li class="nav-item"><a href="/page/daily_info/" class="nav-link" target="_blank">走走停停</a></li>
         </ul>
     </div>
@@ -416,52 +416,49 @@
         }
 
          
-        #controls {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-        }
+         
 
          
-        button {
+        #controls {
             margin: 5px;
             padding: 10px;
             font-size: 16px;
             background-color: transparent;  
             border: none;
-            border-radius: 5px;
-            color: #5d513c;  
-            cursor: pointer;
+
+             
+             
             position: fixed;  
             right: 20px;  
             bottom: 20px;  
             z-index: 1000;  
-            overflow: hidden;  
+             
+        
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: rgba(93,80,60,0.3);
+            border: none;
+            border-radius: 5px;
+            color: #5d513c;
+            cursor: pointer;
+            
         }
 
+         
         button::before,
         button::after {
             content: '';
             position: absolute;
             width: 30px;  
             height: 30px;  
-            background-color: rgba(254, 166, 92, 0.5);  
+            background-color: rgba(93,80,60,0.1);;  
             border-radius: 50%;  
         }
-
-        button::before {
-            top: 10px;  
-            left: 10px;  
-        }
-
-        button::after {
-            bottom: 10px;  
-            right: 10px;  
-        }
-
         button:hover {
-            background-color: rgba(254, 166, 92, 0.5);  
+            background-color: rgbargba(93,80,60,0.1);  
         }
 
 
@@ -634,8 +631,8 @@
 </head>
 <body>
     <div id="controls">
-        <button id="playBtn">1</button> 
-        <button id="resetBtn">2</button> 
+        <button id="playBtn">  </button> 
+        <button id="resetBtn">  </button> 
     </div>
     <div id="china"></div> 
 
@@ -644,37 +641,87 @@
             <div class="content">
                 <h2>北京市</h2>
                 <p class="date">2023年4月15日</p>
-                <img src="/page/timeline-img/timeline1.jpg" alt="北京故宫">
+                <img src="/page/timeline-img/timeline1.jpg" alt="北京">
             </div>
         </div>
         <div class="timeline-item right">
             <div class="content">
                 <h2>成都市</h2>
                 <p class="date">2023年5月3日</p>
-                <img src="/page/timeline-img/timeline1.jpg" alt="成都大熊猫基地">
+                <img src="/page/timeline-img/timeline2.jpg" alt="成都武侯区">
             </div>
         </div>
         <div class="timeline-item left">
             <div class="content">
                 <h2>武汉市</h2>
                 <p class="date">2023年6月20日</p>
-                <img src="/page/timeline-img/timeline1.jpg" alt="武汉长江大桥">
+                <img src="/page/timeline-img/timeline3.jpg" alt="武汉">
             </div>
         </div>
         <div class="timeline-item right">
             <div class="content">
                 <h2>乌鲁木齐市</h2>
                 <p class="date">2023年7月8日</p>
-                <img src="/page/timeline-img/timeline1.jpg" alt="乌鲁木齐天山">
+                <img src="/page/timeline-img/timeline4.jpg" alt="乌鲁木齐">
             </div>
         </div>
         <div class="timeline-item left">
             <div class="content">
                 <h2>承德市</h2>
                 <p class="date">2023年8月15日</p>
-                <img src="/page/timeline-img/timeline1.jpg" alt="承德市">
+                <img src="/page/timeline-img/timeline5.jpg" alt="承德市">
             </div>
         </div>
+        <div class="timeline-item right">
+            <div class="content">
+                <h2>太原市</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline6.jpg" alt="太原市">
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="content">
+                <h2>郑州市</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline7.jpg" alt="郑州市">
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="content">
+                <h2>贵阳市</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline9.jpg" alt="贵阳市">
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="content">
+                <h2>资阳市</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline10.jpg" alt="太原市">
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="content">
+                <h2>毕节市1</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline13.jpg" alt="毕节市1">
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="content">
+                <h2>唐山市</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline12.jpg" alt="唐山市">
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="content">
+                <h2>毕节市</h2>
+                <p class="date">2023年8月15日</p>
+                <img src="/page/timeline-img/timeline11.jpg" alt="毕节市">
+            </div>
+        </div>
+        
     </div>
 
     
@@ -894,7 +941,7 @@
         }
 
         
-        
+        reorderCities(['北京市', '太原市', '郑州市', '武汉市', '成都市', '贵阳市', '毕节市', '遵义市', '乌鲁木齐市', '承德市', '保定市', '邯郸市', '唐山市','资阳市']);
     </script>
 </body>
 </html>
