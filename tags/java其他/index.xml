@@ -134,7 +134,7 @@
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
         
         <guid>http://localhost:1313/post/java/</guid>
-        <description>&lt;img src="http://localhost:1313/post/archives-java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
+        <description>&lt;img src="http://localhost:1313/post/cover/archives-java.png" alt="Featured image of post 流操作和函数式编程" /&gt;&lt;h1 id=&#34;流操作&#34;&gt;流操作
 &lt;/h1&gt;&lt;p&gt;是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。&lt;/p&gt;
 &lt;p&gt;例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。&lt;/p&gt;
 &lt;p&gt;例如：能用max()和min()对流操作找到流中的最大元素。&lt;/p&gt;

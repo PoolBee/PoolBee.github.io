@@ -263,7 +263,7 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
         
         <guid>http://localhost:1313/post/opencv/</guid>
-        <description>&lt;img src="http://localhost:1313/post/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
+        <description>&lt;img src="http://localhost:1313/post/cover/tag-opencv.jpg" alt="Featured image of post OpenCV中对图像噪声处理的常用形态学操作" /&gt;&lt;p&gt;Typlog 的相册语法
 &lt;img src=&#34;http://localhost:1313/post/tag-opencv.jpg&#34;
 	
 	
@@ -321,7 +321,7 @@ iterations可选参数  腐蚀操作的迭代次数，默认值为1，后面两�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;waitKey()
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;destroyAllwindows()
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;```&lt;/span&gt;Python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;​```&lt;/span&gt;Python
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dst&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cv2&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;dilate(src,kernel,anchor,iterations,borderType,borderValue)\
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参数说明如下&lt;/p&gt;
 &lt;blockquote&gt;
