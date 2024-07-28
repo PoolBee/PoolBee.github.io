@@ -113,5 +113,7 @@
     <loc>http://localhost:1313/page/search/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/essay/</loc>
+  </url><url>
+    <loc>http://localhost:1313/page/blogroll/</loc>
   </url>
 </urlset>

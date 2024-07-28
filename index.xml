@@ -3293,6 +3293,25 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
         <guid>http://localhost:1313/page/search/</guid>
         <description></description>
         </item>
+        <item>
+        <title>友链</title>
+        <link>http://localhost:1313/page/blogroll/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/page/blogroll/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/default_img.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;暂时没有~~~&#34;
+	
+	
+&gt;
+&lt;code&gt;急急急&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
         
     </channel>
 </rss>

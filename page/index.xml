@@ -104,6 +104,25 @@
         <guid>http://localhost:1313/page/search/</guid>
         <description></description>
         </item>
+        <item>
+        <title>友链</title>
+        <link>http://localhost:1313/page/blogroll/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/page/blogroll/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;http://localhost:1313/qrcode.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;公众号二维码&#34;
+	
+	
+&gt;
+&lt;code&gt;链接&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
         
     </channel>
 </rss>
