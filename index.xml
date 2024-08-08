@@ -6,7 +6,1071 @@
         <description>Recent content on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 25 Jul 2024 23:50:28 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Aug 2024 20:01:49 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo主题-Docker学习-8月8日博客更新日志</title>
+        <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.08.08/</link>
+        <pubDate>Wed, 07 Aug 2024 20:01:49 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.08.08/</guid>
+        <description>&lt;img src="http://localhost:1313/post/cover/docker-cover.png" alt="Featured image of post Hugo主题-Docker学习-8月8日博客更新日志" /&gt;&lt;h1 id=&#34;一迁移至腾讯云&#34;&gt;一、迁移至腾讯云
+&lt;/h1&gt;&lt;p&gt;使用Linux，而CentOs7.6不支持Node.js18所以选择了Docker创建hugo。&lt;/p&gt;
+&lt;h1 id=&#34;docker&#34;&gt;Docker
+&lt;/h1&gt;&lt;h2 id=&#34;为什么出现&#34;&gt;为什么出现?
+&lt;/h2&gt;&lt;p&gt;一款产品:开发&amp;ndash;上线 两套环境！&lt;/p&gt;
+&lt;p&gt;应用环境,应用配置，开发即运维。&lt;/p&gt;
+&lt;p&gt;环境配置十分麻烦的。&lt;/p&gt;
+&lt;p&gt;（集群Redis、ES、Hadoop&amp;hellip;.），发布jar包或者war包，带上环境发布。&lt;/p&gt;
+&lt;p&gt;项目能不能带上环境安装打包？&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1og4y1q7M4/?p=2&amp;amp;spm_id_from=pageDriver&amp;amp;vd_source=7380129e81d052c5b32ce598508c71d5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;2、聊聊Docker为什么会出现_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;配置麻烦，不能够跨平台。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;传统观念&lt;/strong&gt;：开发jar，运维来做！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;现在&lt;/strong&gt;：开发打包部署上线，一套流程做完。&lt;/p&gt;
+&lt;p&gt;Docker给以上问题，提出解决方案。&lt;/p&gt;
+&lt;p&gt;类比：Java-apk-发布应用商店-使用apk即可&lt;/p&gt;
+&lt;p&gt;java-jar-打包代环境&lt;/p&gt;
+&lt;p&gt;Docker思想——容器想象为集装箱——隔离机制。&lt;/p&gt;
+&lt;h2 id=&#34;docker的历史&#34;&gt;Docker的历史
+&lt;/h2&gt;&lt;p&gt;2010年-美国成立的公司dotCloud做一些pass的云计算服务！lxc有关的容器技术！&lt;/p&gt;
+&lt;p&gt;他们将自己的技术（容器化技术）命名为Docker！但是没有引起行业注意！docCloud，就活不下去了。那么&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;就选择开源代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2013年开源！Docker越来越多人发现了docker的优点！火了，Docker每个月都会更新一个版本！&lt;/p&gt;
+&lt;p&gt;2014年4月9日，Docker1.0发布！&lt;/p&gt;
+&lt;p&gt;为什么这么火！轻巧！&lt;/p&gt;
+&lt;p&gt;容器技术出来之前，我们都是使用的虚拟机技术！19G&lt;/p&gt;
+&lt;p&gt;虚拟机：Vmware虚拟机多台一台电脑，但笨重！&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VM：linux centos原生镜像（一个电脑！）
+而docker：隔离，镜像用最核心的环境4m+jdk+mysql 十分的小巧，运行镜像就好了！小巧！几个M几个kb 秒级启动！
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;聊聊Docker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Docker是基于Go语言开发的！开源项目！&lt;/p&gt;
+&lt;h1 id=&#34;基于官方文档学习&#34;&gt;&lt;strong&gt;基于官方文档学习&lt;/strong&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.docker.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Docker: Accelerated Container Application Development&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;容器化技术：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不是模拟一个完整的操作系统&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;直接用在操作系统上，充分利用操作系统的资源。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不同&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;传统虚拟机，虚拟一个硬件，运行一个完整的操作系统他，在系统上安装和运行软件。&lt;/li&gt;
+&lt;li&gt;容器内的引用hi直接运行在宿主机的上的，容器是没有自己的内容的，也没有虚拟硬件。&lt;/li&gt;
+&lt;li&gt;容器相互隔离，容器都有一个数以自己的文件系统，不糊影响。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;更快速的交付和部署&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;传统：一堆帮助文档，安装程序&lt;/p&gt;
+&lt;p&gt;Docker：打包镜像发布测试，一键运行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更便捷的升级和扩缩容&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用了Docker之后，我们部署引用就和搭积木一样！&lt;/p&gt;
+&lt;p&gt;项目打包为一个镜像，扩展——服务器A！服务器B！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更简单的系统运维&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;容器化之后，我们开发，测试环境都是高度一致的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更高效的计算资源利用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Docker是内核级别的虚拟化，可以在一个物理机上运行很多的容器实例！服务器的性能能被压榨到极致。&lt;/p&gt;
+&lt;h2 id=&#34;docker-run了之后发生了什么&#34;&gt;docker run了之后发生了什么？
+&lt;/h2&gt;&lt;p&gt;Docker在本机上寻找镜像——判断本机是否有这个镜像——yes——使用运行这个镜像&lt;/p&gt;
+&lt;p&gt;——no——Docker上取下载——DockerHub是否可以找到——yes——下载到这个镜像到本地&lt;/p&gt;
+&lt;p&gt;no——找不到返回错误&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240803161442427.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240803161442427&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;底层原理&#34;&gt;底层原理
+&lt;/h3&gt;&lt;p&gt;Docker是怎么工作的？&lt;/p&gt;
+&lt;p&gt;Docker 是一个Client-Server结构的系统，Docker的守护进程运行在主机上，通过Socket客户端访问。&lt;/p&gt;
+&lt;p&gt;DockerServer接收到Docker-Client的指令，就会执行这个命令。&lt;/p&gt;
+&lt;p&gt;客户端命令-守护进程-产生Dokcer&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240803162038740.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240803162038740&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;docker为什么比虚拟机快&#34;&gt;Docker为什么比虚拟机快？
+&lt;/h3&gt;&lt;p&gt;1.Docker有着比虚拟机更少的抽象层&lt;/p&gt;
+&lt;p&gt;虚拟机变为了容器，直接在Docker Engine上跑&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240803162357102.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240803162357102&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2.docker利用的是宿主机的内核，vm需要是Guest OS&lt;/p&gt;
+&lt;p&gt;所以新建容器的时候，docker不需要像虚拟机一样重新加载一个操作系统的内核，避免引导。虚拟机是加载Guest OS，分钟级别的，而docker是利用宿主机的操作系统，省略了这个过程，秒级。&lt;/p&gt;
+&lt;p&gt;NS隔离（容器隔离）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240803162713596.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240803162713596&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Linux现在都支持了。&lt;/p&gt;
+&lt;h1 id=&#34;docker常用命令&#34;&gt;Docker常用命令
+&lt;/h1&gt;&lt;h2 id=&#34;镜像命令&#34;&gt;镜像命令
+&lt;/h2&gt;&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令:
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker version
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker info &lt;span style=&#34;color:#75715e&#34;&gt;#显示系信息，包括镜像，容器数量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker --help &lt;span style=&#34;color:#75715e&#34;&gt;#万能所有命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;帮助文档下载地址：&lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/reference/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Reference documentation | Docker Docs&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;镜像帮助命令&#34;&gt;镜像帮助命令
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images --help
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY     TAG          IMAGE ID       CREATED         SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;klakegg/hugo   latest-ext   b34dd4f95ea2   &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt; months ago   1.02GB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello-world    latest       d2c94e258dcb   &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; months ago   13.3kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#解释&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY 镜像仓库源
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;TAG 镜像的标签
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;IMAGE ID 镜像的ID
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CREATED 镜像的创建时间
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SIZE 镜像的大小
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#可选项&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-a,--all		&lt;span style=&#34;color:#75715e&#34;&gt;#列出所有镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-q	--quite			&lt;span style=&#34;color:#75715e&#34;&gt;#只显示ID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;下载Mysql&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker search mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#可选项，通过收藏过滤&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--filter&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;stars&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;3000			&lt;span style=&#34;color:#75715e&#34;&gt;#搜索出来的stars大于3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#下载镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull --help
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull mysql&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;:tag&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#默认下载latest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#下载的时候：分层下载，docker image的核心 联合文件系统&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240803232450018.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240803232450018&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull mysql:5.7
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#下载5.7版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240803232644460.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240803232644460&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这就是linux的联合文件系统。&lt;/p&gt;
+&lt;h3 id=&#34;删除查看镜像命令&#34;&gt;删除、查看镜像命令
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#删除某镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rmi -f 镜像images的id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#递归id批量删除-删除全部的镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rmi -f &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;docker images -aq&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#docker images查看所有镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;容器命令&#34;&gt;容器命令
+&lt;/h1&gt;&lt;p&gt;说明：有了镜像才能创建容器。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#下载一个centos基本镜像系统
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker pull centos
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#run命令的帮助
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run --help
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;新建容器并启动查看&#34;&gt;新建容器并启动、查看
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#参数
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--name=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Name&amp;#34;&lt;/span&gt;	#容器名字 tomcat01 tomcat02 用来区分容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-d		#后台
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-it 	#交互运行 进入容器查看内容
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p		#指定容器端口 -p 8080:8080
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p ip:主机端口:容器端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p 主机端口:容器端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p 容器端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;容器端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p 		随机指定端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images	#显示所有镜像
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#测试，启动并进入容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it centos /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;linux的控制台一般在/bin下
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#exit退出，从容器退回主机
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#列出所有正在运行的容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-a		#列出正在运行、历史运行过的容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-n=?	#显示最近的?个容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-q		#只显示容器的编号
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#删除镜像
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm mysql 7ce93a845a8a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;退出容器&#34;&gt;退出容器
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#退出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exit
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ctrlpq-退出容器不停止&#34;&gt;ctrl+p+q #退出容器不停止
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804001324303.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804001324303&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;此时就是没有停止，可以看到ps后查看所有正在运行的镜像，centos还在运行而没有停止。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804001412508.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804001412508&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;删除容器&#34;&gt;删除容器
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm 容器 容器的id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm -f $(docker ps -aq)#删除所有容器
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps -a -qixargs docker rm #删除所有容器
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;启动和停止容器&#34;&gt;启动和停止容器
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker start 容器id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker restart 容器id	#重启
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker stop	容器id		#停止
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker kill 容器id		#强制停止当前命令
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;停止&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804001529501.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804001529501&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;常用的其他命令&#34;&gt;常用的其他命令
+&lt;/h1&gt;&lt;h2 id=&#34;后台运行&#34;&gt;后台运行
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#docker run -d 镜像名
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d centos
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;#后台运行必须要有前台服务，没有服务就会自杀——易错
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps 		#查看后发现centos停止了
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804001638797.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804001638797&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;没有前台服务，exit后后台centos自动停止&lt;/p&gt;
+&lt;h2 id=&#34;查看日志&#34;&gt;查看日志
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker logs --help
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker losgs -f -t --tail 容器id			&lt;span style=&#34;color:#75715e&#34;&gt;#查看所有日志和时间戳&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it centos /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ctrl+p+q		&lt;span style=&#34;color:#75715e&#34;&gt;#退出容器不停止&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker logs -f -t tail &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; 容器id  	&lt;span style=&#34;color:#75715e&#34;&gt;#最近10条日志&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;发现什么日志也没有，那么&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;-tf 显示时间戳和log&lt;/p&gt;
+&lt;p&gt;&amp;ndash;tail number #显示日志的条数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;查看容器容器的信息源数据&#34;&gt;查看容器（容器的信息、源数据）
+&lt;/h3&gt;&lt;h3 id=&#34;inspecttop命令&#34;&gt;inspect、top命令
+&lt;/h3&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#命令
+docker ps 
+
+docker top 容器id	#
+UID用户id PID是进程id
+
+#!!!!!查看镜像源数据——显示容器的所有信息
+发现
+docker inspect --help
+
+查看具体的操作
+docker inspect 容器id 	#查看容器的源数据
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;进入容器当前正在运行的&#34;&gt;进入容器（当前正在运行的）
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#通常容器都是后台运行的，需要进行容器，修改一些配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#-it：交互模式运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker exec -it 容器id bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#2方式attach&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker attach -it 容器id &lt;span style=&#34;color:#75715e&#34;&gt;#是进入正在运行的命令行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker rm -f &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;docker ps -aq&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;		&lt;span style=&#34;color:#75715e&#34;&gt;#删除所有&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker exec	&lt;span style=&#34;color:#75715e&#34;&gt;#进入容器后开启一个新的终端，可以在里面操作（常用）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker attach	&lt;span style=&#34;color:#75715e&#34;&gt;#进入当前容器正在运行的终端，不会启动新的进程！&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it centos /bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;如何将容器文件拷主机&#34;&gt;如何将容器文件拷主机
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /home 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch kaugnsheng.java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker attach 容器id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /home	 &lt;span style=&#34;color:#75715e&#34;&gt;#此时在容器内&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch test.java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exit		&lt;span style=&#34;color:#75715e&#34;&gt;#虽然容器停止了，但是数据还在&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps -a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docer cp 容器id:/home/test.java /home		&lt;span style=&#34;color:#75715e&#34;&gt;#从容器拷贝到主机&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804003139883.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804003139883&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804003327965.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804003327965&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二用docker安装nginx&#34;&gt;二、用docker安装nginx
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hub.docker.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Docker Hub Container Image Library | App Containerization&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;dockerhub&#34;&gt;Dockerhub
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#1搜索镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#2下载镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker pull nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;开放3344端口开放，公网的3344可以访问nginx01的80端口
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d --name nginx01 -p 3344:80 nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#-d 后台&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#--name 给容器命名&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#-p 宿主机:容器内端口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker run -d --name nginx01 -p 3344:80 nginx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;15d98bf175044e55e9e5743165cf1fb1256c67c015ea6b0326dd27320b1b018a
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker ps&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;15d98bf17504   nginx                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/docker-entrypoint.…&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt; seconds ago   Up &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; seconds   0.0.0.0:3344-&amp;gt;80/tcp, :::3344-&amp;gt;80/tcp       nginx01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;39fd379b5760   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt; minutes ago   Up &lt;span style=&#34;color:#ae81ff&#34;&gt;18&lt;/span&gt; minutes                                               intelligent_lovelace
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;726ca2e767ff   klakegg/hugo:latest-ext   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo server&amp;#34;&lt;/span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; hours ago     Up &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; hours     0.0.0.0:1313-&amp;gt;1313/tcp, :::1313-&amp;gt;1313/tcp   affectionate_golick
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#本机自测通过了——在宿主机上开启3344端口，相当于映射到了docker上的nginx的80端口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# curl localhost:3344&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;html&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;head&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;title&amp;gt;Welcome to nginx!&amp;lt;/title&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;style&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;html &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt; color-scheme: light dark; &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;body &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt; width: 35em; margin: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; auto;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;font-family: Tahoma, Verdana, Arial, sans-serif; &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/style&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/head&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;body&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;h1&amp;gt;Welcome to nginx!&amp;lt;/h1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;p&amp;gt;If you see this page, the nginx web server is successfully installed and
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;working. Further configuration is required.&amp;lt;/p&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;p&amp;gt;For online documentation and support please refer to
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;a href&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://nginx.org/&amp;#34;&lt;/span&gt;&amp;gt;nginx.org&amp;lt;/a&amp;gt;.&amp;lt;br/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Commercial support is available at
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;a href&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://nginx.com/&amp;#34;&lt;/span&gt;&amp;gt;nginx.com&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;p&amp;gt;&amp;lt;em&amp;gt;Thank you &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; using nginx.&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/body&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/html&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804004455200.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804004455200&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现在在阿里云里就能localhost:3344访问到docker的nginx的80端口了&lt;/p&gt;
+&lt;p&gt;进入容器操作&lt;/p&gt;
+&lt;p&gt;docker exec -it nginx01 /bin/bash&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804004827648.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804004827648&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果阿里云防火墙安全组开了3344端口，那么外网是可以从：外网ip:3344可以访问到界面的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;可视化面板&#34;&gt;可视化面板
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;portainer（先用这个）&lt;/li&gt;
+&lt;li&gt;rancher（ci/cd）再用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;图形化界面管理工具,提供一个后台面板供我们操作。&lt;/p&gt;
+&lt;p&gt;外网8088端口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d -p 8088:9000&lt;span style=&#34;color:#ae81ff&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;--restart&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;always -v /var/run/docker.sock:/var/run/docker.sock --privileged&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;true portainer/portainer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装后外网的8088端口、设置阿里云安全组，然后即可访问ui界面，看得到多少个镜像、容器在运行和端口映射关系。&lt;/p&gt;
+&lt;p&gt;或者在curl localhost:8088然后在服务器中访问也可以。&lt;/p&gt;
+&lt;p&gt;可视化面板。&lt;/p&gt;
+&lt;p&gt;所有的应用，直接打包部署。&lt;/p&gt;
+&lt;h2 id=&#34;镜像得到的方式&#34;&gt;镜像得到的方式：
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;远程仓库下载&lt;/li&gt;
+&lt;li&gt;朋友拷贝给你&lt;/li&gt;
+&lt;li&gt;自己制作镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;三理解分层管理&#34;&gt;三、理解分层管理
+&lt;/h1&gt;&lt;h2 id=&#34;联合文件系统unionfs&#34;&gt;联合文件系统UnionFS
+&lt;/h2&gt;&lt;p&gt;支持对文件系统的修改作为一次提交来一层层叠加。&lt;/p&gt;
+&lt;p&gt;tomcat和mysql都要用到某个linux内核，那么就只会新增。&lt;/p&gt;
+&lt;p&gt;层的概念，image+images&lt;/p&gt;
+&lt;p&gt;docker的镜像实际上是由一层层的文件系统组成的，这种层级的文件系统UnionFS&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;黑屏&amp;mdash;开机的过程中没有了，那么这段时间都是公用的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**bootfs(boot file system)**相当于省去了这段时间，更快。而且精简的内核OS，例如centos很小。&lt;/p&gt;
+&lt;h2 id=&#34;分层&#34;&gt;分层
+&lt;/h2&gt;&lt;p&gt;docker pull redis&lt;/p&gt;
+&lt;p&gt;这一层已经存在了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804012426580.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804012426580&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker image inspect redis:laest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;查看里面layers&#34;&gt;查看里面layers
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804012513441.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804012513441&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在layer记录&lt;/p&gt;
+&lt;p&gt;打包的时候会有6个文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804012617221.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804012617221&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;文件能实现替换，也能文件复用。&lt;/p&gt;
+&lt;p&gt;redis的联合文件系统的表示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804012800417.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804012800417&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在layer中也是6个&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804012843459.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804012843459&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;所以docker是分层下载的。&lt;/p&gt;
+&lt;h1 id=&#34;特点&#34;&gt;特点
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804012936913.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804012936913&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;run起来的东西可以修改，而镜像是无法修改的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240804013113830.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240804013113830&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;四如何提交自己的镜像&#34;&gt;四、如何提交自己的镜像
+&lt;/h1&gt;&lt;h2 id=&#34;commit&#34;&gt;commit
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker commit 提交容器成为一个新的副本
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#命令和git原理类似&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;提交描述的消息&amp;#34;&lt;/span&gt; -a&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;作者&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;举例&#34;&gt;举例：
+&lt;/h2&gt;&lt;p&gt;将tomcat的docker的webapps的内文件拷贝打牌webapps中，制作一个webapps中有文件的镜像&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805153529893.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805153529893&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker images
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it -p 8080:8080 tomcat		&lt;span style=&#34;color:#75715e&#34;&gt;#启动docker-tomcat&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805153051556.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805153051556&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#1.启动了tomcat的前台&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker ps 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker exec -it 容器id /bin/bash			&lt;span style=&#34;color:#75715e&#34;&gt;#进入了tomcat控制台&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805153151667.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805153151667&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd webapps
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd..
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -r webapps.dist/* webapps
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805153228619.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805153228619&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805153352187.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805153352187&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;发布镜像&#34;&gt;发布镜像
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root@7803ab322d1d:/usr/local/tomcat/webapps# ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docs  examples  host-manager  manager  ROOT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;root@7803ab322d1d:/usr/local/tomcat/webapps# exit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;exit
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker ps&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS          PORTS                                                 NAMES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;7803ab322d1d   tomcat                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;catalina.sh run&amp;#34;&lt;/span&gt;        &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; minutes ago   Up &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; minutes   8080/tcp, 0.0.0.0:8081-&amp;gt;8081/tcp, :::8081-&amp;gt;8081/tcp   cranky_payne
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;15d98bf17504   nginx                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/docker-entrypoint.…&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours ago     Up &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours     0.0.0.0:3344-&amp;gt;80/tcp, :::3344-&amp;gt;80/tcp                 nginx01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;39fd379b5760   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours ago     Up &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours                                                           intelligent_lovelace
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;726ca2e767ff   klakegg/hugo:latest-ext   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo server&amp;#34;&lt;/span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago       Up &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days       0.0.0.0:1313-&amp;gt;1313/tcp, :::1313-&amp;gt;1313/tcp             affectionate_golick
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#4.将我们操作过的容器通过commit提交为一个新的镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker commit -a=&amp;#34;kuangsheng&amp;#34; -m=&amp;#34;add webapps applalala&amp;#34; 7803ab322d1d tomcat02:1.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sha256:73725f496f3b9c35005b2089ec45f577ed62958d9bf00ca0c3b91455bc683e34
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY     TAG          IMAGE ID       CREATED          SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat02       1.0          73725f496f3b   &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt; seconds ago   466MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat         latest       2a60d35653ea   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; days ago      461MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx          latest       a72860cb95fd   &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; weeks ago      188MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;klakegg/hugo   latest-ext   b34dd4f95ea2   &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt; months ago    1.02GB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello-world    latest       d2c94e258dcb   &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; months ago    13.3kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;centos         latest       5d0da3dc9764   &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; years ago      231MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805153835686.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805153835686&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805154014112.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805154014112&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;类比学习：VM的快照。&lt;/p&gt;
+&lt;h1 id=&#34;容器数据卷&#34;&gt;容器数据卷
+&lt;/h1&gt;&lt;h2 id=&#34;什么是容器数据卷&#34;&gt;什么是容器数据卷？
+&lt;/h2&gt;&lt;p&gt;docker的理念回顾，应用和环境打包为一个镜像！&lt;/p&gt;
+&lt;p&gt;数据？如果数据在容器中，那么将容器删除，数据就会丢失！&lt;strong&gt;需求：数据可以持久化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MySQL，容器删了，删除跑路！&lt;strong&gt;需求：MySQL数据可以存储在本地&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;卷技术就是这样！&lt;/p&gt;
+&lt;p&gt;目录的挂在，将容器内的目录挂载到Linux上面！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805154732926.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805154732926&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;总结容器的持久化和同步操作容器间也是可以数据共享的&#34;&gt;总结：容器的持久化和同步操作容器间也是可以数据共享的！
+&lt;/h3&gt;&lt;h2 id=&#34;使用数据卷&#34;&gt;使用数据卷
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;方法一、直接使用命令来挂载 -v&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -it -v 主机目录:容器目录
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#测试&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker run -it -v /home/ceshi:/home centos /bin/bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#可以看到宿主机有了/ceshi目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd home&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-bash: cd: home: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd /home&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ceshi  git  git_1  kaungsheng.java  lighthouse  PoolBee  www
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#centos的容器的/home目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd /homge&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-bash: cd: /homge: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd /home&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git  git_1  kaungsheng.java  lighthouse  PoolBee  www
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker run -it -v /home/ceshi:/home centos /bin/bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c /&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd /home&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#以后外部放的文件以后就会和docker的cenos的/home目录同步&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#查看centos的容器的信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker inspect 783df7f8b77c&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#Mount中&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mounts&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bind&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Source&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home/ceshi&amp;#34;&lt;/span&gt;,#主机内地址
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Destination&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/home&amp;#34;&lt;/span&gt;,#docker容器内地址
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mode&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;RW&amp;#34;&lt;/span&gt;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Propagation&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;rprivate&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#测试&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#可以看到主机中是空的&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd ceshi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ceshi&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ceshi&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#在容器中创建test.java&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# touch test.java&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#后续在主机中查看到传过来了！&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ceshi&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ceshi&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test.java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ceshi&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;同步的过程
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805160033812.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805160033812&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805155608500.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805155608500&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;如果容器停止但是在linux的文件夹更改还是会同步到容器内绑定的文件夹&#34;&gt;如果容器停止，但是在Linux的文件夹更改，还是会同步到容器内绑定的文件夹！
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#如果容器停止，但是在Linux的文件夹更改，还是会同步到容器内绑定的文件夹！&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#1.让容器停止&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker ps&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONTAINER ID   IMAGE                     COMMAND                  CREATED        STATUS        PORTS                                       NAMES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;15d98bf17504   nginx                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/docker-entrypoint.…&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours ago   Up &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours   0.0.0.0:3344-&amp;gt;80/tcp, :::3344-&amp;gt;80/tcp       nginx01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;39fd379b5760   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago   Up &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours                                               intelligent_lovelace
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;726ca2e767ff   klakegg/hugo:latest-ext   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo server&amp;#34;&lt;/span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago     Up &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days     0.0.0.0:1313-&amp;gt;1313/tcp, :::1313-&amp;gt;1313/tcp   affectionate_golick
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# stop 39fd379b5760&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash: stop: command not found...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Similar command is: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker stop 39fd379b5760&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;39fd379b5760
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker ps&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONTAINER ID   IMAGE                     COMMAND                  CREATED        STATUS        PORTS                                       NAMES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;15d98bf17504   nginx                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/docker-entrypoint.…&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours ago   Up &lt;span style=&#34;color:#ae81ff&#34;&gt;39&lt;/span&gt; hours   0.0.0.0:3344-&amp;gt;80/tcp, :::3344-&amp;gt;80/tcp       nginx01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;726ca2e767ff   klakegg/hugo:latest-ext   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo server&amp;#34;&lt;/span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago     Up &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days     0.0.0.0:1313-&amp;gt;1313/tcp, :::1313-&amp;gt;1313/tcp   affectionate_golick
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#修改宿主机中的文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#启动容器进行查看&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker ps -a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS                        PORTS                                       NAMES
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;09b5fac024a8   5d0da3dc9764              &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; minutes ago    Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; minutes ago                                                  objective_noyce
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;783df7f8b77c   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt; minutes ago   Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; minutes ago                                                 affectionate_shaw
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;7803ab322d1d   tomcat                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;catalina.sh run&amp;#34;&lt;/span&gt;        &lt;span style=&#34;color:#ae81ff&#34;&gt;46&lt;/span&gt; minutes ago   Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;130&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; minutes ago                                               cranky_payne
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;15d98bf17504   nginx                     &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/docker-entrypoint.…&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Up &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours                   0.0.0.0:3344-&amp;gt;80/tcp, :::3344-&amp;gt;80/tcp       nginx01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;a17f2df4b0c2   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;127&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                 eloquent_northcutt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;223a694af194   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                   magical_volhard
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;39fd379b5760   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;127&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; minutes ago                                                intelligent_lovelace
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;28e3e9b4ecdf   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                   unruffled_sinoussi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f75f0b03f939   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                   vigilant_euclid
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;aa158bb7f0e1   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                   elated_robinson
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;d6dfa990d314   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;127&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                 nervous_montalcini
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;9101ac141b0f   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;127&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                 competent_mcnulty
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;02cd07c4283d   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/basj&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Created                                                                   upbeat_driscoll
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;9b872200a3b3   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/bash&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago                                                   stoic_kepler
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;8512fca58a26   centos                    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/basj&amp;#34;&lt;/span&gt;              &lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt; hours ago     Created                                                                   hungry_sutherland
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;7fd5a54afd95   hello-world               &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/hello&amp;#34;&lt;/span&gt;                 &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago       Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;0&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago                                                     cool_turing
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;726ca2e767ff   klakegg/hugo:latest-ext   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo server&amp;#34;&lt;/span&gt;            &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago       Up &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days                     0.0.0.0:1313-&amp;gt;1313/tcp, :::1313-&amp;gt;1313/tcp   affectionate_golick
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;59e514225874   klakegg/hugo:latest-ext   &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo&amp;#34;&lt;/span&gt;                   &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago       Exited &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;255&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; days ago                                                   confident_bassi
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker start 783df7f8b77c&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;783df7f8b77c
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker attach 783df7f8b77c&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c /&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cd /home&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ls&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;test.java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cat test/java&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat: test/java: No such file or directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cat test.java&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello linux update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@783df7f8b77c home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#可以看到成功了！&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;好处：以后在本地修改，容器中会自动同步。&lt;/p&gt;
+&lt;h2 id=&#34;实战安装mysql&#34;&gt;实战：安装MySQL
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;思考：MySQL的数据持久化问题！&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#下载mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#docker search mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#进官网看版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#docker pull mysql:5.7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker pull mysql:5.7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;5.7: Pulling from library/mysql
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;20e4dcae4c69: Downloading &lt;span style=&#34;color:#f92672&#34;&gt;[=============&lt;/span&gt;&amp;gt;                                     &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;  13.71MB/50.5MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;1c56c3d4ce74: Download complete 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;e9f03a1c24ce: Download complete 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;68c3898c2015: Download complete 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;6b95a940e7b6: Download complete 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;90986bb8de6e: Download complete 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ae71319cb779: Waiting 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffc89e9dfd88: Download complete 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;43d05e938198: Waiting 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;064b2d298fba: Waiting 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;df9a4d85569b: Waiting 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY     TAG          IMAGE ID       CREATED          SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat02       1.0          73725f496f3b   &lt;span style=&#34;color:#ae81ff&#34;&gt;49&lt;/span&gt; minutes ago   466MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat         latest       2a60d35653ea   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; days ago      461MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx          latest       a72860cb95fd   &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; weeks ago      188MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql          5.7          5107333e08a8   &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt; months ago     501MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;klakegg/hugo   latest-ext   b34dd4f95ea2   &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt; months ago    1.02GB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello-world    latest       d2c94e258dcb   &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; months ago    13.3kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;centos         latest       5d0da3dc9764   &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; years ago      231MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#运行容器进行数据挂载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#安装启动mysql，要配置【用户密码】&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#去docker hub找mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY     TAG          IMAGE ID       CREATED          SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat02       1.0          73725f496f3b   &lt;span style=&#34;color:#ae81ff&#34;&gt;49&lt;/span&gt; minutes ago   466MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat         latest       2a60d35653ea   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; days ago      461MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx          latest       a72860cb95fd   &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; weeks ago      188MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql          5.7          5107333e08a8   &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt; months ago     501MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;klakegg/hugo   latest-ext   b34dd4f95ea2   &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt; months ago    1.02GB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello-world    latest       d2c94e258dcb   &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; months ago    13.3kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;centos         latest       5d0da3dc9764   &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; years ago      231MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;4d55165721b1195ccfb240b39dcf2f5cb9d8edd50095305d4197ae55391fbf5b
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#启动我们的mysql&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-d 后台运行
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-p 端口映射
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-v 卷挂载
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-e 环境配置
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--name 容器名字
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hub.docker.com/_/mysql&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;mysql - Official Image | Docker Hub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官网中&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;my-secret-pw -d mysql:tag
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;-e MYSQL_ROOT_PASSWORD=123456 &amp;ndash;name mysql01 mysql:5.7&lt;/p&gt;
+&lt;p&gt;-e 就是配置环境，那么这里就是设置密码&lt;/p&gt;
+&lt;h2 id=&#34;新建mysql连接&#34;&gt;新建Mysql连接
+&lt;/h2&gt;&lt;p&gt;阿里云安全组、本地防火墙、虚拟机防火墙。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805164131422.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805164131422&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;且要保证这个是有程序占用的！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#云服务器LinuxCentos上打开3306,命令行打开或图形化界面打开&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#腾讯云安全组设置，本机windows设置防火墙设置出站规则&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# firewall-cmd --permanent --add-port=3306/tcp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;success
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# firewall-cmd --reload&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;success
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos home&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;宝塔面板中可以看到状态，而腾讯云的看不到&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805173115153.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805173115153&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;重启服务器，然后在宝塔中查看状态为未使用。&lt;/p&gt;
+&lt;h5 id=&#34;已经下载了mysql57镜像然后又删除了原本的mysql01容器然后重新根据景象创建成功了&#34;&gt;已经下载了mysql5.7镜像，然后又删除了原本的mysql01容器，然后重新根据景象创建，成功了！
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker images&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;REPOSITORY     TAG          IMAGE ID       CREATED         SIZE
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat02       1.0          73725f496f3b   &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; hours ago     466MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tomcat         latest       2a60d35653ea   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt; days ago     461MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx          latest       a72860cb95fd   &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt; weeks ago     188MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql          5.7          5107333e08a8   &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt; months ago    501MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;klakegg/hugo   latest-ext   b34dd4f95ea2   &lt;span style=&#34;color:#ae81ff&#34;&gt;14&lt;/span&gt; months ago   1.02GB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hello-world    latest       d2c94e258dcb   &lt;span style=&#34;color:#ae81ff&#34;&gt;15&lt;/span&gt; months ago   13.3kB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;centos         latest       5d0da3dc9764   &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; years ago     231MB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker: Error response from daemon: Conflict. The container name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/mysql01&amp;#34;&lt;/span&gt; is already in use by container &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;4d55165721b1195ccfb240b39dcf2f5cb9d8edd50095305d4197ae55391fbf5b&amp;#34;&lt;/span&gt;. You have to remove &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;or rename&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; that container to be able to reuse that name.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;See &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;docker run --help&amp;#39;&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# stop mysql01&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash: stop: command not found...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Similar command is: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker stop mysql01&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker rm mysql01&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mysql01
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#两个容器数据卷进行挂载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#1.宿主机/home/mysql/conf---&amp;gt;docker的/etc/mysql/conf.d    mysql的配置文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#2.宿主机/home/mysql/data---&amp;gt;docker的/var/lib/mysql 	mysql的数据文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f669f7ef2710692ff207cd5b8889e77289d3631e5419e494ad056fd0e405f504
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;root@VM-12-5-centos ~&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#启动成功后本地是有sqlyog来测试&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#sqlyog--连接到服务器的3310--3310和容器中的3306映射，这个时候可以连接上了&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;具名和匿名挂载&#34;&gt;具名和匿名挂载
+&lt;/h2&gt;&lt;h3 id=&#34;匿名挂载&#34;&gt;匿名挂载
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-v 容器内路径
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d -p --name nginx01 -v /etc/nginx nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker  volume --help
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker volum ls	 		&lt;span style=&#34;color:#75715e&#34;&gt;#查看所有volum的镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;docker volume ls&lt;/p&gt;
+&lt;p&gt;这些都是匿名卷，每一个VOLUME NAME&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805180512950.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805180512950&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;只写了容器内的路径，没有写容器外的路径。&lt;/p&gt;
+&lt;h3 id=&#34;具名挂载&#34;&gt;具名挂载
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#具名挂载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#通过 -v 卷名:容器内路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d -P&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;随机映射端口&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; --name nginx02 -v juming-nginx:/etc/nginx nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#juming-nginx这个代表是-v的名字VOLUMN NAME而不是路径。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#看一下这个卷&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805180838927.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805180838927&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;image-20240805181104283postbeforeimage-20240805181104283png&#34;&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240805181104283.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240805181104283&#34;
+	
+	
+&gt;
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#是在/var/lib/docker/volumes/juming-nginx/_data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#	里面就是默认的具名挂载的位置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#/var/lib/docker/volumes	所有卷存储的位置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#/var/lib/docker		docker的所有的文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;如何确定是具名挂载还是匿名挂载还是指定路径挂载&#34;&gt;如何确定是具名挂载还是匿名挂载，还是指定路径挂载！
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-V容器内路径
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#匿名挂载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-V卷名：容器内路径
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#具名挂载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-V/宿主机路径：：容器内路径#指定路径挂载！
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;拓展-v-容器内路径ro--rw--改变读写权限&#34;&gt;拓展：-v 容器内路径:ro  rw  改变读写权限
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SHELL&#34; data-lang=&#34;SHELL&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#通过 -v 容器内路径:ro  rw  改变读写权限&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ro 	readonly	&lt;span style=&#34;color:#75715e&#34;&gt;#只读&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rw	readwrite	&lt;span style=&#34;color:#75715e&#34;&gt;#可读可写&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d -P&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;随机映射端口&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; --name nginx02 -v juming-nginx:/etc/nginx:ro nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;docker run -d -P&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;随机映射端口&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; --name nginx02 -v juming-nginx:/etc/nginx:rw nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#ro 只要看到ro说明路径只能通过宿主机来操作，容器内部是无法操作的。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Echart使用及常见问题</title>
         <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.26-2/</link>
         <pubDate>Thu, 25 Jul 2024 23:50:28 +0000</pubDate>

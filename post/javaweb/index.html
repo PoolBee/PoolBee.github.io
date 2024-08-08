@@ -1,0 +1,1593 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<meta name='description' content="狂神 JavaWeb-smbms-狂神: # smbms-狂神 https://blog.csdn.net/bell_love/article/details/105667638 引用这位仁兄博客中的源码修改而成，学习的原视频为B站狂神。 1、数据SQL为目录中的smbms.sql文件，直接运行即可。 2、连接MySQL数据的用户名密码都为：root ，可根据自己的本地的进行修改。 3、页面登录用户名和密码都为：admin。 (gitee.com) SSM JDK1.8 Mysql 5.7 maven 3.6.1 IDEA 1简介 MyBatis中文网 1.1什么是Mybatis MyBatis 是一款优秀的持久层框架 它支持自定义 SQL、存储过程以及高级映射。 MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。 ibatis包，基于java的持久层框架。 方便写sql 不用写jdbc set int不用result set也不用做了 POJO实体类 java代码操作数据库的东西 1.1如何获得mybatis maven获得 github获得 mybatis就是 maven仓库：Maven Repository: Search/Browse/Explore (mvnrepository.com) GITHUB仓库： &lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt; &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis&lt;/artifactId&gt; &lt;version&gt;3.5.2&lt;/version&gt; &lt;/dependency&gt; 1.2持久化 数据持久化 持久层就是将层序的数据在持久状态和瞬时状态转化的过程 内存：断电即失 数据库jdbc，io文件吃就话 生活冷藏，罐头 为什么需要持久化?">
+
+
+
+<title></title>
+
+
+<link rel='canonical' href='http://localhost:1313/post/javaweb/'>
+
+
+                                                          
+<link rel="stylesheet" href="/scss/partials/navbar.scss">
+
+
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="">
+<meta property='og:description' content="狂神 JavaWeb-smbms-狂神: # smbms-狂神 https://blog.csdn.net/bell_love/article/details/105667638 引用这位仁兄博客中的源码修改而成，学习的原视频为B站狂神。 1、数据SQL为目录中的smbms.sql文件，直接运行即可。 2、连接MySQL数据的用户名密码都为：root ，可根据自己的本地的进行修改。 3、页面登录用户名和密码都为：admin。 (gitee.com) SSM JDK1.8 Mysql 5.7 maven 3.6.1 IDEA 1简介 MyBatis中文网 1.1什么是Mybatis MyBatis 是一款优秀的持久层框架 它支持自定义 SQL、存储过程以及高级映射。 MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。 ibatis包，基于java的持久层框架。 方便写sql 不用写jdbc set int不用result set也不用做了 POJO实体类 java代码操作数据库的东西 1.1如何获得mybatis maven获得 github获得 mybatis就是 maven仓库：Maven Repository: Search/Browse/Explore (mvnrepository.com) GITHUB仓库： &lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt; &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis&lt;/artifactId&gt; &lt;version&gt;3.5.2&lt;/version&gt; &lt;/dependency&gt; 1.2持久化 数据持久化 持久层就是将层序的数据在持久状态和瞬时状态转化的过程 内存：断电即失 数据库jdbc，io文件吃就话 生活冷藏，罐头 为什么需要持久化?">
+<meta property='og:url' content='http://localhost:1313/post/javaweb/'>
+<meta property='og:site_name' content='PoolBee的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' />
+<meta name="twitter:site" content="@PoolBee">
+    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="">
+<meta name="twitter:description" content="狂神 JavaWeb-smbms-狂神: # smbms-狂神 https://blog.csdn.net/bell_love/article/details/105667638 引用这位仁兄博客中的源码修改而成，学习的原视频为B站狂神。 1、数据SQL为目录中的smbms.sql文件，直接运行即可。 2、连接MySQL数据的用户名密码都为：root ，可根据自己的本地的进行修改。 3、页面登录用户名和密码都为：admin。 (gitee.com) SSM JDK1.8 Mysql 5.7 maven 3.6.1 IDEA 1简介 MyBatis中文网 1.1什么是Mybatis MyBatis 是一款优秀的持久层框架 它支持自定义 SQL、存储过程以及高级映射。 MyBatis 免除了几乎所有的 JDBC 代码以及设置参数和获取结果集的工作。MyBatis 可以通过简单的 XML 或注解来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。 ibatis包，基于java的持久层框架。 方便写sql 不用写jdbc set int不用result set也不用做了 POJO实体类 java代码操作数据库的东西 1.1如何获得mybatis maven获得 github获得 mybatis就是 maven仓库：Maven Repository: Search/Browse/Explore (mvnrepository.com) GITHUB仓库： &lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt; &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis&lt;/artifactId&gt; &lt;version&gt;3.5.2&lt;/version&gt; &lt;/dependency&gt; 1.2持久化 数据持久化 持久层就是将层序的数据在持久状态和瞬时状态转化的过程 内存：断电即失 数据库jdbc，io文件吃就话 生活冷藏，罐头 为什么需要持久化?">
+  
+
+
+
+
+    
+</head>
+
+<body class="
+    article-page
+    ">
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+        
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+            
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+            
+        }
+    })();
+</script>
+
+
+    <nav id="navbar" class="navbar--fixed-top">
+    <div class="container">
+        <a href="/" class="navbar-brand">
+            
+        </a>
+        <ul class="navbar-nav">
+            
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link" >关于我</a></li>
+            <li class="nav-item"><a href="/page/daily_info/" class="nav-link" target="_blank">走走停停</a></li>
+            <li class="nav-item"><a href="/page/blogroll/" class="nav-link" target="_blank">友链</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    let lastScrollY = window.scrollY;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            
+            navbar.classList.add('navbar--hidden');
+        } else {
+            
+            navbar.classList.remove('navbar--hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === path) {
+                link.parentElement.classList.add('active'); 
+            }
+        });
+    });
+</script>
+
+    
+
+    <div class="container main-container flex on-phone--column extended">
+        <aside class="sidebar left-sidebar sticky compact">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hud111a09d55ebb32217e16308c85c65c5_4420_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌏</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">PoolBee的博客</a></h1>
+            <h2 class="site-description">热爱生活，忠于记录</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/28343232'
+                        target="_blank"
+                        title="Blibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M665.056 123.904a32 32 0 0 1 49.824 40.192l-36.8 45.632c114.48 4.32 166 19.904 198.784 66.512C908.032 320.528 912 363.6 912 539.168 912 861.952 891.152 880 512 880 136.64 880 112.448 862.32 112 548.768v-25.216c0.272-160.224 4.864-201.984 34.4-245.072 32.832-47.904 85.664-64.112 201.504-68.752l-36.8-45.632a32 32 0 1 1 49.808-40.192l68.064 84.4 23.2-0.256h4.368l2.224-0.016h6.976l2.496-0.016L506.992 208h52.832l37.104 0.352zM559.52 272h-91.104l-9.344 0.032h-6.464l-77.504 0.864c-113.52 2.784-156.8 13.888-175.92 41.76-18.784 27.424-22.928 67.008-23.168 209.872v29.568c0.32 163.072 6.368 202.768 34.928 227.488C243.12 809.424 304.064 816 512 816c207.936 0 268.88-6.56 301.056-34.416C842.464 756.128 848 714.784 848 539.184c0-156.736-3.824-198.176-23.472-226.112-19.28-27.408-62.928-37.952-179.248-40.24L559.52 272z m-20.656 324.208c15.312 27.168 27.456 37.504 34.88 37.76 4 0.144 10.096-4.064 16.688-12.88a91.904 91.904 0 0 0 10.08-17.312 24 24 0 0 1 44.384 18.24 132 132 0 0 1-16 27.776c-15.04 20.16-33.6 32.96-56.832 32.16-19.184-0.688-36.896-10.944-53.504-30.528l-0.896-1.088-0.112 0.144c-15.68 17.92-32.688 27.792-51.04 29.392l-3.264 0.192c-23.024 0.768-42.368-11.008-58.736-29.808a132.88 132.88 0 0 1-18.176-26.576 24 24 0 1 1 42.88-21.552 94.16 94.16 0 0 0 11.488 16.608c7.84 8.992 15.312 13.536 20.96 13.36 8.64-0.288 20.736-10.08 35.408-35.936a24 24 0 0 1 41.792 0.048z m31.072-173.408a36.112 36.112 0 0 1 42.72-23.088l140.288 34.64a29.472 29.472 0 0 1 20.592 38.8 36.8 36.8 0 0 1-43.36 22.992l-139.264-34.496a29.84 29.84 0 0 1-20.96-38.848z m-115.616-0.032a30.032 30.032 0 0 1-21.168 38.88L294.4 496.064a37.136 37.136 0 0 1-43.68-22.944 29.296 29.296 0 0 1 20.384-38.784l140.8-34.72a35.76 35.76 0 0 1 42.4 23.136z"  /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:Cr8462643@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M777.1136 164.8128H262.2976a151.1424 151.1424 0 0 0-150.9888 150.9376v393.5232A151.1424 151.1424 0 0 0 262.2976 860.16h514.816a151.1424 151.1424 0 0 0 150.9888-150.9888V315.7504a150.3232 150.3232 0 0 0-150.9888-150.9376zM262.2976 224.1536h514.816a90.0096 90.0096 0 0 1 77.4144 43.8784l-296.96 241.3056a60.2624 60.2624 0 0 1-76.1344 0l-296.96-241.3056a92.8768 92.8768 0 0 1 77.824-43.8784z m514.816 576.768H262.2976a90.5728 90.5728 0 0 1-90.3168-90.3168V337.92l272.2304 220.6208a122.2144 122.2144 0 0 0 76.1344 27.0848 119.6032 119.6032 0 0 0 76.1344-27.0848L868.7104 337.92v372.8896a92.5696 92.5696 0 0 1-91.5968 90.112z" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/PoolBee/PoolBee.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1721529668393" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5378" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path fill="currentColor" d="M822.514 74.129c10.466 0.815 19.898 5.47 26.913 13.047 9.015 9.737 12.574 21.584 13.722 36.348l0.088 1.208 0.096 1.514 0.055 1.015 0.049 1.02 0.021 0.512 0.054 1.547 0.027 1.04 0.028 1.577 0.01 1.063 0.003 1.073-0.009 1.63-0.015 1.102-0.022 1.115-0.029 1.128-0.036 1.143-0.043 1.158-0.078 1.767-0.06 1.198-0.106 1.832-0.12 1.875-0.138 1.92-0.208 2.633-0.115 1.35-0.122 1.375-0.197 2.106-0.213 2.164-0.31 2.977-0.251 2.307-0.268 2.371-0.383 3.27-0.412 3.395-0.442 3.528-0.595 4.607-0.64 4.836-0.547 4.041-2.52 18.408-0.813 6.102-0.572 4.412-0.495 3.963-0.291 2.423-0.422 3.713-0.253 2.397-0.222 2.265-0.142 1.556-0.177 2.113-0.049 0.622c-0.04 0.517-0.077 1.03-0.113 1.542l-0.063 0.92-0.098 1.535-0.067 1.154-0.056 1.115-0.046 1.073-0.037 1.033-0.027 0.99-0.018 0.95-0.008 0.906v0.437l0.005 0.84 0.014 0.798 0.024 0.752 0.039 0.851 0.957 1.205c34.772 44.068 53.83 94.986 54.229 148.28v1.683c0 83.459-38.319 163.265-106.095 214.099-28.706 21.533-63.37 38.442-102.552 50.635 10.739 21.22 16.366 41.779 16.543 61.802l0.005 0.974V918c0 17.673-14.327 32-32 32-17.497 0-31.714-14.042-31.996-31.47l-0.004-0.53V733.469c0-12.49-5.22-27.792-16.299-45.67l-0.886-1.418c-2.997-4.74-6.4-9.659-10.223-14.751l-0.786-1.04a31.773 31.773 0 0 1-4.814-8.452 31.8 31.8 0 0 1-1.858-7.435 31.836 31.836 0 0 1 2.911-17.872 31.755 31.755 0 0 1 4.673-7.107 31.848 31.848 0 0 1 12.357-8.768l0.18-0.07 0.156-0.06c0.14-0.055 0.281-0.108 0.422-0.16l0.041-0.014a31.69 31.69 0 0 1 4.88-1.361l-0.381 0.081c48.847-10.151 90.314-27.323 121.229-50.513C813.853 530.346 843 469.641 843 405.96c0-40.68-15.192-79.967-43.952-114.619-6.678-8.047-9.546-17.165-10.725-27.973-0.714-6.55-0.755-13.866-0.272-22.374l0.104-1.738 0.048-0.746c0.048-0.744 0.099-1.482 0.152-2.218l0.166-2.209 0.177-2.147 0.222-2.463 0.212-2.175 0.234-2.257 0.398-3.583 0.406-3.436 0.522-4.212 0.67-5.193 1.118-8.358 1.04-7.614 1.14-8.279 0.85-6.313 0.557-4.242 0.513-4.027 0.288-2.318 0.446-3.7 0.405-3.508 0.294-2.672 0.203-1.928 0.19-1.864 0.173-1.804 0.134-1.466-23.747 12.922-4.579 2.474-2.87 1.539-3.449 1.835-1.352 0.715-2.144 1.128-2.114 1.103-2.084 1.08-2.055 1.057-2.027 1.033-1.999 1.01-1.972 0.987-0.977 0.485-2.892 1.422-1.898 0.92c-0.314 0.153-0.627 0.303-0.94 0.453l-1.863 0.888-1.84 0.867c-0.916 0.428-1.823 0.848-2.723 1.26l-1.79 0.815-0.887 0.399-1.762 0.784-0.874 0.384-1.735 0.754-0.861 0.37-1.71 0.724-1.696 0.704-1.68 0.686c-0.558 0.226-1.114 0.448-1.668 0.667l-1.654 0.649c-0.55 0.213-1.097 0.423-1.642 0.63l-1.632 0.612-1.62 0.594-0.808 0.291-1.607 0.568-1.599 0.551-0.796 0.27c-22.154 7.432-41.43 9.635-59.205 4.372-36.56-10.827-75.79-16.47-116.138-16.47-34.516 0-68.229 4.129-100.183 12.116l-1.68 0.424c-23.136 5.893-46.24 3.314-70.526-5.913a210.629 210.629 0 0 1-9.102-3.693l-0.937-0.41-1.875-0.837-1.408-0.644-1.414-0.66-0.947-0.45-1.43-0.689-1.442-0.709-0.97-0.484-0.98-0.494-1.984-1.018-2.027-1.062-1.552-0.827-1.583-0.855-1.616-0.884-1.652-0.914-1.692-0.947-1.734-0.98-2.383-1.36-3.102-1.793-3.92-2.294-2.745-1.621-5.079-3.025-11.695-7.01-3.848-2.286-3.362-1.975-2.36-1.367-2.2-1.256-1.506-0.848-1.77-0.983-0.913-0.5-0.698-0.381-0.093 0.641-0.157 1.131-0.152 1.16-0.074 0.591-0.144 1.203-0.139 1.233-0.133 1.262-0.191 1.948-0.18 2.016-0.113 1.38-0.108 1.412-0.104 1.442-0.098 1.472-0.094 1.503-0.09 1.533-0.083 1.565-0.118 2.406-0.107 2.476-0.097 2.547-0.086 2.62-0.052 1.786-0.048 1.818-0.063 2.789-0.037 1.9-0.047 2.911-0.026 1.983-0.047 4.756-0.031 5.83-0.011 5.895-0.009 16.084-0.029 7.372-0.04 4.756-0.044 3.323-0.057 3.054-0.083 3.23-0.062 1.912-0.07 1.853-0.078 1.753-0.048 0.986-0.068 1.311-0.093 1.645-0.054 0.89c-0.407 6.486-1.021 12.005-1.966 16.903-1.642 8.513-4.148 15.463-9.436 22.014-27.505 34.082-42.002 72.494-42.002 112.238 0 60.104 33.061 122.348 87.13 162.901 35.686 26.767 81.861 45.038 136.312 54.205 1.759 0.281 3.5 0.712 5.205 1.29 0.03 0.012 0.06 0.022 0.09 0.032a24.393 24.393 0 0 1 0.738 0.263c0.128 0.047 0.254 0.095 0.38 0.143l0.04 0.017a31.932 31.932 0 0 1 15.38 12.568 31.865 31.865 0 0 1 4.624 22.577 31.851 31.851 0 0 1-8.318 16.704l0.436-0.485c-0.99 1.09-1.952 2.172-2.888 3.246l-1.11 1.285a172.775 172.775 0 0 0-6.593 8.172l-0.92 1.229c-11.637 15.725-17.087 29.595-17.225 41.55l-0.003 0.465 0.001 68.053a32.62 32.62 0 0 1 0 1.39l-0.001 116.434c0 17.673-14.327 32-32 32-17.496 0-31.713-14.042-31.996-31.471l-0.004-0.53v-85.132h-57.066c-20.435 0-40.2-6.64-59.18-18.52-15.106-9.457-29.484-22.078-43.365-37.311-10.958-12.025-21.228-25.257-30.997-39.436l-1.31-1.909-1.264-1.86-0.618-0.917-1.211-1.808-1.184-1.785-1.163-1.772-0.575-0.884-1.144-1.77-1.14-1.782-1.143-1.804-1.152-1.834-1.167-1.875-1.19-1.926-1.22-1.987-1.9-3.115-0.654-1.079c-3.988-6.579-9.336-9.967-18.662-11.201l-0.504-0.064c-17.542-2.145-30.024-18.105-27.88-35.648 2.146-17.542 18.105-30.024 35.648-27.88 28.696 3.51 51.659 17.747 66.127 41.617l1.47 2.415 1.455 2.373 0.723 1.171 1.436 2.313 1.426 2.274 1.417 2.237 1.409 2.202 1.403 2.169c9.808 15.063 19.297 27.759 30.87 40.459 0.415 0.455 0.829 0.906 1.243 1.353l1.24 1.327c0.825 0.877 1.648 1.736 2.468 2.578l1.23 1.251c18.202 18.36 35.137 28.209 48.605 28.425l0.453 0.004h57.066V732.12c0-19.062 5.12-37.964 15.008-56.731-43.866-12.305-82.781-30.747-115.558-55.331-69.74-52.308-112.728-133.24-112.728-214.1 0-52.686 18.239-103.12 51.91-146.985l0.987-1.278 0.079-0.608 0.09-0.762 0.086-0.816 0.084-0.87 0.081-0.924 0.116-1.484 0.036-0.52 0.1-1.572 0.092-1.649 0.101-2.105 0.1-2.587 0.053-1.711 0.063-2.558 0.044-2.377 0.046-3.489 0.042-5.52 0.026-9.886 0.01-16.233 0.03-6.683 0.035-4 0.036-3.107 0.029-2.08 0.034-2.05 0.038-2.023 0.042-1.994 0.047-1.966 0.079-2.897 0.09-2.836 0.101-2.778 0.074-1.819 0.079-1.793 0.129-2.644 0.14-2.588 0.102-1.696 0.107-1.673 0.113-1.649 0.119-1.626 0.19-2.399 0.135-1.571 0.14-1.55 0.148-1.53 0.154-1.51 0.161-1.488 0.168-1.47 0.087-0.726 0.178-1.44 0.186-1.422 0.193-1.403 0.2-1.385 0.207-1.368 0.216-1.35 0.223-1.334 0.23-1.317 0.24-1.302c0.04-0.215 0.08-0.43 0.122-0.644l0.25-1.278 0.26-1.263 0.267-1.249 0.276-1.234 0.285-1.22 0.293-1.207 0.302-1.194 0.31-1.181c3.806-14.18 9.58-25.536 19.415-33.946 14.031-11.999 32.335-13.9 49.522-6.514 6.255 2.688 12.625 5.804 19.407 9.44l0.977 0.525 1.909 1.035 1.408 0.773 2.711 1.51 2.682 1.522 2.475 1.427 1.874 1.093 4.109 2.423 6.295 3.756 8.096 4.858 4.623 2.754 4.268 2.515 2.85 1.66 2.17 1.25 1.567 0.895 2.014 1.139 1.459 0.814 1.879 1.035 0.913 0.497 1.339 0.721 1.732 0.918 1.263 0.657 1.234 0.631 0.406 0.205 0.764 0.383c4.302 2.143 8.157 3.847 12.115 5.386l0.7 0.27 0.35 0.134c12.877 4.892 22.978 6.02 32 3.721 37.628-9.584 77.224-14.52 117.66-14.52 46.478 0 91.829 6.524 134.31 19.103l0.22 0.056c0.12 0.026 0.259 0.05 0.413 0.071l0.332 0.038c0.118 0.01 0.243 0.02 0.376 0.028l0.422 0.018 0.227 0.005h0.488c0.085 0 0.172-0.002 0.261-0.004l0.555-0.019 0.295-0.015 0.622-0.041c0.43-0.033 0.89-0.077 1.38-0.132 4.038-0.462 9.105-1.68 15.084-3.687l1.174-0.4 1.19-0.417 1.207-0.434 1.223-0.45 1.24-0.47 1.258-0.486 0.635-0.25 1.285-0.513 1.304-0.531 1.323-0.55 1.342-0.567 1.363-0.587 1.384-0.605 0.7-0.31 1.416-0.633 1.439-0.653 1.46-0.673 1.484-0.691 1.507-0.712 1.532-0.731 1.556-0.752 1.581-0.772 1.607-0.792 1.633-0.813 1.659-0.833 1.686-0.855 1.714-0.876 1.742-0.897 2.667-1.386 2.733-1.434 3.063-1.624 2.538-1.356 4.733-2.55 22.134-12.071 5.8-3.137 1.96-1.05 2.76-1.471 1.788-0.946 1.748-0.919 2.55-1.33 2.472-1.275 1.607-0.82 1.577-0.798 2.314-1.157 1.51-0.746 1.486-0.727 1.466-0.708 1.446-0.691 1.429-0.674c0.236-0.111 0.472-0.222 0.708-0.331 7.914-3.687 16.048-5.558 24.572-4.893z" p-id="5379"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://poolbee.github.io/page/links/'
+                        target="_blank"
+                        title="Wechat"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M767.818667 409.173333C867.338667 444.266667 938.666667 539.136 938.666667 650.666667c0 42.709333-10.496 83.978667-30.261334 120.842666-1.792 3.338667-4.992 8.928-9.696 16.96l14.613334 53.557334c6.506667 23.893333-15.402667 45.813333-39.296 39.296l-53.642667-14.634667-6.229333 3.669333A254.933333 254.933333 0 0 1 682.666667 906.666667c-77.994667 0-147.84-34.88-194.805334-89.888a352.608 352.608 0 0 1-56.64 4.554666c-63.338667 0-124.266667-16.853333-177.472-48.298666-1.834667-1.088-6.410667-3.733333-13.632-7.893334l-80.544 21.653334c-23.914667 6.432-45.76-15.573333-39.146666-39.434667l21.792-78.752a961.205333 961.205333 0 0 1-15.904-27.317333A336.384 336.384 0 0 1 85.333333 480c0-188.618667 154.965333-341.333333 345.888-341.333333 159.914667 0 297.984 108.010667 335.818667 259.296 0.949333 3.765333 1.173333 7.552 0.778667 11.2z m-68.106667-13.952C662.88 282.037333 555.178667 202.666667 431.221333 202.666667 275.434667 202.666667 149.333333 326.933333 149.333333 480c0 46.272 11.498667 90.837333 33.194667 130.698667 2.88 5.290667 10.176 17.706667 21.621333 36.746666a32 32 0 0 1 3.413334 25.013334l-10.517334 37.994666 39.232-10.549333a32 32 0 0 1 24.234667 3.146667c14.272 8.192 22.773333 13.098667 25.802667 14.890666A283.882667 283.882667 0 0 0 431.221333 757.333333c6.154667 0 12.288-0.192 18.389334-0.576A255.061333 255.061333 0 0 1 426.666667 650.666667c0-141.386667 114.613333-256 256-256 5.728 0 11.413333 0.192 17.045333 0.554666z m133.706667 397.056a32 32 0 0 1 3.338666-24.725333 996.672 996.672 0 0 0 15.242667-26.293333A190.997333 190.997333 0 0 0 874.666667 650.666667c0-106.037333-85.962667-192-192-192s-192 85.962667-192 192 85.962667 192 192 192a190.933333 190.933333 0 0 0 98.570666-27.2c2.208-1.322667 8.288-4.874667 18.517334-10.837334a32 32 0 0 1 24.522666-3.210666l12.565334 3.424-3.424-12.565334zM330.666667 426.666667a42.666667 42.666667 0 1 1 0-85.333334 42.666667 42.666667 0 0 1 0 85.333334z m192 0a42.666667 42.666667 0 1 1 0-85.333334 42.666667 42.666667 0 0 1 0 85.333334z m85.333333 202.666666a32 32 0 1 1 0-64 32 32 0 0 1 0 64z m149.333333 0a32 32 0 1 1 0-64 32 32 0 0 1 0 64z"  /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>首页&amp;文章</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我 About me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/soft/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>软件&amp;网站</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/share/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>日常分享</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+        
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+                
+            </ol>
+        </li>
+    
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#11什么是mybatis">1.1什么是Mybatis</a></li>
+    <li><a href="#11如何获得mybatis">1.1如何获得mybatis</a></li>
+    <li><a href="#12持久化">1.2持久化</a>
+      <ul>
+        <li><a href="#为什么需要持久化">为什么需要持久化?</a></li>
+      </ul>
+    </li>
+    <li><a href="#13持久层">1.3持久层</a></li>
+    <li><a href="#14为什么需要mybatis">1.4为什么需要Mybatis？</a>
+      <ul>
+        <li><a href="#最重要的一点使用的人多">最重要的一点：使用的人多！</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#21搭建环境">2.1搭建环境</a>
+      <ul>
+        <li><a href="#maven是什么">maven是什么？</a></li>
+        <li><a href="#maven项目架构管理工具">maven项目架构管理工具</a></li>
+        <li><a href="#为什么是m2_home">为什么是M2_HOME</a></li>
+        <li><a href="#1新建一个普通的maven项目">1.新建一个普通的maven项目</a></li>
+        <li><a href="#2删除src目录">2.删除src目录</a></li>
+        <li><a href="#22创建一个模块">2.2创建一个模块</a></li>
+        <li><a href="#从-xml-中构建-sqlsessionfactory">从 XML 中构建 SqlSessionFactory</a></li>
+        <li><a href="#23编写代码">2.3编写代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+            
+                
+<a id="back-to-top" href="#">
+    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="48px" height="48.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M526.848 202.24A20.48 20.48 0 0 0 512 196.096a19.68 19.68 0 0 0-14.848 6.144l-155.136 154.624a21.632 21.632 0 0 0 0 30.208 21.632 21.632 0 0 0 30.208 0L512 247.296l139.776 139.776a21.376 21.376 0 0 0 14.848 6.144 20.48 20.48 0 0 0 14.848-6.144 21.632 21.632 0 0 0 0-30.208L526.848 202.24zM116.224 595.968h90.624v231.936h42.496v-231.936h90.624v-42.496H115.712v42.496h0.512z m458.24-42.496h-112.64c-13.824 0-27.136 5.12-37.376 15.36-10.24 10.24-15.36 24.064-15.36 37.376v168.448c0 13.824 5.12 27.136 15.36 37.376 10.24 10.24 24.064 15.36 37.376 15.36h112.64c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-168.448c0-13.824-5.12-27.136-15.36-37.376-10.24-10.24-23.552-15.36-37.376-15.36z m10.752 221.696c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-112.64a10.688 10.688 0 0 1-7.68-3.072 10.688 10.688 0 0 1-3.072-7.68V606.72c0-2.048 0.512-5.12 3.072-7.68a10.688 10.688 0 0 1 7.68-3.072h112.64c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v168.448z m307.2-205.824a53.12 53.12 0 0 0-37.376-15.36h-145.408v274.432h42.496v-120.32h102.912c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-48.128c0-14.336-5.12-27.648-15.36-37.888z m-27.136 84.992c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-103.424v-69.12h103.936c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v47.616h-0.512z"  /></svg>
+</a>
+
+            
+        
+            
+                <form action="/page/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+        <div style="height: 30%;width: 30%">
+            
+            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=vWVduL3EI8o8M2YkHMyY1dtYyf7vfgNKC8KQ1ugXVMw"></script>
+        </div>
+    </aside>
+
+
+
+        
+
+
+
+        <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/javaweb/">
+                <img src="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png"
+                        srcset="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png 800w, /img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="119" 
+                        loading="lazy"
+                        alt="Featured image of post " />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/javaweb/"></a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>狂神</p>
+<p><a class="link" href="https://gitee.com/zy-hao/JavaWeb-smbms"  target="_blank" rel="noopener"
+    >JavaWeb-smbms-狂神: # smbms-狂神 https://blog.csdn.net/bell_love/article/details/105667638 引用这位仁兄博客中的源码修改而成，学习的原视频为B站狂神。 1、数据SQL为目录中的smbms.sql文件，直接运行即可。 2、连接MySQL数据的用户名密码都为：root ，可根据自己的本地的进行修改。 3、页面登录用户名和密码都为：admin。 (gitee.com)</a></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804210437767.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804210437767"
+	
+	
+></p>
+<p>SSM</p>
+<ul>
+<li>
+<p>JDK1.8</p>
+</li>
+<li>
+<p>Mysql 5.7</p>
+</li>
+<li>
+<p>maven 3.6.1</p>
+</li>
+<li>
+<p>IDEA</p>
+</li>
+</ul>
+<h1 id="1简介">1简介
+</h1><p><a class="link" href="https://mybatis.net.cn/"  target="_blank" rel="noopener"
+    >MyBatis中文网</a></p>
+<h2 id="11什么是mybatis">1.1什么是Mybatis
+</h2><p>MyBatis 是一款优秀的<strong>持久层</strong>框架</p>
+<p>它支持<strong>自定义 SQL、存储过程以及高级映射</strong>。</p>
+<p>MyBatis 免除了几乎所有的 <strong>JDBC 代码以及设置参数和获取结果集</strong>的工作。MyBatis 可以通过简单的 XML 或<strong>注解</strong>来配置和映射原始类型、接口和 Java POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录。</p>
+<p>ibatis包，基于java的持久层框架。</p>
+<ul>
+<li>
+<p>方便写sql</p>
+</li>
+<li>
+<p>不用写jdbc</p>
+</li>
+<li>
+<p>set int不用result set也不用做了</p>
+</li>
+<li>
+<p>POJO实体类</p>
+</li>
+<li>
+<p>java代码操作数据库的东西</p>
+</li>
+</ul>
+<h2 id="11如何获得mybatis">1.1如何获得mybatis
+</h2><ul>
+<li>maven获得</li>
+<li>github获得</li>
+</ul>
+<p>mybatis就是</p>
+<p>maven仓库：<a class="link" href="https://mvnrepository.com/"  target="_blank" rel="noopener"
+    >Maven Repository: Search/Browse/Explore (mvnrepository.com)</a></p>
+<p>GITHUB仓库：</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804211716382.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804211716382"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">dependency</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">groupId</span>&gt;org.mybatis&lt;/<span style="color:#f92672">groupId</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">artifactId</span>&gt;mybatis&lt;/<span style="color:#f92672">artifactId</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">version</span>&gt;3.5.2&lt;/<span style="color:#f92672">version</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">dependency</span>&gt;
+</span></span></code></pre></div><h2 id="12持久化">1.2持久化
+</h2><p>数据持久化</p>
+<ul>
+<li>持久层就是将层序的数据在持久状态和瞬时状态转化的过程</li>
+<li>内存：断电即失</li>
+<li>数据库jdbc，io文件吃就话</li>
+<li>生活冷藏，罐头</li>
+</ul>
+<h3 id="为什么需要持久化">为什么需要持久化?
+</h3><ul>
+<li>
+<p>内：有一些对象不能让他丢掉</p>
+</li>
+<li>
+<p>外：内存太贵了</p>
+</li>
+</ul>
+<h2 id="13持久层">1.3持久层
+</h2><p>Dao层、Service层（做业务操作），Controller层（接受用户请求，转发给）</p>
+<ul>
+<li>完成吃就话工作的代码块</li>
+<li>层界限十分明显</li>
+</ul>
+<h2 id="14为什么需要mybatis">1.4为什么需要Mybatis？
+</h2><ul>
+<li>
+<p>帮助程序员将数据存入到数据库中</p>
+</li>
+<li>
+<p>方便</p>
+</li>
+<li>
+<p>传统的JDBC代码太复杂了，需要简化看过来，自动化</p>
+</li>
+<li>
+<p>不用Mybatis也可以，更容易。<strong>技术没有高低之分</strong></p>
+</li>
+<li>
+<p>优点：百度百科Mybatis</p>
+</li>
+</ul>
+<p>。简单易学
+。灵活
+。Sql和代码的分离，提高了可维护性。
+<strong>。提供映射标签，支持对像与数据库的om字段关系映射</strong>
+<strong>。提供对象关系映射标签，支持对象关系组建维护</strong>
+<strong>。提供xml标签，支持编写动态sql。</strong></p>
+<h3 id="最重要的一点使用的人多">最重要的一点：使用的人多！
+</h3><h1 id="2第一个mybatis程序">2、第一个Mybatis程序
+</h1><p>思路：搭建环境&ndash;&gt;导入Mybatis&ndash;&gt;编写代码&ndash;&gt;测试！</p>
+<h2 id="21搭建环境">2.1搭建环境
+</h2><p><a class="link" href="https://www.mysql.com/"  target="_blank" rel="noopener"
+    >MySQL</a></p>
+<p><a class="link" href="https://sqlyog.en.softonic.com/"  target="_blank" rel="noopener"
+    >SQLyog - Download (softonic.com)</a></p>
+<p>插入表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> <span style="color:#f92672">`</span>mybatis<span style="color:#f92672">`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>USE <span style="color:#f92672">`</span>mybatis<span style="color:#f92672">`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span>(
+</span></span><span style="display:flex;"><span><span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> INT(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">`</span>pwd<span style="color:#f92672">`</span> VARCHAR(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>)ENGINE<span style="color:#f92672">=</span> INNODB <span style="color:#66d9ef">DEFAULT</span> CHARSET <span style="color:#f92672">=</span> utf8;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">user</span><span style="color:#f92672">`</span>(<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>,<span style="color:#f92672">`</span>name<span style="color:#f92672">`</span>,<span style="color:#f92672">`</span>pwd<span style="color:#f92672">`</span>) <span style="color:#66d9ef">VALUES</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;aaa&#39;</span>,<span style="color:#e6db74">&#39;123456&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;bbb&#39;</span>,<span style="color:#e6db74">&#39;121236&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">3</span>,<span style="color:#e6db74">&#39;ccc&#39;</span>,<span style="color:#e6db74">&#39;125556&#39;</span>)
+</span></span></code></pre></div><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804221331540.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804221331540"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804221342795.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804221342795"
+	
+	
+></p>
+<p>新建项目maven项目</p>
+<h3 id="maven是什么">maven是什么？
+</h3><p>1.javaWeb开发中有许多jar包</p>
+<p>tomcat中lib中有很多jar包，</p>
+<p>2.如何能够让一个东西自动帮我导入和配置这个jar包</p>
+<p>由此，maven诞生了</p>
+<h3 id="maven项目架构管理工具">maven项目架构管理工具
+</h3><p>目前用来方便导入jar包的！</p>
+<p>maven的核心思想：约定大于配置</p>
+<ul>
+<li>有约束，不要取违反</li>
+<li>maven会规定好如何</li>
+</ul>
+<p><a class="link" href="https://maven.apache.org/"  target="_blank" rel="noopener"
+    >https://maven.apache.org/</a></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804222422665.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804222422665"
+	
+	
+></p>
+<p><a class="link" href="https://archive.apache.org/dist/maven/maven-3/3.6.1/binaries/"  target="_blank" rel="noopener"
+    >Index of /dist/maven/maven-3/3.6.1/binaries (apache.org)</a></p>
+<ul>
+<li>
+<p>bin</p>
+</li>
+<li>
+<p>config——和tomcat的一样</p>
+<ul>
+<li>有头文件、插件组、proxies、配置来连接的端口信息、镜像：方便下载使用的
+<ul>
+<li>默认的镜像地址也有</li>
+<li>M2_HOME    maven目录下的bin目录</li>
+<li>MAVEN_HOME    maven的目录</li>
+<li>在系统的path中配置【指向maven的bin目录】</li>
+<li><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804223938486.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804223938486"
+	
+	
+></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>boot就是启动需要的jar包</p>
+</li>
+<li></li>
+<li></li>
+<li>
+<p>我tm找到了我23年配置的maven的3.6.0的环境变量配置【删除了】</p>
+</li>
+<li>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804224214963.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804224214963"
+	
+	
+></p>
+</li>
+<li>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804224022866.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804224022866"
+	
+	
+></p>
+</li>
+<li>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804223623147.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804223623147"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804223619043.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804223619043"
+	
+	
+></p>
+</li>
+</ul>
+<p>D:\java\jdk-15.0.1也删除了<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804224652410.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804224652410"
+	
+	
+></p>
+<p>重新配置1.8</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804224750526.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804224750526"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804230048178.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804230048178"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804230353060.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804230353060"
+	
+	
+></p>
+<p>path中要配置jdk和jre两个</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804230346945.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804230346945"
+	
+	
+></p>
+<p>成功</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804230543748.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804230543748"
+	
+	
+></p>
+<h3 id="为什么是m2_home">为什么是M2_HOME
+</h3><p>，因为后续的springboot自动引用的是这个名字。</p>
+<p><strong>记住maven一定是自己的maven，而不是自动设置的</strong></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804230646862.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804230646862"
+	
+	
+></p>
+<h3 id="1新建一个普通的maven项目">1.新建一个普通的maven项目
+</h3><h3 id="2删除src目录">2.删除src目录
+</h3><p><a class="link" href="https://mybatis.net.cn/"  target="_blank" rel="noopener"
+    >MyBatis中文网</a></p>
+<p><a class="link" href="https://mvnrepository.com/artifact/mysql/mysql-connector-java"  target="_blank" rel="noopener"
+    >Maven Repository: mysql » mysql-connector-java (mvnrepository.com)</a></p>
+<p><a class="link" href="https://mvnrepository.com/artifact/mysql/mysql-connector-java"  target="_blank" rel="noopener"
+    >https://mvnrepository.com/artifact/mysql/mysql-connector-java</a></p>
+<h5 id="maven的jar包下载方法">maven的jar包下载方法
+</h5><p><a class="link" href="https://blog.csdn.net/Milan__Kundera/article/details/81182757"  target="_blank" rel="noopener"
+    >mysql-connector-java各种版本下载地址_mysql-connection5.jar-CSDN博客</a></p>
+<p><a class="link" href="https://gitee.com/zy-hao/JavaWeb-smbms"  target="_blank" rel="noopener"
+    >JavaWeb-smbms-狂神: # smbms-狂神 https://blog.csdn.net/bell_love/article/details/105667638 引用这位仁兄博客中的源码修改而成，学习的原视频为B站狂神。 1、数据SQL为目录中的smbms.sql文件，直接运行即可。 2、连接MySQL数据的用户名密码都为：root ，可根据自己的本地的进行修改。 3、页面登录用户名和密码都为：admin。 (gitee.com)</a></p>
+<p>多点击重新加载项目即可</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804232842679.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804232842679"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;project</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#a6e22e">xsi:schemaLocation=</span><span style="color:#e6db74">&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;modelVersion&gt;</span>4.0.0<span style="color:#f92672">&lt;/modelVersion&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;groupId&gt;</span>org.example<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;artifactId&gt;</span>maven_kuang<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--父工程--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--    导入依赖--&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;dependencies&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--mysql驱动-自动下载-&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        &lt;!- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;groupId&gt;</span>mysql<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;artifactId&gt;</span>mysql-connector-java<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;version&gt;</span>5.1.46<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--mybatis--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;groupId&gt;</span>org.mybatis<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;artifactId&gt;</span>mybatis<span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;version&gt;</span>3.5.2<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--junit--&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;dependency&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;groupId&gt;</span>junit<span style="color:#f92672">&lt;/groupId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>                junit
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/artifactId&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;version&gt;</span>4.12<span style="color:#f92672">&lt;/version&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/dependency&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/dependencies&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;properties&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;maven.compiler.source&gt;</span>8<span style="color:#f92672">&lt;/maven.compiler.source&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;maven.compiler.target&gt;</span>8<span style="color:#f92672">&lt;/maven.compiler.target&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span style="color:#f92672">&lt;/project.build.sourceEncoding&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/properties&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/project&gt;</span>
+</span></span></code></pre></div><h3 id="22创建一个模块">2.2创建一个模块
+</h3><p>再新建一个model，<img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804233153299.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804233153299"
+	
+	
+></p>
+<p>类似于这样在“新建项目”下建立</p>
+<p>这样的好处：每次不用再去导包了，这样方便</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804233335440.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804233335440"
+	
+	
+></p>
+<p>crtl进入</p>
+<p>自动生成了modules</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804233413235.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804233413235"
+	
+	
+></p>
+<h4 id="编写mybatis的核心配置文件">编写mybatis的核心配置文件
+</h4><h3 id="从-xml-中构建-sqlsessionfactory">从 XML 中构建 SqlSessionFactory
+</h3><p>XML 配置文件中包含了对 MyBatis 系统的核心设置，包括获取数据库连接实例的数据源（DataSource）以及决定事务作用域和控制方式的事务管理器（TransactionManager）。后面会再探讨 XML 配置文件的详细内容，这里先给出一个简单的示例：</p>
+<p><a class="link" href="https://blog.csdn.net/qq_34767784/article/details/105874355"  target="_blank" rel="noopener"
+    >IDEA community找不到DataBase_idea tool windows 中找不到database-CSDN博客</a></p>
+<p><a class="link" href="https://blog.csdn.net/m0_55913607/article/details/119644662"  target="_blank" rel="noopener"
+    >idea 连接数据库详细教程（新手篇）2021版idea_idea2021连接数据库-CSDN博客</a></p>
+<p>安装数据库插件-显示数据库到toool视图即可见</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804235722088.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804235722088"
+	
+	
+></p>
+<p>链接上了</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804235705261.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804235705261"
+	
+	
+></p>
+<p>setting中看url</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240804235920004.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240804235920004"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805000239050.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805000239050"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--来自官网https://mybatis.net.cn/getting-started.html--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE configuration
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        PUBLIC &#34;-//mybatis.org//DTD Config 3.0//EN&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        &#34;http://mybatis.org/dtd/mybatis-3-config.dtd&#34;&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--核心配置文件--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;configuration&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;environments</span> <span style="color:#a6e22e">default=</span><span style="color:#e6db74">&#34;development&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;environment</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;development&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--            事物管理--&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;transactionManager</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;JDBC&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;dataSource</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;POOLED&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--                数据库相关的东西--&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;driver&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;com.mysql.jdbc.Driver&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;jdbc:mysql://localhost:3306/mysql/mybatis?useSSL=&amp;amp;useUnicode=true&amp;amp;characterEncoding=UTF-8&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;password&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;/dataSource&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/environment&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/environments&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;mappers&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;mapper</span> <span style="color:#a6e22e">resource=</span><span style="color:#e6db74">&#34;org/mybatis/example/BlogMapper.xml&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/mappers&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/configuration&gt;</span>
+</span></span></code></pre></div><p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805000449410.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805000449410"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805000500228.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805000500228"
+	
+	
+></p>
+<p>从这个Factory中找到</p>
+<pre tabindex="0"><code>String resource = &#34;org/mybatis/example/mybatis-config.xml&#34;;
+InputStream inputStream = Resources.getResourceAsStream(resource);
+SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+</code></pre><p>Dao层和utils</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805000823582.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805000823582"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805001624308.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805001624308"
+	
+	
+></p>
+<p>获取工厂类的时候，创建实例sqlsession</p>
+<p>ctrl+alt+v快速创建</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805001823685.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805001823685"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805001958472.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805001958472"
+	
+	
+></p>
+<p>return</p>
+<p>然后优化一下</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805002027418.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805002027418"
+	
+	
+></p>
+<h5 id="现在定义了工具类">现在定义了工具类
+</h5><h5 id="作用资源加载进来创建了一个能执行sql的对象sqlsession">作用：资源加载进来，创建了一个能执行sql的对象SqlSession。
+</h5><p>好了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-JAVA" data-lang="JAVA"><span style="display:flex;"><span><span style="color:#f92672">package</span> org.example.utils;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//就是获取到</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.ibatis.io.Resources;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.ibatis.session.SqlSession;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> org.apache.ibatis.session.SqlSessionFactory;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.IOException;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.InputStream;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//sqlSessionFactory--&gt;构建sqlsession</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MybatisUtils</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> SqlSessionFactory sqlSessionFactory;<span style="color:#75715e">//提升作用域了</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//改为初始就加载</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> {
+</span></span><span style="display:flex;"><span>        String resource <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mybatis-config.xml&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//使用Mybatis，第一步获取sqlSessionFactory类</span>
+</span></span><span style="display:flex;"><span>            InputStream inputStream <span style="color:#f92672">=</span> Resources.<span style="color:#a6e22e">getResourceAsStream</span>(resource);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">catch</span> (IOException e) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> RuntimeException(e);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//既然有了 SqlSessionFactory，顾名思义，我们可以从中获得 SqlSession 的实例。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// SqlSession 提供了在数据库执行 SQL 命令所需的所有方法。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 你可以通过 SqlSession 实例来直接执行已映射的 SQL 语句。</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> SqlSession <span style="color:#a6e22e">getSqlSession</span>(){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> sqlSessionFactory.<span style="color:#a6e22e">openSession</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="23编写代码">2.3编写代码
+</h3><ul>
+<li>
+<p>实体类</p>
+</li>
+<li>
+<p>操作实体类的实现类——我们这里用接口——</p>
+</li>
+<li>
+<p>接口实现类</p>
+</li>
+</ul>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805002323183.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805002323183"
+	
+	
+></p>
+<p>pojo写User.java</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805002542239.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805002542239"
+	
+	
+></p>
+<h5 id="构造方法快捷键altinsert笔记本是fnaltinsert-必须是大写锁定">构造方法快捷键alt+insert（笔记本是fn+alt+insert 必须是大写锁定）
+</h5><p><a class="link" href="https://blog.csdn.net/weixin_45384457/article/details/128342311"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/weixin_45384457/article/details/128342311</a></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805002719950.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805002719950"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805002808500.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805002808500"
+	
+	
+></p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805003222485.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805003222485"
+	
+	
+></p>
+<p>快捷键</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240805003335100.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240805003335100"
+	
+	
+></p>
+<p>构造方法和有参方法，都是选择构造方法创建的。</p>
+<p>get</p>
+<p>set的创建相同。</p>
+<h1 id="01存档2第一个mybatis程序_哔哩哔哩_bilibilihttpswwwbilibilicomvideobv1ne411q7nxp2spm_id_frompagedrivervd_source7380129e81d052c5b32ce598508c71d53352">01存档：<a class="link" href="https://www.bilibili.com/video/BV1NE411Q7Nx/?p=2&amp;spm_id_from=pageDriver&amp;vd_source=7380129e81d052c5b32ce598508c71d5"  target="_blank" rel="noopener"
+    >2、第一个Mybatis程序_哔哩哔哩_bilibili</a>33:52
+</h1><p>项目在maven_kaung中</p>
+<p>maven也在D盘</p>
+<p>mysql</p>
+<p>sqlyog也在D盘</p>
+<p>jdk在javaweb中</p>
+
+
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":"说点什么吧~~请填写正确的昵称和邮箱，方便接受评论回复信息"},"requiredMeta":["nick","mail","url"],"serverURL":"https://waline-poolbee.vercel.app"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 PoolBee的博客
+    </section>
+    
+    
+    <a href="https://github.com/PoolBee/PoolBee.github.io" target="_blank">
+        <img src="https://ghchart.rshah.org/poolbee" />
+    </a>
+    
+
+    <section class="powerby">
+         <br />
+        
+    </section>
+
+
+    <section class="count_info">
+    
+        <div>
+            在漫长的
+            <span id="ds" class="running-days"></span>
+            天
+            <span id="hs" class="running-days"></span>
+            小时
+            <span id="ms" class="running-days"></span>
+            分钟中
+        </div>
+
+    
+        <div>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+             
+             
+          
+            
+       
+            · 写下 18 篇文章、总计 8.30 k 字
+        </div> 
+
+    
+        <div>
+            <span id="busuanzi_container_site_pv">· 迎接<span id="busuanzi_value_site_pv"></span>次不期而遇。</span>
+        </div>
+        
+    </section>
+    
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=13060602001722" rel="noreferrer" target="_blank">冀公网安备13060602001722</a>
+
+    <script>
+        let s1 = '2023-6-09'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+        
+    </script>
+    
+</footer>
+<style>
+     
+.site-footer {
+    text-align: center;
+}
+</style>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            
+        </main>
+        
+    </div>
+
+    <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script><script type="text/javascript" src="/ts/custom.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+    
+    
+</body>
+</html>
