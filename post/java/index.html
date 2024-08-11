@@ -11,7 +11,7 @@
 
 
 
-<title>流操作和函数式编程</title>
+<title></title>
 
 
 <link rel='canonical' href='http://localhost:1313/post/java/'>
@@ -25,7 +25,7 @@
 <meta property='og:description' content="流操作 是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。 例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。 例如：能用max()和min()对流操作找到流中的最大元素。 [参数:可用Comparator接口自定义比较的逻辑] import java.util.Arrays; import java.util.Optional; import java.util.Comparator; public class StreamExample { public static void main(String[] args) { Integer[] numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5}; // 使用默认比较器找到最大元素 Optional&lt;Integer&gt; max = Arrays.stream(numbers).max(); max.ifPresent(System.out::println); // 输出：9 // 使用默认比较器找到最小元素 Optional&lt;Integer&gt; min = Arrays.stream(numbers).min(); min.ifPresent(System.out::println); // 输出：1 // 使用自定义比较器找到最大元素（基于绝对值） Optional&lt;Integer&gt; maxAbs = Arrays.stream(numbers).max(Comparator.comparingInt(Math::abs)); maxAbs.ifPresent(System.out::println); // 输出：9 或 -5取决于绝对值的比较 } } 其中Optional">
 <meta property='og:url' content='http://localhost:1313/post/java/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Java其他' /><meta property='article:published_time' content='2023-03-28T11:08:00&#43;00:00'/><meta property='article:modified_time' content='2023-03-28T11:08:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/post/cover/archives-java.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='og:image' content='http://localhost:1313/post/cover/archives-java.png' />
 <meta name="twitter:site" content="@PoolBee">
     <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="流操作和函数式编程">
 <meta name="twitter:description" content="流操作 是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。 例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。 例如：能用max()和min()对流操作找到流中的最大元素。 [参数:可用Comparator接口自定义比较的逻辑] import java.util.Arrays; import java.util.Optional; import java.util.Comparator; public class StreamExample { public static void main(String[] args) { Integer[] numbers = {3, 1, 4, 1, 5, 9, 2, 6, 5}; // 使用默认比较器找到最大元素 Optional&lt;Integer&gt; max = Arrays.stream(numbers).max(); max.ifPresent(System.out::println); // 输出：9 // 使用默认比较器找到最小元素 Optional&lt;Integer&gt; min = Arrays.stream(numbers).min(); min.ifPresent(System.out::println); // 输出：1 // 使用自定义比较器找到最大元素（基于绝对值） Optional&lt;Integer&gt; maxAbs = Arrays.stream(numbers).max(Comparator.comparingInt(Math::abs)); maxAbs.ifPresent(System.out::println); // 输出：9 或 -5取决于绝对值的比较 } } 其中Optional"><meta name="twitter:card" content="summary_large_image">
@@ -381,6 +381,42 @@
         
             
                 
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#12web应用程序">1.2、web应用程序</a></li>
+    <li><a href="#13静态web">1.3静态web</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#14动态web">1.4、动态web</a></li>
+    <li><a href="#15web服务器">1.5、web服务器</a></li>
+    <li><a href="#22web服务器">2.2web服务器</a>
+      <ul>
+        <li><a href="#手写tomcat">手写tomcat</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
             
         
             
@@ -424,12 +460,12 @@
 
 
         <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
         <div class="article-image">
             <a href="/post/java/">
                 
-                    <img src="/post/cover/archives-java.png" loading="lazy" alt="Featured image of post 流操作和函数式编程" />
+                    <img src="/post/cover/archives-java.png" loading="lazy" alt="Featured image of post " />
                 
             </a>
         </div>
@@ -500,121 +536,176 @@
     <section class="article-content">
     
     
-    <h1 id="流操作">流操作
-</h1><p>是Java 8中引入的一种数据处理模式，通常涉及数据的读取、写入、转换、过滤等，这些操作可以在数据流上连续进行，形成一条处理链。</p>
-<p>例如：stream() 方法是 Java 8 引入的 Stream API 的一部分，它用于将集合（如数组、列表等）转换为流（Stream）。</p>
-<p>例如：能用max()和min()对流操作找到流中的最大元素。</p>
-<p>[参数:可用Comparator接口自定义比较的逻辑]</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;  
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Optional;  
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Comparator;  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StreamExample</span> {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {  
-</span></span><span style="display:flex;"><span>        Integer<span style="color:#f92672">[]</span> numbers <span style="color:#f92672">=</span> {3, 1, 4, 1, 5, 9, 2, 6, 5};  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 使用默认比较器找到最大元素  </span>
-</span></span><span style="display:flex;"><span>        Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> max <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(numbers).<span style="color:#a6e22e">max</span>();  
-</span></span><span style="display:flex;"><span>        max.<span style="color:#a6e22e">ifPresent</span>(System.<span style="color:#a6e22e">out</span>::println); <span style="color:#75715e">// 输出：9  </span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 使用默认比较器找到最小元素  </span>
-</span></span><span style="display:flex;"><span>        Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> min <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(numbers).<span style="color:#a6e22e">min</span>();  
-</span></span><span style="display:flex;"><span>        min.<span style="color:#a6e22e">ifPresent</span>(System.<span style="color:#a6e22e">out</span>::println); <span style="color:#75715e">// 输出：1  </span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 使用自定义比较器找到最大元素（基于绝对值）  </span>
-</span></span><span style="display:flex;"><span>        Optional<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> maxAbs <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">stream</span>(numbers).<span style="color:#a6e22e">max</span>(Comparator.<span style="color:#a6e22e">comparingInt</span>(Math::abs));  
-</span></span><span style="display:flex;"><span>        maxAbs.<span style="color:#a6e22e">ifPresent</span>(System.<span style="color:#a6e22e">out</span>::println); <span style="color:#75715e">// 输出：9 或 -5取决于绝对值的比较  </span>
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>其中Optional<!-- raw HTML omitted --></p>
-<p>Optional是Java8中引入的容器类，可以包含Integer对象或不含任何对象(空)。</p>
-<blockquote>
-<p>程序员可以避免在代码中出现大量的空值判断，从而减少了if-else控制判断的使用，提高了代码的健壮性和可读性。</p>
-<p>避免NullPointerException</p>
-</blockquote>
-<blockquote>
-<p>流操作的主要目的是简化数据处理和提高代码的可读性。通过使用流，程序员可以<strong>链式地</strong>应用一系列的操作，</p>
-<p>如<strong>过滤、映射、归约</strong>等，以实现对数据的转换和聚合。流操作还支持<strong>并行处理</strong>，可以<strong>充分利用多核处理器的优势，提高数据处理的速度</strong>。</p>
-</blockquote>
-<h1 id="函数式编程">函数式编程
-</h1><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;  
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;  
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.stream.Collectors;  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FunctionalOperationExample</span> {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 创建一个整数列表  </span>
-</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> numbers <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 使用Stream API进行函数式操作  </span>
-</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> squaredEvenNumbers <span style="color:#f92672">=</span> numbers.<span style="color:#a6e22e">stream</span>() <span style="color:#75715e">// 将列表转换为流  </span>
-</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">filter</span>(n <span style="color:#f92672">-&gt;</span> n <span style="color:#f92672">%</span> 2 <span style="color:#f92672">==</span> 0) <span style="color:#75715e">// 过滤出偶数  </span>
-</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">map</span>(n <span style="color:#f92672">-&gt;</span> n <span style="color:#f92672">*</span> n) <span style="color:#75715e">// 将每个偶数平方  </span>
-</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">collect</span>(Collectors.<span style="color:#a6e22e">toList</span>()); <span style="color:#75715e">// 收集结果到新的列表  </span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 输出结果  </span>
-</span></span><span style="display:flex;"><span>        squaredEvenNumbers.<span style="color:#a6e22e">forEach</span>(System.<span style="color:#a6e22e">out</span>::println);  
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>整个操作链以<strong>声明性</strong>的方式描述了我们的意图：找到所有偶数并将它们平方。</p>
-<p>我们不需要<strong>显式地编写循环或条件语句</strong>，函数式操作提供了一种更加简洁、高效和可维护的编程方式。</p>
-<p>流式编程的声明性主要体现在其通过一系列的操作来定义数据的转换和聚合过程，而无需显式地编写复杂的控制流代码。这使得代码更加简洁、易于理解，并且关注点更集中于数据的处理逻辑，而非流程控制。</p>
-<p>下面是一个使用Java 8 Stream API进行流式编程的示例，该示例体现了流式编程的声明性：</p>
-<p>假设我们有一个包含员工信息的列表，每个员工都有姓名（String）和薪水（double）两个属性。我们想要找出薪水最高的员工。</p>
-<p>首先，我们定义一个简单的<code>Employee</code>类：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span> {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> salary;  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Employee</span>(String name, <span style="color:#66d9ef">double</span> salary) {  
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;  
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">salary</span> <span style="color:#f92672">=</span> salary;  
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() {  
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> name;  
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getSalary</span>() {  
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> salary;  
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {  
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Employee{&#34;</span> <span style="color:#f92672">+</span>  
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;name=&#39;&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;\&#39;&#39;</span> <span style="color:#f92672">+</span>  
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;, salary=&#34;</span> <span style="color:#f92672">+</span> salary <span style="color:#f92672">+</span>  
-</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;}&#39;</span>;  
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>接下来，我们创建一个包含多个<code>Employee</code>对象的列表，并使用流式编程找出薪水最高的员工：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;  
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.List;  
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Optional;  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DeclarativeStreamingExample</span> {  
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 创建一个员工列表  </span>
-</span></span><span style="display:flex;"><span>        List<span style="color:#f92672">&lt;</span>Employee<span style="color:#f92672">&gt;</span> employees <span style="color:#f92672">=</span> Arrays.<span style="color:#a6e22e">asList</span>(  
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Employee(<span style="color:#e6db74">&#34;Alice&#34;</span>, 50000),  
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Employee(<span style="color:#e6db74">&#34;Bob&#34;</span>, 60000),  
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Employee(<span style="color:#e6db74">&#34;Charlie&#34;</span>, 45000),  
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">new</span> Employee(<span style="color:#e6db74">&#34;David&#34;</span>, 70000)  
-</span></span><span style="display:flex;"><span>        );  
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 使用流式编程找出薪水最高的员工  </span>
-</span></span><span style="display:flex;"><span>        Optional<span style="color:#f92672">&lt;</span>Employee<span style="color:#f92672">&gt;</span> highestPaidEmployee <span style="color:#f92672">=</span> employees.<span style="color:#a6e22e">stream</span>() <span style="color:#75715e">// 转换为流  </span>
-</span></span><span style="display:flex;"><span>                .<span style="color:#a6e22e">max</span>((e1, e2) <span style="color:#f92672">-&gt;</span> Double.<span style="color:#a6e22e">compare</span>(e1.<span style="color:#a6e22e">getSalary</span>(), e2.<span style="color:#a6e22e">getSalary</span>())); <span style="color:#75715e">// 根据薪水比较员工  </span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 处理结果  </span>
-</span></span><span style="display:flex;"><span>        highestPaidEmployee.<span style="color:#a6e22e">ifPresent</span>(emp <span style="color:#f92672">-&gt;</span> {  
-</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Highest paid employee is: &#34;</span> <span style="color:#f92672">+</span> emp);  
-</span></span><span style="display:flex;"><span>        });  
-</span></span><span style="display:flex;"><span>    }  
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>在这个例子中，我们使用了<code>stream()</code>方法将员工列表转换为一个流。然后，我们调用了<code>max()</code>方法，并传入了一个lambda表达式作为比较器，用于比较两个员工的薪水。<code>max()</code>方法会返回一个<code>Optional</code>对象，它可能包含薪水最高的员工（如果存在的话）。最后，我们使用<code>ifPresent()</code>方法来处理找到的员工（如果存在）。</p>
-<p>这个例子体现了流式编程的声明性，因为我们没有编写显式的循环或条件语句来遍历列表和比较元素。相反，我们通过调用一系列的方法（<code>stream()</code>, <code>max()</code>, <code>ifPresent()</code>）并传入必要的函数式接口实例（lambda表达式）来声明我们的意图。这种方式使得代码更加简洁和易于理解，同时也更容易进行扩展和修改。</p>
-
+    <p>JavaWeb</p>
+<h1 id="1基本概念">1.基本概念
+</h1><p>web开发</p>
+<ul>
+<li>
+<p>web，网页的意思</p>
+<ul>
+<li>静态Web</li>
+<li>html/cs</li>
+<li>提供给所有人看的数据始终不会发生变化</li>
+</ul>
+</li>
+<li>
+<p>动态web</p>
+<ul>
+<li>提供给所有人看的数据始终不会发生变化</li>
+<li>技术栈：Servlet/JSP，ASP，PHP</li>
+</ul>
+</li>
+</ul>
+<p>在Java中，动态web资源开发的技术统称为JavaWeb</p>
+<h2 id="12web应用程序">1.2、web应用程序
+</h2><p>web应用程序：可以通过浏览器访问的程序</p>
+<ul>
+<li>a.html、</li>
+<li>url：统一资源定位符，访问到的任何一个页面或资源都存在与这个世界的某一个角落的计算机上</li>
+<li>这些统一的web资源会被放在同一个文件夹下，就是web应用程序了，需要以来tomcat服务器</li>
+<li>一个web应用由多部分组成（静态、动态web）
+<ul>
+<li>html，css，js</li>
+<li>jsp，servlet</li>
+<li>java程序</li>
+<li>jar包</li>
+<li>配置文件properties</li>
+</ul>
+</li>
+<li>web应用程序编写完毕后，提供外界访问，需要一个服务器来统一管理</li>
+</ul>
+<h2 id="13静态web">1.3静态web
+</h2><ul>
+<li>*.html，服务器存在，那么就能读取</li>
+</ul>
+<h4 id="request和response">Request和Response
+</h4><p>请求到webService（网页服务器）&ndash;&gt;index&gt;html</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240809123750570.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240809123750570"
+	
+	
+></p>
+<p>这里重点</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240809123812500.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240809123812500"
+	
+	
+></p>
+<ul>
+<li>缺点
+<ul>
+<li>web页面无法动态更新
+<ul>
+<li>轮播提。点击特效：为动态</li>
+<li>JS实际开发中用的最多</li>
+<li>VBscript</li>
+</ul>
+</li>
+<li>无法和数据库交互（数据无法持久化，用户无法交互）</li>
+</ul>
+</li>
+</ul>
+<h2 id="14动态web">1.4、动态web
+</h2><p>页面会动态展示，</p>
+<p>页面服务器，页面服务器插件处理病毒什么的</p>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240809124204298.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240809124204298"
+	
+	
+></p>
+<ul>
+<li>缺点
+<ul>
+<li>假如服务器动态web资源出现了错误，我们需要重新编写我们的后台程序，重新发布
+<ul>
+<li>停机维护</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>优点：动态更新，所有用户看到的不是同一个界面
+<ul>
+<li>访问数据库（数据持久化：注册、用户信息、商品信息）</li>
+</ul>
+</li>
+</ul>
+<p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240809124335321.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240809124335321"
+	
+	
+></p>
+<p>新手村&ndash;&gt;魔鬼训练-（分析原理，看源码）&ndash;&gt;pk场</p>
+<h2 id="15web服务器">1.5、web服务器
+</h2><p>ASP</p>
+<ul>
+<li>
+<p>微软：国内最早流行的是ASP</p>
+</li>
+<li>
+<p>在HTML中嵌入了VB脚本，ASP+COM</p>
+</li>
+<li>
+<p>在ASP开发中，基本的一个页面都会有几千行的页面代码，页面极其混乱</p>
+<ul>
+<li>C#</li>
+<li>lls，启动或关闭windows功能，里面能进行lls开发</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"></code></pre></div></li>
+<li>
+<p>php</p>
+<ul>
+<li>PHP开发速度很快，功能抢答，跨平台，代码简单（开源的模板引擎WordPress）</li>
+<li>无法承载大量访问量的情况（局限性）</li>
+</ul>
+</li>
+<li>
+<p>jsp/servlet</p>
+<ul>
+<li>B/S：浏览和服务器</li>
+<li>C/S：客户端和服务器
+<ul>
+<li>sun公司主推B/S架构,所有大公司,或者开源组件为java写的</li>
+<li>基于Java语言</li>
+<li>可以承载三高的问题带来的影响</li>
+<li>语法像ASP</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="22web服务器">2.2web服务器
+</h2><p>服务器是被动的操作,处理用户的请求和给用户一些相应信息。</p>
+<p>tomcat百度百科</p>
+<p>最新的Servlet和jsp规范总是在tomcat中得到体现，是一个Web应用服务器</p>
+<p>世界上运行jsp页面和Servlet</p>
+<p>1.安装</p>
+<p>2.配置文件和目录结构</p>
+<p>3.</p>
+<p>jdk讲解17:03</p>
+<p><a class="link" href="https://www.bilibili.com/video/BV12J411M7Sj/?p=2&amp;spm_id_from=pageDriver&amp;vd_source=7380129e81d052c5b32ce598508c71d5"  target="_blank" rel="noopener"
+    >javaweb-02：web服务器讲解_哔哩哔哩_bilibili</a></p>
+<h3 id="手写tomcat">手写tomcat
+</h3>
 
 
     
@@ -623,12 +714,6 @@
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/java%E5%85%B6%E4%BB%96/">Java其他</a>
-        
-    </section>
-
 
     
     <section class="article-copyright">
@@ -651,34 +736,6 @@
     
 
     
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/post1/java/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/java.png" loading="lazy" data-key="Java" data-hash="/java.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">流操作和函数式编程</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
 
      
     
@@ -782,12 +839,22 @@
                 
             
                 
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
              
              
           
             
        
-            · 写下 9 篇文章、总计 4.48 k 字
+            · 写下 14 篇文章、总计 9.59 k 字
         </div> 
 
     

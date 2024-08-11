@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Datawhale on PoolBee的博客</title>
+        <link>http://localhost:1313/tags/datawhale/</link>
+        <description>Recent content in Datawhale on PoolBee的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 10 Aug 2024 17:06:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/datawhale/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Datawhale AI夏令营第四期大模型应用开发-Task01</title>
+        <link>http://localhost:1313/post/llm/</link>
+        <pubDate>Sat, 10 Aug 2024 17:06:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/llm/</guid>
+        <description>&lt;img src="http://localhost:1313/post/cover/datawhale-cover.png" alt="Featured image of post Datawhale AI夏令营第四期大模型应用开发-Task01" /&gt;&lt;h1 id=&#34;datawhale-ai夏令营第四期大模型应用开发-task01&#34;&gt;Datawhale AI夏令营第四期大模型应用开发-Task01
+&lt;/h1&gt;&lt;p&gt;首先了解一些背景知识。&lt;/p&gt;
+&lt;h1 id=&#34;一什么是大模型&#34;&gt;一、&lt;strong&gt;什么是大模型&lt;/strong&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;语言模型发展历史&#34;&gt;语言模型发展历史
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;语言模型：为了对人类语言的内在规律进行建模，研究者们提出使用语言模型（language model）来准确预测词序列中 &lt;code&gt;下一个词&lt;/code&gt; 或者 &lt;code&gt;缺失的词&lt;/code&gt; 的概率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;统计语言模型：使用马儿可夫假设，假设当前词与之前的词产生联系。&lt;/p&gt;
+&lt;p&gt;中文中，建立n元语言模型，n元作为最小的&lt;strong&gt;语义单元&lt;/strong&gt;进行建模&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;神经语言模型&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上下文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;统计语言模型（Statistical Language Model, SLM）：使用马尔可夫假设（Markov Assumption）来建模语言序列的 𝑛 元（𝑛-gram）语言模型&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;神经语言模型（Neural Language Model, NLM）：基于神经网络构建语言模型，如循环神经网络（Recurrent Neural Networks, RNN），并学习上下文相关的词表示（即分布式词向量），也被称为词嵌入（Word Embedding）。代表性工作：word2vec&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;预训练语言模型（Pre-trained Language Model, PLM）：使用大量的无标注数据预训练双向 LSTM（Bidirectional LSTM, biLSTM）或者Transformer，然后在下游任务上进行微调（Fine-Tuning）。代表性工作：ELMo、BERT、GPT-1/2&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;双向lstm是在RNN基础上进行改进的模型&lt;/li&gt;
+&lt;li&gt;Transformer，使用多层自注意力结构的模型&lt;/li&gt;
+&lt;li&gt;无标注数据：数据没有任何人标注，数据自监督的方式进行学习-&lt;/li&gt;
+&lt;li&gt;形成了预训练微调的范式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大语言模型（Large Language Model, LLM）：基于“扩展法则”（Scaling Law），即通过增加模型参数或训练数据，可以提升下游任务的性能，同时具有小模型不具有的“涌现能力”（Emergent Abilities）。代表性工作：GPT-3、ChatGPT、Claude、Llama&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MTZlZDA1ZjQ5NDNkZWIzYzI4YTRmZTczOWExZDczNDdfWE8zNGxpa0xsYjhua0I5aGN6MDRyUmg3bGZZT1d4cGtfVG9rZW46WGgxQmI0MndibzBtNTl4Z205R2NMNXVCbmllXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二大模型是怎么构建的三个阶段&#34;&gt;二、大模型是怎么构建的（三个阶段）
+&lt;/h1&gt;&lt;p&gt;大模型的构建过程可以分为预训练（Pretraining）、有监督微调（Supervised Fine-tuning, SFT）、基于人类反馈的强化学习对齐（Reinforcement Learning from Human Feedback, RLHF）三个阶段。&lt;/p&gt;
+&lt;h3 id=&#34;1预训练pretraining&#34;&gt;1.&lt;strong&gt;预训练（Pretraining）&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用海量的数据进行模型参数的初始学习，旨在为模型参数寻找到一个优质的“起点”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;1预训练技术的发展&#34;&gt;(1)预训练技术的发展
+&lt;/h4&gt;&lt;p&gt;​	这一概念最初在计算机视觉领域萌芽，通过在ImageNet（一个大型图像数据集）上的训练，为模型参数奠定了坚实的基础。&lt;/p&gt;
+&lt;p&gt;​	后来在自然语言处理（NLP）领域使用，word2vec开创先河，利用未标注文本构建词嵌入模型；ELMo、BERT及GPT-1则进一步推动了**“预训练-微调”范式**的普及。&lt;/p&gt;
+&lt;p&gt;​	起初，只用于解决特定类别的&lt;strong&gt;下游任务&lt;/strong&gt;；例如文本分类、序列标注、序列到序列生成等传统NLP任务。&lt;/p&gt;
+&lt;p&gt;​	之后，GPT-2——通过&lt;strong&gt;大规模文本数据&lt;/strong&gt;预训练：打造能够应对广泛任务的通用解决方案，并在GPT-3中将这一理念扩展至前所未有的超大规模。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在BERT等早期预训练模型中，模型架构和训练任务呈现出多样化特征。然而，随着GPT系列模型的兴起，&lt;strong&gt;“解码器架构+预测下一个词”&lt;strong&gt;的策略证明了其卓越效能，成为了&lt;/strong&gt;当前主流的大模型技术路线&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2预训练的过程&#34;&gt;(2)预训练的过程
+&lt;/h4&gt;&lt;h5 id=&#34;搜集和清洗文本数据&#34;&gt;搜集和清洗文本数据
+&lt;/h5&gt;&lt;p&gt;​	首要任务是搜集和清洗海量的文本数据，确保剔除潜在的有害内容。获取高质、多元的数据集，并对其进行严谨的预处理。&lt;/p&gt;
+&lt;p&gt;​	鉴于模型的知识库几乎完全源自训练数据，数据的质量与多样性对模型性能至关重要。这是打造高性能语言模型的关键步骤。&lt;/p&gt;
+&lt;p&gt;​	当前，多数开源模型的预训练均基于数T的token。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;大模型&lt;/th&gt;
+&lt;th&gt;token&lt;/th&gt;
+&lt;th&gt;计算资源需求&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Llama-1&lt;/td&gt;
+&lt;td&gt;1T&lt;/td&gt;
+&lt;td&gt;2,048块A100 80GB GPU三周&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Llama-2&lt;/td&gt;
+&lt;td&gt;2T&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Llama-3&lt;/td&gt;
+&lt;td&gt;15T&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;​	除了对数据量的苛刻要求，预训练阶段对计算资源的需求也极为庞大。以Llama-1的65B参数模型为例，其在2,048块A100 80GB GPU集群上进行了接近三周的训练。&lt;/p&gt;
+&lt;h5 id=&#34;训练及细节&#34;&gt;训练及细节
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;此外，预训练过程中还涉及诸多细节，诸如&lt;strong&gt;数据配比、学习率调度、模型行为监测等&lt;/strong&gt;，这些往往缺乏公开的最佳实践指导，需要研发团队具备深厚的训练经验与故障排查能力，以规避训练过程中的回溯与重复迭代，节约计算资源，提高训练效率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​	总体而言，预训练不仅是一项技术挑战，更是一场对数据质量、算力投入与研发智慧的综合考验。&lt;/p&gt;
+&lt;h3 id=&#34;2有监督微调supervised-fine-tuning-sft或指令微调instruction-tuning&#34;&gt;2.有监督微调（Supervised Fine-tuning, SFT）或**指令微调(instruction tuning)
+&lt;/h3&gt;&lt;h4 id=&#34;预训练模型能力限制&#34;&gt;预训练模型能力限制
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;大规模预训练后，模型已经具备较强的模型能力，能够编码丰富的世界知识，但是由于&lt;strong&gt;预训练任务形式&lt;/strong&gt;所限，&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;这些模型更擅长于文本补全，并不适合直接解决具体的任务。&lt;/p&gt;
+&lt;p&gt;尽管引入了诸如&lt;strong&gt;上下文学习（In-Context Learning, ICL）&lt;strong&gt;等&lt;/strong&gt;提示学习策略&lt;/strong&gt;以增强模型的适应性，但&lt;strong&gt;模型本身在下游任务解决上的能力仍受限&lt;/strong&gt;。为了克服这一局限，预训练后的大型语言模型往往需经历微调过程，以提升其在&lt;strong&gt;特定任务中的表现。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;目前来说，比较广泛使用的微调技术是“&lt;strong&gt;有监督微调&lt;/strong&gt;”（也叫做&lt;strong&gt;指令微调，Instruction Tuning&lt;/strong&gt;）：该方法利用成对的任务输入与预期输出数据，训练模型学会以问答的形式解答问题，从而解锁其任务解决潜能。&lt;/p&gt;
+&lt;p&gt;经过指令微调后，大语言模型能够展现出较强的指令遵循能力，可以通过&lt;strong&gt;零样本学习&lt;/strong&gt;的方式解决多种下游任务。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;指令微调更多地扮演着催化剂的角色，激活模型内在的潜在能力，而非单纯地灌输信息&lt;/strong&gt;。**&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;sft的优点&#34;&gt;SFT的优点
+&lt;/h4&gt;&lt;p&gt;相较于预训练所需的海量数据，指令微调&lt;strong&gt;所需数据量显著减少&lt;/strong&gt;，从几十万到上百万条不等的数据，均可有效激发模型的通用任务解决能力，甚至有研究表明，少量高质量的指令数据（数千至数万条）亦能实现令人满意的微调效果。这不仅降低了对计算资源的依赖，也提升了微调的灵活性与效率。&lt;/p&gt;
+&lt;h3 id=&#34;3基于人类反馈的强化学习对齐&#34;&gt;3.基于人类反馈的强化学习对齐
+&lt;/h3&gt;&lt;p&gt;除了提升任务的解决能力外，大语言模型与**人类期望、需求及价值观的对齐（Alignment）**至关重要，这对于大模型的应用具有重要的意义。&lt;/p&gt;
+&lt;h4 id=&#34;instructgpt论文提出&#34;&gt;InstructGPT论文提出
+&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/613688211&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;InstructGPT论文解读 - 知乎 (zhihu.com)&lt;/a&gt;OpenAI在 2022 年初发布&lt;/p&gt;
+&lt;p&gt;​	详尽阐述了如何实现语言模型与人类对齐。论文提出了&lt;strong&gt;基于人类反馈的强化学习对齐（Reinforcement Learning from Human Feedback, RLHF）&lt;/strong&gt;，通过指令微调后的强化学习，提升模型的人类对齐度。RLHF的&lt;strong&gt;核心在于构建一个反映人类价值观的奖励模型（Reward Model）&lt;/strong&gt;。这一模型的训练依赖于专家对模型多种输出的偏好排序，通过偏好数据训练出的奖励模型能够有效评判模型输出的质量。&lt;/p&gt;
+&lt;h4 id=&#34;其他简化方法&#34;&gt;其他简化方法
+&lt;/h4&gt;&lt;p&gt;​	目前还有很多工作试图&lt;strong&gt;去除复杂的强化学习算法&lt;/strong&gt;，或&lt;strong&gt;其他使用 SFT&lt;/strong&gt; 方式来达到与 RLHF 相似的效果，从而简化模型的对齐过程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;直接偏好优化（Direct Preference Optimization, DPO）&lt;/strong&gt;，它通过与有监督微调相似的复杂度实现模型与人类对齐，是一种典型的不需要强化学习的对齐算法。相比RLHF，DPO不再需要在训练过程中针对大模型进行采样，同时超参数的选择更加容易。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后，我们以开源大模型Llama-2-Chat为例，简要介绍一下其训练过程。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MzJjMTI3MGMxZWRjNjVmODRiMjNiMDI1ZjMzMjc3ZDBfbkx1NXd6NUdreUZXR2taNU9NS3NBRUVFdldYOE9rRmJfVG9rZW46WjJtNGJ5Q3BRb0F6UXl4VkdMNWNnZ3hibkFlXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;​	整个过程起始于利用公开数据进行预训练，获得Llama-2。在此之后，通过有监督微调创建了Llama-2-Chat的初始版本。随后，使用基于人类反馈的强化学习（RLHF）方法来迭代地改进模型，具体包括拒绝采样（Rejection Sampling）和近端策略优化（Proximal Policy Optimization, PPO）。在RLHF阶段，人类偏好数据也在并行迭代，以保持奖励模型的更新。&lt;/p&gt;
+&lt;h1 id=&#34;三开源大模型和闭源大模型&#34;&gt;三、开源大模型和闭源大模型
+&lt;/h1&gt;&lt;p&gt;​	根据上面的学习，我们不难发现，构建大模型不仅需要&lt;strong&gt;海量的数据&lt;/strong&gt;，更依赖于&lt;strong&gt;强大的计算能力&lt;/strong&gt;，以确保模型能够快速迭代和优化，从而达到预期的性能水平。鉴于此，全球范围内能够独立承担起如此庞大计算成本的机构屈指可数。这些机构可以分为以下两大阵营：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;一是选择将模型开源的组织&lt;/strong&gt;，他们秉持着促进学术交流和技术创新的理念，让全球的研究者和开发者都能受益于这些模型。通过开放模型的代码和数据集，他们加速了整个AI社区的发展，促进了创新和技术的民主化。这一阵营的代表有Meta AI、浪潮信息等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;另一类则是保持模型闭源的公司&lt;/strong&gt;，它们通常将模型作为核心竞争力，用于提供专有服务或产品，以维持商业优势。闭源模型通常伴随着专有技术和服务，企业可以通过API等方式提供给客户使用，而不直接公开模型的细节或代码。这种模式有助于保障公司的商业利益，同时也为用户提供了稳定和安全的服务。这一阵营的代表有OpenAI、百度等。&lt;/p&gt;
+&lt;p&gt;无论是开源还是闭源，这些大模型都在推动人工智能领域向前发展，对于推动大语言模型技术的渐进式发展起到了至关重要的作用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来，我们以浪潮信息为例，简要介绍下浪潮信息源大模型开源体系。&lt;/p&gt;
+&lt;h1 id=&#34;四源大模型开源体系浪潮信息&#34;&gt;四、&lt;strong&gt;源大模型开源体系&lt;/strong&gt;(浪潮信息)
+&lt;/h1&gt;&lt;p&gt;截止到目前，浪潮信息已经发布了三个大模型：&lt;code&gt;源1.0&lt;/code&gt; ，&lt;code&gt;源2.0&lt;/code&gt; 和 &lt;code&gt;源2.0-M32&lt;/code&gt;，其中 &lt;code&gt;源1.0&lt;/code&gt; 开放了模型API、高质量中文数据集和代码，&lt;code&gt;源2.0&lt;/code&gt; 和 &lt;code&gt;源2.0-M32&lt;/code&gt; 采用全面开源策略，全系列模型参数和代码均可免费下载使用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YTliY2IwMzI1M2M1YmQ3NmJjY2MwMmRjNGMyMzg1ZGFfTXZybXQwOGw4UzY0OUhBVk1VQkZqMFI5Rm1wdG83Sm5fVG9rZW46WGtnZGJ1Wmhxb1E1RXV4ems4b2M4YmN4bmhiXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2021年9月，源1.0大模型发布，它采用76层的Transformer Decoder结构，使用5T数据训练，拥有2457亿参数量，超越OpenAI研发的GPT-3，成为全球最大规模的AI巨量模型，表现出了出色的中文理解与创作能力。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Shawn-IEITSystems/Yuan-1.0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;项目链接: https://github.com/Shawn-IEITSystems/Yuan-1.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/s/6CH0I4eOLzj3YDZyIxdeEQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方报道: https://mp.weixin.qq.com/s/6CH0I4eOLzj3YDZyIxdeEQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2110.04725&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;论文链接: https://arxiv.org/abs/2110.04725&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=OGFmMzU1NDk0NjM1OTM3NDQ0MzcyMDc0ZTAzZmYwNzFfTzZjSEhUZmZHUlNwSk53M0hJQjAyYkhjQWFxNVpvSjFfVG9rZW46VHBHQ2JHT3hJb3FkcXR4ZUdQSWM2T2dZbkpoXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2023年11月，源2.0大模型发布，它使用10T数据训练，包括1026亿、518亿、21亿 三款参数规模，在数理逻辑、代码生成等方面表现出色。&lt;/p&gt;
+&lt;p&gt;在算法方面，与传统Attention对输入的所有文字一视同仁不同，&lt;/p&gt;
+&lt;h2 id=&#34;局部注意力过滤增强机制localized-filtering-based-attention-lfa&#34;&gt;局部注意力过滤增强机制（Localized Filtering-based Attention, LFA）
+&lt;/h2&gt;&lt;p&gt;源2.0提出，它假设自然语言相邻词之间有更强的语义关联，因此针对局部依赖进行了建模，最后使得模型精度提高3.53%。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/IEIT-Yuan/Yuan-2.0&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;项目链接: https://github.com/IEIT-Yuan/Yuan-2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/s/rjnsUS83TT7aEN3r2i0IPQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方报道: https://mp.weixin.qq.com/s/rjnsUS83TT7aEN3r2i0IPQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2311.15786&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;论文链接: https://arxiv.org/abs/2311.15786&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MzEzOWY2YzliODJhN2ZlOWI5NTZkYmYzMjNjOTUyMTRfOEdkbkdaYmxZYzRVM09tRVgydjVSb3FGZ0E0eDlWeVFfVG9rZW46RHNPdWIzYno0b0hMekp4U0x3OGM1cHcwbnFoXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2024年5月，源2.0-M32发布，它是一个混合专家（Mixture of Experts, MoE）大模型，使用2000B Tokens训练，包含400亿参数，37亿激活参数&lt;/p&gt;
+&lt;p&gt;源2.0-M32 包含32个专家，基于LFA+Attention Router的MoE模型结构。&lt;/p&gt;
+&lt;p&gt;源2.0-M32 在数理逻辑、代码生成、知识等方面精度对标Llama3-70B，推理算力降至1/19。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/IEIT-Yuan/Yuan2.0-M32&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;项目链接: https://github.com/IEIT-Yuan/Yuan2.0-M32&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mp.weixin.qq.com/s/WEVyYq9BkTTlO6EAfiCf6w&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方报道: https://mp.weixin.qq.com/s/WEVyYq9BkTTlO6EAfiCf6w&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2405.17976&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;论文链接: https://arxiv.org/abs/2405.17976&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YzRmNGRlYjZjZDhjOWQyMDlkMWM5NDBmZGMzMjhiZThfTFpZQ1lWYnRUQ2FtbFhWcXNlaXBjdW9QeDZDRDk4dE5fVG9rZW46S3NMemJBcUNkb0JuZkl4S3NwQWN3amNRbmJnXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;本次学习，我们将以 &lt;code&gt;源2.0-2B&lt;/code&gt; 模型为例，带领大家一起体验源大模型，欢迎大家来给项目点点 star 哦！&lt;/p&gt;
+&lt;h1 id=&#34;五大模型时代挖掘模型能力的开发范式&#34;&gt;五、大模型时代挖掘模型能力的开发范式
+&lt;/h1&gt;&lt;p&gt;​	进入大模型时代，人工智能领域的边界正以前所未有的速度扩展，而&lt;strong&gt;如何充分挖掘大模型的内在潜能&lt;/strong&gt;，成为了应用开发者面前的一道关键课题。&lt;/p&gt;
+&lt;p&gt;​	在这一背景下，不同的应用场景催生了&lt;strong&gt;多样化的应用开发策略&lt;/strong&gt;，这些策略不仅展现了大模型应用开发的丰富可能性，也预示着未来AI技术在各行业落地的广阔前景。&lt;/p&gt;
+&lt;h2 id=&#34;有手就行的prompt工程&#34;&gt;有手就行的Prompt工程
+&lt;/h2&gt;&lt;p&gt;Prompt工程（Prompt Engineering）是指通过精心构造提示（Prompt），直接调教大模型，解决实际问题。&lt;/p&gt;
+&lt;p&gt;为了更充分地挖掘大模型的潜能，出现了以下两种技术：&lt;/p&gt;
+&lt;h3 id=&#34;lct和cot&#34;&gt;LCT和CoT
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;上下文学习（In-Context Learning, ICL）：将任务说明及示例融入提示文本之中，利用模型自身的归纳能力，无需额外训练即可完成新任务的学习。&lt;/li&gt;
+&lt;li&gt;思维链提示（Chain-of-Thought, CoT）：引入连贯的逻辑推理链条至提示信息内，显著增强了模型处理复杂问题时的解析深度与广度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;embedding辅助给llm外接大脑&#34;&gt;Embedding辅助给LLM外接大脑
+&lt;/h3&gt;&lt;p&gt;​	尽管大模型具有非常出色的能力，然而在实际应用场景中，仍然会出现大模型无法满足我们需求的情况，主要有以下几方面原因：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些&lt;strong&gt;实时性的或者非公开&lt;/strong&gt;的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。&lt;/li&gt;
+&lt;li&gt;数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;大模型幻觉&lt;/strong&gt;：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，将知识提前转成Embedding向量，存入知识库，然后通过检索将知识作为背景信息，这样就相当于给LLM外接大脑，使大模型能够运用这些外部知识，生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。&lt;/p&gt;
+&lt;h3 id=&#34;参数高效微调parameter-efficient-fine-tuning轻量化微调lightweight-fine-tuning&#34;&gt;参数高效微调Parameter-efficient Fine-tuning，轻量化微调Lightweight Fine-tuning
+&lt;/h3&gt;&lt;p&gt;在实际应用场景中，大模型还会经常出现以下问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大模型在当前任务上能力不佳，如果提升其能力？&lt;/li&gt;
+&lt;li&gt;另外，怎么使大模型学习其本身不具备的能力呢？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些问题的答案是&lt;strong&gt;模型微调&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;模型微调也被称为指令微调（Instruction Tuning）或者有监督微调（Supervised Fine-tuning, SFT），首先需要构建指令训练数据，然后通过有监督的方式对大模型的参数进行微调。经过模型微调后，大模型能够更好地遵循和执行人类指令，进而完成下游任务。&lt;/p&gt;
+&lt;p&gt;然而，由于大模型的参数量巨大， 进行&lt;strong&gt;全量参数微调需要消耗非常多的算力&lt;/strong&gt;。为了解决这一问题，研究者提出了&lt;strong&gt;参数高效微调（Parameter-efficient Fine-tuning）&lt;/strong&gt;，也称为&lt;strong&gt;轻量化微调 （Lightweight Fine-tuning）&lt;/strong&gt;，这些方法通过训练极少的模型参数，同时保证微调后的模型表现可以与全量微调相媲美。&lt;/p&gt;
+&lt;h1 id=&#34;六大模型应用开发-必知必会&#34;&gt;六、大模型应用开发 必知必会
+&lt;/h1&gt;&lt;p&gt;通常，一个完整的大模型应用包含一个客户端和一个服务端。&lt;/p&gt;
+&lt;p&gt;客户端接收到用户请求后，将请求输入到服务端，服务端经过计算得到输出后，返回给客户端回复用户的请求。&lt;/p&gt;
+&lt;p&gt;暂时无法在飞书文档外展示此内容&lt;/p&gt;
+&lt;h2 id=&#34;客户端&#34;&gt;客户端
+&lt;/h2&gt;&lt;p&gt;在大模型应用中，客户端需要接受用户请求，并且能将回复返回给用户。&lt;/p&gt;
+&lt;p&gt;目前，客户端通常使用 &lt;a class=&#34;link&#34; href=&#34;https://www.gradio.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Gradio&lt;/a&gt; 和 &lt;a class=&#34;link&#34; href=&#34;https://streamlit.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Streamlit&lt;/a&gt; 进行开发。&lt;/p&gt;
+&lt;h3 id=&#34;gradiohttpswwwgradioapp-基本概念&#34;&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.gradio.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Gradio&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;基本概念&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://datawhaler.feishu.cn/sync/C8BfdAPevsOWctbpowocZYOGnmb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://datawhaler.feishu.cn/sync/C8BfdAPevsOWctbpowocZYOGnmb&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;streamlithttpsstreamlitio-基础概念&#34;&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://streamlit.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Streamlit&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;基础概念&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://datawhaler.feishu.cn/sync/AylRdptJis6baEbW2f9cW17snVh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://datawhaler.feishu.cn/sync/AylRdptJis6baEbW2f9cW17snVh&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;服务端&#34;&gt;服务端
+&lt;/h2&gt;&lt;p&gt;在大模型应用中，服务端需要与大模型进行交互，大模型接受到用户请求后，经过复杂的计算，得到模型输出。&lt;/p&gt;
+&lt;p&gt;目前，服务端主要有以下两种方式：&lt;/p&gt;
+&lt;h3 id=&#34;直接调用大模型api&#34;&gt;直接调用大模型API
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;直接调用大模型API：将请求直接发送给相应的服务商，如openai，讯飞星火等，等待API返回大模型回复&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✔️ 优点：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;便捷性&lt;/strong&gt;： 不需要关心模型的维护和更新，服务商通常会负责这些工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源效率&lt;/strong&gt;： 避免了本地硬件投资和维护成本，按需付费，灵活调整成本支出。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定性与安全性&lt;/strong&gt;： 专业团队管理，可能提供更好的系统稳定性和数据安全性措施。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;扩展性&lt;/strong&gt;： API服务易于集成到现有的应用和服务中，支持高并发请求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✖️ 缺点：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;网络延迟&lt;/strong&gt;： 需要稳定的网络连接，可能会受到网络延迟的影响。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据隐私&lt;/strong&gt;： 数据需要传输到服务商的服务器，可能涉及数据安全和隐私问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成本控制&lt;/strong&gt;： 高频次或大量数据的调用可能会导致较高的费用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;依赖性&lt;/strong&gt;： 受制于服务商的政策变化，如价格调整、服务条款变更等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;大模型本地部署&#34;&gt;**大模型本地部署
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;大模型本地部署&lt;/strong&gt;**：在本地GPU或者CPU上，下载模型文件，并基于推理框架进行部署大模型**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;✔️ 优点：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据主权&lt;/strong&gt;： 数据完全在本地处理，对于敏感数据处理更为安全。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;性能可控&lt;/strong&gt;： 可以根据需求优化配置，减少网络延迟，提高响应速度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成本固定&lt;/strong&gt;： 初始投入后，长期运行成本相对固定，避免了按使用量付费的不确定性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定制化&lt;/strong&gt;： 更容易针对特定需求进行模型微调或扩展。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;✖️ 缺点：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;硬件投资&lt;/strong&gt;： 需要强大的计算资源，如高性能GPU，初期投资成本较高。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;运维复杂&lt;/strong&gt;： 需要自行管理模型的更新、维护和故障排查。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;技术门槛&lt;/strong&gt;： 对于非专业团队而言，模型的部署和优化可能较为复杂。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源利用率&lt;/strong&gt;： 在低负载情况下，本地硬件资源可能无法充分利用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;综上，选择哪种方式取决于具体的应用场景、数据敏感性、预算以及对延迟和性能的需求。&lt;/p&gt;
+&lt;h2 id=&#34;来精读一下baseline&#34;&gt;&lt;strong&gt;来精读一下baseline&lt;/strong&gt;
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;完整baseline代码&#34;&gt;完整baseline代码
+&lt;/h3&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 导入所需的库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; transformers &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; AutoTokenizer, AutoModelForCausalLM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; torch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; streamlit &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; st
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 创建一个标题和一个副标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;title(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;💬 Yuan2.0 智能编程助手&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 源大模型下载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; modelscope &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; snapshot_download
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;model_dir &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; snapshot_download(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IEITYuan/Yuan2-2B-Mars-hf&amp;#39;&lt;/span&gt;, cache_dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# model_dir = snapshot_download(&amp;#39;IEITYuan/Yuan2-2B-July-hf&amp;#39;, cache_dir=&amp;#39;./&amp;#39;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 定义模型路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;path &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./IEITYuan/Yuan2-2B-Mars-hf&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# path = &amp;#39;./IEITYuan/Yuan2-2B-July-hf&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 定义模型数据类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;torch_dtype &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; torch&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;bfloat16 &lt;span style=&#34;color:#75715e&#34;&gt;# A10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# torch_dtype = torch.float16 # P100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 定义一个函数，用于获取模型和tokenizer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;@st.cache_resource&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get_model&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Creat tokenizer...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tokenizer &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AutoTokenizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;from_pretrained(path, add_eos_token&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, add_bos_token&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, eos_token&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;eod&amp;gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    tokenizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_tokens([&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;sep&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;pad&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;mask&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;predict&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;FIM_SUFFIX&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;FIM_PREFIX&amp;gt;&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;FIM_MIDDLE&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;commit_before&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;commit_msg&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;commit_after&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;jupyter_start&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;jupyter_text&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;jupyter_code&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;jupyter_output&amp;gt;&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;lt;empty_output&amp;gt;&amp;#39;&lt;/span&gt;], special_tokens&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Creat model...&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    model &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AutoModelForCausalLM&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;from_pretrained(path, torch_dtype&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;torch_dtype, trust_remote_code&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cuda()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Done.&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; tokenizer, model
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 加载model和tokenizer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tokenizer, model &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; get_model()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 初次运行时，session_state中没有&amp;#34;messages&amp;#34;，需要创建一个空列表&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;messages&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;not&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;session_state:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;session_state[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;messages&amp;#34;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; []
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 每次对话时，都需要遍历session_state中的所有消息，并显示在聊天界面上&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; msg &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;session_state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;messages:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;chat_message(msg[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;])&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(msg[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如果用户在聊天输入框中输入了内容，则执行以下操作&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; prompt &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;chat_input():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 将用户的输入添加到session_state中的messages列表中&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;session_state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;messages&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;: prompt})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 在聊天界面上显示用户的输入&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;chat_message(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(prompt)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 调用模型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    prompt &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;n&amp;gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;join(msg[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;] &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; msg &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;session_state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;messages) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;sep&amp;gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# 拼接对话历史&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    inputs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tokenizer(prompt, return_tensors&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pt&amp;#34;&lt;/span&gt;)[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input_ids&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;cuda()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    outputs &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; model&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;generate(inputs, do_sample&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;False&lt;/span&gt;, max_length&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1024&lt;/span&gt;) &lt;span style=&#34;color:#75715e&#34;&gt;# 设置解码方式和最大生成长度&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    output &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tokenizer&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;decode(outputs[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; output&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;split(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;sep&amp;gt;&amp;#34;&lt;/span&gt;)[&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;replace(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;lt;eod&amp;gt;&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 将模型的输出添加到session_state中的messages列表中&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;session_state&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;messages&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;append({&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;assistant&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;: response})
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 在聊天界面上显示模型的输出&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    st&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;chat_message(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;assistant&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;write(response)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;h3 id=&#34;baseline方案设计&#34;&gt;baseline方案设计
+&lt;/h3&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;21-概要设计&#34;&gt;2.1 概要设计
+&lt;/h4&gt;&lt;p&gt;baseline基于源大模型的编程能力来解决用户的问题，主要包含一个Streamlit开发的客户端，以及一个部署好浪潮源大模型的服务端。客户端接收到用户请求后，首先进行交互历史拼接，然后输入到服务端的浪潮源大模型，得到模型输出结果后，返回给客户端，用于回复用户的问题。&lt;/p&gt;
+&lt;p&gt;暂时无法在飞书文档外展示此内容&lt;/p&gt;
+&lt;h4 id=&#34;22-详细设计&#34;&gt;2.2 详细设计
+&lt;/h4&gt;&lt;p&gt;暂时无法在飞书文档外展示此内容&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;导入库：&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;导入所需要的依赖，包括 &lt;code&gt;transformers&lt;/code&gt;，&lt;code&gt;torch&lt;/code&gt; 和 &lt;code&gt;streamlit&lt;/code&gt;。其中&lt;code&gt;torch&lt;/code&gt; 魔搭本身已经安装，&lt;code&gt;transformers&lt;/code&gt; 和 &lt;code&gt;streamlit&lt;/code&gt;在第二步也安装完毕。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型下载：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Yuan2-2B-Mars支持通过多个平台进行下载，包括魔搭、HuggingFace、OpenXlab、百度网盘、WiseModel等。因为我们的机器就在魔搭，所以这里我们直接选择通过魔搭进行下载。模型在魔搭平台的地址为 &lt;a class=&#34;link&#34; href=&#34;https://modelscope.cn/models/IEITYuan/Yuan2-2B-Mars-hf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;IEITYuan/Yuan2-2B-Mars-hf&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;模型下载使用的是 modelscope 中的 snapshot_download 函数，第一个参数为模型名称 &lt;code&gt;IEITYuan/Yuan2-2B-Mars-hf&lt;/code&gt;，第二个参数 &lt;code&gt;cache_dir&lt;/code&gt; 为模型保存路径，这里&lt;code&gt;.&lt;/code&gt;表示当前路径。&lt;/p&gt;
+&lt;p&gt;模型大小约为4.1G，由于是从魔搭直接进行下载，速度会非常快。下载完成后，会在当前目录增加一个名为 &lt;code&gt;IEITYuan&lt;/code&gt; 的文件夹，其中 &lt;code&gt;Yuan2-2B-Mars-hf&lt;/code&gt; 里面保存着我们下载好的源大模型。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTJlZjg0NjI2MjNlODg1MzJmNzI4YTY2MDhkODMwMWVfdGJLSUlQdjRteVJCTnZDRFJLWWtjbGN2cGpOajNiRWtfVG9rZW46VExvbWJlRU5Ib0dZa1F4QXdJYmNwVWNObjh4XzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;模型加载：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用 &lt;code&gt;transformers&lt;/code&gt; 中的 &lt;code&gt;from_pretrained&lt;/code&gt; 函数来加载下载好的模型和tokenizer，并通过 &lt;code&gt;.cuda()&lt;/code&gt; 将模型放置在GPU上。另外，这里额外使用了 &lt;code&gt;streamlit&lt;/code&gt; 提供的一个装饰器 &lt;code&gt;@st.cache_resource&lt;/code&gt; ，它可以用于缓存加载好的模型和tokenizer。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;读取用户输入：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用 &lt;code&gt;streamlit&lt;/code&gt; 提供的 &lt;code&gt;chat_input()&lt;/code&gt; 来获取用户输入，同时将其保存到对话历史里，并通过&lt;code&gt;st.chat_message(&amp;quot;user&amp;quot;).write(prompt)&lt;/code&gt; 在聊天界面上进行显示。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;对话历史拼接：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对于 &lt;code&gt;Yuan2-2B-Mars&lt;/code&gt; 模型来说，输入需要在末尾添加 &lt;code&gt;，模型输出到 &lt;/code&gt; 结束。如果输入是多轮对话历史，需要使用 &lt;code&gt;进行拼接，并且在末尾添加&lt;/code&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;模型调用：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;输入的prompt需要先经tokenizer切分成token，并转成对应的id，并通过 &lt;code&gt;.cuda()&lt;/code&gt; 将输入也放置在GPU上。然后调用 &lt;code&gt;model.generate()&lt;/code&gt; 生成输出的id，并通过 &lt;code&gt;tokenizer.decode()&lt;/code&gt; 将id转成对应的字符串。最后从字符串中提取模型生成的内容（即 &lt;code&gt;之后的字符串），并删除末尾的&lt;/code&gt; ，得到最终的回复内容。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;显示模型输出：&lt;/strong&gt;
+&lt;ol&gt;
+&lt;li&gt;得到回复内容后，将其保存到对话历史里，并通过&lt;code&gt;st.chat_message(&amp;quot;assistant&amp;quot;).write(response)&lt;/code&gt; 在聊天界面上进行显示。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;尝试替换其他yuan大模型&#34;&gt;&lt;strong&gt;尝试替换其他Yuan大****模型&lt;/strong&gt;！
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://datawhaler.feishu.cn/sync/UG0ydiJi9sSFkub60HmcuQTJn9f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://datawhaler.feishu.cn/sync/UG0ydiJi9sSFkub60HmcuQTJn9f&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

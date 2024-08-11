@@ -886,17 +886,7 @@ hugo: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.21&rsquo; not found (required 
 <p><a class="link" href="https://blog.csdn.net/wbsu2004/article/details/125757009"  target="_blank" rel="noopener"
     >基于docker搭建Hugo_hugo docker-CSDN博客</a></p>
 <h1 id="docker">docker
-</h1><p><img src="https://s.gravatar.com/avatar/93f221127ed28404e31835a74b1243f4?s=480&amp;r=pg&amp;d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fer.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="User"
-	
-	
-></p>
-<p># 创建一个新的 hugo 站点 docker run &ndash;rm -it \   -v $(pwd)/src:/src \   klakegg/hugo:latest-ext \   &ldquo;new site . &ndash;force&rdquo; 这是在做什么?</p>
+</h1><p># 创建一个新的 hugo 站点 docker run &ndash;rm -it \   -v $(pwd)/src:/src \   klakegg/hugo:latest-ext \   &ldquo;new site . &ndash;force&rdquo; 这是在做什么?</p>
 <p>ChatGPT</p>
 <p>这个命令在用 Docker 创建一个新的 Hugo 站点。具体来说：</p>
 <ul>
@@ -1381,10 +1371,10 @@ docker pull mysql[:tag]
 	
 	
 ></p>
-<pre tabindex="0"><code class="language-CMD" data-lang="CMD">docker pull mysql:5.7
-
-#下载5.7版本
-</code></pre><p>共用了！！只需要更新了，不需要冲突的删除即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker pull mysql:5.7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#下载5.7版本</span>
+</span></span></code></pre></div><p>共用了！！只需要更新了，不需要冲突的删除即可。</p>
 <p><img src="C:%5cUsers%5canymore%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20240803232644460.png"
 	
 	
@@ -1397,7 +1387,7 @@ docker pull mysql[:tag]
 ></p>
 <p>这就是linux的联合文件系统。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>#删除某镜像
-</span></span><span style="display:flex;"><span>docker rmi -f 容器images的id
+</span></span><span style="display:flex;"><span>docker rmi -f 镜像images的id
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>#递归id批量删除-删除全部的
 </span></span><span style="display:flex;"><span>docker rmi -f $(docker images -aq)
@@ -1747,7 +1737,7 @@ ls
 <li>朋友拷贝给你</li>
 <li>自己制作镜像</li>
 </ul>
-<h1 id="理解分层管理-">理解分层管理-
+<h1 id="理解分层管理">理解分层管理
 </h1><h2 id="联合文件系统unionfs">联合文件系统UnionFS
 </h2><p>支持对文件系统的修改作为一次提交来一层层叠加。</p>
 <p>tomcat和mysql都要用到某个linux内核，那么就只会新增。</p>
@@ -3016,20 +3006,12 @@ ls
                 
             
                 
-            
-                
-            
-                
-            
-                
-            
-                
              
              
           
             
        
-            · 写下 18 篇文章、总计 8.30 k 字
+            · 写下 14 篇文章、总计 9.59 k 字
         </div> 
 
     
@@ -3042,7 +3024,9 @@ ls
 
 
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=13060602001722" rel="noreferrer" target="_blank">冀公网安备13060602001722</a>
+	 
+        
+
 
     <script>
         let s1 = '2023-6-09'; 
