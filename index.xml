@@ -49,13 +49,13 @@
 &lt;p&gt;大语言模型（Large Language Model, LLM）：基于“扩展法则”（Scaling Law），即通过增加模型参数或训练数据，可以提升下游任务的性能，同时具有小模型不具有的“涌现能力”（Emergent Abilities）。代表性工作：GPT-3、ChatGPT、Claude、Llama&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MTZlZDA1ZjQ5NDNkZWIzYzI4YTRmZTczOWExZDczNDdfWE8zNGxpa0xsYjhua0I5aGN6MDRyUmg3bGZZT1d4cGtfVG9rZW46WGgxQmI0MndibzBtNTl4Z205R2NMNXVCbmllXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171705821.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;image-20240811171705821&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -138,13 +138,13 @@
 &lt;li&gt;&lt;strong&gt;直接偏好优化（Direct Preference Optimization, DPO）&lt;/strong&gt;，它通过与有监督微调相似的复杂度实现模型与人类对齐，是一种典型的不需要强化学习的对齐算法。相比RLHF，DPO不再需要在训练过程中针对大模型进行采样，同时超参数的选择更加容易。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最后，我们以开源大模型Llama-2-Chat为例，简要介绍一下其训练过程。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MzJjMTI3MGMxZWRjNjVmODRiMjNiMDI1ZjMzMjc3ZDBfbkx1NXd6NUdreUZXR2taNU9NS3NBRUVFdldYOE9rRmJfVG9rZW46WjJtNGJ5Q3BRb0F6UXl4VkdMNWNnZ3hibkFlXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171726174.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;image-20240811171726174&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -163,13 +163,13 @@
 &lt;p&gt;接下来，我们以浪潮信息为例，简要介绍下浪潮信息源大模型开源体系。&lt;/p&gt;
 &lt;h1 id=&#34;四源大模型开源体系浪潮信息&#34;&gt;四、&lt;strong&gt;源大模型开源体系&lt;/strong&gt;(浪潮信息)
 &lt;/h1&gt;&lt;p&gt;截止到目前，浪潮信息已经发布了三个大模型：&lt;code&gt;源1.0&lt;/code&gt; ，&lt;code&gt;源2.0&lt;/code&gt; 和 &lt;code&gt;源2.0-M32&lt;/code&gt;，其中 &lt;code&gt;源1.0&lt;/code&gt; 开放了模型API、高质量中文数据集和代码，&lt;code&gt;源2.0&lt;/code&gt; 和 &lt;code&gt;源2.0-M32&lt;/code&gt; 采用全面开源策略，全系列模型参数和代码均可免费下载使用。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YTliY2IwMzI1M2M1YmQ3NmJjY2MwMmRjNGMyMzg1ZGFfTXZybXQwOGw4UzY0OUhBVk1VQkZqMFI5Rm1wdG83Sm5fVG9rZW46WGtnZGJ1Wmhxb1E1RXV4ems4b2M4YmN4bmhiXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171740560.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;image-20240811171740560&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -182,13 +182,13 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2110.04725&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;论文链接: https://arxiv.org/abs/2110.04725&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=OGFmMzU1NDk0NjM1OTM3NDQ0MzcyMDc0ZTAzZmYwNzFfTzZjSEhUZmZHUlNwSk53M0hJQjAyYkhjQWFxNVpvSjFfVG9rZW46VHBHQ2JHT3hJb3FkcXR4ZUdQSWM2T2dZbkpoXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171748984.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;image-20240811171748984&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -204,13 +204,13 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2311.15786&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;论文链接: https://arxiv.org/abs/2311.15786&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=MzEzOWY2YzliODJhN2ZlOWI5NTZkYmYzMjNjOTUyMTRfOEdkbkdaYmxZYzRVM09tRVgydjVSb3FGZ0E0eDlWeVFfVG9rZW46RHNPdWIzYno0b0hMekp4U0x3OGM1cHcwbnFoXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171756911.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;image-20240811171756911&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -225,13 +225,13 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2405.17976&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;论文链接: https://arxiv.org/abs/2405.17976&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=YzRmNGRlYjZjZDhjOWQyMDlkMWM5NDBmZGMzMjhiZThfTFpZQ1lWYnRUQ2FtbFhWcXNlaXBjdW9QeDZDRDk4dE5fVG9rZW46S3NMemJBcUNkb0JuZkl4S3NwQWN3amNRbmJnXzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171806132.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
+		alt=&#34;image-20240811171806132&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -267,12 +267,21 @@
 &lt;h1 id=&#34;六大模型应用开发-必知必会&#34;&gt;六、大模型应用开发 必知必会
 &lt;/h1&gt;&lt;p&gt;通常，一个完整的大模型应用包含一个客户端和一个服务端。&lt;/p&gt;
 &lt;p&gt;客户端接收到用户请求后，将请求输入到服务端，服务端经过计算得到输出后，返回给客户端回复用户的请求。&lt;/p&gt;
-&lt;p&gt;暂时无法在飞书文档外展示此内容&lt;/p&gt;
 &lt;h2 id=&#34;客户端&#34;&gt;客户端
 &lt;/h2&gt;&lt;p&gt;在大模型应用中，客户端需要接受用户请求，并且能将回复返回给用户。&lt;/p&gt;
 &lt;p&gt;目前，客户端通常使用 &lt;a class=&#34;link&#34; href=&#34;https://www.gradio.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Gradio&lt;/a&gt; 和 &lt;a class=&#34;link&#34; href=&#34;https://streamlit.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Streamlit&lt;/a&gt; 进行开发。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240811171855196.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240811171855196&#34;
+	
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;gradiohttpswwwgradioapp-基本概念&#34;&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.gradio.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Gradio&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;基本概念&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://datawhaler.feishu.cn/sync/C8BfdAPevsOWctbpowocZYOGnmb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -437,16 +446,6 @@
     &gt;IEITYuan/Yuan2-2B-Mars-hf&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;模型下载使用的是 modelscope 中的 snapshot_download 函数，第一个参数为模型名称 &lt;code&gt;IEITYuan/Yuan2-2B-Mars-hf&lt;/code&gt;，第二个参数 &lt;code&gt;cache_dir&lt;/code&gt; 为模型保存路径，这里&lt;code&gt;.&lt;/code&gt;表示当前路径。&lt;/p&gt;
 &lt;p&gt;模型大小约为4.1G，由于是从魔搭直接进行下载，速度会非常快。下载完成后，会在当前目录增加一个名为 &lt;code&gt;IEITYuan&lt;/code&gt; 的文件夹，其中 &lt;code&gt;Yuan2-2B-Mars-hf&lt;/code&gt; 里面保存着我们下载好的源大模型。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://datawhaler.feishu.cn/space/api/box/stream/download/asynccode/?code=ZTJlZjg0NjI2MjNlODg1MzJmNzI4YTY2MDhkODMwMWVfdGJLSUlQdjRteVJCTnZDRFJLWWtjbGN2cGpOajNiRWtfVG9rZW46VExvbWJlRU5Ib0dZa1F4QXdJYmNwVWNObjh4XzE3MjMyOTUwNTE6MTcyMzI5ODY1MV9WNA&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;img&#34;
-	
-	
-&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;模型加载：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
