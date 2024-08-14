@@ -247,7 +247,8 @@
 &lt;li&gt;上下文学习（In-Context Learning, ICL）：将任务说明及示例融入提示文本之中，利用模型自身的归纳能力，无需额外训练即可完成新任务的学习。&lt;/li&gt;
 &lt;li&gt;思维链提示（Chain-of-Thought, CoT）：引入连贯的逻辑推理链条至提示信息内，显著增强了模型处理复杂问题时的解析深度与广度。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;embedding辅助给llm外接大脑&#34;&gt;Embedding辅助给LLM外接大脑
+&lt;h3 id=&#34;embedding辅助给llm外接大脑大模型基础embedding---知乎-zhihucomhttpszhuanlanzhihucomp664867771&#34;&gt;Embedding辅助给LLM外接大脑&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/664867771&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;大模型基础：Embedding - 知乎 (zhihu.com)&lt;/a&gt;
 &lt;/h3&gt;&lt;p&gt;​	尽管大模型具有非常出色的能力，然而在实际应用场景中，仍然会出现大模型无法满足我们需求的情况，主要有以下几方面原因：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些&lt;strong&gt;实时性的或者非公开&lt;/strong&gt;的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。&lt;/li&gt;
