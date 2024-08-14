@@ -6,7 +6,167 @@
         <description>Recent content in Posts on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 10 Aug 2024 17:06:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 13 Aug 2024 19:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>大模型RAG基础知识</title>
+        <link>http://localhost:1313/post/rag/</link>
+        <pubDate>Tue, 13 Aug 2024 19:14:39 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/rag/</guid>
+        <description>&lt;img src="http://localhost:1313/post/cover/tag-opencv.jpg" alt="Featured image of post 大模型RAG基础知识" /&gt;&lt;h1 id=&#34;什么是rag&#34;&gt;什么是RAG
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;检索增强生成（Retrieval Augmented Generation, &lt;strong&gt;RAG&lt;/strong&gt;），引入外部知识，使大模型能够生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1概览一个完整的rag链路&#34;&gt;1概览：一个完整的RAG链路
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/rag.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;rag&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;从上图可以看到，大模型接收到用户query后，RAG会先进行检索。&lt;/p&gt;
+&lt;p&gt;检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。&lt;/p&gt;
+&lt;p&gt;Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&amp;gt;到Datebase然后和query一起进行Retrieval——&amp;gt;检索到相关的Chunks&lt;/p&gt;
+&lt;p&gt;第二次Retrieval——&amp;gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer&lt;/p&gt;
+&lt;p&gt;query：在第一次Retrieval和第二次Retrieval的时候输入&lt;/p&gt;
+&lt;p&gt;为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。&lt;/p&gt;
+&lt;h2 id=&#34;11离线计算流程&#34;&gt;1.1离线计算流程
+&lt;/h2&gt;&lt;p&gt;文件（pdf、word、ppt等，这些 &lt;code&gt;文档&lt;/code&gt;documents）——解析parser——&amp;gt;切割为较短的Chunk——清洗和去重。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知识库中知识的数量和质量决定了RAG的效果，因此这是非常关键且必不可少的环节。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;向量化vectorizationchunk转化为向量或者-索引indexing&#34;&gt;&lt;strong&gt;向量化（Vectorization）&lt;/strong&gt;：Chunk转化为向量或者 &lt;code&gt;索引&lt;/code&gt;（Indexing）。
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/a7671658-08a6-4750-b01e-35827f694ce1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;a7671658-08a6-4750-b01e-35827f694ce1&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;具体是构建**向量模型（Embedding Model）**作用是将一段 &lt;code&gt;Chunk&lt;/code&gt; 转成 &lt;code&gt;向量&lt;/code&gt;（Embedding）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个好的向量模型，会使得具有相同语义的文本的向量表示在语义空间中的距离会比较近，而语义不同的文本在语义空间中的距离会比较远。&lt;img src=&#34;http://localhost:1313/post/before/39b45d85-0c8a-4f49-9971-069ec534338a.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;39b45d85-0c8a-4f49-9971-069ec534338a&#34;
+	
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由于知识库中的所有 &lt;code&gt;Chunk&lt;/code&gt; 都需要进行 &lt;code&gt;向量化&lt;/code&gt;，这会使得计算量非常大，因此这一过程通常是离线完成的。&lt;/p&gt;
+&lt;p&gt;随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 &lt;code&gt;数据库&lt;/code&gt; （DataBase）中进行管理，例如 &lt;a class=&#34;link&#34; href=&#34;https://milvus.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Milvus&lt;/a&gt; 中。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;离线计算总结&#34;&gt;&lt;strong&gt;离线计算总结：&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;离线计算就是在文档在parse&amp;amp;splitter后将得到的Chunk进行&lt;code&gt;向量化&lt;/code&gt;（Vectorization）或称 &lt;code&gt;索引&lt;/code&gt;（Indexing），随着向量的数量不断增加会将向量存储到Milvus等数据库中。&lt;/p&gt;
+&lt;p&gt;因为Chunk进行向量化的时候会使得计算量非常大，通常是离线进行的。&lt;/p&gt;
+&lt;h2 id=&#34;12在线计算&#34;&gt;1.2在线计算
+&lt;/h2&gt;&lt;h3 id=&#34;检索retrievalrag系统使用时候给定一条用户-查询query从知识库中找到所需的知识的操作&#34;&gt;**&lt;code&gt;检索&lt;/code&gt;（Retrieval）：**RAG系统使用时候，给定一条用户 &lt;code&gt;查询&lt;/code&gt;（Query），从知识库中找到所需的知识的操作。
+&lt;/h3&gt;&lt;p&gt;具体过程：Query会经过&lt;strong&gt;向量模型（Embedding Model）&lt;/strong&gt;&lt;em&gt;【是的也就是向量化】得到相应向量，然后与数据库中所有的&lt;/em&gt;&lt;em&gt;Chunk的向量计算&lt;em&gt;相似度&lt;/em&gt;&lt;/em&gt;*，得到最相近的一系列Chunk。&lt;/p&gt;
+&lt;p&gt;但 &lt;code&gt;数据库&lt;/code&gt; 非常大的时候，向量相似度的计算过程需要一定的时间。&lt;/p&gt;
+&lt;p&gt;这时可以在索引之前那&lt;code&gt;召回&lt;/code&gt;（Recall）：从 &lt;code&gt;数据库&lt;/code&gt; 中&lt;strong&gt;快速获得大量大概率相关的 &lt;code&gt;Chunk&lt;/code&gt;&lt;/strong&gt;，**然后只有这些 &lt;code&gt;Chunk&lt;/code&gt; 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。&lt;/p&gt;
+&lt;h3 id=&#34;召回recall&#34;&gt;&lt;code&gt;召回&lt;/code&gt;（Recall）：
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;召回&lt;/code&gt;（Recall）：通常采用简单的基于字符串的匹配算法，常用的算法有 &lt;code&gt;TF-IDF&lt;/code&gt;，&lt;code&gt;BM25&lt;/code&gt; 。【由于这些算法不需要任何模型，速度会非常快】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;也有还是致力于实现更快的 &lt;code&gt;向量检索&lt;/code&gt;的 ，例如 &lt;a class=&#34;link&#34; href=&#34;https://github.com/facebookresearch/faiss&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;faiss&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://github.com/spotify/annoy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;annoy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;**总结：**在&lt;code&gt;查询&lt;/code&gt;（Query）前增加了&lt;code&gt;召回&lt;/code&gt;（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。&lt;/p&gt;
+&lt;p&gt;思维导图：向量化——query所有向量进行计算向量相似度，得到Chunk&lt;/p&gt;
+&lt;p&gt;而是在此之前增加recall进行大概率相关的Chunk计算向量相似度。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;但人们发现，随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化，如下图中绿线所示：&lt;img src=&#34;http://localhost:1313/post/before/zhaohui.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;zhaohui&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这是由于&lt;code&gt;向量模型&lt;/code&gt; （Embedding Model）能力有限。&lt;/p&gt;
+&lt;p&gt;知识库增大，超过了向量模型的容量，这种情况下相似度最高的结果可能不是最优的，因此准确度就下降了。&lt;/p&gt;
+&lt;p&gt;为解决随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化的问题，&lt;/p&gt;
+&lt;p&gt;研究者提出增加一个二阶段检索——&lt;/p&gt;
+&lt;h3 id=&#34;重排-rerank&#34;&gt;&lt;code&gt;重排&lt;/code&gt; (Rerank)：
+&lt;/h3&gt;&lt;p&gt;即利用 &lt;code&gt;重排模型&lt;/code&gt;（Reranker），使得越相似的结果排名更靠前。&lt;/p&gt;
+&lt;p&gt;这样就能实现准确率稳定增长，即数据越多，效果越好（如上图中紫线所示）。&lt;/p&gt;
+&lt;p&gt;一阶段检索有时也被称为 &lt;code&gt;精排&lt;/code&gt; 。而在一些更复杂的系统中，在 &lt;code&gt;召回&lt;/code&gt; 和 &lt;code&gt;精排&lt;/code&gt; 之间还会添加一个 &lt;code&gt;粗排&lt;/code&gt; 步骤。&lt;/p&gt;
+&lt;p&gt;综上所述，在整个 &lt;code&gt;检索&lt;/code&gt; 过程中，计算量的顺序是 &lt;code&gt;召回&lt;/code&gt; &amp;gt; &lt;code&gt;精排&lt;/code&gt; &amp;gt; &lt;code&gt;重排&lt;/code&gt;，而检索效果的顺序则是 &lt;code&gt;召回&lt;/code&gt; &amp;lt; &lt;code&gt;精排&lt;/code&gt; &amp;lt; &lt;code&gt;重排&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;当这一复杂的 &lt;code&gt;检索&lt;/code&gt; 过程完成后，我们就会得到排好序的一系列 &lt;code&gt;检索文档&lt;/code&gt;（Retrieval Documents）。&lt;/p&gt;
+&lt;p&gt;然后我们会从其中挑选最相似的 &lt;code&gt;k&lt;/code&gt; 个结果，将它们和用户查询拼接成prompt的形式，输入到大模型。&lt;/p&gt;
+&lt;p&gt;最后，大型模型就能够依据所提供的知识来生成回复，从而更有效地解答用户的问题。&lt;/p&gt;
+&lt;h4 id=&#34;在线计算总结&#34;&gt;&lt;strong&gt;在线计算总结：&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;一阶段检索（精排）（召回recall）&lt;/strong&gt;：在&lt;code&gt;查询&lt;/code&gt;（Query）前增加了&lt;code&gt;召回&lt;/code&gt;（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。&lt;/p&gt;
+&lt;p&gt;复杂的系统中有时候会在&lt;code&gt;召回&lt;/code&gt;recall与精排添加一个&lt;code&gt;粗排&lt;/code&gt;的步骤&lt;/p&gt;
+&lt;p&gt;**二阶段检索（重排）（重排模型Reanker）：**为解决随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化的问题。【本质向量模型容量问题】。重排模型（Reanker）使得越相似的结果排名更靠前，实现准确率稳定增长，即数据越多，效果越好。&lt;/p&gt;
+&lt;p&gt;最终得到的是排好序的一系列 &lt;code&gt;检索文档&lt;/code&gt;（Retrieval Documents）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;检索&lt;/code&gt;（Retrieval）就是以上的一个过程。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2开源rag框架&#34;&gt;2开源RAG框架**
+&lt;/h2&gt;&lt;p&gt;目前，开源社区中已经涌现出了众多RAG框架，例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/KMnO4-zx/TinyRAG&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;TinyRAG&lt;/a&gt;：DataWhale成员宋志学精心打造的纯手工搭建RAG框架。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/run-llama/llama_index&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LlamaIndex&lt;/a&gt;：一个用于构建大语言模型应用程序的数据框架，包括数据摄取、数据索引和查询引擎等功能。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/langchain-ai/langchain&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LangChain&lt;/a&gt;：一个专为开发大语言模型应用程序而设计的框架，提供了构建所需的模块和工具。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/netease-youdao/QAnything&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;QAnything&lt;/a&gt;：网易有道开发的本地知识库问答系统，支持任意格式文件或数据库。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/infiniflow/ragflow&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RAGFlow&lt;/a&gt;：InfiniFlow开发的基于深度文档理解的RAG引擎。&lt;/li&gt;
+&lt;li&gt;···&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;再理解rag的链路图&#34;&gt;再理解RAG的链路图：
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/rag.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;rag&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.离线计算就是说的图片下方，文档经过patser&amp;amp;Splitter后得到Chunk然后进行&lt;code&gt;向量化Vectorization&lt;/code&gt;，然后再存储到DataBase中。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;向量化就是利用向量模型Embedding Model将Chunk转化为向量，得到各个文本在语义空间的相似度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.在线计算就是图片上方，用户的&lt;code&gt;查询&lt;/code&gt;Query经过大模型理解，经过1st检索（Retrival）及经过2st 检索（Retrival）最终得到&lt;code&gt;检索文档&lt;/code&gt;（Retrieval Documents）与&lt;code&gt;查询&lt;/code&gt;Query拼接成prompt的形式，输入到大模型中，大模型根据所提供的知识回答问题。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;​	具体来说：1st Retrival中为了解决Query向量化后 与 向量数据库中所有的Chunk的计算向量相似度的问题，提出在Query进大模型之前进行&lt;code&gt;召回&lt;/code&gt;recall，降低了计算复杂度。_有些会在召回和精排（1st Retrival）之间增加&lt;code&gt;粗排&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;召回&lt;/code&gt;（Recall）：从 &lt;code&gt;数据库&lt;/code&gt; 中快速获得大量大概率相关的 &lt;code&gt;Chunk&lt;/code&gt;**，**然后只有这些 &lt;code&gt;Chunk&lt;/code&gt; 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。_也有直接更快速搜索的方案&lt;a class=&#34;link&#34; href=&#34;https://github.com/facebookresearch/faiss&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;faiss&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://github.com/spotify/annoy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;annoy&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化，为解决这个问题：_本质是&lt;strong&gt;向量模型&lt;/strong&gt;容量问题&lt;/p&gt;
+&lt;p&gt;​	提出2st Retrival中增加&lt;code&gt;重排&lt;/code&gt;(Reank)，使得&lt;strong&gt;向量相似度&lt;/strong&gt;越相似的结果排名更靠前，实现准确率稳定增长。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Datawhale AI夏令营第四期大模型应用开发-Task01</title>
         <link>http://localhost:1313/post/llm/</link>
         <pubDate>Sat, 10 Aug 2024 17:06:00 +0000</pubDate>
@@ -4331,166 +4491,6 @@ iterations可选参数膨胀操作的迭代次数  后面两个为可选参数�
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在这个例子中，我们使用了&lt;code&gt;stream()&lt;/code&gt;方法将员工列表转换为一个流。然后，我们调用了&lt;code&gt;max()&lt;/code&gt;方法，并传入了一个lambda表达式作为比较器，用于比较两个员工的薪水。&lt;code&gt;max()&lt;/code&gt;方法会返回一个&lt;code&gt;Optional&lt;/code&gt;对象，它可能包含薪水最高的员工（如果存在的话）。最后，我们使用&lt;code&gt;ifPresent()&lt;/code&gt;方法来处理找到的员工（如果存在）。&lt;/p&gt;
 &lt;p&gt;这个例子体现了流式编程的声明性，因为我们没有编写显式的循环或条件语句来遍历列表和比较元素。相反，我们通过调用一系列的方法（&lt;code&gt;stream()&lt;/code&gt;, &lt;code&gt;max()&lt;/code&gt;, &lt;code&gt;ifPresent()&lt;/code&gt;）并传入必要的函数式接口实例（lambda表达式）来声明我们的意图。这种方式使得代码更加简洁和易于理解，同时也更容易进行扩展和修改。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title></title>
-        <link>http://localhost:1313/post/rag%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/post/rag%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/</guid>
-        <description>&lt;h1 id=&#34;什么是rag&#34;&gt;什么是RAG
-&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;检索增强生成（Retrieval Augmented Generation, &lt;strong&gt;RAG&lt;/strong&gt;），引入外部知识，使大模型能够生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;1概览一个完整的rag链路&#34;&gt;1概览：一个完整的RAG链路
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/rag.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;rag&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;从上图可以看到，大模型接收到用户query后，RAG会先进行检索。&lt;/p&gt;
-&lt;p&gt;检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。&lt;/p&gt;
-&lt;p&gt;Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&amp;gt;到Datebase然后和query一起进行Retrieval——&amp;gt;检索到相关的Chunks&lt;/p&gt;
-&lt;p&gt;第二次Retrieval——&amp;gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer&lt;/p&gt;
-&lt;p&gt;query：在第一次Retrieval和第二次Retrieval的时候输入&lt;/p&gt;
-&lt;p&gt;为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。&lt;/p&gt;
-&lt;h2 id=&#34;11离线计算流程&#34;&gt;1.1离线计算流程
-&lt;/h2&gt;&lt;p&gt;文件（pdf、word、ppt等，这些 &lt;code&gt;文档&lt;/code&gt;documents）——解析parser——&amp;gt;切割为较短的Chunk——清洗和去重。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;知识库中知识的数量和质量决定了RAG的效果，因此这是非常关键且必不可少的环节。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;向量化vectorizationchunk转化为向量或者-索引indexing&#34;&gt;&lt;strong&gt;向量化（Vectorization）&lt;/strong&gt;：Chunk转化为向量或者 &lt;code&gt;索引&lt;/code&gt;（Indexing）。
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/a7671658-08a6-4750-b01e-35827f694ce1.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;a7671658-08a6-4750-b01e-35827f694ce1&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;具体是构建**向量模型（Embedding Model）**作用是将一段 &lt;code&gt;Chunk&lt;/code&gt; 转成 &lt;code&gt;向量&lt;/code&gt;（Embedding）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个好的向量模型，会使得具有相同语义的文本的向量表示在语义空间中的距离会比较近，而语义不同的文本在语义空间中的距离会比较远。&lt;img src=&#34;http://localhost:1313/post/before/39b45d85-0c8a-4f49-9971-069ec534338a.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;39b45d85-0c8a-4f49-9971-069ec534338a&#34;
-	
-	
-&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;由于知识库中的所有 &lt;code&gt;Chunk&lt;/code&gt; 都需要进行 &lt;code&gt;向量化&lt;/code&gt;，这会使得计算量非常大，因此这一过程通常是离线完成的。&lt;/p&gt;
-&lt;p&gt;随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 &lt;code&gt;数据库&lt;/code&gt; （DataBase）中进行管理，例如 &lt;a class=&#34;link&#34; href=&#34;https://milvus.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Milvus&lt;/a&gt; 中。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;离线计算总结&#34;&gt;&lt;strong&gt;离线计算总结：&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;离线计算就是在文档在parse&amp;amp;splitter后将得到的Chunk进行&lt;code&gt;向量化&lt;/code&gt;（Vectorization）或称 &lt;code&gt;索引&lt;/code&gt;（Indexing），随着向量的数量不断增加会将向量存储到Milvus等数据库中。&lt;/p&gt;
-&lt;p&gt;因为Chunk进行向量化的时候会使得计算量非常大，通常是离线进行的。&lt;/p&gt;
-&lt;h2 id=&#34;12在线计算&#34;&gt;1.2在线计算
-&lt;/h2&gt;&lt;h3 id=&#34;检索retrievalrag系统使用时候给定一条用户-查询query从知识库中找到所需的知识的操作&#34;&gt;**&lt;code&gt;检索&lt;/code&gt;（Retrieval）：**RAG系统使用时候，给定一条用户 &lt;code&gt;查询&lt;/code&gt;（Query），从知识库中找到所需的知识的操作。
-&lt;/h3&gt;&lt;p&gt;具体过程：Query会经过&lt;strong&gt;向量模型（Embedding Model）&lt;/strong&gt;&lt;em&gt;【是的也就是向量化】得到相应向量，然后与数据库中所有的&lt;/em&gt;&lt;em&gt;Chunk的向量计算&lt;em&gt;相似度&lt;/em&gt;&lt;/em&gt;*，得到最相近的一系列Chunk。&lt;/p&gt;
-&lt;p&gt;但 &lt;code&gt;数据库&lt;/code&gt; 非常大的时候，向量相似度的计算过程需要一定的时间。&lt;/p&gt;
-&lt;p&gt;这时可以在索引之前那&lt;code&gt;召回&lt;/code&gt;（Recall）：从 &lt;code&gt;数据库&lt;/code&gt; 中&lt;strong&gt;快速获得大量大概率相关的 &lt;code&gt;Chunk&lt;/code&gt;&lt;/strong&gt;，**然后只有这些 &lt;code&gt;Chunk&lt;/code&gt; 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。&lt;/p&gt;
-&lt;h3 id=&#34;召回recall&#34;&gt;&lt;code&gt;召回&lt;/code&gt;（Recall）：
-&lt;/h3&gt;&lt;p&gt;&lt;code&gt;召回&lt;/code&gt;（Recall）：通常采用简单的基于字符串的匹配算法，常用的算法有 &lt;code&gt;TF-IDF&lt;/code&gt;，&lt;code&gt;BM25&lt;/code&gt; 。【由于这些算法不需要任何模型，速度会非常快】&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;也有还是致力于实现更快的 &lt;code&gt;向量检索&lt;/code&gt;的 ，例如 &lt;a class=&#34;link&#34; href=&#34;https://github.com/facebookresearch/faiss&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;faiss&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://github.com/spotify/annoy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;annoy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;**总结：**在&lt;code&gt;查询&lt;/code&gt;（Query）前增加了&lt;code&gt;召回&lt;/code&gt;（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。&lt;/p&gt;
-&lt;p&gt;思维导图：向量化——query所有向量进行计算向量相似度，得到Chunk&lt;/p&gt;
-&lt;p&gt;而是在此之前增加recall进行大概率相关的Chunk计算向量相似度。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;但人们发现，随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化，如下图中绿线所示：&lt;img src=&#34;http://localhost:1313/post/before/zhaohui.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;zhaohui&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;这是由于&lt;code&gt;向量模型&lt;/code&gt; （Embedding Model）能力有限。&lt;/p&gt;
-&lt;p&gt;知识库增大，超过了向量模型的容量，这种情况下相似度最高的结果可能不是最优的，因此准确度就下降了。&lt;/p&gt;
-&lt;p&gt;为解决随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化的问题，&lt;/p&gt;
-&lt;p&gt;研究者提出增加一个二阶段检索——&lt;/p&gt;
-&lt;h3 id=&#34;重排-rerank&#34;&gt;&lt;code&gt;重排&lt;/code&gt; (Rerank)：
-&lt;/h3&gt;&lt;p&gt;即利用 &lt;code&gt;重排模型&lt;/code&gt;（Reranker），使得越相似的结果排名更靠前。&lt;/p&gt;
-&lt;p&gt;这样就能实现准确率稳定增长，即数据越多，效果越好（如上图中紫线所示）。&lt;/p&gt;
-&lt;p&gt;一阶段检索有时也被称为 &lt;code&gt;精排&lt;/code&gt; 。而在一些更复杂的系统中，在 &lt;code&gt;召回&lt;/code&gt; 和 &lt;code&gt;精排&lt;/code&gt; 之间还会添加一个 &lt;code&gt;粗排&lt;/code&gt; 步骤。&lt;/p&gt;
-&lt;p&gt;综上所述，在整个 &lt;code&gt;检索&lt;/code&gt; 过程中，计算量的顺序是 &lt;code&gt;召回&lt;/code&gt; &amp;gt; &lt;code&gt;精排&lt;/code&gt; &amp;gt; &lt;code&gt;重排&lt;/code&gt;，而检索效果的顺序则是 &lt;code&gt;召回&lt;/code&gt; &amp;lt; &lt;code&gt;精排&lt;/code&gt; &amp;lt; &lt;code&gt;重排&lt;/code&gt; 。&lt;/p&gt;
-&lt;p&gt;当这一复杂的 &lt;code&gt;检索&lt;/code&gt; 过程完成后，我们就会得到排好序的一系列 &lt;code&gt;检索文档&lt;/code&gt;（Retrieval Documents）。&lt;/p&gt;
-&lt;p&gt;然后我们会从其中挑选最相似的 &lt;code&gt;k&lt;/code&gt; 个结果，将它们和用户查询拼接成prompt的形式，输入到大模型。&lt;/p&gt;
-&lt;p&gt;最后，大型模型就能够依据所提供的知识来生成回复，从而更有效地解答用户的问题。&lt;/p&gt;
-&lt;h4 id=&#34;在线计算总结&#34;&gt;&lt;strong&gt;在线计算总结：&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;一阶段检索（精排）（召回recall）&lt;/strong&gt;：在&lt;code&gt;查询&lt;/code&gt;（Query）前增加了&lt;code&gt;召回&lt;/code&gt;（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。&lt;/p&gt;
-&lt;p&gt;复杂的系统中有时候会在&lt;code&gt;召回&lt;/code&gt;recall与精排添加一个&lt;code&gt;粗排&lt;/code&gt;的步骤&lt;/p&gt;
-&lt;p&gt;**二阶段检索（重排）（重排模型Reanker）：**为解决随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化的问题。【本质向量模型容量问题】。重排模型（Reanker）使得越相似的结果排名更靠前，实现准确率稳定增长，即数据越多，效果越好。&lt;/p&gt;
-&lt;p&gt;最终得到的是排好序的一系列 &lt;code&gt;检索文档&lt;/code&gt;（Retrieval Documents）。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;检索&lt;/code&gt;（Retrieval）就是以上的一个过程。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;2开源rag框架&#34;&gt;2开源RAG框架**
-&lt;/h2&gt;&lt;p&gt;目前，开源社区中已经涌现出了众多RAG框架，例如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/KMnO4-zx/TinyRAG&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;TinyRAG&lt;/a&gt;：DataWhale成员宋志学精心打造的纯手工搭建RAG框架。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/run-llama/llama_index&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;LlamaIndex&lt;/a&gt;：一个用于构建大语言模型应用程序的数据框架，包括数据摄取、数据索引和查询引擎等功能。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/langchain-ai/langchain&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;LangChain&lt;/a&gt;：一个专为开发大语言模型应用程序而设计的框架，提供了构建所需的模块和工具。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/netease-youdao/QAnything&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;QAnything&lt;/a&gt;：网易有道开发的本地知识库问答系统，支持任意格式文件或数据库。&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/infiniflow/ragflow&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;RAGFlow&lt;/a&gt;：InfiniFlow开发的基于深度文档理解的RAG引擎。&lt;/li&gt;
-&lt;li&gt;···&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;再理解rag的链路图&#34;&gt;再理解RAG的链路图：
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/rag.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;rag&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.离线计算就是说的图片下方，文档经过patser&amp;amp;Splitter后得到Chunk然后进行&lt;code&gt;向量化Vectorization&lt;/code&gt;，然后再存储到DataBase中。&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;向量化就是利用向量模型Embedding Model将Chunk转化为向量，得到各个文本在语义空间的相似度。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;2.在线计算就是图片上方，用户的&lt;code&gt;查询&lt;/code&gt;Query经过大模型理解，经过1st检索（Retrival）及经过2st 检索（Retrival）最终得到&lt;code&gt;检索文档&lt;/code&gt;（Retrieval Documents）与&lt;code&gt;查询&lt;/code&gt;Query拼接成prompt的形式，输入到大模型中，大模型根据所提供的知识回答问题。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;​	具体来说：1st Retrival中为了解决Query向量化后 与 向量数据库中所有的Chunk的计算向量相似度的问题，提出在Query进大模型之前进行&lt;code&gt;召回&lt;/code&gt;recall，降低了计算复杂度。_有些会在召回和精排（1st Retrival）之间增加&lt;code&gt;粗排&lt;/code&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;召回&lt;/code&gt;（Recall）：从 &lt;code&gt;数据库&lt;/code&gt; 中快速获得大量大概率相关的 &lt;code&gt;Chunk&lt;/code&gt;**，**然后只有这些 &lt;code&gt;Chunk&lt;/code&gt; 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。_也有直接更快速搜索的方案&lt;a class=&#34;link&#34; href=&#34;https://github.com/facebookresearch/faiss&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;faiss&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://github.com/spotify/annoy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;annoy&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;但知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化，为解决这个问题：_本质是&lt;strong&gt;向量模型&lt;/strong&gt;容量问题&lt;/p&gt;
-&lt;p&gt;​	提出2st Retrival中增加&lt;code&gt;重排&lt;/code&gt;(Reank)，使得&lt;strong&gt;向量相似度&lt;/strong&gt;越相似的结果排名更靠前，实现准确率稳定增长。&lt;/p&gt;
 </description>
         </item>
         <item>

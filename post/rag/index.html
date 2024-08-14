@@ -7,11 +7,11 @@
 
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-<meta name='description' content="RAG 1.2一个完整的RAG链路 从上图可以看到，线上接收到用户query后，RAG会先进行检索。 检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。 Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后进行Retrieval——&gt;检索到相关的Chunks 第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer query：在第一次Retrieval和第二次Retrieval的时候输入 为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。 1.2.1离线计算 ">
+<meta name='description' content="什么是RAG 知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。 数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。 大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。 检索增强生成（Retrieval Augmented Generation, RAG），引入外部知识，使大模型能够生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。 1概览：一个完整的RAG链路 从上图可以看到，大模型接收到用户query后，RAG会先进行检索。 检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。 Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后和query一起进行Retrieval——&gt;检索到相关的Chunks 第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer query：在第一次Retrieval和第二次Retrieval的时候输入 为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。 1.1离线计算流程 文件（pdf、word、ppt等，这些 文档documents）——解析parser——&gt;切割为较短的Chunk——清洗和去重。 知识库中知识的数量和质量决定了RAG的效果，因此这是非常关键且必不可少的环节。 向量化（Vectorization）：Chunk转化为向量或者 索引（Indexing）。 具体是构建**向量模型（Embedding Model）**作用是将一段 Chunk 转成 向量（Embedding） 一个好的向量模型，会使得具有相同语义的文本的向量表示在语义空间中的距离会比较近，而语义不同的文本在语义空间中的距离会比较远。 由于知识库中的所有 Chunk 都需要进行 向量化，这会使得计算量非常大，因此这一过程通常是离线完成的。 随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 数据库 （DataBase）中进行管理，例如 Milvus 中。 离线计算总结： 离线计算就是在文档在parse&amp;splitter后将得到的Chunk进行向量化（Vectorization）或称 索引（Indexing），随着向量的数量不断增加会将向量存储到Milvus等数据库中。 因为Chunk进行向量化的时候会使得计算量非常大，通常是离线进行的。 1.2在线计算 **检索（Retrieval）：**RAG系统使用时候，给定一条用户 查询（Query），从知识库中找到所需的知识的操作。 具体过程：Query会经过向量模型（Embedding Model）【是的也就是向量化】得到相应向量，然后与数据库中所有的Chunk的向量计算相似度*，得到最相近的一系列Chunk。 但 数据库 非常大的时候，向量相似度的计算过程需要一定的时间。 这时可以在索引之前那召回（Recall）：从 数据库 中快速获得大量大概率相关的 Chunk，**然后只有这些 Chunk 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。 召回（Recall）： 召回（Recall）：通常采用简单的基于字符串的匹配算法，常用的算法有 TF-IDF，BM25 。【由于这些算法不需要任何模型，速度会非常快】 也有还是致力于实现更快的 向量检索的 ，例如 faiss，annoy **总结：**在查询（Query）前增加了召回（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。 思维导图：向量化——query所有向量进行计算向量相似度，得到Chunk 而是在此之前增加recall进行大概率相关的Chunk计算向量相似度。">
 
 
 
-<title></title>
+<title>大模型RAG基础知识</title>
 
 
 <link rel='canonical' href='http://localhost:1313/post/rag/'>
@@ -21,14 +21,15 @@
 <link rel="stylesheet" href="/scss/partials/navbar.scss">
 
 
-<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="">
-<meta property='og:description' content="RAG 1.2一个完整的RAG链路 从上图可以看到，线上接收到用户query后，RAG会先进行检索。 检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。 Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后进行Retrieval——&gt;检索到相关的Chunks 第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer query：在第一次Retrieval和第二次Retrieval的时候输入 为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。 1.2.1离线计算 ">
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="大模型RAG基础知识">
+<meta property='og:description' content="什么是RAG 知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。 数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。 大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。 检索增强生成（Retrieval Augmented Generation, RAG），引入外部知识，使大模型能够生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。 1概览：一个完整的RAG链路 从上图可以看到，大模型接收到用户query后，RAG会先进行检索。 检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。 Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后和query一起进行Retrieval——&gt;检索到相关的Chunks 第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer query：在第一次Retrieval和第二次Retrieval的时候输入 为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。 1.1离线计算流程 文件（pdf、word、ppt等，这些 文档documents）——解析parser——&gt;切割为较短的Chunk——清洗和去重。 知识库中知识的数量和质量决定了RAG的效果，因此这是非常关键且必不可少的环节。 向量化（Vectorization）：Chunk转化为向量或者 索引（Indexing）。 具体是构建**向量模型（Embedding Model）**作用是将一段 Chunk 转成 向量（Embedding） 一个好的向量模型，会使得具有相同语义的文本的向量表示在语义空间中的距离会比较近，而语义不同的文本在语义空间中的距离会比较远。 由于知识库中的所有 Chunk 都需要进行 向量化，这会使得计算量非常大，因此这一过程通常是离线完成的。 随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 数据库 （DataBase）中进行管理，例如 Milvus 中。 离线计算总结： 离线计算就是在文档在parse&amp;splitter后将得到的Chunk进行向量化（Vectorization）或称 索引（Indexing），随着向量的数量不断增加会将向量存储到Milvus等数据库中。 因为Chunk进行向量化的时候会使得计算量非常大，通常是离线进行的。 1.2在线计算 **检索（Retrieval）：**RAG系统使用时候，给定一条用户 查询（Query），从知识库中找到所需的知识的操作。 具体过程：Query会经过向量模型（Embedding Model）【是的也就是向量化】得到相应向量，然后与数据库中所有的Chunk的向量计算相似度*，得到最相近的一系列Chunk。 但 数据库 非常大的时候，向量相似度的计算过程需要一定的时间。 这时可以在索引之前那召回（Recall）：从 数据库 中快速获得大量大概率相关的 Chunk，**然后只有这些 Chunk 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。 召回（Recall）： 召回（Recall）：通常采用简单的基于字符串的匹配算法，常用的算法有 TF-IDF，BM25 。【由于这些算法不需要任何模型，速度会非常快】 也有还是致力于实现更快的 向量检索的 ，例如 faiss，annoy **总结：**在查询（Query）前增加了召回（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。 思维导图：向量化——query所有向量进行计算向量相似度，得到Chunk 而是在此之前增加recall进行大概率相关的Chunk计算向量相似度。">
 <meta property='og:url' content='http://localhost:1313/post/rag/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='RAG' /><meta property='article:published_time' content='2024-08-13T19:14:39&#43;00:00'/><meta property='article:modified_time' content='2024-08-13T19:14:39&#43;00:00'/><meta property='og:image' content='http://localhost:1313/post/cover/tag-opencv.jpg' />
 <meta name="twitter:site" content="@PoolBee">
-    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="">
-<meta name="twitter:description" content="RAG 1.2一个完整的RAG链路 从上图可以看到，线上接收到用户query后，RAG会先进行检索。 检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。 Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后进行Retrieval——&gt;检索到相关的Chunks 第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer query：在第一次Retrieval和第二次Retrieval的时候输入 为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。 1.2.1离线计算 ">
+    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="大模型RAG基础知识">
+<meta name="twitter:description" content="什么是RAG 知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。 数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。 大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。 检索增强生成（Retrieval Augmented Generation, RAG），引入外部知识，使大模型能够生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。 1概览：一个完整的RAG链路 从上图可以看到，大模型接收到用户query后，RAG会先进行检索。 检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。 Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后和query一起进行Retrieval——&gt;检索到相关的Chunks 第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer query：在第一次Retrieval和第二次Retrieval的时候输入 为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。 1.1离线计算流程 文件（pdf、word、ppt等，这些 文档documents）——解析parser——&gt;切割为较短的Chunk——清洗和去重。 知识库中知识的数量和质量决定了RAG的效果，因此这是非常关键且必不可少的环节。 向量化（Vectorization）：Chunk转化为向量或者 索引（Indexing）。 具体是构建**向量模型（Embedding Model）**作用是将一段 Chunk 转成 向量（Embedding） 一个好的向量模型，会使得具有相同语义的文本的向量表示在语义空间中的距离会比较近，而语义不同的文本在语义空间中的距离会比较远。 由于知识库中的所有 Chunk 都需要进行 向量化，这会使得计算量非常大，因此这一过程通常是离线完成的。 随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 数据库 （DataBase）中进行管理，例如 Milvus 中。 离线计算总结： 离线计算就是在文档在parse&amp;splitter后将得到的Chunk进行向量化（Vectorization）或称 索引（Indexing），随着向量的数量不断增加会将向量存储到Milvus等数据库中。 因为Chunk进行向量化的时候会使得计算量非常大，通常是离线进行的。 1.2在线计算 **检索（Retrieval）：**RAG系统使用时候，给定一条用户 查询（Query），从知识库中找到所需的知识的操作。 具体过程：Query会经过向量模型（Embedding Model）【是的也就是向量化】得到相应向量，然后与数据库中所有的Chunk的向量计算相似度*，得到最相近的一系列Chunk。 但 数据库 非常大的时候，向量相似度的计算过程需要一定的时间。 这时可以在索引之前那召回（Recall）：从 数据库 中快速获得大量大概率相关的 Chunk，**然后只有这些 Chunk 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。 召回（Recall）： 召回（Recall）：通常采用简单的基于字符串的匹配算法，常用的算法有 TF-IDF，BM25 。【由于这些算法不需要任何模型，速度会非常快】 也有还是致力于实现更快的 向量检索的 ，例如 faiss，annoy **总结：**在查询（Query）前增加了召回（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。 思维导图：向量化——query所有向量进行计算向量相似度，得到Chunk 而是在此之前增加recall进行大概率相关的Chunk计算向量相似度。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/post/cover/tag-opencv.jpg' />
   
 
 
@@ -398,7 +399,20 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#121离线计算">1.2.1离线计算</a></li>
+    <li><a href="#1概览一个完整的rag链路">1概览：一个完整的RAG链路</a></li>
+    <li><a href="#11离线计算流程">1.1离线计算流程</a>
+      <ul>
+        <li><a href="#向量化vectorizationchunk转化为向量或者-索引indexing"><strong>向量化（Vectorization）</strong>：Chunk转化为向量或者 <code>索引</code>（Indexing）。</a></li>
+      </ul>
+    </li>
+    <li><a href="#12在线计算">1.2在线计算</a>
+      <ul>
+        <li><a href="#检索retrievalrag系统使用时候给定一条用户-查询query从知识库中找到所需的知识的操作">**<code>检索</code>（Retrieval）：**RAG系统使用时候，给定一条用户 <code>查询</code>（Query），从知识库中找到所需的知识的操作。</a></li>
+        <li><a href="#召回recall"><code>召回</code>（Recall）：</a></li>
+        <li><a href="#重排-rerank"><code>重排</code> (Rerank)：</a></li>
+      </ul>
+    </li>
+    <li><a href="#2开源rag框架">2开源RAG框架**</a></li>
   </ul>
 </nav>
         </div>
@@ -447,16 +461,12 @@
 
 
         <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
             <a href="/post/rag/">
-                <img src="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png"
-                        srcset="/img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_800x0_resize_box_3.png 800w, /img/defaultimage2_hu0d7034ba65a92233e29b1da081aeb4e3_2051_1600x0_resize_box_3.png 1600w"
-                        width="800" 
-                        height="119" 
-                        loading="lazy"
-                        alt="Featured image of post " />
+                
+                    <img src="/post/cover/tag-opencv.jpg" loading="lazy" alt="Featured image of post 大模型RAG基础知识" />
                 
             </a>
         </div>
@@ -464,10 +474,18 @@
 
     <div class="article-details">
     
+    <header class="article-category">
+        
+            <a href="/categories/llm/" >
+                Llm
+            </a>
+        
+    </header>
+    
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/rag/"></a>
+            <a href="/post/rag/">大模型RAG基础知识</a>
         </h2>
     
         
@@ -478,6 +496,19 @@
     
     
     <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Aug 13, 2024</time>
+            </div>
         
 
         
@@ -506,16 +537,159 @@
     <section class="article-content">
     
     
-    <h1 id="rag">RAG
-</h1><p>1.2一个完整的RAG链路</p>
-<p>从上图可以看到，线上接收到用户query后，RAG会先进行检索。</p>
+    <h1 id="什么是rag">什么是RAG
+</h1><ul>
+<li>
+<p>知识局限性：大模型的知识来源于训练数据，而这些数据主要来自于互联网上已经公开的资源，对于一些实时性的或者非公开的，由于大模型没有获取到相关数据，这部分知识也就无法被掌握。</p>
+</li>
+<li>
+<p>数据安全性：为了使得大模型能够具备相应的知识，就需要将数据纳入到训练集进行训练。然而，对于企业来说，数据的安全性至关重要，任何形式的数据泄露都可能对企业构成致命的威胁。</p>
+</li>
+<li>
+<p>大模型幻觉：由于大模型是基于概率统计进行构建的，其输出本质上是一系列数值运算。因此，有时会出现模型“一本正经地胡说八道”的情况，尤其是在大模型不具备的知识或不擅长的场景中。</p>
+</li>
+</ul>
+<p>检索增强生成（Retrieval Augmented Generation, <strong>RAG</strong>），引入外部知识，使大模型能够生成准确且符合上下文的答案，同时能够减少模型幻觉的出现。</p>
+<hr>
+<h2 id="1概览一个完整的rag链路">1概览：一个完整的RAG链路
+</h2><p><img src="/post/before/rag.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="rag"
+	
+	
+></p>
+<p>从上图可以看到，大模型接收到用户query后，RAG会先进行检索。</p>
 <p>检索(Retrieval)：检索 Chunks 和 query 一并输入到大模型，进而回答用户的问题。</p>
-<p>Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后进行Retrieval——&gt;检索到相关的Chunks</p>
+<p>Chunks：query和离线文档经过parser和splitter（orc）向量化（或称索引）——&gt;到Datebase然后和query一起进行Retrieval——&gt;检索到相关的Chunks</p>
 <p>第二次Retrieval——&gt;输入query和相关的Chunks然后得到reanked的Chunks输入到LLM后得到Answer</p>
 <p>query：在第一次Retrieval和第二次Retrieval的时候输入</p>
 <p>为了完成检索，需要离线将文档（ppt、word、pdf等）经过解析、切割甚至OCR转写，然后进行向量化存入数据库中。 接下来，我们将分别介绍离线计算和在线计算流程。</p>
-<h2 id="121离线计算">1.2.1离线计算
-</h2>
+<h2 id="11离线计算流程">1.1离线计算流程
+</h2><p>文件（pdf、word、ppt等，这些 <code>文档</code>documents）——解析parser——&gt;切割为较短的Chunk——清洗和去重。</p>
+<ul>
+<li>知识库中知识的数量和质量决定了RAG的效果，因此这是非常关键且必不可少的环节。</li>
+</ul>
+<h3 id="向量化vectorizationchunk转化为向量或者-索引indexing"><strong>向量化（Vectorization）</strong>：Chunk转化为向量或者 <code>索引</code>（Indexing）。
+</h3><p><img src="/post/before/a7671658-08a6-4750-b01e-35827f694ce1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="a7671658-08a6-4750-b01e-35827f694ce1"
+	
+	
+></p>
+<p>具体是构建**向量模型（Embedding Model）**作用是将一段 <code>Chunk</code> 转成 <code>向量</code>（Embedding）</p>
+<ul>
+<li>一个好的向量模型，会使得具有相同语义的文本的向量表示在语义空间中的距离会比较近，而语义不同的文本在语义空间中的距离会比较远。<img src="/post/before/39b45d85-0c8a-4f49-9971-069ec534338a.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="39b45d85-0c8a-4f49-9971-069ec534338a"
+	
+	
+></li>
+</ul>
+<p>由于知识库中的所有 <code>Chunk</code> 都需要进行 <code>向量化</code>，这会使得计算量非常大，因此这一过程通常是离线完成的。</p>
+<p>随着新知识的不断存储，向量的数量也会不断增加。这就需要将这些向量存储到 <code>数据库</code> （DataBase）中进行管理，例如 <a class="link" href="https://milvus.io/"  target="_blank" rel="noopener"
+    >Milvus</a> 中。</p>
+<hr>
+<h4 id="离线计算总结"><strong>离线计算总结：</strong>
+</h4><p>离线计算就是在文档在parse&amp;splitter后将得到的Chunk进行<code>向量化</code>（Vectorization）或称 <code>索引</code>（Indexing），随着向量的数量不断增加会将向量存储到Milvus等数据库中。</p>
+<p>因为Chunk进行向量化的时候会使得计算量非常大，通常是离线进行的。</p>
+<h2 id="12在线计算">1.2在线计算
+</h2><h3 id="检索retrievalrag系统使用时候给定一条用户-查询query从知识库中找到所需的知识的操作">**<code>检索</code>（Retrieval）：**RAG系统使用时候，给定一条用户 <code>查询</code>（Query），从知识库中找到所需的知识的操作。
+</h3><p>具体过程：Query会经过<strong>向量模型（Embedding Model）</strong><em>【是的也就是向量化】得到相应向量，然后与数据库中所有的</em><em>Chunk的向量计算<em>相似度</em></em>*，得到最相近的一系列Chunk。</p>
+<p>但 <code>数据库</code> 非常大的时候，向量相似度的计算过程需要一定的时间。</p>
+<p>这时可以在索引之前那<code>召回</code>（Recall）：从 <code>数据库</code> 中<strong>快速获得大量大概率相关的 <code>Chunk</code></strong>，**然后只有这些 <code>Chunk</code> 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。</p>
+<h3 id="召回recall"><code>召回</code>（Recall）：
+</h3><p><code>召回</code>（Recall）：通常采用简单的基于字符串的匹配算法，常用的算法有 <code>TF-IDF</code>，<code>BM25</code> 。【由于这些算法不需要任何模型，速度会非常快】</p>
+<ul>
+<li>也有还是致力于实现更快的 <code>向量检索</code>的 ，例如 <a class="link" href="https://github.com/facebookresearch/faiss"  target="_blank" rel="noopener"
+    >faiss</a>，<a class="link" href="https://github.com/spotify/annoy"  target="_blank" rel="noopener"
+    >annoy</a></li>
+</ul>
+<p>**总结：**在<code>查询</code>（Query）前增加了<code>召回</code>（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。</p>
+<p>思维导图：向量化——query所有向量进行计算向量相似度，得到Chunk</p>
+<p>而是在此之前增加recall进行大概率相关的Chunk计算向量相似度。</p>
+<hr>
+<p>但人们发现，随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化，如下图中绿线所示：<img src="/post/before/zhaohui.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="zhaohui"
+	
+	
+></p>
+<p>这是由于<code>向量模型</code> （Embedding Model）能力有限。</p>
+<p>知识库增大，超过了向量模型的容量，这种情况下相似度最高的结果可能不是最优的，因此准确度就下降了。</p>
+<p>为解决随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化的问题，</p>
+<p>研究者提出增加一个二阶段检索——</p>
+<h3 id="重排-rerank"><code>重排</code> (Rerank)：
+</h3><p>即利用 <code>重排模型</code>（Reranker），使得越相似的结果排名更靠前。</p>
+<p>这样就能实现准确率稳定增长，即数据越多，效果越好（如上图中紫线所示）。</p>
+<p>一阶段检索有时也被称为 <code>精排</code> 。而在一些更复杂的系统中，在 <code>召回</code> 和 <code>精排</code> 之间还会添加一个 <code>粗排</code> 步骤。</p>
+<p>综上所述，在整个 <code>检索</code> 过程中，计算量的顺序是 <code>召回</code> &gt; <code>精排</code> &gt; <code>重排</code>，而检索效果的顺序则是 <code>召回</code> &lt; <code>精排</code> &lt; <code>重排</code> 。</p>
+<p>当这一复杂的 <code>检索</code> 过程完成后，我们就会得到排好序的一系列 <code>检索文档</code>（Retrieval Documents）。</p>
+<p>然后我们会从其中挑选最相似的 <code>k</code> 个结果，将它们和用户查询拼接成prompt的形式，输入到大模型。</p>
+<p>最后，大型模型就能够依据所提供的知识来生成回复，从而更有效地解答用户的问题。</p>
+<h4 id="在线计算总结"><strong>在线计算总结：</strong>
+</h4><p><strong>一阶段检索（精排）（召回recall）</strong>：在<code>查询</code>（Query）前增加了<code>召回</code>（recall），即从数据库中快速获得大量大概率相关的Chunk，用这些大概率相关的Chunk进行计算向量相似度。达到降低计算复杂度的效果。</p>
+<p>复杂的系统中有时候会在<code>召回</code>recall与精排添加一个<code>粗排</code>的步骤</p>
+<p>**二阶段检索（重排）（重排模型Reanker）：**为解决随着知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化的问题。【本质向量模型容量问题】。重排模型（Reanker）使得越相似的结果排名更靠前，实现准确率稳定增长，即数据越多，效果越好。</p>
+<p>最终得到的是排好序的一系列 <code>检索文档</code>（Retrieval Documents）。</p>
+<p><code>检索</code>（Retrieval）就是以上的一个过程。</p>
+<hr>
+<h2 id="2开源rag框架">2开源RAG框架**
+</h2><p>目前，开源社区中已经涌现出了众多RAG框架，例如：</p>
+<ul>
+<li><a class="link" href="https://github.com/KMnO4-zx/TinyRAG"  target="_blank" rel="noopener"
+    >TinyRAG</a>：DataWhale成员宋志学精心打造的纯手工搭建RAG框架。</li>
+<li><a class="link" href="https://github.com/run-llama/llama_index"  target="_blank" rel="noopener"
+    >LlamaIndex</a>：一个用于构建大语言模型应用程序的数据框架，包括数据摄取、数据索引和查询引擎等功能。</li>
+<li><a class="link" href="https://github.com/langchain-ai/langchain"  target="_blank" rel="noopener"
+    >LangChain</a>：一个专为开发大语言模型应用程序而设计的框架，提供了构建所需的模块和工具。</li>
+<li><a class="link" href="https://github.com/netease-youdao/QAnything"  target="_blank" rel="noopener"
+    >QAnything</a>：网易有道开发的本地知识库问答系统，支持任意格式文件或数据库。</li>
+<li><a class="link" href="https://github.com/infiniflow/ragflow"  target="_blank" rel="noopener"
+    >RAGFlow</a>：InfiniFlow开发的基于深度文档理解的RAG引擎。</li>
+<li>···</li>
+</ul>
+<hr>
+<h1 id="再理解rag的链路图">再理解RAG的链路图：
+</h1><p><img src="/post/before/rag.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="rag"
+	
+	
+></p>
+<p><strong>1.离线计算就是说的图片下方，文档经过patser&amp;Splitter后得到Chunk然后进行<code>向量化Vectorization</code>，然后再存储到DataBase中。</strong></p>
+<ul>
+<li>向量化就是利用向量模型Embedding Model将Chunk转化为向量，得到各个文本在语义空间的相似度。</li>
+</ul>
+<p><strong>2.在线计算就是图片上方，用户的<code>查询</code>Query经过大模型理解，经过1st检索（Retrival）及经过2st 检索（Retrival）最终得到<code>检索文档</code>（Retrieval Documents）与<code>查询</code>Query拼接成prompt的形式，输入到大模型中，大模型根据所提供的知识回答问题。</strong></p>
+<p>​	具体来说：1st Retrival中为了解决Query向量化后 与 向量数据库中所有的Chunk的计算向量相似度的问题，提出在Query进大模型之前进行<code>召回</code>recall，降低了计算复杂度。_有些会在召回和精排（1st Retrival）之间增加<code>粗排</code>。</p>
+<ul>
+<li><code>召回</code>（Recall）：从 <code>数据库</code> 中快速获得大量大概率相关的 <code>Chunk</code>**，**然后只有这些 <code>Chunk</code> 会参与计算向量相似度。**使得计算的复杂度就从整个知识库降到了非常低。_也有直接更快速搜索的方案<a class="link" href="https://github.com/facebookresearch/faiss"  target="_blank" rel="noopener"
+    >faiss</a>，<a class="link" href="https://github.com/spotify/annoy"  target="_blank" rel="noopener"
+    >annoy</a>。</li>
+</ul>
+<p>但知识库的增大，除了检索的速度变慢外，检索的效果也会出现退化，为解决这个问题：_本质是<strong>向量模型</strong>容量问题</p>
+<p>​	提出2st Retrival中增加<code>重排</code>(Reank)，使得<strong>向量相似度</strong>越相似的结果排名更靠前，实现准确率稳定增长。</p>
+
 
 
     
@@ -524,6 +698,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/rag/">RAG</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
@@ -659,16 +839,12 @@
                 
             
                 
-            
-                
-            
-                
              
              
           
             
        
-            · 写下 15 篇文章、总计 9.61 k 字
+            · 写下 13 篇文章、总计 5.38 k 字
         </div> 
 
     
