@@ -6,7 +6,348 @@
         <description>Recent content in Datawhale on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sat, 10 Aug 2024 17:06:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/datawhale/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 01 Sep 2024 22:27:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/datawhale/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>大模型微调知识实践</title>
+        <link>http://localhost:1313/post/fine-tuning/</link>
+        <pubDate>Sun, 01 Sep 2024 22:27:30 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/fine-tuning/</guid>
+        <description>&lt;img src="http://localhost:1313/post/cover/datawhale-cover.png" alt="Featured image of post 大模型微调知识实践" /&gt;&lt;h1 id=&#34;大模型微调指令微调有监督微调&#34;&gt;大模型微调（指令微调/有监督微调）
+&lt;/h1&gt;&lt;h2 id=&#34;11简介&#34;&gt;1.1简介
+&lt;/h2&gt;&lt;p&gt;模型微调，称为指令微调（Instruction Tuning）或者有监督微调（Supervised Fine-tuning，SFT）：使用成对的输入与预期的输出，训练模型学会以问答的形式解答问题。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;经过微调之后，大模型展现较强的指令遵循能力，后可以通过&lt;strong&gt;零样本学习&lt;/strong&gt;的方式解决多种下游任务。&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指令微调还是扮&lt;strong&gt;催化剂&lt;/strong&gt;的角色，激活模型内在的潜力，而非单纯灌输信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;111预训练对比&#34;&gt;1.1.1预训练对比
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;指令微调/有监督微调，所需数据显著减少，从十几万到上百万条，均能有效激发模型的通用任务解决能力；甚至有些少量高质量的指令数据，（数千条数万条）也能实现很好的效果。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;降低了对计算资源的依赖，也提升了微调的灵活性与效率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12轻量化微调技术lightweight-fine-tuning参数高效微调&#34;&gt;1.2轻量化微调技术（Lightweight Fine-tuning）&lt;em&gt;参数高效微调&lt;/em&gt;
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;由于大模型的参数量巨大，进行**全量参数微调**需要消耗非常多的算力，为了解决这一问题，提出：
+
+**参数高效微调**（**P**arameter-efficient **F**ine-tuning）/轻量化微调（**L**ightweight **F**ine-tuning）：通过训来拿极少的模型参数，也能保证微调后的模型表现可以与全量微调普美。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;常用的轻量化微调技术：LoRA、Adapter和Prompt Tuning&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;13lora技术不是lora&#34;&gt;1.3LoRA技术（不是LoRa
+&lt;/h2&gt;&lt;p&gt;LoRA（Low-Rank Adaptation）一种降低语言模型微调参数数量的技术&lt;/p&gt;
+&lt;p&gt;翻译是”低秩适配“的意思&lt;/p&gt;
+&lt;p&gt;通过低秩矩阵分解，在原始矩阵的基础上增加一个旁路矩阵，然后只更新旁路矩阵的参数。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903011543999.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903011543999&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2106.09685&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LoRA paper第一页&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;实例&#34;&gt;实例：
+&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;使用简历命名实体识别的数据集，进行微调，进而开发一个AI简历助手，后能批量地自动识别并提取简历中的关键信息（姓名、教育背景、工作经历等）提升效率。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;具体来说，输入一个摘录自某简历的句子，模型需要识别出所有的命名实体。实体的类别包括：姓名(NAME)国籍(CONT)、种族(RACE)、职位(TITLE)、教育背景(EDU)、专业(PRO)、组织名(ORG)、地名(LOC)。原始的数据来自于&lt;a class=&#34;link&#34; href=&#34;https://hf-mirror.com/datasets/BAAI/COIG-PC-Lite&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BAAI/COIG-PC-Lite · Datasets at HF Mirror (hf-mirror.com)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;torch、transformer、streamlit安装&lt;/p&gt;
+&lt;p&gt;下载模型&lt;/p&gt;
+&lt;p&gt;数据处理pandas进行数据读取，转为Dataset格式&lt;/p&gt;
+&lt;p&gt;[&amp;lsquo;input&amp;rsquo;:[&amp;rsquo;#任务描述\n假设你是一个AI简历助手，能从简历中识别出所有的命名实体，并以json格式返回结果。\n\n#任务要求1n实体的类别包括：姓名、国籍、种族、职位、教育背景、专业、组织名、地名。1n返回的jso格式是一个字典，其中每个键
+是实体的类别，值是一个列表，包含实体的文本。\n\n#样例小n输入：\n张三，男，中国籍，工程师1n输出：1n(&amp;ldquo;姓名&amp;rdquo;：[&amp;ldquo;张三&amp;rdquo;]，&amp;ldquo;国籍&amp;rdquo;：[&amp;ldquo;中国&amp;rdquo;]，&amp;ldquo;职位&amp;rdquo;：[&amp;ldquo;工程师&amp;rdquo;]}八n\n#当前简历\n高勇：男，中国国籍，无境外居留权，\n\n#任务重述\n请
+参考样例，按照任务要求，识别出当前简历中所有的命名实体，并以jso格式返回结果。·]，&amp;lsquo;output&amp;rsquo;:[&amp;rsquo;{&amp;ldquo;姓名&amp;rdquo;：[&amp;ldquo;高勇&amp;rdquo;]，&amp;ldquo;国籍&amp;rdquo;：[&amp;ldquo;中国国籍&amp;rdquo;]}&amp;rsquo;]}&lt;/p&gt;
+&lt;p&gt;加载tokenizer&lt;/p&gt;
+&lt;p&gt;定义数据处理函数&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-PYTHON&#34; data-lang=&#34;PYTHON&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;process_func&lt;/span&gt; (example):
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    MAX_LENGTH &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;384&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;#Llama分词器会将中文字切分为多个token因此需要放开一些最大长度，保证数据的完整性。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    instruction &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tokenizer (f &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{example [&amp;#39;input&amp;#39;]} &amp;lt; sep &amp;gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; tokenizer (f &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;{example [&amp;#39;output&amp;#39;]} &amp;lt; eod &amp;gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    input_ids &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; instruction [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input_ids&amp;#34;&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; response [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input_ids&amp;#34;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    attention_mask &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; len (input_ids)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;100&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; len (instruction [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input_ids&amp;#34;&lt;/span&gt;]) &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; response [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input_ids&amp;#34;&lt;/span&gt;] &lt;span style=&#34;color:#75715e&#34;&gt;#instruction 不计算loss&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; len (input_ids) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; MAX_LENGTH: &lt;span style=&#34;color:#75715e&#34;&gt;# 做一个截断&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        input_ids &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; input_ids [: MAX_LENGTH]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        attention_mask &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; attention_mask [: MAX_LENGTH]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        Labels &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; labels [: MAX_LENGTH]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;input_ids&amp;#34;&lt;/span&gt;: input_ids,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;attention_mask&amp;#34;&lt;/span&gt;: attention_mask,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Labels&amp;#34;&lt;/span&gt;: labels
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;需要使用tokenizer讲文本转为id，同时讲input和output凭借，组成input_ids和attention_mask&lt;/p&gt;
+&lt;p&gt;源大模型需要在input后面添加一个特殊的token&lt;!-- raw HTML omitted --&gt;在output后面添加一个特殊的token&lt;!-- raw HTML omitted --&gt;，同时为了防止数据超长进行了一个阶段处理。&lt;/p&gt;
+&lt;p&gt;然后使用map函数对整个数据集进行预处理。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903013701994.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903013701994&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;处理完毕后，使用tokenizer的decode函数，将id转回文本，进行最后的检查：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903013745556.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903013745556&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;24模型训练&#34;&gt;2.4模型训练
+&lt;/h2&gt;&lt;p&gt;加载大模型参数，然后打印模型结构&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903013818454.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903013818454&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Yuan大模型中包含24层YuanDecoderLayer每层包含self_attn、mpl和layernorm。&lt;/p&gt;
+&lt;p&gt;为了进行模型使用训练，需要先执行，model.enable_input_require_grads()&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903013940673.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903013940673&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最后打印模型的数据类型，可以看到是&lt;code&gt;torch.bfloat16&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014026174.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014026174&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;使用lora进行轻量化微调&#34;&gt;使用lora进行轻量化微调
+&lt;/h4&gt;&lt;p&gt;配置&lt;code&gt;LoraConfig&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014101199.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014101199&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;构建一个&lt;code&gt;PeftModel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014123587.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014123587&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;mdoel.print_trainable_parameters()&lt;/code&gt;可以看到需要训练的参数在所有参数中的占比&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014212565.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014212565&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;然后，设置训练参数&lt;code&gt;TrainingArguments&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014243787.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014243787&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;同时初始化一个Trainer:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014301380.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014301380&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最后允许trainer.train()j执行模型训练。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014325730.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014325730&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;训练过程中会打印模型训的loss，我们可以通过loss降低的情况，检查模型是否收敛。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014406705.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014406705&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;训练完成后，会打印训练相关的信息：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014442066.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014442066&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;同时，会看到output文件夹中出现了3个文件夹，每个文件夹下保存这每个epoch训练玩的模型&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014524835.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014524835&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;以epoch3为例，可以看到其中保存了训练的config，state，ckpt等信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014557488.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014557488&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;25效果验证&#34;&gt;2.5效果验证
+&lt;/h2&gt;&lt;p&gt;通过生成函数&lt;code&gt;generate()&lt;/code&gt;进行效果验证&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014626096.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014626096&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;同时定义好输入的prompt template中要和训练保持一致。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014716879.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014716879&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最后进行输入样例进行测试&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014733015.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014733015&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;可以看到经过模型微调，模型已经具备了相应的能力。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240903014822453.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240903014822453&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;占用17G显存，显存占用的多少和需要训练的模型参数，batch size等相关，可以尝试不同的训练配置。&lt;/p&gt;
+&lt;h2 id=&#34;尝试使用训练的模型&#34;&gt;尝试使用训练的模型
+&lt;/h2&gt;&lt;p&gt;重启内核，可以看到显存已被清空。然后streamlit启动项目即可。&lt;/p&gt;
+&lt;h2 id=&#34;31任务挑选和训练集构建&#34;&gt;3.1任务挑选和训练集构建
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原则：任务是否必须微调，单纯通过prompt或者RAG能否解决&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;任务来源：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已有的任务：传统的NLP任务，分类，NER等-&amp;gt;直接服用开源训练集&lt;/li&gt;
+&lt;li&gt;新任务：构建应用过程中依赖的能力-&amp;gt;有无开源训练集可以服用？没有如何收集数据？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;训练集预处理，收集好的数据需要哪些预处理步骤？数据清洗？去重？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;32微调实战&#34;&gt;3.2微调实战
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;效果测试：测试集如何来，轻量化微调效果能否达到需求？&lt;/li&gt;
+&lt;li&gt;效果调优：没有达到的原因有那些？数据不够？参数设置不对？需要全量微调？模型太小?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;33数据集推荐&#34;&gt;3.3数据集推荐
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Huggingface dataset: &lt;a class=&#34;link&#34; href=&#34;https://hf-mirror.com/datasets&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://hf-mirror.com/datasets&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;魔搭： &lt;a class=&#34;link&#34; href=&#34;https://modelscope.cn/datasets&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://modelscope.cn/datasets&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;openDataLab 数据集: &lt;a class=&#34;link&#34; href=&#34;https://opendatalab.org.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://opendatalab.org.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;和鲸社区 数据集: &lt;a class=&#34;link&#34; href=&#34;https://www.heywhale.com/home/dataset&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.heywhale.com/home/dataset&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;git clone &lt;a class=&#34;link&#34; href=&#34;https://www.modelscope.cn/datasets/Datawhale/AICamp_yuan_baseline.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.modelscope.cn/datasets/Datawhale/AICamp_yuan_baseline.git&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Datawhale AI夏令营第四期大模型应用开发-Task01</title>
         <link>http://localhost:1313/post/llm/</link>
         <pubDate>Sat, 10 Aug 2024 17:06:00 +0000</pubDate>
