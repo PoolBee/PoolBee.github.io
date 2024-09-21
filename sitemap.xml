@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-09-02T03:27:30+00:00</lastmod>
+    <loc>http://localhost:1313/tags/auto-coder/</loc>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/datawhale/</loc>
-    <lastmod>2024-09-02T03:27:30+00:00</lastmod>
+    <loc>http://localhost:1313/post/auto-coder/</loc>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/plugin/</loc>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-02T03:27:30+00:00</lastmod>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-09-02T03:27:30+00:00</lastmod>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-09-21T01:47:30+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/datawhale/</loc>
     <lastmod>2024-09-02T03:27:30+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
@@ -51,9 +60,6 @@
     <lastmod>2024-07-25T23:50:28+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/js%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2024-07-25T23:50:28+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/plugin/</loc>
     <lastmod>2024-07-25T23:50:28+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.26-1/</loc>

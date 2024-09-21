@@ -6,7 +6,53 @@
         <description>Recent content on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 02 Sep 2024 03:27:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Sep 2024 01:47:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>auto-coder首次接触感想</title>
+        <link>http://localhost:1313/post/auto-coder/</link>
+        <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/auto-coder/</guid>
+        <description>&lt;img src="http://localhost:1313/post/cover/plugin_cover.png" alt="Featured image of post auto-coder首次接触感想" /&gt;&lt;h1 id=&#34;看完了auto-coder的教程&#34;&gt;看完了auto-coder的教程
+&lt;/h1&gt;&lt;p&gt;打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。&lt;/p&gt;
+&lt;h1 id=&#34;以下是几个让我印象深刻的点&#34;&gt;以下是几个让我印象深刻的点：
+&lt;/h1&gt;&lt;p&gt;1.能够让活跃的文件组成组——达到最佳手动效率的编程效果&lt;/p&gt;
+&lt;p&gt;2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改&lt;/p&gt;
+&lt;p&gt;3.直接使用auto-coder快速理解一个github的项目，非常方便&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/DeIfwUrO3iYMmwkOwBWc815fnjg?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;‌﻿﻿⁠⁠⁠⁠‍‌⁠‍⁠‬‌‬‬⁠‍⁠‍‍‬‍⁠‍022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。&lt;/p&gt;
+&lt;p&gt;5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改&lt;/p&gt;
+&lt;p&gt;6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程&lt;/p&gt;
+&lt;p&gt;7.人类模型模式，手动用大模型然后输出&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/GJjpwVLE8ixXTPkTazacGvFhnCw?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;‍‬‬﻿‍⁠⁠‬﻿‬‌﻿⁠﻿﻿‌‬﻿‌‬‍﻿⁠‬012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其他：语音编程，多模态（图片）的编程，/design&lt;/p&gt;
+&lt;p&gt;文档详细，而且视频教程充足&lt;/p&gt;
+&lt;p&gt;8.byzer-llm（大模型友好库&lt;a class=&#34;link&#34; href=&#34;https://github.com/allwefantasy/llm_friendly_packages&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;allwefantasy/llm_friendly_packages (github.com)&lt;/a&gt;）&lt;/p&gt;
+&lt;p&gt;byzer-llm：byzer-llm 库是 LLM 友好型库 &lt;a class=&#34;link&#34; href=&#34;https://github.com/allwefantasy/byzer-llm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;byzer-llm&lt;/a&gt; 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。&lt;/p&gt;
+&lt;p&gt;项目：&lt;/p&gt;
+&lt;p&gt;提到的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最简RAG 10w文档以下的使用方式✓&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/BPgpwy2aUi0qSXkcjLRcW2w2nDb?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;‌⁠⁠⁠﻿‌‬﻿‬‬﻿﻿‌﻿⁠‍‌﻿⁠⁠‍﻿‬⁠‌‬auto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如何自动化开发基于大模型的应用（个人觉得参考即可）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;哔哩哔哩视频翻译的简单demo✓&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;实践的时候可以参考&#34;&gt;实践的时候可以参考
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/ErpcwV1Tiin8bbkm1ARcYzhknpf?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;‍﻿‬﻿﻿‍﻿‍⁠‌‍﻿﻿‌‬‌﻿‬015-编码实践推荐 - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>大模型应用开发总结-提示词</title>
         <link>http://localhost:1313/post/prompt/</link>
         <pubDate>Mon, 02 Sep 2024 03:27:30 +0000</pubDate>

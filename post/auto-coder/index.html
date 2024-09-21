@@ -7,30 +7,29 @@
 
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-<meta name='description' content="热爱生活，忠于记录">
+<meta name='description' content="看完了auto-coder的教程 打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。 以下是几个让我印象深刻的点： 1.能够让活跃的文件组成组——达到最佳手动效率的编程效果 2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改 3.直接使用auto-coder快速理解一个github的项目，非常方便 \u200c\ufeff\ufeff\u2060\u2060\u2060\u2060\u200d\u200c\u2060\u200d\u2060\u202c\u200c\u202c\u202c\u2060\u200d\u2060\u200d\u200d\u202c\u200d\u2060\u200d022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn) 4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。 5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改 6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程 7.人类模型模式，手动用大模型然后输出 \u200d\u202c\u202c\ufeff\u200d\u2060\u2060\u202c\ufeff\u202c\u200c\ufeff\u2060\ufeff\ufeff\u200c\u202c\ufeff\u200c\u202c\u200d\ufeff\u2060\u202c012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn) 其他：语音编程，多模态（图片）的编程，/design 文档详细，而且视频教程充足 8.byzer-llm（大模型友好库allwefantasy/llm_friendly_packages (github.com)） byzer-llm：byzer-llm 库是 LLM 友好型库 byzer-llm 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。 项目： 提到的： 最简RAG 10w文档以下的使用方式✓ \u200c\u2060\u2060\u2060\ufeff\u200c\u202c\ufeff\u202c\u202c\ufeff\ufeff\u200c\ufeff\u2060\u200d\u200c\ufeff\u2060\u2060\u200d\ufeff\u202c\u2060\u200c\u202cauto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn) 如何自动化开发基于大模型的应用（个人觉得参考即可） 哔哩哔哩视频翻译的简单demo✓ 实践的时候可以参考 \u200d\ufeff\u202c\ufeff\ufeff\u200d\ufeff\u200d\u2060\u200c\u200d\ufeff\ufeff\u200c\u202c\u200c\ufeff\u202c015-编码实践推荐 - 飞书云文档 (feishu.cn)">
 
 
 
-<title>Tag: Stable Diffusion - PoolBee的博客</title>
+<title>auto-coder首次接触感想</title>
 
 
-<link rel='canonical' href='http://localhost:1313/tags/stable-diffusion/'>
+<link rel='canonical' href='http://localhost:1313/post/auto-coder/'>
 
 
                                                           
 <link rel="stylesheet" href="/scss/partials/navbar.scss">
 
 
-<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="Tag: Stable Diffusion - PoolBee的博客">
-<meta property='og:description' content="热爱生活，忠于记录">
-<meta property='og:url' content='http://localhost:1313/tags/stable-diffusion/'>
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="auto-coder首次接触感想">
+<meta property='og:description' content="看完了auto-coder的教程 打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。 以下是几个让我印象深刻的点： 1.能够让活跃的文件组成组——达到最佳手动效率的编程效果 2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改 3.直接使用auto-coder快速理解一个github的项目，非常方便 \u200c\ufeff\ufeff\u2060\u2060\u2060\u2060\u200d\u200c\u2060\u200d\u2060\u202c\u200c\u202c\u202c\u2060\u200d\u2060\u200d\u200d\u202c\u200d\u2060\u200d022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn) 4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。 5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改 6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程 7.人类模型模式，手动用大模型然后输出 \u200d\u202c\u202c\ufeff\u200d\u2060\u2060\u202c\ufeff\u202c\u200c\ufeff\u2060\ufeff\ufeff\u200c\u202c\ufeff\u200c\u202c\u200d\ufeff\u2060\u202c012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn) 其他：语音编程，多模态（图片）的编程，/design 文档详细，而且视频教程充足 8.byzer-llm（大模型友好库allwefantasy/llm_friendly_packages (github.com)） byzer-llm：byzer-llm 库是 LLM 友好型库 byzer-llm 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。 项目： 提到的： 最简RAG 10w文档以下的使用方式✓ \u200c\u2060\u2060\u2060\ufeff\u200c\u202c\ufeff\u202c\u202c\ufeff\ufeff\u200c\ufeff\u2060\u200d\u200c\ufeff\u2060\u2060\u200d\ufeff\u202c\u2060\u200c\u202cauto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn) 如何自动化开发基于大模型的应用（个人觉得参考即可） 哔哩哔哩视频翻译的简单demo✓ 实践的时候可以参考 \u200d\ufeff\u202c\ufeff\ufeff\u200d\ufeff\u200d\u2060\u200c\u200d\ufeff\ufeff\u200c\u202c\u200c\ufeff\u202c015-编码实践推荐 - 飞书云文档 (feishu.cn)">
+<meta property='og:url' content='http://localhost:1313/post/auto-coder/'>
 <meta property='og:site_name' content='PoolBee的博客'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2024-09-21T01:47:30&#43;00:00 '/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='auto-coder' /><meta property='article:published_time' content='2024-09-21T01:47:30&#43;00:00'/><meta property='article:modified_time' content='2024-09-21T01:47:30&#43;00:00'/><meta property='og:image' content='http://localhost:1313/post/cover/plugin_cover.png' />
 <meta name="twitter:site" content="@PoolBee">
-    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Tag: Stable Diffusion - PoolBee的博客">
-<meta name="twitter:description" content="热爱生活，忠于记录">
-    <link rel="alternate" type="application/rss&#43;xml" href="http://localhost:1313/tags/stable-diffusion/index.xml">
-    
+    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="auto-coder首次接触感想">
+<meta name="twitter:description" content="看完了auto-coder的教程 打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。 以下是几个让我印象深刻的点： 1.能够让活跃的文件组成组——达到最佳手动效率的编程效果 2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改 3.直接使用auto-coder快速理解一个github的项目，非常方便 \u200c\ufeff\ufeff\u2060\u2060\u2060\u2060\u200d\u200c\u2060\u200d\u2060\u202c\u200c\u202c\u202c\u2060\u200d\u2060\u200d\u200d\u202c\u200d\u2060\u200d022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn) 4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。 5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改 6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程 7.人类模型模式，手动用大模型然后输出 \u200d\u202c\u202c\ufeff\u200d\u2060\u2060\u202c\ufeff\u202c\u200c\ufeff\u2060\ufeff\ufeff\u200c\u202c\ufeff\u200c\u202c\u200d\ufeff\u2060\u202c012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn) 其他：语音编程，多模态（图片）的编程，/design 文档详细，而且视频教程充足 8.byzer-llm（大模型友好库allwefantasy/llm_friendly_packages (github.com)） byzer-llm：byzer-llm 库是 LLM 友好型库 byzer-llm 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。 项目： 提到的： 最简RAG 10w文档以下的使用方式✓ \u200c\u2060\u2060\u2060\ufeff\u200c\u202c\ufeff\u202c\u202c\ufeff\ufeff\u200c\ufeff\u2060\u200d\u200c\ufeff\u2060\u2060\u200d\ufeff\u202c\u2060\u200c\u202cauto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn) 如何自动化开发基于大模型的应用（个人觉得参考即可） 哔哩哔哩视频翻译的简单demo✓ 实践的时候可以参考 \u200d\ufeff\u202c\ufeff\ufeff\u200d\ufeff\u200d\u2060\u200c\u200d\ufeff\ufeff\u200c\u202c\u200c\ufeff\u202c015-编码实践推荐 - 飞书云文档 (feishu.cn)"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/post/cover/plugin_cover.png' />
   
 
 
@@ -39,7 +38,9 @@
     
 </head>
 
-<body class="">
+<body class="
+    article-page
+    ">
     
     <script>
         (function() {
@@ -379,6 +380,42 @@
     <aside class="sidebar right-sidebar sticky">
         
             
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#实践的时候可以参考">实践的时候可以参考</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+            
+                
+<a id="back-to-top" href="#">
+    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="48px" height="48.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M526.848 202.24A20.48 20.48 0 0 0 512 196.096a19.68 19.68 0 0 0-14.848 6.144l-155.136 154.624a21.632 21.632 0 0 0 0 30.208 21.632 21.632 0 0 0 30.208 0L512 247.296l139.776 139.776a21.376 21.376 0 0 0 14.848 6.144 20.48 20.48 0 0 0 14.848-6.144 21.632 21.632 0 0 0 0-30.208L526.848 202.24zM116.224 595.968h90.624v231.936h42.496v-231.936h90.624v-42.496H115.712v42.496h0.512z m458.24-42.496h-112.64c-13.824 0-27.136 5.12-37.376 15.36-10.24 10.24-15.36 24.064-15.36 37.376v168.448c0 13.824 5.12 27.136 15.36 37.376 10.24 10.24 24.064 15.36 37.376 15.36h112.64c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-168.448c0-13.824-5.12-27.136-15.36-37.376-10.24-10.24-23.552-15.36-37.376-15.36z m10.752 221.696c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-112.64a10.688 10.688 0 0 1-7.68-3.072 10.688 10.688 0 0 1-3.072-7.68V606.72c0-2.048 0.512-5.12 3.072-7.68a10.688 10.688 0 0 1 7.68-3.072h112.64c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v168.448z m307.2-205.824a53.12 53.12 0 0 0-37.376-15.36h-145.408v274.432h42.496v-120.32h102.912c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-48.128c0-14.336-5.12-27.648-15.36-37.888z m-27.136 84.992c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-103.424v-69.12h103.936c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v47.616h-0.512z"  /></svg>
+</a>
+
+            
+        
+            
                 <form action="/page/search/" class="search-form widget" >
         <p>
             <label>搜索</label>
@@ -398,177 +435,6 @@
     </form>
             
         
-            
-                <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">归档</h2>
-
-        
-        
-        
-        
-        
-        <div class="widget-archive--list">
-            <div class="archives-year">
-                    <a href="/page/archives/#2024">
-                        
-                            <span class="year">2024</span>
-                            <span class="count">12</span>
-                        
-                    </a> 
-                </div>
-            <div class="archives-year">
-                    <a href="/page/archives/#2023">
-                        
-                            <span class="year">2023</span>
-                            <span class="count">2</span>
-                        
-                    </a> 
-                </div>
-            <div class="archives-year">
-                    <a href="/page/archives/#0001">
-                        
-                            <span class="year">0001</span>
-                            <span class="count">2</span>
-                        
-                    </a> 
-                </div>
-            
-        </div>
-    </section>
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">分类</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/categories/%E5%BB%BA%E7%AB%99/" class="font_size_4">
-                建站
-            </a>
-        
-            <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="font_size_3">
-                大模型
-            </a>
-        
-            <a href="/categories/java/" class="font_size_2">
-                Java
-            </a>
-        
-            <a href="/categories/opencv/" class="font_size_2">
-                OpenCV
-            </a>
-        
-            <a href="/categories/plugin/" class="font_size_2">
-                Plugin
-            </a>
-        
-            <a href="/categories/python/" class="font_size_2">
-                Python
-            </a>
-        
-            <a href="/categories/%E9%9A%8F%E7%AC%94/" class="font_size_2">
-                随笔
-            </a>
-        
-            <a href="/categories/aigc/" class="font_size_1">
-                AIGC
-            </a>
-        
-            <a href="/categories/llm/" class="font_size_1">
-                Llm
-            </a>
-        
-    </div>
-</section>
-
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/hugo/" class="font_size_4">
-                Hugo
-            </a>
-        
-            <a href="/tags/datawhale/" class="font_size_3">
-                Datawhale
-            </a>
-        
-            <a href="/tags/java%E5%85%B6%E4%BB%96/" class="font_size_2">
-                Java其他
-            </a>
-        
-            <a href="/tags/opencv/" class="font_size_2">
-                OpenCV
-            </a>
-        
-            <a href="/tags/%E9%9A%8F%E7%AC%94/" class="font_size_2">
-                随笔
-            </a>
-        
-            <a href="/tags/auto-coder/" class="font_size_1">
-                Auto-Coder
-            </a>
-        
-            <a href="/tags/js%E6%8F%92%E4%BB%B6/" class="font_size_1">
-                Js插件
-            </a>
-        
-            <a href="/tags/rag/" class="font_size_1">
-                RAG
-            </a>
-        
-            <a href="/tags/stable-diffusion/" class="font_size_1">
-                Stable Diffusion
-            </a>
-        
-    </div>
-</section>
-            
-        
-            
-                
-<a id="back-to-top" href="#">
-    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="48px" height="48.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M526.848 202.24A20.48 20.48 0 0 0 512 196.096a19.68 19.68 0 0 0-14.848 6.144l-155.136 154.624a21.632 21.632 0 0 0 0 30.208 21.632 21.632 0 0 0 30.208 0L512 247.296l139.776 139.776a21.376 21.376 0 0 0 14.848 6.144 20.48 20.48 0 0 0 14.848-6.144 21.632 21.632 0 0 0 0-30.208L526.848 202.24zM116.224 595.968h90.624v231.936h42.496v-231.936h90.624v-42.496H115.712v42.496h0.512z m458.24-42.496h-112.64c-13.824 0-27.136 5.12-37.376 15.36-10.24 10.24-15.36 24.064-15.36 37.376v168.448c0 13.824 5.12 27.136 15.36 37.376 10.24 10.24 24.064 15.36 37.376 15.36h112.64c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-168.448c0-13.824-5.12-27.136-15.36-37.376-10.24-10.24-23.552-15.36-37.376-15.36z m10.752 221.696c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-112.64a10.688 10.688 0 0 1-7.68-3.072 10.688 10.688 0 0 1-3.072-7.68V606.72c0-2.048 0.512-5.12 3.072-7.68a10.688 10.688 0 0 1 7.68-3.072h112.64c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v168.448z m307.2-205.824a53.12 53.12 0 0 0-37.376-15.36h-145.408v274.432h42.496v-120.32h102.912c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-48.128c0-14.336-5.12-27.648-15.36-37.888z m-27.136 84.992c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-103.424v-69.12h103.936c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v47.616h-0.512z"  /></svg>
-</a>
-
-            
-        
         <div style="height: 30%;width: 30%">
             
             <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=vWVduL3EI8o8M2YkHMyY1dtYyf7vfgNKC8KQ1ugXVMw"></script>
@@ -582,43 +448,208 @@
 
 
         <main class="main full-width">
-    <header>
-        <h3 class="section-title">
-            
-                Tags
-            
-        </h3>
-
-        <div class="section-card">
-            <div class="section-details">
-                <h3 class="section-count">1 个页面</h3>
-                <h1 class="section-term">Stable Diffusion</h1>
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/auto-coder/">
                 
-            </div>
+                    <img src="/post/cover/plugin_cover.png" loading="lazy" alt="Featured image of post auto-coder首次接触感想" />
+                
+            </a>
         </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/plugin/" >
+                Plugin
+            </a>
+        
     </header>
     
-    <section class="article-list--compact">
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/auto-coder/">auto-coder首次接触感想</a>
+        </h2>
+    
         
-            <article>
-    <a href="/post/sd/">
-        <div class="article-details">
-            <h2 class="article-title">Stable Diffusion笔记</h2>
-            <footer class="article-time">
-                <time datetime='2024-06-09T11:54:39Z'>Jun 09, 2024</time>
-            </footer>
-        </div>
-            <div class="article-image">
-                
-                    <img src="/post/before/image-20240607184336146.png" loading="lazy" alt="Featured image of post Stable Diffusion笔记" />
-                
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 21, 2024</time>
             </div>
         
-    </a>
-</article>
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="看完了auto-coder的教程">看完了auto-coder的教程
+</h1><p>打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。</p>
+<h1 id="以下是几个让我印象深刻的点">以下是几个让我印象深刻的点：
+</h1><p>1.能够让活跃的文件组成组——达到最佳手动效率的编程效果</p>
+<p>2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改</p>
+<p>3.直接使用auto-coder快速理解一个github的项目，非常方便</p>
+<p><a class="link" href="https://uelng8wukz.feishu.cn/wiki/DeIfwUrO3iYMmwkOwBWc815fnjg?fromScene=spaceOverview"  target="_blank" rel="noopener"
+    >‌﻿﻿⁠⁠⁠⁠‍‌⁠‍⁠‬‌‬‬⁠‍⁠‍‍‬‍⁠‍022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn)</a></p>
+<p>4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。</p>
+<p>5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改</p>
+<p>6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程</p>
+<p>7.人类模型模式，手动用大模型然后输出</p>
+<p><a class="link" href="https://uelng8wukz.feishu.cn/wiki/GJjpwVLE8ixXTPkTazacGvFhnCw?fromScene=spaceOverview"  target="_blank" rel="noopener"
+    >‍‬‬﻿‍⁠⁠‬﻿‬‌﻿⁠﻿﻿‌‬﻿‌‬‍﻿⁠‬012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn)</a></p>
+<p>其他：语音编程，多模态（图片）的编程，/design</p>
+<p>文档详细，而且视频教程充足</p>
+<p>8.byzer-llm（大模型友好库<a class="link" href="https://github.com/allwefantasy/llm_friendly_packages"  target="_blank" rel="noopener"
+    >allwefantasy/llm_friendly_packages (github.com)</a>）</p>
+<p>byzer-llm：byzer-llm 库是 LLM 友好型库 <a class="link" href="https://github.com/allwefantasy/byzer-llm"  target="_blank" rel="noopener"
+    >byzer-llm</a> 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。</p>
+<p>项目：</p>
+<p>提到的：</p>
+<ul>
+<li>最简RAG 10w文档以下的使用方式✓</li>
+</ul>
+<p><a class="link" href="https://uelng8wukz.feishu.cn/wiki/BPgpwy2aUi0qSXkcjLRcW2w2nDb?fromScene=spaceOverview"  target="_blank" rel="noopener"
+    >‌⁠⁠⁠﻿‌‬﻿‬‬﻿﻿‌﻿⁠‍‌﻿⁠⁠‍﻿‬⁠‌‬auto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn)</a></p>
+<ul>
+<li>
+<p>如何自动化开发基于大模型的应用（个人觉得参考即可）</p>
+</li>
+<li>
+<p>哔哩哔哩视频翻译的简单demo✓</p>
+</li>
+</ul>
+<h2 id="实践的时候可以参考">实践的时候可以参考
+</h2><p><a class="link" href="https://uelng8wukz.feishu.cn/wiki/ErpcwV1Tiin8bbkm1ARcYzhknpf?fromScene=spaceOverview"  target="_blank" rel="noopener"
+    >‍﻿‬﻿﻿‍﻿‍⁠‌‍﻿﻿‌‬‌﻿‬015-编码实践推荐 - 飞书云文档 (feishu.cn)</a></p>
+
+
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/auto-coder/">Auto-Coder</a>
         
     </section>
-<footer class="site-footer">
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+        <div class="article-list--compact links">
+    
+        <article>
+            <a href="https://github.com/allwefantasy/llm_friendly_packages" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">大模型友好库</h2>
+                    <footer class="article-time">
+                        
+                            大模型友好库
+                        
+                    </footer>
+                </div>
+        
+                
+                    
+                    
+                    <div class="article-image">
+                        <img src="/post/logo/default_logo.png" loading="lazy">
+                    </div>
+                
+            </a>
+        </article>
+    
+</div>
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":"说点什么吧~~请填写正确的昵称和邮箱，方便接受评论回复信息"},"requiredMeta":["nick","mail","url"],"serverURL":"https://waline-poolbee.vercel.app"});
+</script>
+
+    
+
+    <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -756,6 +787,84 @@
     text-align: center;
 }
 </style>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
 
             
         </main>
