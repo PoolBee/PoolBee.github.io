@@ -8,21 +8,28 @@
         <language>zh-cn</language>
         <lastBuildDate>Wed, 16 Oct 2024 23:39:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vue3%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Vue3基础</title>
-        <link>http://localhost:1313/post/llm/</link>
+        <link>http://localhost:1313/post/vue3/</link>
         <pubDate>Wed, 16 Oct 2024 23:39:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/llm/</guid>
-        <description>&lt;img src="http://localhost:1313/post/cover/datawhale-cover.png" alt="Featured image of post Vue3基础" /&gt;&lt;h1 id=&#34;vue基础&#34;&gt;vue基础
+        <guid>http://localhost:1313/post/vue3/</guid>
+        <description>&lt;img src="http://localhost:1313/post/cover/vue-post.jpg" alt="Featured image of post Vue3基础" /&gt;&lt;h1 id=&#34;vue3基础&#34;&gt;vue3基础
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://vue3js.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Vue3 (vue3js.cn)&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;官网：[简介 | Vue.js (vuejs.org)](https://cn. vuejs.org/guide/introduction.html)&lt;/p&gt;
 &lt;p&gt;可以使用CDN&lt;/p&gt;
 &lt;p&gt;可以用源码&lt;/p&gt;
-&lt;p&gt;使用html界面，简单学习vue语法&lt;/p&gt;
+&lt;p&gt;使用html界面，vscode导入vue插件，简单学习vue语法&lt;/p&gt;
 &lt;h2 id=&#34;hello-word&#34;&gt;hello word
-&lt;/h2&gt;&lt;h2 id=&#34;v-html及v-text&#34;&gt;v-html及v-text
-&lt;/h2&gt;&lt;h2 id=&#34;v-if及v-elsev-show&#34;&gt;v-if及v-else、v-show
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;## v-html及v-text
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;## v-if及v-else、v-show
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;​```HTML
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt;&amp;gt;

@@ -7,7 +7,7 @@
 
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-<meta name='description' content="vue基础 Vue3 (vue3js.cn) 官网：[简介 | Vue.js (vuejs.org)](https://cn. vuejs.org/guide/introduction.html) 可以使用CDN 可以用源码 使用html界面，简单学习vue语法 hello word v-html及v-text v-if及v-else、v-show &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;!-- CDN --&gt; &lt;script src=&#34;https://unpkg.com/vue@3/dist/vue.global.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;!-- v-if 是 Vue.js 中用于条件性地渲染一块内容，内容只会在指令的表达返回true值的时候被渲染。 v-else 可用于提供条件为flase时的替代内容。 功能：当 age 的值大于 18 时，页面会显示“成年人”； 否则，显示“未成年人”。初始值设定为 18，因此会显示“未成年人” --&gt; &lt;!-- v-if --&gt; &lt;h1 v-if=&#34;age &gt; 18&#34;&gt;成年人&lt;/h1&gt; &lt;h1 v-else&gt;未成年人&lt;/h1&gt; &lt;h1 v-show=&#34;ok&#34;&gt;hello!&lt;/h1&gt; &lt;/div&gt; &lt;script&gt; const app= { data() { return{ age:19, } } } Vue.">
+<meta name='description' content="Datawhale AI夏令营第四期大模型应用开发-Task01 首先了解一些背景知识。 一、什么是大模型 语言模型发展历史 语言模型：为了对人类语言的内在规律进行建模，研究者们提出使用语言模型（language model）来准确预测词序列中 下一个词 或者 缺失的词 的概率。 统计语言模型：使用马儿可夫假设，假设当前词与之前的词产生联系。 中文中，建立n元语言模型，n元作为最小的语义单元进行建模 神经语言模型 上下文 统计语言模型（Statistical Language Model, SLM）：使用马尔可夫假设（Markov Assumption）来建模语言序列的 𝑛 元（𝑛-gram）语言模型 神经语言模型（Neural Language Model, NLM）：基于神经网络构建语言模型，如循环神经网络（Recurrent Neural Networks, RNN），并学习上下文相关的词表示（即分布式词向量），也被称为词嵌入（Word Embedding）。代表性工作：word2vec 预训练语言模型（Pre-trained Language Model, PLM）：使用大量的无标注数据预训练双向 LSTM（Bidirectional LSTM, biLSTM）或者Transformer，然后在下游任务上进行微调（Fine-Tuning）。代表性工作：ELMo、BERT、GPT-1/2 双向lstm是在RNN基础上进行改进的模型 Transformer，使用多层自注意力结构的模型 无标注数据：数据没有任何人标注，数据自监督的方式进行学习- 形成了预训练微调的范式 大语言模型（Large Language Model, LLM）：基于“扩展法则”（Scaling Law），即通过增加模型参数或训练数据，可以提升下游任务的性能，同时具有小模型不具有的“涌现能力”（Emergent Abilities）。代表性工作：GPT-3、ChatGPT、Claude、Llama 二、大模型是怎么构建的（三个阶段） 大模型的构建过程可以分为预训练（Pretraining）、有监督微调（Supervised Fine-tuning, SFT）、基于人类反馈的强化学习对齐（Reinforcement Learning from Human Feedback, RLHF）三个阶段。 1.预训练（Pretraining） 使用海量的数据进行模型参数的初始学习，旨在为模型参数寻找到一个优质的“起点”。 (1)预训练技术的发展 \u200b\t这一概念最初在计算机视觉领域萌芽，通过在ImageNet（一个大型图像数据集）上的训练，为模型参数奠定了坚实的基础。 \u200b\t后来在自然语言处理（NLP）领域使用，word2vec开创先河，利用未标注文本构建词嵌入模型；ELMo、BERT及GPT-1则进一步推动了**“预训练-微调”范式**的普及。 \u200b\t起初，只用于解决特定类别的下游任务；例如文本分类、序列标注、序列到序列生成等传统NLP任务。 \u200b\t之后，GPT-2——通过大规模文本数据预训练：打造能够应对广泛任务的通用解决方案，并在GPT-3中将这一理念扩展至前所未有的超大规模。 在BERT等早期预训练模型中，模型架构和训练任务呈现出多样化特征。然而，随着GPT系列模型的兴起，“解码器架构+预测下一个词”的策略证明了其卓越效能，成为了当前主流的大模型技术路线。 (2)预训练的过程 搜集和清洗文本数据 \u200b\t首要任务是搜集和清洗海量的文本数据，确保剔除潜在的有害内容。获取高质、多元的数据集，并对其进行严谨的预处理。">
 
 
 
@@ -21,14 +21,14 @@
 <link rel="stylesheet" href="/scss/partials/navbar.scss">
 
 
-<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="Vue3基础">
-<meta property='og:description' content="vue基础 Vue3 (vue3js.cn) 官网：[简介 | Vue.js (vuejs.org)](https://cn. vuejs.org/guide/introduction.html) 可以使用CDN 可以用源码 使用html界面，简单学习vue语法 hello word v-html及v-text v-if及v-else、v-show &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;!-- CDN --&gt; &lt;script src=&#34;https://unpkg.com/vue@3/dist/vue.global.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;!-- v-if 是 Vue.js 中用于条件性地渲染一块内容，内容只会在指令的表达返回true值的时候被渲染。 v-else 可用于提供条件为flase时的替代内容。 功能：当 age 的值大于 18 时，页面会显示“成年人”； 否则，显示“未成年人”。初始值设定为 18，因此会显示“未成年人” --&gt; &lt;!-- v-if --&gt; &lt;h1 v-if=&#34;age &gt; 18&#34;&gt;成年人&lt;/h1&gt; &lt;h1 v-else&gt;未成年人&lt;/h1&gt; &lt;h1 v-show=&#34;ok&#34;&gt;hello!&lt;/h1&gt; &lt;/div&gt; &lt;script&gt; const app= { data() { return{ age:19, } } } Vue.">
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="Datawhale AI夏令营第四期大模型应用开发-Task01">
+<meta property='og:description' content="Datawhale AI夏令营第四期大模型应用开发-Task01 首先了解一些背景知识。 一、什么是大模型 语言模型发展历史 语言模型：为了对人类语言的内在规律进行建模，研究者们提出使用语言模型（language model）来准确预测词序列中 下一个词 或者 缺失的词 的概率。 统计语言模型：使用马儿可夫假设，假设当前词与之前的词产生联系。 中文中，建立n元语言模型，n元作为最小的语义单元进行建模 神经语言模型 上下文 统计语言模型（Statistical Language Model, SLM）：使用马尔可夫假设（Markov Assumption）来建模语言序列的 𝑛 元（𝑛-gram）语言模型 神经语言模型（Neural Language Model, NLM）：基于神经网络构建语言模型，如循环神经网络（Recurrent Neural Networks, RNN），并学习上下文相关的词表示（即分布式词向量），也被称为词嵌入（Word Embedding）。代表性工作：word2vec 预训练语言模型（Pre-trained Language Model, PLM）：使用大量的无标注数据预训练双向 LSTM（Bidirectional LSTM, biLSTM）或者Transformer，然后在下游任务上进行微调（Fine-Tuning）。代表性工作：ELMo、BERT、GPT-1/2 双向lstm是在RNN基础上进行改进的模型 Transformer，使用多层自注意力结构的模型 无标注数据：数据没有任何人标注，数据自监督的方式进行学习- 形成了预训练微调的范式 大语言模型（Large Language Model, LLM）：基于“扩展法则”（Scaling Law），即通过增加模型参数或训练数据，可以提升下游任务的性能，同时具有小模型不具有的“涌现能力”（Emergent Abilities）。代表性工作：GPT-3、ChatGPT、Claude、Llama 二、大模型是怎么构建的（三个阶段） 大模型的构建过程可以分为预训练（Pretraining）、有监督微调（Supervised Fine-tuning, SFT）、基于人类反馈的强化学习对齐（Reinforcement Learning from Human Feedback, RLHF）三个阶段。 1.预训练（Pretraining） 使用海量的数据进行模型参数的初始学习，旨在为模型参数寻找到一个优质的“起点”。 (1)预训练技术的发展 \u200b\t这一概念最初在计算机视觉领域萌芽，通过在ImageNet（一个大型图像数据集）上的训练，为模型参数奠定了坚实的基础。 \u200b\t后来在自然语言处理（NLP）领域使用，word2vec开创先河，利用未标注文本构建词嵌入模型；ELMo、BERT及GPT-1则进一步推动了**“预训练-微调”范式**的普及。 \u200b\t起初，只用于解决特定类别的下游任务；例如文本分类、序列标注、序列到序列生成等传统NLP任务。 \u200b\t之后，GPT-2——通过大规模文本数据预训练：打造能够应对广泛任务的通用解决方案，并在GPT-3中将这一理念扩展至前所未有的超大规模。 在BERT等早期预训练模型中，模型架构和训练任务呈现出多样化特征。然而，随着GPT系列模型的兴起，“解码器架构+预测下一个词”的策略证明了其卓越效能，成为了当前主流的大模型技术路线。 (2)预训练的过程 搜集和清洗文本数据 \u200b\t首要任务是搜集和清洗海量的文本数据，确保剔除潜在的有害内容。获取高质、多元的数据集，并对其进行严谨的预处理。">
 <meta property='og:url' content='http://localhost:1313/post/llm/'>
 <meta property='og:site_name' content='PoolBee的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Datawhale' /><meta property='article:published_time' content='2024-08-10T17:06:00&#43;00:00'/><meta property='article:modified_time' content='2024-08-10T17:06:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/post/cover/datawhale-cover.png' />
 <meta name="twitter:site" content="@PoolBee">
-    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Vue3基础">
-<meta name="twitter:description" content="vue基础 Vue3 (vue3js.cn) 官网：[简介 | Vue.js (vuejs.org)](https://cn. vuejs.org/guide/introduction.html) 可以使用CDN 可以用源码 使用html界面，简单学习vue语法 hello word v-html及v-text v-if及v-else、v-show &lt;!DOCTYPE html&gt; &lt;html lang=&#34;en&#34;&gt; &lt;head&gt; &lt;meta charset=&#34;UTF-8&#34;&gt; &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1.0&#34;&gt; &lt;title&gt;Document&lt;/title&gt; &lt;!-- CDN --&gt; &lt;script src=&#34;https://unpkg.com/vue@3/dist/vue.global.js&#34;&gt;&lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&#34;app&#34;&gt; &lt;!-- v-if 是 Vue.js 中用于条件性地渲染一块内容，内容只会在指令的表达返回true值的时候被渲染。 v-else 可用于提供条件为flase时的替代内容。 功能：当 age 的值大于 18 时，页面会显示“成年人”； 否则，显示“未成年人”。初始值设定为 18，因此会显示“未成年人” --&gt; &lt;!-- v-if --&gt; &lt;h1 v-if=&#34;age &gt; 18&#34;&gt;成年人&lt;/h1&gt; &lt;h1 v-else&gt;未成年人&lt;/h1&gt; &lt;h1 v-show=&#34;ok&#34;&gt;hello!&lt;/h1&gt; &lt;/div&gt; &lt;script&gt; const app= { data() { return{ age:19, } } } Vue."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Datawhale AI夏令营第四期大模型应用开发-Task01">
+<meta name="twitter:description" content="Datawhale AI夏令营第四期大模型应用开发-Task01 首先了解一些背景知识。 一、什么是大模型 语言模型发展历史 语言模型：为了对人类语言的内在规律进行建模，研究者们提出使用语言模型（language model）来准确预测词序列中 下一个词 或者 缺失的词 的概率。 统计语言模型：使用马儿可夫假设，假设当前词与之前的词产生联系。 中文中，建立n元语言模型，n元作为最小的语义单元进行建模 神经语言模型 上下文 统计语言模型（Statistical Language Model, SLM）：使用马尔可夫假设（Markov Assumption）来建模语言序列的 𝑛 元（𝑛-gram）语言模型 神经语言模型（Neural Language Model, NLM）：基于神经网络构建语言模型，如循环神经网络（Recurrent Neural Networks, RNN），并学习上下文相关的词表示（即分布式词向量），也被称为词嵌入（Word Embedding）。代表性工作：word2vec 预训练语言模型（Pre-trained Language Model, PLM）：使用大量的无标注数据预训练双向 LSTM（Bidirectional LSTM, biLSTM）或者Transformer，然后在下游任务上进行微调（Fine-Tuning）。代表性工作：ELMo、BERT、GPT-1/2 双向lstm是在RNN基础上进行改进的模型 Transformer，使用多层自注意力结构的模型 无标注数据：数据没有任何人标注，数据自监督的方式进行学习- 形成了预训练微调的范式 大语言模型（Large Language Model, LLM）：基于“扩展法则”（Scaling Law），即通过增加模型参数或训练数据，可以提升下游任务的性能，同时具有小模型不具有的“涌现能力”（Emergent Abilities）。代表性工作：GPT-3、ChatGPT、Claude、Llama 二、大模型是怎么构建的（三个阶段） 大模型的构建过程可以分为预训练（Pretraining）、有监督微调（Supervised Fine-tuning, SFT）、基于人类反馈的强化学习对齐（Reinforcement Learning from Human Feedback, RLHF）三个阶段。 1.预训练（Pretraining） 使用海量的数据进行模型参数的初始学习，旨在为模型参数寻找到一个优质的“起点”。 (1)预训练技术的发展 \u200b\t这一概念最初在计算机视觉领域萌芽，通过在ImageNet（一个大型图像数据集）上的训练，为模型参数奠定了坚实的基础。 \u200b\t后来在自然语言处理（NLP）领域使用，word2vec开创先河，利用未标注文本构建词嵌入模型；ELMo、BERT及GPT-1则进一步推动了**“预训练-微调”范式**的普及。 \u200b\t起初，只用于解决特定类别的下游任务；例如文本分类、序列标注、序列到序列生成等传统NLP任务。 \u200b\t之后，GPT-2——通过大规模文本数据预训练：打造能够应对广泛任务的通用解决方案，并在GPT-3中将这一理念扩展至前所未有的超大规模。 在BERT等早期预训练模型中，模型架构和训练任务呈现出多样化特征。然而，随着GPT系列模型的兴起，“解码器架构+预测下一个词”的策略证明了其卓越效能，成为了当前主流的大模型技术路线。 (2)预训练的过程 搜集和清洗文本数据 \u200b\t首要任务是搜集和清洗海量的文本数据，确保剔除潜在的有害内容。获取高质、多元的数据集，并对其进行严谨的预处理。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/post/cover/datawhale-cover.png' />
   
 
@@ -509,8 +509,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/vue/" >
-                Vue
+            <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" >
+                大模型
             </a>
         
     </header>
@@ -518,7 +518,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/llm/">Vue3基础</a>
+            <a href="/post/llm/">Datawhale AI夏令营第四期大模型应用开发-Task01</a>
         </h2>
     
         
@@ -540,7 +540,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Oct 16, 2024</time>
+                <time class="article-time--published">Aug 10, 2024</time>
             </div>
         
 
@@ -555,7 +555,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 7 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
