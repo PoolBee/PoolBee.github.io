@@ -441,7 +441,7 @@
 at &lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
 &lt;li&gt;属性&amp;quot;methodName1&amp;quot;在渲染期间内被访问了，但是没有自傲实例中定义。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241016110010727.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241016110010727.png&#34;
 	
 	
 	
@@ -451,7 +451,7 @@ at &lt;!-- raw HTML omitted --&gt;&lt;/li&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241016110015796.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241016110015796.png&#34;
 	
 	
 	
@@ -665,7 +665,7 @@ export default {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm run serve
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;看到实现了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241016165923901.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241016165923901.png&#34;
 	
 	
 	
@@ -783,7 +783,7 @@ export default {
 &lt;li&gt;Vue模板需要有且仅有一个根元素&lt;/li&gt;
 &lt;li&gt;有该报错网页仍然可正常运行&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241017212936539.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241017212936539.png&#34;
 	
 	
 	
@@ -953,7 +953,7 @@ export default {
 &lt;h1 id=&#34;组件的生命周期&#34;&gt;组件的生命周期
 &lt;/h1&gt;&lt;p&gt;每个组件在被创建时都要经过一系列的初始化过程——例如，需要 设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更 新 DOM 等。&lt;/p&gt;
 &lt;p&gt;同时在这个过程中也会运行一些叫做&lt;strong&gt;生命周期钩子&lt;/strong&gt;的函数，这给了用户在不同阶段添加自己的代码的机会&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241017221333267.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241017221333267.png&#34;
 	
 	
 	
