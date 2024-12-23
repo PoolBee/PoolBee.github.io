@@ -8,10 +8,10 @@
         <language>zh-cn</language>
         <lastBuildDate>Sun, 22 Dec 2024 15:15:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>JDK安装</title>
-        <link>http://localhost:1313/post/fine-tuning/</link>
+        <link>http://localhost:1313/post/jdk/</link>
         <pubDate>Sun, 22 Dec 2024 15:15:30 +0000</pubDate>
         
-        <guid>http://localhost:1313/post/fine-tuning/</guid>
+        <guid>http://localhost:1313/post/jdk/</guid>
         <description>&lt;img src="http://localhost:1313/post/cover/datawhale-cover.png" alt="Featured image of post JDK安装" /&gt;&lt;h1 id=&#34;jdk17和jdk18区别&#34;&gt;JDK17和JDK1.8区别
 &lt;/h1&gt;&lt;p&gt;1.8版本之前，jdk和jre是分开的，例如：1.6版本&lt;/p&gt;
 &lt;p&gt;17和21的版本是企业在用的&lt;/p&gt;
