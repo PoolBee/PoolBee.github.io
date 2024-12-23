@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/base/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-12-22T15:15:30+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/categories/java/</loc>
     <lastmod>2024-12-22T15:15:30+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/jdk/</loc>
@@ -18,10 +18,7 @@
     <lastmod>2024-12-22T15:15:30+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-12-22T15:15:30+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-12-22T15:15:30+00:00</lastmod>
+    <lastmod>2024-10-16T23:39:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/vue/</loc>
     <lastmod>2024-10-16T23:39:00+00:00</lastmod>
@@ -142,9 +139,6 @@
   </url><url>
     <loc>http://localhost:1313/page/archives/</loc>
     <lastmod>2023-06-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/java/</loc>
-    <lastmod>2023-03-28T11:08:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2023-03-28T11:08:00+00:00</lastmod>

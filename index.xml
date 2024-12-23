@@ -12,13 +12,13 @@
         <pubDate>Sun, 22 Dec 2024 15:15:30 +0000</pubDate>
         
         <guid>http://localhost:1313/post/jdk/</guid>
-        <description>&lt;img src="http://localhost:1313/post/cover/datawhale-cover.png" alt="Featured image of post JDK安装" /&gt;&lt;h1 id=&#34;jdk17和jdk18区别&#34;&gt;JDK17和JDK1.8区别
+        <description>&lt;h1 id=&#34;jdk17和jdk18区别&#34;&gt;JDK17和JDK1.8区别
 &lt;/h1&gt;&lt;p&gt;1.8版本之前，jdk和jre是分开的，例如：1.6版本&lt;/p&gt;
 &lt;p&gt;17和21的版本是企业在用的&lt;/p&gt;
 &lt;h1 id=&#34;一jdk目录文件解释&#34;&gt;一、jdk目录文件解释
 &lt;/h1&gt;&lt;p&gt;C:\Program Files\Java\&lt;/p&gt;
 &lt;p&gt;这是一般默认安装JDK的路径。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223135744998.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223135744998.png&#34;
 	
 	
 	
@@ -33,7 +33,7 @@
 &lt;p&gt;bin下有java.exe和javac.exe&lt;/p&gt;
 &lt;p&gt;jdk/bin目录下有java.exe和javac.exe&lt;/p&gt;
 &lt;h3 id=&#34;配置环境变量的目的任意目录下执行java程序&#34;&gt;配置环境变量的目的：任意目录下执行java程序
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223135935558.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223135935558.png&#34;
 	
 	
 	
@@ -55,7 +55,7 @@
 &lt;/ul&gt;
 &lt;p&gt;这个里面的String的所有的类的源码在这里。&lt;/p&gt;
 &lt;p&gt;这里indexOf方法的源码就再这里。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223095120333.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223095120333.png&#34;
 	
 	
 	
@@ -71,7 +71,7 @@
 &lt;/h2&gt;&lt;p&gt;包含 JavaFX 所依赖的第三方组件及其许可证信息的文档。它确保了在分发、使用或修改 JavaFX 时，遵守所有相关的开源许可证要求。&lt;/p&gt;
 &lt;h1 id=&#34;二环境变量配置&#34;&gt;二、环境变量配置
 &lt;/h1&gt;&lt;p&gt;path是系统环境变量（windows电脑都有）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223095744862.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223095744862.png&#34;
 	
 	
 	
@@ -85,7 +85,7 @@
 &lt;li&gt;这个是系统变量中的Path&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;第一步：设置%javahome%/bin&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223095817469.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223095817469.png&#34;
 	
 	
 	
@@ -106,7 +106,7 @@
 &lt;p&gt;导致一些软件在安装的时候会失败。&lt;/p&gt;
 &lt;h2 id=&#34;执行过程&#34;&gt;执行过程？
 &lt;/h2&gt;&lt;p&gt;交给jvm，让计执行class文件，让计算机系统读懂这个程序。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223100751461.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223100751461.png&#34;
 	
 	
 	
@@ -126,7 +126,7 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/aspirant/p/16916342.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;error:could not open &amp;hellip;jvm.cfg解决方法 - aspirant - 博客园&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;移动到最前面即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223133413007.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223133413007.png&#34;
 	
 	
 	
@@ -136,7 +136,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/before/image-20241223133304986.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223133304986.png&#34;
 	
 	
 	

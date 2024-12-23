@@ -6,7 +6,150 @@
         <description>Recent content in Java on PoolBee的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 28 Mar 2023 11:08:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 22 Dec 2024 15:15:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>JDK安装</title>
+        <link>http://localhost:1313/post/jdk/</link>
+        <pubDate>Sun, 22 Dec 2024 15:15:30 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/jdk/</guid>
+        <description>&lt;h1 id=&#34;jdk17和jdk18区别&#34;&gt;JDK17和JDK1.8区别
+&lt;/h1&gt;&lt;p&gt;1.8版本之前，jdk和jre是分开的，例如：1.6版本&lt;/p&gt;
+&lt;p&gt;17和21的版本是企业在用的&lt;/p&gt;
+&lt;h1 id=&#34;一jdk目录文件解释&#34;&gt;一、jdk目录文件解释
+&lt;/h1&gt;&lt;p&gt;C:\Program Files\Java\&lt;/p&gt;
+&lt;p&gt;这是一般默认安装JDK的路径。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223135744998.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223135744998&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bin目录下都是可执行文件&#34;&gt;bin目录下都是可执行文件
+&lt;/h2&gt;&lt;p&gt;D:\Javaweb\java8\jdk1.8\bin&lt;/p&gt;
+&lt;p&gt;bin下有java.exe和javac.exe&lt;/p&gt;
+&lt;p&gt;jdk/bin目录下有java.exe和javac.exe&lt;/p&gt;
+&lt;h3 id=&#34;配置环境变量的目的任意目录下执行java程序&#34;&gt;配置环境变量的目的：任意目录下执行java程序
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223135935558.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223135935558&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;什么是接口&#34;&gt;什么是接口
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;只定义行为，不做实现。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由具体的东西取实现&lt;/p&gt;
+&lt;p&gt;jdk中的jre是java运行环境&lt;/p&gt;
+&lt;p&gt;lib：java开发工具包&lt;/p&gt;
+&lt;p&gt;开发这个程序的时候，第三方其他人开发的东西。&lt;/p&gt;
+&lt;h2 id=&#34;srczip是jdk的源码&#34;&gt;src.zip是jdk的源码
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;例如：String字符串是一个类，是java提供的，这个String就是在src.zip/java/lang包下。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个里面的String的所有的类的源码在这里。&lt;/p&gt;
+&lt;p&gt;这里indexOf方法的源码就再这里。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223095120333.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223095120333&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;thirdpartylicensereadmetxt&#34;&gt;THIRDPARTYLICENSEREADME.txt
+&lt;/h2&gt;&lt;p&gt;用于记录和展示项目中所有第三方组件及其许可证信息的重要文档。&lt;/p&gt;
+&lt;h2 id=&#34;thirdpartylicensereadme-javafxtxt&#34;&gt;THIRDPARTYLICENSEREADME-JAVAFX.txt
+&lt;/h2&gt;&lt;p&gt;包含 JavaFX 所依赖的第三方组件及其许可证信息的文档。它确保了在分发、使用或修改 JavaFX 时，遵守所有相关的开源许可证要求。&lt;/p&gt;
+&lt;h1 id=&#34;二环境变量配置&#34;&gt;二、环境变量配置
+&lt;/h1&gt;&lt;p&gt;path是系统环境变量（windows电脑都有）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223095744862.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223095744862&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个是系统变量中的Path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;第一步：设置%javahome%/bin&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223095817469.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223095817469&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这个是系统变量中的JAVA_HOME&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;为什么先配path中要配javahomebin再配javahome&#34;&gt;为什么先配path中要配%javahome%/bin，再配javahome？
+&lt;/h2&gt;&lt;h3 id=&#34;第一方便后续修改jdk目录&#34;&gt;第一：方便后续修改jdk目录
+&lt;/h3&gt;&lt;p&gt;如果更改jdk的路径，那么直接更改%JAVA_HOME%变量的路径即可&lt;/p&gt;
+&lt;h3 id=&#34;第二方便后续软件安装不报错&#34;&gt;第二：方便后续软件安装不报错
+&lt;/h3&gt;&lt;p&gt;有些软件在安装的时候会先找%javahome%再找系统path中的/bin。&lt;/p&gt;
+&lt;p&gt;导致一些软件在安装的时候会失败。&lt;/p&gt;
+&lt;h2 id=&#34;执行过程&#34;&gt;执行过程？
+&lt;/h2&gt;&lt;p&gt;交给jvm，让计执行class文件，让计算机系统读懂这个程序。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223100751461.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223100751461&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;环境变量配置报错&#34;&gt;环境变量配置—报错
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;错误：&lt;/p&gt;
+&lt;p&gt;C:\Users\anymore&amp;gt;java -version Error: could not open `E:\java-jre\lib\amd64\jvm.cfg&#39;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/aspirant/p/16916342.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;error:could not open &amp;hellip;jvm.cfg解决方法 - aspirant - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;移动到最前面即可&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223133413007.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223133413007&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20241223133304986.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20241223133304986&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;运行成功&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>流操作和函数式编程</title>
         <link>http://localhost:1313/post1/java/</link>
         <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
