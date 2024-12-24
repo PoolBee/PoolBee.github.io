@@ -1,0 +1,2030 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<meta name='description' content="Mysql安装 检验是否安装 命令行提示 cmd中验证 mysql -u root -p navicat17连接远程的数据库 输入地址及密码，使用navicat17 tomcat安装 我的tomcat目录 D:\\tomcat\\apache-tomcat-8.5.57 如何创建表 一、了解表和表之间的关系 四种关系： 没有关系 一对一 1对多或多对1 多对多 关联字段可以设置在任意的一张表中 这里的多表指的是：多对一的关系。 SQL语句 新建数据库 全选、运行、刷新 DROP TABLE IF EXISTS `class`; CREATE TABLE `class` ( `id` int(11) NOT NULL AUTO_INCREMENT, `class_num` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;班级号&#39;, `class_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;班级名称&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of class -- ---------------------------- INSERT INTO `class` VALUES (1, &#39;20201001&#39;, &#39;软件工程&#39;); INSERT INTO `class` VALUES (2, &#39;20201002&#39;, &#39;计算机科学&#39;); INSERT INTO `class` VALUES (3, &#39;20201003&#39;, &#39;网络工程&#39;); INSERT INTO `class` VALUES (4, &#39;20201005&#39;, &#39;数学&#39;); -- ---------------------------- -- Table structure for course -- ---------------------------- DROP TABLE IF EXISTS `course`; CREATE TABLE `course` ( `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &#39;选课表&#39;, `cno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程号&#39;, `gradeName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程名称&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of course -- ---------------------------- INSERT INTO `course` VALUES (1, &#39;1001&#39;, &#39;数学&#39;); INSERT INTO `course` VALUES (2, &#39;1002&#39;, &#39;语文&#39;); INSERT INTO `course` VALUES (3, &#39;1003&#39;, &#39;英语&#39;); -- ---------------------------- -- Table structure for relationship -- ---------------------------- DROP TABLE IF EXISTS `relationship`; CREATE TABLE `relationship` ( `id` int(11) NOT NULL AUTO_INCREMENT, `sno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;学号&#39;, `cno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程号&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of relationship -- ---------------------------- INSERT INTO `relationship` VALUES (1, &#39;202001&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (2, &#39;202001&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (3, &#39;202001&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (4, &#39;202002&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (5, &#39;202002&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (6, &#39;202003&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (7, &#39;202004&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (8, &#39;202004&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (9, &#39;202004&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (10, &#39;202005&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (11, &#39;202005&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (12, &#39;202006&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (13, &#39;202006&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (14, &#39;202006&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (15, &#39;202007&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (16, &#39;202009&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (17, &#39;202009&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (18, &#39;202009&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (19, &#39;202010&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (20, &#39;202010&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (21, &#39;202010&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (22, &#39;202011&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (23, &#39;202012&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (24, &#39;202012&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (25, &#39;202013&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (26, &#39;202013&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (27, &#39;202014&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (28, &#39;202014&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (29, &#39;202014&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (30, &#39;202015&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (31, &#39;202015&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (32, &#39;202016&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (33, &#39;202016&#39;, &#39;1003&#39;); -- ---------------------------- -- Table structure for student -- ---------------------------- DROP TABLE IF EXISTS `student`; CREATE TABLE `student` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL, `sex` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL, `age` int(11) NOT NULL, `sno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;学号&#39;, `class_num` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT &#39;班级号&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of student -- ---------------------------- INSERT INTO `student` VALUES (1, &#39;张三&#39;, &#39;男&#39;, 20, &#39;202001&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (2, &#39;李四&#39;, &#39;男&#39;, 21, &#39;202002&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (3, &#39;王五&#39;, &#39;男&#39;, 20, &#39;202003&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (4, &#39;张安&#39;, &#39;女&#39;, 23, &#39;202004&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (5, &#39;萨达&#39;, &#39;女&#39;, 21, &#39;202005&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (6, &#39;阿斯蒂芬&#39;, &#39;女&#39;, 22, &#39;202006&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (7, &#39;广大儒风&#39;, &#39;男&#39;, 20, &#39;202007&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (8, &#39;安顺&#39;, &#39;男&#39;, 20, &#39;202008&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (9, &#39;东方&#39;, &#39;女&#39;, 20, &#39;202009&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (10, &#39;咖啡&#39;, &#39;男&#39;, 20, &#39;202010&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (11, &#39;回顾&#39;, &#39;女&#39;, 20, &#39;202011&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (12, &#39;同意&#39;, &#39;男&#39;, 20, &#39;202012&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (13, &#39;规划局&#39;, &#39;女&#39;, 20, &#39;202013&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (14, &#39;各环节&#39;, &#39;男&#39;, 20, &#39;202014&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (15, &#39;空格&#39;, &#39;女&#39;, 20, &#39;202015&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (16, &#39;发送到&#39;, &#39;男&#39;, 22, &#39;202016&#39;, &#39;20201004&#39;); SET FOREIGN_KEY_CHECKS = 1; sql语句中不区分大小写">
+
+
+
+<title>Mysql、tomcat、sql语句</title>
+
+
+<link rel='canonical' href='http://localhost:1313/post/mysql01/'>
+
+
+                                                          
+<link rel="stylesheet" href="/scss/partials/navbar.scss">
+
+
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="Mysql、tomcat、sql语句">
+<meta property='og:description' content="Mysql安装 检验是否安装 命令行提示 cmd中验证 mysql -u root -p navicat17连接远程的数据库 输入地址及密码，使用navicat17 tomcat安装 我的tomcat目录 D:\\tomcat\\apache-tomcat-8.5.57 如何创建表 一、了解表和表之间的关系 四种关系： 没有关系 一对一 1对多或多对1 多对多 关联字段可以设置在任意的一张表中 这里的多表指的是：多对一的关系。 SQL语句 新建数据库 全选、运行、刷新 DROP TABLE IF EXISTS `class`; CREATE TABLE `class` ( `id` int(11) NOT NULL AUTO_INCREMENT, `class_num` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;班级号&#39;, `class_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;班级名称&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of class -- ---------------------------- INSERT INTO `class` VALUES (1, &#39;20201001&#39;, &#39;软件工程&#39;); INSERT INTO `class` VALUES (2, &#39;20201002&#39;, &#39;计算机科学&#39;); INSERT INTO `class` VALUES (3, &#39;20201003&#39;, &#39;网络工程&#39;); INSERT INTO `class` VALUES (4, &#39;20201005&#39;, &#39;数学&#39;); -- ---------------------------- -- Table structure for course -- ---------------------------- DROP TABLE IF EXISTS `course`; CREATE TABLE `course` ( `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &#39;选课表&#39;, `cno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程号&#39;, `gradeName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程名称&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of course -- ---------------------------- INSERT INTO `course` VALUES (1, &#39;1001&#39;, &#39;数学&#39;); INSERT INTO `course` VALUES (2, &#39;1002&#39;, &#39;语文&#39;); INSERT INTO `course` VALUES (3, &#39;1003&#39;, &#39;英语&#39;); -- ---------------------------- -- Table structure for relationship -- ---------------------------- DROP TABLE IF EXISTS `relationship`; CREATE TABLE `relationship` ( `id` int(11) NOT NULL AUTO_INCREMENT, `sno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;学号&#39;, `cno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程号&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of relationship -- ---------------------------- INSERT INTO `relationship` VALUES (1, &#39;202001&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (2, &#39;202001&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (3, &#39;202001&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (4, &#39;202002&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (5, &#39;202002&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (6, &#39;202003&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (7, &#39;202004&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (8, &#39;202004&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (9, &#39;202004&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (10, &#39;202005&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (11, &#39;202005&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (12, &#39;202006&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (13, &#39;202006&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (14, &#39;202006&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (15, &#39;202007&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (16, &#39;202009&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (17, &#39;202009&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (18, &#39;202009&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (19, &#39;202010&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (20, &#39;202010&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (21, &#39;202010&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (22, &#39;202011&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (23, &#39;202012&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (24, &#39;202012&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (25, &#39;202013&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (26, &#39;202013&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (27, &#39;202014&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (28, &#39;202014&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (29, &#39;202014&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (30, &#39;202015&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (31, &#39;202015&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (32, &#39;202016&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (33, &#39;202016&#39;, &#39;1003&#39;); -- ---------------------------- -- Table structure for student -- ---------------------------- DROP TABLE IF EXISTS `student`; CREATE TABLE `student` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL, `sex` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL, `age` int(11) NOT NULL, `sno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;学号&#39;, `class_num` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT &#39;班级号&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of student -- ---------------------------- INSERT INTO `student` VALUES (1, &#39;张三&#39;, &#39;男&#39;, 20, &#39;202001&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (2, &#39;李四&#39;, &#39;男&#39;, 21, &#39;202002&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (3, &#39;王五&#39;, &#39;男&#39;, 20, &#39;202003&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (4, &#39;张安&#39;, &#39;女&#39;, 23, &#39;202004&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (5, &#39;萨达&#39;, &#39;女&#39;, 21, &#39;202005&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (6, &#39;阿斯蒂芬&#39;, &#39;女&#39;, 22, &#39;202006&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (7, &#39;广大儒风&#39;, &#39;男&#39;, 20, &#39;202007&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (8, &#39;安顺&#39;, &#39;男&#39;, 20, &#39;202008&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (9, &#39;东方&#39;, &#39;女&#39;, 20, &#39;202009&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (10, &#39;咖啡&#39;, &#39;男&#39;, 20, &#39;202010&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (11, &#39;回顾&#39;, &#39;女&#39;, 20, &#39;202011&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (12, &#39;同意&#39;, &#39;男&#39;, 20, &#39;202012&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (13, &#39;规划局&#39;, &#39;女&#39;, 20, &#39;202013&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (14, &#39;各环节&#39;, &#39;男&#39;, 20, &#39;202014&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (15, &#39;空格&#39;, &#39;女&#39;, 20, &#39;202015&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (16, &#39;发送到&#39;, &#39;男&#39;, 22, &#39;202016&#39;, &#39;20201004&#39;); SET FOREIGN_KEY_CHECKS = 1; sql语句中不区分大小写">
+<meta property='og:url' content='http://localhost:1313/post/mysql01/'>
+<meta property='og:site_name' content='PoolBee的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='sql语句' /><meta property='article:published_time' content='2024-12-23T16:24:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-23T16:24:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/post/cover/mysql-cover.jpg' />
+<meta name="twitter:site" content="@PoolBee">
+    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="Mysql、tomcat、sql语句">
+<meta name="twitter:description" content="Mysql安装 检验是否安装 命令行提示 cmd中验证 mysql -u root -p navicat17连接远程的数据库 输入地址及密码，使用navicat17 tomcat安装 我的tomcat目录 D:\\tomcat\\apache-tomcat-8.5.57 如何创建表 一、了解表和表之间的关系 四种关系： 没有关系 一对一 1对多或多对1 多对多 关联字段可以设置在任意的一张表中 这里的多表指的是：多对一的关系。 SQL语句 新建数据库 全选、运行、刷新 DROP TABLE IF EXISTS `class`; CREATE TABLE `class` ( `id` int(11) NOT NULL AUTO_INCREMENT, `class_num` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;班级号&#39;, `class_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;班级名称&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of class -- ---------------------------- INSERT INTO `class` VALUES (1, &#39;20201001&#39;, &#39;软件工程&#39;); INSERT INTO `class` VALUES (2, &#39;20201002&#39;, &#39;计算机科学&#39;); INSERT INTO `class` VALUES (3, &#39;20201003&#39;, &#39;网络工程&#39;); INSERT INTO `class` VALUES (4, &#39;20201005&#39;, &#39;数学&#39;); -- ---------------------------- -- Table structure for course -- ---------------------------- DROP TABLE IF EXISTS `course`; CREATE TABLE `course` ( `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &#39;选课表&#39;, `cno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程号&#39;, `gradeName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程名称&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of course -- ---------------------------- INSERT INTO `course` VALUES (1, &#39;1001&#39;, &#39;数学&#39;); INSERT INTO `course` VALUES (2, &#39;1002&#39;, &#39;语文&#39;); INSERT INTO `course` VALUES (3, &#39;1003&#39;, &#39;英语&#39;); -- ---------------------------- -- Table structure for relationship -- ---------------------------- DROP TABLE IF EXISTS `relationship`; CREATE TABLE `relationship` ( `id` int(11) NOT NULL AUTO_INCREMENT, `sno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;学号&#39;, `cno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;课程号&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of relationship -- ---------------------------- INSERT INTO `relationship` VALUES (1, &#39;202001&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (2, &#39;202001&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (3, &#39;202001&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (4, &#39;202002&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (5, &#39;202002&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (6, &#39;202003&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (7, &#39;202004&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (8, &#39;202004&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (9, &#39;202004&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (10, &#39;202005&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (11, &#39;202005&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (12, &#39;202006&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (13, &#39;202006&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (14, &#39;202006&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (15, &#39;202007&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (16, &#39;202009&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (17, &#39;202009&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (18, &#39;202009&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (19, &#39;202010&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (20, &#39;202010&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (21, &#39;202010&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (22, &#39;202011&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (23, &#39;202012&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (24, &#39;202012&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (25, &#39;202013&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (26, &#39;202013&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (27, &#39;202014&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (28, &#39;202014&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (29, &#39;202014&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (30, &#39;202015&#39;, &#39;1003&#39;); INSERT INTO `relationship` VALUES (31, &#39;202015&#39;, &#39;1001&#39;); INSERT INTO `relationship` VALUES (32, &#39;202016&#39;, &#39;1002&#39;); INSERT INTO `relationship` VALUES (33, &#39;202016&#39;, &#39;1003&#39;); -- ---------------------------- -- Table structure for student -- ---------------------------- DROP TABLE IF EXISTS `student`; CREATE TABLE `student` ( `id` int(11) NOT NULL AUTO_INCREMENT, `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL, `sex` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL, `age` int(11) NOT NULL, `sno` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT &#39;学号&#39;, `class_num` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT &#39;班级号&#39;, PRIMARY KEY (`id`) USING BTREE ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin ROW_FORMAT = Compact; -- ---------------------------- -- Records of student -- ---------------------------- INSERT INTO `student` VALUES (1, &#39;张三&#39;, &#39;男&#39;, 20, &#39;202001&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (2, &#39;李四&#39;, &#39;男&#39;, 21, &#39;202002&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (3, &#39;王五&#39;, &#39;男&#39;, 20, &#39;202003&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (4, &#39;张安&#39;, &#39;女&#39;, 23, &#39;202004&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (5, &#39;萨达&#39;, &#39;女&#39;, 21, &#39;202005&#39;, &#39;20201001&#39;); INSERT INTO `student` VALUES (6, &#39;阿斯蒂芬&#39;, &#39;女&#39;, 22, &#39;202006&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (7, &#39;广大儒风&#39;, &#39;男&#39;, 20, &#39;202007&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (8, &#39;安顺&#39;, &#39;男&#39;, 20, &#39;202008&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (9, &#39;东方&#39;, &#39;女&#39;, 20, &#39;202009&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (10, &#39;咖啡&#39;, &#39;男&#39;, 20, &#39;202010&#39;, &#39;20201002&#39;); INSERT INTO `student` VALUES (11, &#39;回顾&#39;, &#39;女&#39;, 20, &#39;202011&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (12, &#39;同意&#39;, &#39;男&#39;, 20, &#39;202012&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (13, &#39;规划局&#39;, &#39;女&#39;, 20, &#39;202013&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (14, &#39;各环节&#39;, &#39;男&#39;, 20, &#39;202014&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (15, &#39;空格&#39;, &#39;女&#39;, 20, &#39;202015&#39;, &#39;20201003&#39;); INSERT INTO `student` VALUES (16, &#39;发送到&#39;, &#39;男&#39;, 22, &#39;202016&#39;, &#39;20201004&#39;); SET FOREIGN_KEY_CHECKS = 1; sql语句中不区分大小写"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/post/cover/mysql-cover.jpg' />
+  
+
+
+
+
+    
+</head>
+
+<body class="
+    article-page
+    ">
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+        
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+            
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+            
+        }
+    })();
+</script>
+
+
+    <nav id="navbar" class="navbar--fixed-top">
+    <div class="container">
+        <a href="/" class="navbar-brand">
+            
+        </a>
+        <ul class="navbar-nav">
+            
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link" >关于我</a></li>
+            <li class="nav-item"><a href="/page/daily_info/" class="nav-link" target="_blank">走走停停</a></li>
+            <li class="nav-item"><a href="/page/blogroll/" class="nav-link" target="_blank">友链</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    let lastScrollY = window.scrollY;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            
+            navbar.classList.add('navbar--hidden');
+        } else {
+            
+            navbar.classList.remove('navbar--hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === path) {
+                link.parentElement.classList.add('active'); 
+            }
+        });
+    });
+</script>
+
+    
+
+    <div class="container main-container flex on-phone--column extended">
+        <aside class="sidebar left-sidebar sticky compact">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hud111a09d55ebb32217e16308c85c65c5_4420_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌏</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">PoolBee的博客</a></h1>
+            <h2 class="site-description">热爱生活，忠于记录</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/28343232'
+                        target="_blank"
+                        title="Blibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M665.056 123.904a32 32 0 0 1 49.824 40.192l-36.8 45.632c114.48 4.32 166 19.904 198.784 66.512C908.032 320.528 912 363.6 912 539.168 912 861.952 891.152 880 512 880 136.64 880 112.448 862.32 112 548.768v-25.216c0.272-160.224 4.864-201.984 34.4-245.072 32.832-47.904 85.664-64.112 201.504-68.752l-36.8-45.632a32 32 0 1 1 49.808-40.192l68.064 84.4 23.2-0.256h4.368l2.224-0.016h6.976l2.496-0.016L506.992 208h52.832l37.104 0.352zM559.52 272h-91.104l-9.344 0.032h-6.464l-77.504 0.864c-113.52 2.784-156.8 13.888-175.92 41.76-18.784 27.424-22.928 67.008-23.168 209.872v29.568c0.32 163.072 6.368 202.768 34.928 227.488C243.12 809.424 304.064 816 512 816c207.936 0 268.88-6.56 301.056-34.416C842.464 756.128 848 714.784 848 539.184c0-156.736-3.824-198.176-23.472-226.112-19.28-27.408-62.928-37.952-179.248-40.24L559.52 272z m-20.656 324.208c15.312 27.168 27.456 37.504 34.88 37.76 4 0.144 10.096-4.064 16.688-12.88a91.904 91.904 0 0 0 10.08-17.312 24 24 0 0 1 44.384 18.24 132 132 0 0 1-16 27.776c-15.04 20.16-33.6 32.96-56.832 32.16-19.184-0.688-36.896-10.944-53.504-30.528l-0.896-1.088-0.112 0.144c-15.68 17.92-32.688 27.792-51.04 29.392l-3.264 0.192c-23.024 0.768-42.368-11.008-58.736-29.808a132.88 132.88 0 0 1-18.176-26.576 24 24 0 1 1 42.88-21.552 94.16 94.16 0 0 0 11.488 16.608c7.84 8.992 15.312 13.536 20.96 13.36 8.64-0.288 20.736-10.08 35.408-35.936a24 24 0 0 1 41.792 0.048z m31.072-173.408a36.112 36.112 0 0 1 42.72-23.088l140.288 34.64a29.472 29.472 0 0 1 20.592 38.8 36.8 36.8 0 0 1-43.36 22.992l-139.264-34.496a29.84 29.84 0 0 1-20.96-38.848z m-115.616-0.032a30.032 30.032 0 0 1-21.168 38.88L294.4 496.064a37.136 37.136 0 0 1-43.68-22.944 29.296 29.296 0 0 1 20.384-38.784l140.8-34.72a35.76 35.76 0 0 1 42.4 23.136z"  /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:Cr8462643@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M777.1136 164.8128H262.2976a151.1424 151.1424 0 0 0-150.9888 150.9376v393.5232A151.1424 151.1424 0 0 0 262.2976 860.16h514.816a151.1424 151.1424 0 0 0 150.9888-150.9888V315.7504a150.3232 150.3232 0 0 0-150.9888-150.9376zM262.2976 224.1536h514.816a90.0096 90.0096 0 0 1 77.4144 43.8784l-296.96 241.3056a60.2624 60.2624 0 0 1-76.1344 0l-296.96-241.3056a92.8768 92.8768 0 0 1 77.824-43.8784z m514.816 576.768H262.2976a90.5728 90.5728 0 0 1-90.3168-90.3168V337.92l272.2304 220.6208a122.2144 122.2144 0 0 0 76.1344 27.0848 119.6032 119.6032 0 0 0 76.1344-27.0848L868.7104 337.92v372.8896a92.5696 92.5696 0 0 1-91.5968 90.112z" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/PoolBee/PoolBee.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1721529668393" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5378" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path fill="currentColor" d="M822.514 74.129c10.466 0.815 19.898 5.47 26.913 13.047 9.015 9.737 12.574 21.584 13.722 36.348l0.088 1.208 0.096 1.514 0.055 1.015 0.049 1.02 0.021 0.512 0.054 1.547 0.027 1.04 0.028 1.577 0.01 1.063 0.003 1.073-0.009 1.63-0.015 1.102-0.022 1.115-0.029 1.128-0.036 1.143-0.043 1.158-0.078 1.767-0.06 1.198-0.106 1.832-0.12 1.875-0.138 1.92-0.208 2.633-0.115 1.35-0.122 1.375-0.197 2.106-0.213 2.164-0.31 2.977-0.251 2.307-0.268 2.371-0.383 3.27-0.412 3.395-0.442 3.528-0.595 4.607-0.64 4.836-0.547 4.041-2.52 18.408-0.813 6.102-0.572 4.412-0.495 3.963-0.291 2.423-0.422 3.713-0.253 2.397-0.222 2.265-0.142 1.556-0.177 2.113-0.049 0.622c-0.04 0.517-0.077 1.03-0.113 1.542l-0.063 0.92-0.098 1.535-0.067 1.154-0.056 1.115-0.046 1.073-0.037 1.033-0.027 0.99-0.018 0.95-0.008 0.906v0.437l0.005 0.84 0.014 0.798 0.024 0.752 0.039 0.851 0.957 1.205c34.772 44.068 53.83 94.986 54.229 148.28v1.683c0 83.459-38.319 163.265-106.095 214.099-28.706 21.533-63.37 38.442-102.552 50.635 10.739 21.22 16.366 41.779 16.543 61.802l0.005 0.974V918c0 17.673-14.327 32-32 32-17.497 0-31.714-14.042-31.996-31.47l-0.004-0.53V733.469c0-12.49-5.22-27.792-16.299-45.67l-0.886-1.418c-2.997-4.74-6.4-9.659-10.223-14.751l-0.786-1.04a31.773 31.773 0 0 1-4.814-8.452 31.8 31.8 0 0 1-1.858-7.435 31.836 31.836 0 0 1 2.911-17.872 31.755 31.755 0 0 1 4.673-7.107 31.848 31.848 0 0 1 12.357-8.768l0.18-0.07 0.156-0.06c0.14-0.055 0.281-0.108 0.422-0.16l0.041-0.014a31.69 31.69 0 0 1 4.88-1.361l-0.381 0.081c48.847-10.151 90.314-27.323 121.229-50.513C813.853 530.346 843 469.641 843 405.96c0-40.68-15.192-79.967-43.952-114.619-6.678-8.047-9.546-17.165-10.725-27.973-0.714-6.55-0.755-13.866-0.272-22.374l0.104-1.738 0.048-0.746c0.048-0.744 0.099-1.482 0.152-2.218l0.166-2.209 0.177-2.147 0.222-2.463 0.212-2.175 0.234-2.257 0.398-3.583 0.406-3.436 0.522-4.212 0.67-5.193 1.118-8.358 1.04-7.614 1.14-8.279 0.85-6.313 0.557-4.242 0.513-4.027 0.288-2.318 0.446-3.7 0.405-3.508 0.294-2.672 0.203-1.928 0.19-1.864 0.173-1.804 0.134-1.466-23.747 12.922-4.579 2.474-2.87 1.539-3.449 1.835-1.352 0.715-2.144 1.128-2.114 1.103-2.084 1.08-2.055 1.057-2.027 1.033-1.999 1.01-1.972 0.987-0.977 0.485-2.892 1.422-1.898 0.92c-0.314 0.153-0.627 0.303-0.94 0.453l-1.863 0.888-1.84 0.867c-0.916 0.428-1.823 0.848-2.723 1.26l-1.79 0.815-0.887 0.399-1.762 0.784-0.874 0.384-1.735 0.754-0.861 0.37-1.71 0.724-1.696 0.704-1.68 0.686c-0.558 0.226-1.114 0.448-1.668 0.667l-1.654 0.649c-0.55 0.213-1.097 0.423-1.642 0.63l-1.632 0.612-1.62 0.594-0.808 0.291-1.607 0.568-1.599 0.551-0.796 0.27c-22.154 7.432-41.43 9.635-59.205 4.372-36.56-10.827-75.79-16.47-116.138-16.47-34.516 0-68.229 4.129-100.183 12.116l-1.68 0.424c-23.136 5.893-46.24 3.314-70.526-5.913a210.629 210.629 0 0 1-9.102-3.693l-0.937-0.41-1.875-0.837-1.408-0.644-1.414-0.66-0.947-0.45-1.43-0.689-1.442-0.709-0.97-0.484-0.98-0.494-1.984-1.018-2.027-1.062-1.552-0.827-1.583-0.855-1.616-0.884-1.652-0.914-1.692-0.947-1.734-0.98-2.383-1.36-3.102-1.793-3.92-2.294-2.745-1.621-5.079-3.025-11.695-7.01-3.848-2.286-3.362-1.975-2.36-1.367-2.2-1.256-1.506-0.848-1.77-0.983-0.913-0.5-0.698-0.381-0.093 0.641-0.157 1.131-0.152 1.16-0.074 0.591-0.144 1.203-0.139 1.233-0.133 1.262-0.191 1.948-0.18 2.016-0.113 1.38-0.108 1.412-0.104 1.442-0.098 1.472-0.094 1.503-0.09 1.533-0.083 1.565-0.118 2.406-0.107 2.476-0.097 2.547-0.086 2.62-0.052 1.786-0.048 1.818-0.063 2.789-0.037 1.9-0.047 2.911-0.026 1.983-0.047 4.756-0.031 5.83-0.011 5.895-0.009 16.084-0.029 7.372-0.04 4.756-0.044 3.323-0.057 3.054-0.083 3.23-0.062 1.912-0.07 1.853-0.078 1.753-0.048 0.986-0.068 1.311-0.093 1.645-0.054 0.89c-0.407 6.486-1.021 12.005-1.966 16.903-1.642 8.513-4.148 15.463-9.436 22.014-27.505 34.082-42.002 72.494-42.002 112.238 0 60.104 33.061 122.348 87.13 162.901 35.686 26.767 81.861 45.038 136.312 54.205 1.759 0.281 3.5 0.712 5.205 1.29 0.03 0.012 0.06 0.022 0.09 0.032a24.393 24.393 0 0 1 0.738 0.263c0.128 0.047 0.254 0.095 0.38 0.143l0.04 0.017a31.932 31.932 0 0 1 15.38 12.568 31.865 31.865 0 0 1 4.624 22.577 31.851 31.851 0 0 1-8.318 16.704l0.436-0.485c-0.99 1.09-1.952 2.172-2.888 3.246l-1.11 1.285a172.775 172.775 0 0 0-6.593 8.172l-0.92 1.229c-11.637 15.725-17.087 29.595-17.225 41.55l-0.003 0.465 0.001 68.053a32.62 32.62 0 0 1 0 1.39l-0.001 116.434c0 17.673-14.327 32-32 32-17.496 0-31.713-14.042-31.996-31.471l-0.004-0.53v-85.132h-57.066c-20.435 0-40.2-6.64-59.18-18.52-15.106-9.457-29.484-22.078-43.365-37.311-10.958-12.025-21.228-25.257-30.997-39.436l-1.31-1.909-1.264-1.86-0.618-0.917-1.211-1.808-1.184-1.785-1.163-1.772-0.575-0.884-1.144-1.77-1.14-1.782-1.143-1.804-1.152-1.834-1.167-1.875-1.19-1.926-1.22-1.987-1.9-3.115-0.654-1.079c-3.988-6.579-9.336-9.967-18.662-11.201l-0.504-0.064c-17.542-2.145-30.024-18.105-27.88-35.648 2.146-17.542 18.105-30.024 35.648-27.88 28.696 3.51 51.659 17.747 66.127 41.617l1.47 2.415 1.455 2.373 0.723 1.171 1.436 2.313 1.426 2.274 1.417 2.237 1.409 2.202 1.403 2.169c9.808 15.063 19.297 27.759 30.87 40.459 0.415 0.455 0.829 0.906 1.243 1.353l1.24 1.327c0.825 0.877 1.648 1.736 2.468 2.578l1.23 1.251c18.202 18.36 35.137 28.209 48.605 28.425l0.453 0.004h57.066V732.12c0-19.062 5.12-37.964 15.008-56.731-43.866-12.305-82.781-30.747-115.558-55.331-69.74-52.308-112.728-133.24-112.728-214.1 0-52.686 18.239-103.12 51.91-146.985l0.987-1.278 0.079-0.608 0.09-0.762 0.086-0.816 0.084-0.87 0.081-0.924 0.116-1.484 0.036-0.52 0.1-1.572 0.092-1.649 0.101-2.105 0.1-2.587 0.053-1.711 0.063-2.558 0.044-2.377 0.046-3.489 0.042-5.52 0.026-9.886 0.01-16.233 0.03-6.683 0.035-4 0.036-3.107 0.029-2.08 0.034-2.05 0.038-2.023 0.042-1.994 0.047-1.966 0.079-2.897 0.09-2.836 0.101-2.778 0.074-1.819 0.079-1.793 0.129-2.644 0.14-2.588 0.102-1.696 0.107-1.673 0.113-1.649 0.119-1.626 0.19-2.399 0.135-1.571 0.14-1.55 0.148-1.53 0.154-1.51 0.161-1.488 0.168-1.47 0.087-0.726 0.178-1.44 0.186-1.422 0.193-1.403 0.2-1.385 0.207-1.368 0.216-1.35 0.223-1.334 0.23-1.317 0.24-1.302c0.04-0.215 0.08-0.43 0.122-0.644l0.25-1.278 0.26-1.263 0.267-1.249 0.276-1.234 0.285-1.22 0.293-1.207 0.302-1.194 0.31-1.181c3.806-14.18 9.58-25.536 19.415-33.946 14.031-11.999 32.335-13.9 49.522-6.514 6.255 2.688 12.625 5.804 19.407 9.44l0.977 0.525 1.909 1.035 1.408 0.773 2.711 1.51 2.682 1.522 2.475 1.427 1.874 1.093 4.109 2.423 6.295 3.756 8.096 4.858 4.623 2.754 4.268 2.515 2.85 1.66 2.17 1.25 1.567 0.895 2.014 1.139 1.459 0.814 1.879 1.035 0.913 0.497 1.339 0.721 1.732 0.918 1.263 0.657 1.234 0.631 0.406 0.205 0.764 0.383c4.302 2.143 8.157 3.847 12.115 5.386l0.7 0.27 0.35 0.134c12.877 4.892 22.978 6.02 32 3.721 37.628-9.584 77.224-14.52 117.66-14.52 46.478 0 91.829 6.524 134.31 19.103l0.22 0.056c0.12 0.026 0.259 0.05 0.413 0.071l0.332 0.038c0.118 0.01 0.243 0.02 0.376 0.028l0.422 0.018 0.227 0.005h0.488c0.085 0 0.172-0.002 0.261-0.004l0.555-0.019 0.295-0.015 0.622-0.041c0.43-0.033 0.89-0.077 1.38-0.132 4.038-0.462 9.105-1.68 15.084-3.687l1.174-0.4 1.19-0.417 1.207-0.434 1.223-0.45 1.24-0.47 1.258-0.486 0.635-0.25 1.285-0.513 1.304-0.531 1.323-0.55 1.342-0.567 1.363-0.587 1.384-0.605 0.7-0.31 1.416-0.633 1.439-0.653 1.46-0.673 1.484-0.691 1.507-0.712 1.532-0.731 1.556-0.752 1.581-0.772 1.607-0.792 1.633-0.813 1.659-0.833 1.686-0.855 1.714-0.876 1.742-0.897 2.667-1.386 2.733-1.434 3.063-1.624 2.538-1.356 4.733-2.55 22.134-12.071 5.8-3.137 1.96-1.05 2.76-1.471 1.788-0.946 1.748-0.919 2.55-1.33 2.472-1.275 1.607-0.82 1.577-0.798 2.314-1.157 1.51-0.746 1.486-0.727 1.466-0.708 1.446-0.691 1.429-0.674c0.236-0.111 0.472-0.222 0.708-0.331 7.914-3.687 16.048-5.558 24.572-4.893z" p-id="5379"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://poolbee.github.io/page/links/'
+                        target="_blank"
+                        title="Wechat"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M767.818667 409.173333C867.338667 444.266667 938.666667 539.136 938.666667 650.666667c0 42.709333-10.496 83.978667-30.261334 120.842666-1.792 3.338667-4.992 8.928-9.696 16.96l14.613334 53.557334c6.506667 23.893333-15.402667 45.813333-39.296 39.296l-53.642667-14.634667-6.229333 3.669333A254.933333 254.933333 0 0 1 682.666667 906.666667c-77.994667 0-147.84-34.88-194.805334-89.888a352.608 352.608 0 0 1-56.64 4.554666c-63.338667 0-124.266667-16.853333-177.472-48.298666-1.834667-1.088-6.410667-3.733333-13.632-7.893334l-80.544 21.653334c-23.914667 6.432-45.76-15.573333-39.146666-39.434667l21.792-78.752a961.205333 961.205333 0 0 1-15.904-27.317333A336.384 336.384 0 0 1 85.333333 480c0-188.618667 154.965333-341.333333 345.888-341.333333 159.914667 0 297.984 108.010667 335.818667 259.296 0.949333 3.765333 1.173333 7.552 0.778667 11.2z m-68.106667-13.952C662.88 282.037333 555.178667 202.666667 431.221333 202.666667 275.434667 202.666667 149.333333 326.933333 149.333333 480c0 46.272 11.498667 90.837333 33.194667 130.698667 2.88 5.290667 10.176 17.706667 21.621333 36.746666a32 32 0 0 1 3.413334 25.013334l-10.517334 37.994666 39.232-10.549333a32 32 0 0 1 24.234667 3.146667c14.272 8.192 22.773333 13.098667 25.802667 14.890666A283.882667 283.882667 0 0 0 431.221333 757.333333c6.154667 0 12.288-0.192 18.389334-0.576A255.061333 255.061333 0 0 1 426.666667 650.666667c0-141.386667 114.613333-256 256-256 5.728 0 11.413333 0.192 17.045333 0.554666z m133.706667 397.056a32 32 0 0 1 3.338666-24.725333 996.672 996.672 0 0 0 15.242667-26.293333A190.997333 190.997333 0 0 0 874.666667 650.666667c0-106.037333-85.962667-192-192-192s-192 85.962667-192 192 85.962667 192 192 192a190.933333 190.933333 0 0 0 98.570666-27.2c2.208-1.322667 8.288-4.874667 18.517334-10.837334a32 32 0 0 1 24.522666-3.210666l12.565334 3.424-3.424-12.565334zM330.666667 426.666667a42.666667 42.666667 0 1 1 0-85.333334 42.666667 42.666667 0 0 1 0 85.333334z m192 0a42.666667 42.666667 0 1 1 0-85.333334 42.666667 42.666667 0 0 1 0 85.333334z m85.333333 202.666666a32 32 0 1 1 0-64 32 32 0 0 1 0 64z m149.333333 0a32 32 0 1 1 0-64 32 32 0 0 1 0 64z"  /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>首页&amp;文章</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我 About me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/soft/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>软件&amp;网站</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/share/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>日常分享</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+        
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+                
+            </ol>
+        </li>
+    
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#检验是否安装">检验是否安装</a></li>
+    <li><a href="#命令行提示">命令行提示</a></li>
+    <li><a href="#cmd中验证">cmd中验证</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#一了解表和表之间的关系">一、了解表和表之间的关系</a>
+      <ul>
+        <li><a href="#四种关系">四种关系：</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#新建数据库">新建数据库</a></li>
+        <li><a href="#全选运行刷新">全选、运行、刷新</a></li>
+      </ul>
+    </li>
+    <li><a href="#一查询语句---select">一、查询语句&mdash;select</a>
+      <ul>
+        <li><a href="#1条件查询---where">(1)条件查询&mdash;&gt;where</a></li>
+        <li><a href="#2分组查询group-by">(2)分组查询group by</a></li>
+        <li><a href="#3排序order-by-和倒序desc">(3)排序order by 和倒序desc</a></li>
+        <li><a href="#4分页查询限制查询">(4)分页查询/限制查询</a></li>
+        <li><a href="#5连表查询跨表查询">(5)连表查询/跨表查询</a></li>
+        <li><a href="#1左右外连接">1.左/右外连接</a></li>
+        <li><a href="#要查询每个学生的班级名称">要查询每个学生的班级名称？</a></li>
+        <li><a href="#小总结连接其实就是将两个表放在一起成为一个表然后进行select进行查询">小总结：连接其实就是将两个表放在一起成为一个表，然后进行select进行查询</a></li>
+        <li><a href="#肯定有个疑问on后的关系是什么两张表是否必须有相同的字段才能使用连接">肯定有个疑问，on后的关系是什么？两张表是否必须有相同的字段才能使用连接？</a></li>
+        <li><a href="#on后的关系是什么呢">on后的关系是什么呢？</a></li>
+        <li><a href="#2内连接----join或inner-join"><strong>2.内连接</strong>    join或inner join</a></li>
+      </ul>
+    </li>
+    <li><a href="#二插入语句--insert">二、插入语句&ndash;insert</a></li>
+    <li><a href="#四update修改操作">四、update修改操作</a></li>
+    <li><a href="#五删除delete操作">五、删除delete操作</a>
+      <ul>
+        <li><a href="#truncate-快速删除">TRUNCATE 快速删除</a></li>
+        <li><a href="#drop---彻底删除这张表">drop&mdash;&gt;彻底删除这张表</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+            
+                
+<a id="back-to-top" href="#">
+    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="48px" height="48.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M526.848 202.24A20.48 20.48 0 0 0 512 196.096a19.68 19.68 0 0 0-14.848 6.144l-155.136 154.624a21.632 21.632 0 0 0 0 30.208 21.632 21.632 0 0 0 30.208 0L512 247.296l139.776 139.776a21.376 21.376 0 0 0 14.848 6.144 20.48 20.48 0 0 0 14.848-6.144 21.632 21.632 0 0 0 0-30.208L526.848 202.24zM116.224 595.968h90.624v231.936h42.496v-231.936h90.624v-42.496H115.712v42.496h0.512z m458.24-42.496h-112.64c-13.824 0-27.136 5.12-37.376 15.36-10.24 10.24-15.36 24.064-15.36 37.376v168.448c0 13.824 5.12 27.136 15.36 37.376 10.24 10.24 24.064 15.36 37.376 15.36h112.64c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-168.448c0-13.824-5.12-27.136-15.36-37.376-10.24-10.24-23.552-15.36-37.376-15.36z m10.752 221.696c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-112.64a10.688 10.688 0 0 1-7.68-3.072 10.688 10.688 0 0 1-3.072-7.68V606.72c0-2.048 0.512-5.12 3.072-7.68a10.688 10.688 0 0 1 7.68-3.072h112.64c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v168.448z m307.2-205.824a53.12 53.12 0 0 0-37.376-15.36h-145.408v274.432h42.496v-120.32h102.912c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-48.128c0-14.336-5.12-27.648-15.36-37.888z m-27.136 84.992c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-103.424v-69.12h103.936c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v47.616h-0.512z"  /></svg>
+</a>
+
+            
+        
+            
+                <form action="/page/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+        <div style="height: 30%;width: 30%">
+            
+            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=vWVduL3EI8o8M2YkHMyY1dtYyf7vfgNKC8KQ1ugXVMw"></script>
+        </div>
+    </aside>
+
+
+
+        
+
+
+
+        <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/mysql01/">
+                
+                    <img src="/post/cover/mysql-cover.jpg" loading="lazy" alt="Featured image of post Mysql、tomcat、sql语句" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/mysql/" >
+                Mysql
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/mysql01/">Mysql、tomcat、sql语句</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 23, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 8 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="mysql安装">Mysql安装
+</h1><h2 id="检验是否安装">检验是否安装
+</h2><h2 id="命令行提示">命令行提示
+</h2><p><img src="/post/before/image-20241224091555610.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224091555610"
+	
+	
+></p>
+<h2 id="cmd中验证">cmd中验证
+</h2><pre tabindex="0"><code>mysql -u root -p
+</code></pre><h1 id="navicat17连接远程的数据库">navicat17连接远程的数据库
+</h1><p>输入地址及密码，使用navicat17</p>
+<p><img src="/post/before/image-20241224092343585.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224092343585"
+	
+	
+></p>
+<h1 id="tomcat安装">tomcat安装
+</h1><p>我的tomcat目录</p>
+<p>D:\tomcat\apache-tomcat-8.5.57</p>
+<h1 id="如何创建表">如何创建表
+</h1><h2 id="一了解表和表之间的关系">一、了解表和表之间的关系
+</h2><h3 id="四种关系">四种关系：
+</h3><ul>
+<li>没有关系</li>
+<li>一对一</li>
+<li>1对多或多对1</li>
+<li>多对多</li>
+</ul>
+<p><strong>关联字段可以设置在任意的一张表中</strong></p>
+<p><img src="/post/before/image-20241224094452083.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224094452083"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224094500546.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224094500546"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224094634570.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224094634570"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224100447025.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224100447025"
+	
+	
+></p>
+<p>这里的多表指的是：多对一的关系。</p>
+<p><img src="/post/before/image-20241224132709198.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224132709198"
+	
+	
+></p>
+<h1 id="sql语句">SQL语句
+</h1><h3 id="新建数据库">新建数据库
+</h3><p><img src="/post/before/image-20241224100147569.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224100147569"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224100040765.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224100040765"
+	
+	
+></p>
+<h3 id="全选运行刷新">全选、运行、刷新
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">class</span><span style="color:#f92672">`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">class</span><span style="color:#f92672">`</span>  (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>class_num<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;班级号&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>class_name<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;班级名称&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>) <span style="color:#66d9ef">USING</span> BTREE
+</span></span><span style="display:flex;"><span>) ENGINE <span style="color:#f92672">=</span> InnoDB AUTO_INCREMENT <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> CHARACTER <span style="color:#66d9ef">SET</span> <span style="color:#f92672">=</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> <span style="color:#f92672">=</span> utf8mb4_bin ROW_FORMAT <span style="color:#f92672">=</span> Compact;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Records of class
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">class</span><span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;20201001&#39;</span>, <span style="color:#e6db74">&#39;软件工程&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">class</span><span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;20201002&#39;</span>, <span style="color:#e6db74">&#39;计算机科学&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">class</span><span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;20201003&#39;</span>, <span style="color:#e6db74">&#39;网络工程&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">class</span><span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;20201005&#39;</span>, <span style="color:#e6db74">&#39;数学&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Table structure for course
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>course<span style="color:#f92672">`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>course<span style="color:#f92672">`</span>  (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;选课表&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>cno<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;课程号&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>gradeName<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;课程名称&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>) <span style="color:#66d9ef">USING</span> BTREE
+</span></span><span style="display:flex;"><span>) ENGINE <span style="color:#f92672">=</span> InnoDB AUTO_INCREMENT <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> CHARACTER <span style="color:#66d9ef">SET</span> <span style="color:#f92672">=</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> <span style="color:#f92672">=</span> utf8mb4_bin ROW_FORMAT <span style="color:#f92672">=</span> Compact;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Records of course
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>course<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;1001&#39;</span>, <span style="color:#e6db74">&#39;数学&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>course<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;1002&#39;</span>, <span style="color:#e6db74">&#39;语文&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>course<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;1003&#39;</span>, <span style="color:#e6db74">&#39;英语&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Table structure for relationship
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span>  (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>sno<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;学号&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>cno<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;课程号&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>) <span style="color:#66d9ef">USING</span> BTREE
+</span></span><span style="display:flex;"><span>) ENGINE <span style="color:#f92672">=</span> InnoDB AUTO_INCREMENT <span style="color:#f92672">=</span> <span style="color:#ae81ff">39</span> CHARACTER <span style="color:#66d9ef">SET</span> <span style="color:#f92672">=</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> <span style="color:#f92672">=</span> utf8mb4_bin ROW_FORMAT <span style="color:#f92672">=</span> Compact;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Records of relationship
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;202001&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;202001&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;202001&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;202002&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;202002&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;202003&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">7</span>, <span style="color:#e6db74">&#39;202004&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">8</span>, <span style="color:#e6db74">&#39;202004&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">9</span>, <span style="color:#e6db74">&#39;202004&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;202005&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#39;202005&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;202006&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;202006&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">14</span>, <span style="color:#e6db74">&#39;202006&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">15</span>, <span style="color:#e6db74">&#39;202007&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">16</span>, <span style="color:#e6db74">&#39;202009&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">17</span>, <span style="color:#e6db74">&#39;202009&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">18</span>, <span style="color:#e6db74">&#39;202009&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">19</span>, <span style="color:#e6db74">&#39;202010&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202010&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">21</span>, <span style="color:#e6db74">&#39;202010&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">22</span>, <span style="color:#e6db74">&#39;202011&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">23</span>, <span style="color:#e6db74">&#39;202012&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">24</span>, <span style="color:#e6db74">&#39;202012&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">25</span>, <span style="color:#e6db74">&#39;202013&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">26</span>, <span style="color:#e6db74">&#39;202013&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">27</span>, <span style="color:#e6db74">&#39;202014&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">28</span>, <span style="color:#e6db74">&#39;202014&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">29</span>, <span style="color:#e6db74">&#39;202014&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">30</span>, <span style="color:#e6db74">&#39;202015&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">31</span>, <span style="color:#e6db74">&#39;202015&#39;</span>, <span style="color:#e6db74">&#39;1001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">32</span>, <span style="color:#e6db74">&#39;202016&#39;</span>, <span style="color:#e6db74">&#39;1002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>relationship<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">33</span>, <span style="color:#e6db74">&#39;202016&#39;</span>, <span style="color:#e6db74">&#39;1003&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Table structure for student
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span>  (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>id<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> AUTO_INCREMENT,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>name<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>sex<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>age<span style="color:#f92672">`</span> int(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>sno<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;学号&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>class_num<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">11</span>) CHARACTER <span style="color:#66d9ef">SET</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> utf8mb4_bin <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">COMMENT</span> <span style="color:#e6db74">&#39;班级号&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>id<span style="color:#f92672">`</span>) <span style="color:#66d9ef">USING</span> BTREE
+</span></span><span style="display:flex;"><span>) ENGINE <span style="color:#f92672">=</span> InnoDB AUTO_INCREMENT <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span> CHARACTER <span style="color:#66d9ef">SET</span> <span style="color:#f92672">=</span> utf8mb4 <span style="color:#66d9ef">COLLATE</span> <span style="color:#f92672">=</span> utf8mb4_bin ROW_FORMAT <span style="color:#f92672">=</span> Compact;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- Records of student
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">-- ----------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;张三&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202001&#39;</span>, <span style="color:#e6db74">&#39;20201001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;李四&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">21</span>, <span style="color:#e6db74">&#39;202002&#39;</span>, <span style="color:#e6db74">&#39;20201001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;王五&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202003&#39;</span>, <span style="color:#e6db74">&#39;20201001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">4</span>, <span style="color:#e6db74">&#39;张安&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">23</span>, <span style="color:#e6db74">&#39;202004&#39;</span>, <span style="color:#e6db74">&#39;20201001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">5</span>, <span style="color:#e6db74">&#39;萨达&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">21</span>, <span style="color:#e6db74">&#39;202005&#39;</span>, <span style="color:#e6db74">&#39;20201001&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">6</span>, <span style="color:#e6db74">&#39;阿斯蒂芬&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">22</span>, <span style="color:#e6db74">&#39;202006&#39;</span>, <span style="color:#e6db74">&#39;20201002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">7</span>, <span style="color:#e6db74">&#39;广大儒风&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202007&#39;</span>, <span style="color:#e6db74">&#39;20201002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">8</span>, <span style="color:#e6db74">&#39;安顺&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202008&#39;</span>, <span style="color:#e6db74">&#39;20201002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">9</span>, <span style="color:#e6db74">&#39;东方&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202009&#39;</span>, <span style="color:#e6db74">&#39;20201002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#39;咖啡&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202010&#39;</span>, <span style="color:#e6db74">&#39;20201002&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#39;回顾&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202011&#39;</span>, <span style="color:#e6db74">&#39;20201003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">12</span>, <span style="color:#e6db74">&#39;同意&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202012&#39;</span>, <span style="color:#e6db74">&#39;20201003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">13</span>, <span style="color:#e6db74">&#39;规划局&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202013&#39;</span>, <span style="color:#e6db74">&#39;20201003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">14</span>, <span style="color:#e6db74">&#39;各环节&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202014&#39;</span>, <span style="color:#e6db74">&#39;20201003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">15</span>, <span style="color:#e6db74">&#39;空格&#39;</span>, <span style="color:#e6db74">&#39;女&#39;</span>, <span style="color:#ae81ff">20</span>, <span style="color:#e6db74">&#39;202015&#39;</span>, <span style="color:#e6db74">&#39;20201003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>student<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">16</span>, <span style="color:#e6db74">&#39;发送到&#39;</span>, <span style="color:#e6db74">&#39;男&#39;</span>, <span style="color:#ae81ff">22</span>, <span style="color:#e6db74">&#39;202016&#39;</span>, <span style="color:#e6db74">&#39;20201004&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> FOREIGN_KEY_CHECKS <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p>sql语句中不区分大小写</p>
+<p><strong>sql语句关键字必须写在最前面</strong></p>
+<h2 id="一查询语句---select">一、查询语句&mdash;select
+</h2><ul>
+<li>select关键字</li>
+<li>select 查询字段 from 查询的表</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> id <span style="color:#66d9ef">from</span> student
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> id,name <span style="color:#66d9ef">from</span> stdent
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> id,name,sex <span style="color:#66d9ef">from</span> student
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询所有字段</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student
+</span></span></code></pre></div><p><img src="/post/before/image-20241224101157440.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224101157440"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224101238058.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224101238058"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224101319573.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224101319573"
+	
+	
+></p>
+<h3 id="1条件查询---where">(1)条件查询&mdash;&gt;where
+</h3><ul>
+<li>
+<p>关键字：where</p>
+</li>
+<li>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>&lt;&gt;或！=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td><strong>between..and&hellip;</strong></td>
+<td>两个值之间</td>
+</tr>
+<tr>
+<td><strong>is null</strong></td>
+<td>为null</td>
+</tr>
+<tr>
+<td>and</td>
+<td>并且</td>
+</tr>
+<tr>
+<td>or</td>
+<td>或者</td>
+</tr>
+<tr>
+<td><strong>in</strong></td>
+<td>包含</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not可以取非，主要用在is或in</td>
+</tr>
+<tr>
+<td>like</td>
+<td>like为模糊查询，支持%或_匹配</td>
+</tr>
+</tbody>
+</table></div>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> class_num <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;20201001&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询</span>id为1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出年龄不是</span><span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">岁的学生</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> age <span style="color:#f92672">&lt;&gt;</span><span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> age <span style="color:#f92672">!=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出年龄大于</span><span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">岁的学生</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出年龄小于</span><span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">岁的学生</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> name <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出年龄小于</span><span style="color:#ae81ff">20</span><span style="color:#960050;background-color:#1e0010">岁的学生</span><span style="color:#75715e">---》字符串类型没法比较
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询年龄</span><span style="color:#ae81ff">20</span><span style="color:#f92672">-</span><span style="color:#ae81ff">25</span><span style="color:#960050;background-color:#1e0010">岁的学生</span><span style="color:#75715e">---》between...and...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">都是闭区间</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> age <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> age <span style="color:#66d9ef">between</span> <span style="color:#ae81ff">21</span> <span style="color:#66d9ef">and</span> <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询班级号为空的学生</span><span style="color:#75715e">---》null
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> class_num <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>
+</span></span></code></pre></div><p><img src="/post/before/image-20241224103716399.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224103716399"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出班级号为</span><span style="color:#ae81ff">20201001</span><span style="color:#960050;background-color:#1e0010">班的男同学</span><span style="color:#75715e">---》and
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> class_num <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;20201001&#39;</span> <span style="color:#66d9ef">and</span> sex <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;男&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出班级号</span><span style="color:#ae81ff">20201001</span><span style="color:#960050;background-color:#1e0010">班的同学和其他班的男同学</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> class_num <span style="color:#f92672">=</span><span style="color:#e6db74">&#39;20201001&#39;</span> <span style="color:#66d9ef">or</span> sex <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;男&#39;</span>
+</span></span></code></pre></div><h4 id="操作符inbetweenand">操作符IN、between&hellip;and
+</h4><p>允许我们在 WHERE 子句中规定多个值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span>IN操作符运行在WHere子句中规定多个值
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出用户</span>id为1和3的用户记录
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span>  student <span style="color:#66d9ef">where</span> id <span style="color:#66d9ef">in</span> (<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">8</span>)
+</span></span></code></pre></div><p><img src="/post/before/image-20241224132917466.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224132917466"
+	
+	
+></p>
+<h4 id="模糊查询---like和_">模糊查询&mdash;&gt;like和_、%
+</h4><h5 id="匹配字符">匹配字符
+</h5><p>#_（一次匹配一个字符）%（一次匹配多个字符）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出名字中带有王字的同学</span><span style="color:#75715e">---》like
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;%王%&#39;</span>
+</span></span></code></pre></div><p><img src="/post/before/image-20241224103334260.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224103334260"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出名字中带有王字开头且两个字的同学</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">where</span> name <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;王_&#39;</span>
+</span></span></code></pre></div><p><img src="/post/before/image-20241224102940534.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224102940534"
+	
+	
+></p>
+<h4 id="分组函数聚合函数">分组函数/聚合函数
+</h4><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>sum</th>
+<th>求和</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>avg</td>
+<td>取平均</td>
+</tr>
+<tr>
+<td>max</td>
+<td>取最大值</td>
+</tr>
+<tr>
+<td>min</td>
+<td>取最小值</td>
+</tr>
+<tr>
+<td>count</td>
+<td>取得记录数</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">求学生年龄的总和</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">sum</span>(age) sum_age <span style="color:#66d9ef">from</span> student
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出所有学生的平均年龄</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">avg</span>(age) avg_age <span style="color:#66d9ef">from</span> student
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询出年龄最大的同学</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">max</span>(age) <span style="color:#66d9ef">from</span> student;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">min</span>(age) <span style="color:#66d9ef">from</span> student;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询所有学生的数量</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> student;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(class_num) <span style="color:#66d9ef">from</span> student;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">列别名</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(class_num) class_result <span style="color:#66d9ef">from</span> student;
+</span></span></code></pre></div><p><img src="/post/before/image-20241224133306596.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224133306596"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224105153019.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224105153019"
+	
+	
+></p>
+<p><strong>注意：count(*)表示去取得查询表的所有记录，count(字段名)，不会统计为null的记录</strong>。</p>
+<h3 id="2分组查询group-by">(2)分组查询group by
+</h3><p><strong>作用：通过那个或那些字段进行分组</strong></p>
+<ul>
+<li><strong>用法：group by 字段名称</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">求各个班级的平均年龄</span><span style="color:#75715e">--&gt;按照班级分组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> class_num,<span style="color:#66d9ef">avg</span>(age) <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> class_num
+</span></span></code></pre></div><p><img src="/post/before/image-20241224110236135.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224110236135"
+	
+	
+></p>
+<p><strong>结果列指定了一个别名</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">求各个班级的平均年龄</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> class_num,<span style="color:#66d9ef">avg</span>(age) avg_result <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> class_num
+</span></span></code></pre></div><p><img src="/post/before/image-20241224110225306.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<hr>
+<h3 id="3排序order-by-和倒序desc">(3)排序order by 和倒序desc
+</h3><p>select查询的结果默认的是按照从小到大排序的，而且是以id为主列进行从大到小排序的。也就是根据主键排序。</p>
+<p>要根据其他条件排序如何做？</p>
+<p><strong>查询排序的关键字：order by</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">按照年龄正序排列</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> age;
+</span></span></code></pre></div><p><img src="/post/before/image-20241224111032063.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224111032063"
+	
+	
+></p>
+<p><strong>desc表示“倒序”</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">按照年龄倒序排列</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> age <span style="color:#66d9ef">DESC</span>
+</span></span></code></pre></div><p><img src="/post/before/image-20241224111327874.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224111327874"
+	
+	
+></p>
+<h4 id="年龄降序且学号升序">年龄降序且学号升序
+</h4><p><strong>如果要按照年龄降序，并且按照学号升序</strong>怎么做？</p>
+<ul>
+<li>
+<p>也就是说</p>
+</li>
+<li>
+<p><strong>首先</strong>按照 <code>age</code> 从大到小排序（23, 22, 22, 20, 20）。</p>
+<p><strong>然后</strong>在相同 <code>age</code> 的情况下，按照 <code>sno</code> 从小到大排序（例如，<code>202006</code> 在 `202016 之前，因为 006 &lt; 016）。</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">简化写法</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> student <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> age <span style="color:#66d9ef">DESC</span>, sno;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">完整写法</span> <span style="color:#960050;background-color:#1e0010">多了</span><span style="color:#66d9ef">ASC</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> student <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> age <span style="color:#66d9ef">DESC</span>, sno <span style="color:#66d9ef">ASC</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">易于读的写法</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> student 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> age <span style="color:#66d9ef">DESC</span>, sno <span style="color:#66d9ef">ASC</span>;
+</span></span></code></pre></div><p><img src="/post/before/image-20241224134506414.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224134506414"
+	
+	
+></p>
+<h3 id="4分页查询限制查询">(4)分页查询/限制查询
+</h3><p>使用SELECT查询时，如果结果集数据量很大，比如几万行数据，放在一个页面显示的话数据量太大，不如分页显示，每次显示100条。</p>
+<p>要实现分页功能，实际上就是从结果集中显示第1<del>100条记录作为第1页，显示第101</del>200条记录作为第2页，以此类推。</p>
+<p>因此，分页实际上就是从结果集中“截取”出第M~N条记录。这个查询可以通过LIMIT  OFFSET 子句实现。</p>
+<h4 id="limit限制查询">limit限制查询
+</h4><p>首先，先查询结果中的前三条数据。</p>
+<p><img src="/post/before/image-20241224112223568.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224112223568"
+	
+	
+></p>
+<h4 id="limit--offset分页">LIMIT  OFFSET分页
+</h4><p>然后，把结果集分页，每页三条记录，那么获取第一条记录：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">OFFSET</span> <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">表示，对结果集从</span><span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">号记录开始，最多取</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">条。注意</span>SQL记录集的索引从0开始<span style="color:#960050;background-color:#1e0010">。</span><span style="color:#f92672">**</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">offset</span> <span style="color:#ae81ff">0</span>;
+</span></span></code></pre></div><p><img src="/post/before/image-20241224135427873.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224135427873"
+	
+	
+></p>
+<p>如果要查询第2页，那么我们只需要“跳过”头3条记录，也就是对结果集从3号记录开始查询，把OFFSET设定为3：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">对结果集从第</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">号记录开始，最多取</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">条。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">offset</span> <span style="color:#ae81ff">3</span>;
+</span></span></code></pre></div><h5 id="关键点">关键点
+</h5><p>可见，分页查询的关键在于，首先要确定每页需要显示的结果数量pageSize（这里是3），然后根据当前页的索引pageIndex（从1开始），确定LIMIT和OFFSET应该设定的值：</p>
+<ul>
+<li><strong>LIMIT</strong>总是设定为<strong>pageSize</strong></li>
+<li><strong>OFFSET</strong>计算公式为<strong>pageSize * (pageIndex - 1)</strong></li>
+</ul>
+<p>很好理解</p>
+<h5 id="简化写法">简化写法
+</h5><p><img src="/post/before/image-20241224112441552.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224112441552"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">对结果集从</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">号记录开始，最多取</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">条</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">对结果集从</span><span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">号记录开始，最多取</span><span style="color:#ae81ff">6</span><span style="color:#960050;background-color:#1e0010">条</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">6</span>;
+</span></span></code></pre></div><p><img src="/post/before/image-20241224135857329.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224135857329"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224135923663.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224135923663"
+	
+	
+></p>
+<h5 id="小结"><strong>小结</strong>
+</h5><p>使用LIMIT  OFFSET 可以对结果集进行分页，每次查询返回结果集的一部分；</p>
+<p>分页查询需要先确定<strong>每页的数量</strong>和<strong>当前页数</strong>，然后确定LIMIT和OFFSET的值。</p>
+<h3 id="5连表查询跨表查询">(5)连表查询/跨表查询
+</h3><p>在实际开发中，数据往往不是存放一张表中，而是同时存储在多张表中，这些表与表存在着关系，我们在检索数据的时候往往需要多张表联合起来检索，这种多表联合检索被称为<strong>连表查询</strong>或<strong>跨表查询</strong>。</p>
+<ul>
+<li>
+<p><strong>笛卡尔积现象</strong></p>
+<p><strong>含义：若两张表进行连接查询的时候没有任何条件限制，最终的查询结果总数是两张表记录的成绩，该现象称为笛卡尔积现象。</strong></p>
+</li>
+</ul>
+<h3 id="1左右外连接">1.左/右外连接
+</h3><p>首先，student表</p>
+<p><img src="/post/before/image-20241224142104855.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224142104855"
+	
+	
+></p>
+<p>class表</p>
+<p><img src="/post/before/image-20241224142227682.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224142227682"
+	
+	
+></p>
+<h3 id="要查询每个学生的班级名称">要查询每个学生的班级名称？
+</h3><ul>
+<li>可以看到学生表中，只有班级编号，没有班级名称。而班级表中有班级编号和<strong>班级名称</strong>。<strong>共同点</strong>是班级编号。</li>
+</ul>
+<p><strong>这就是班级名称的数据在student表中找不到，需要用到class表，那么不是存放一张表中，而是同时存储在2张表中，那么需要联合起来搜索。</strong></p>
+<hr>
+<ul>
+<li><strong>1.SQL92语法</strong>   select xxx from A 表名,B表名 where 表连接条件 and 数据查询条件;（读者可以跳过不看）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> s.name,<span style="color:#66d9ef">c</span>.class_name <span style="color:#66d9ef">from</span> student s,<span style="color:#66d9ef">class</span> <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">where</span> s.class_num <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>.class_num              
+</span></span></code></pre></div><ul>
+<li><em>缺点：表连接条件与查询条件放在一起，没有分离</em></li>
+</ul>
+<hr>
+<p><strong>2.SQL99语法</strong></p>
+<p><strong>select xxx from A 表名 join B 表名 on 表的连接条件</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">查询每个学生的班级名称</span><span style="color:#75715e">---&gt;左连接
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> student.<span style="color:#f92672">*</span>,<span style="color:#66d9ef">class</span>.class_num <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">JOIN</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">ON</span> student.class_num <span style="color:#f92672">=</span> <span style="color:#66d9ef">class</span>.class_num
+</span></span></code></pre></div><p><em>优点：表连接独立，结构清晰，如果结果数据不满足要求，可再追加where条件进行过滤；</em></p>
+<p><img src="/post/before/image-20241224145801949.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224145801949"
+	
+	
+></p>
+<p>从查询结果可以看到，绿色部分全都是student表，class_num(1)是class表中的class_num自动生成的列。（也可以设置别名）</p>
+<p>同理右连接：</p>
+<p><img src="/post/before/image-20241224154545960.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224154545960"
+	
+	
+></p>
+<h4 id="结果分析重点">结果分析（重点）：
+</h4><h4 id="查询每个学生的班级名称即使某些学生没有对应的班级不保留班级"><strong>查询每个学生的班级名称</strong>，即使某些学生没有对应的班级（不保留班级）。
+</h4><p>左连接：class有class_num为20021001-03和05的班级，student的class_num只有01-04的学生。左表student的全部记录，与右表class不匹配的部分为Null。</p>
+<h4 id="查询每个班级的学生即使某些班级没有对应的学生不保留学生"><strong>查询每个班级的学生，即使某些班级没有对应的学生(不保留学生)</strong>
+</h4><p>右连接：student的class_num有01-04的学生，class的class_num有01-03和05的班级。保留右表课程表的全部记录，与左表不匹配的部分为Null。</p>
+<hr>
+<p>设置别名</p>
+<ul>
+<li><img src="/post/before/image-20241224150031917.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224150031917"
+	
+	
+></li>
+</ul>
+<hr>
+<h4 id="总结">总结：
+</h4><p><strong>左连接（LEFT JOIN）</strong>：以左表为基准，保留左表的所有记录，右表中匹配的记录显示，不匹配的部分为 <code>NULL</code>。</p>
+<p><img src="/post/before/image-20241224153754465.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224153754465"
+	
+	
+></p>
+<p><strong>右连接（RIGHT JOIN）</strong>：以右表为基准，保留右表的所有记录，左表中匹配的记录显示，不匹配的部分为 <code>NULL</code>。</p>
+<h3 id="小总结连接其实就是将两个表放在一起成为一个表然后进行select进行查询">小总结：连接其实就是将两个表放在一起成为一个表，然后进行select进行查询
+</h3><p>SELECT 你想要结果中出现的字段(不一定结果中都需要出现两个表的字段) from student 连接方式 class ON  两张表中的相同或相关的字段（如主键和外键）</p>
+<h3 id="肯定有个疑问on后的关系是什么两张表是否必须有相同的字段才能使用连接">肯定有个疑问，on后的关系是什么？两张表是否必须有相同的字段才能使用连接？
+</h3><p><strong>不一定</strong>。虽然在大多数情况下，连接条件基于两张表中的相同或相关的字段（如主键和外键），但两张表不需要有完全相同的字段才能进行连接。关键在于找到能够建立逻辑关联的字段。</p>
+<h3 id="on后的关系是什么呢">on后的关系是什么呢？
+</h3><p>首先要了解一下一个表可以包含哪些字段：</p>
+<hr>
+<h4 id="关系型数据库的字段分类">关系型数据库的字段分类
+</h4><p>关系型数据库中，一个表可以包含以下几类字段：</p>
+<p><strong>主键</strong>：用于唯一标识表中的每一条记录，每个表必须有一个主键。</p>
+<ul>
+<li>
+<p>用于唯一标识表中的每一条记录。</p>
+</li>
+<li>
+<p>每个表通常有一个主键，可以是单一字段（如 <code>id</code>）或由多个字段组成的<strong>复合主键</strong>。</p>
+</li>
+<li>
+<p>主键的值必须<strong>唯一且不能为空</strong>（<code>NOT NULL</code>）。</p>
+</li>
+</ul>
+<p><strong>外键</strong>：用于建立与其他表的关联关系，确保数据的参照完整性，一个表<strong>可以有多个外键，也可以没有</strong>外键。</p>
+<ul>
+<li>
+<p>用于在一个表中<strong>引用另一个表的主键</strong>，从而建立两个表之间的关系。</p>
+</li>
+<li>
+<p>外键可以帮助维护数据的参照完整性，确保引用的数据在被引用的表中存在。</p>
+</li>
+</ul>
+<p><strong>其他</strong></p>
+<p><strong>非键字段</strong>：用于存储与实体相关的其他信息，不参与表之间的关联。</p>
+<ul>
+<li>
+<p>这些字段既不是主键也不是外键，用于存储与实体相关的其他信息。</p>
+</li>
+<li>
+<p>例如，在学生表中，<code>name</code>、<code>age</code>、<code>address</code> 等字段就是非键字段。</p>
+</li>
+</ul>
+<hr>
+<h4 id="区分on后的关系和外键">区分on后的关系和外键：
+</h4><p><strong>on后一定是外键吗？</strong></p>
+<p>外键必须是引用主键建立两个表之间建立关系的键，****</p>
+<p>on后是两个表之间<strong>建立关系</strong>的字段，在两表连接的时候，on后的字段有可能是外键，也就是使用了一个表中的主键。</p>
+<h4 id="所以on后的关系可以是">所以on后的关系可以是：
+</h4><p>两个表之间相同的字段、可能是主键也可能是非键字段</p>
+<p>两个表之间不同的字段，可以完全不同。</p>
+<p>例如：</p>
+<h5 id="一完全不相同的字段">一、完全不相同的字段
+</h5><p>course表</p>
+<p><img src="/post/before/image-20241224152411200.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224152411200"
+	
+	
+></p>
+<p>student表</p>
+<p><img src="/post/before/image-20241224152428277.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224152428277"
+	
+	
+></p>
+<p>完全没有相同的字段。</p>
+<p>这里使用student.class_num = course.gradeName作为on后的条件，显然两者完全不相同。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">连表查询</span><span style="color:#75715e">--&gt;on后的字段完全不同
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> student.<span style="color:#f92672">*</span>,course.gradeName <span style="color:#66d9ef">from</span> student <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">JOIN</span> course <span style="color:#66d9ef">ON</span> student.class_num <span style="color:#f92672">=</span> course.gradeName
+</span></span></code></pre></div><p><img src="/post/before/image-20241224152556486.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224152556486"
+	
+	
+></p>
+<p>左连接后，以student为主表，查询出gradeName，一个都没有与主表student匹配。</p>
+<p><img src="/post/before/image-20241224152938679.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224152938679"
+	
+	
+></p>
+<p>左连接后，以student为主表，查询出gradeName，一个都没有与主表course匹配。</p>
+<h5 id="结果总结">结果总结：
+</h5><p>以主表为主，如果任何字段都不相同，只显示主表。</p>
+<h5 id="二主键">二、主键
+</h5><h5 id="如果id为主键以id为on后的条件可以实现两表合并">如果id为主键，以id为on后的条件，可以实现两表合并。
+</h5><p><img src="/post/before/image-20241224153458179.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224153458179"
+	
+	
+></p>
+<h5 id="on后的条件决定了表结果的长度">on后的条件决定了表结果的长度
+</h5><h3 id="2内连接----join或inner-join"><strong>2.内连接</strong>    join或inner join
+</h3><p>inner join是以两个表的交集，class_num有交集的就查的到</p>
+<p>我们想要查询每个学生的班级名称，结果只包括那些<strong>实际有班级的学生</strong>。</p>
+<p><img src="/post/before/image-20241224155617218.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224155617218"
+	
+	
+></p>
+<p>举例：</p>
+<p><strong>学生表（student）</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>sno</th>
+<th>name</th>
+<th>class_num</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S001</td>
+<td>Alice</td>
+<td>C001</td>
+</tr>
+<tr>
+<td>S002</td>
+<td>Bob</td>
+<td>C002</td>
+</tr>
+<tr>
+<td>S003</td>
+<td>Charlie</td>
+<td>C001</td>
+</tr>
+<tr>
+<td>S004</td>
+<td>David</td>
+<td>C003</td>
+</tr>
+<tr>
+<td>S005</td>
+<td>Eva</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>班级表（class）</strong></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>class_num</th>
+<th>class_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C001</td>
+<td>一班</td>
+</tr>
+<tr>
+<td>C002</td>
+<td>二班</td>
+</tr>
+<tr>
+<td>C003</td>
+<td>三班</td>
+</tr>
+<tr>
+<td>C004</td>
+<td>四班</td>
+</tr>
+</tbody>
+</table></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> student.sno, student.name, <span style="color:#66d9ef">class</span>.class_name
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> student
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">ON</span> student.class_num <span style="color:#f92672">=</span> <span style="color:#66d9ef">class</span>.class_num;
+</span></span></code></pre></div><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>sno</th>
+<th>name</th>
+<th>class_name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S001</td>
+<td>Alice</td>
+<td>一班</td>
+</tr>
+<tr>
+<td>S002</td>
+<td>Bob</td>
+<td>二班</td>
+</tr>
+<tr>
+<td>S003</td>
+<td>Charlie</td>
+<td>一班</td>
+</tr>
+<tr>
+<td>S004</td>
+<td>David</td>
+<td>三班</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="二插入语句--insert">二、插入语句&ndash;insert
+</h2><p>在设计表的时候id表要设置自动递增</p>
+<p><img src="/post/before/image-20241224113610458.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224113610458"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224160326102.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224160326102"
+	
+	
+></p>
+<p>id为自动递增的时候，不用设置递增。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">插入</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> student(name,sex,age,sno,class_num) VALUE(<span style="color:#e6db74">&#39;asd&#39;</span>,<span style="color:#e6db74">&#39;男&#39;</span>,<span style="color:#e6db74">&#39;18&#39;</span>,<span style="color:#e6db74">&#39;202017&#39;</span>,<span style="color:#e6db74">&#39;20201004&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student
+</span></span></code></pre></div><p><img src="/post/before/image-20241224160404575.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224160404575"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">插入多行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> student(<span style="color:#960050;background-color:#1e0010">列表</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">列表</span><span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">列表</span><span style="color:#ae81ff">3</span>) VLAUE(<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">3</span>),(<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">3</span>),(<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">3</span>),(<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">1</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">2</span>,<span style="color:#960050;background-color:#1e0010">值</span><span style="color:#ae81ff">3</span>);
+</span></span></code></pre></div><p><img src="/post/before/image-20241224113722261.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224113722261"
+	
+	
+></p>
+<p>一次插入多条数据</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> student(name,sex,age,sno,class_num) VALUE(<span style="color:#e6db74">&#39;asd&#39;</span>,<span style="color:#e6db74">&#39;男&#39;</span>,<span style="color:#e6db74">&#39;18&#39;</span>,<span style="color:#e6db74">&#39;202017&#39;</span>,<span style="color:#e6db74">&#39;20201004&#39;</span>),(<span style="color:#e6db74">&#39;asdf&#39;</span>,<span style="color:#e6db74">&#39;男&#39;</span>,<span style="color:#e6db74">&#39;19&#39;</span>,<span style="color:#e6db74">&#39;202018&#39;</span>,<span style="color:#e6db74">&#39;20201004&#39;</span>),(<span style="color:#e6db74">&#39;d&#39;</span>,<span style="color:#e6db74">&#39;男&#39;</span>,<span style="color:#e6db74">&#39;20&#39;</span>,<span style="color:#e6db74">&#39;202019&#39;</span>,<span style="color:#e6db74">&#39;20201003&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> student
+</span></span></code></pre></div><p><img src="/post/before/image-20241224160704767.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224160704767"
+	
+	
+></p>
+<h2 id="四update修改操作">四、update修改操作
+</h2><p>一定要记得要添加上条件列，一般是id</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">update</span> <span style="color:#960050;background-color:#1e0010">表名</span> <span style="color:#66d9ef">set</span> <span style="color:#960050;background-color:#1e0010">列名</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> student <span style="color:#66d9ef">set</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;张三安&#34;</span>,age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>,sno<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;123456&#39;</span> <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> student <span style="color:#66d9ef">set</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;张三安&#34;</span>,age <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>,sno<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;123456&#39;</span>
+</span></span></code></pre></div><p><img src="/post/before/image-20241224160917069.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224160917069"
+	
+	
+></p>
+<p>如果不加id，那么整个表对应的字段都被修改。</p>
+<h2 id="五删除delete操作">五、删除delete操作
+</h2><ul>
+<li>delete from student 会逐行删除记录，并且<strong>每一行的删除都会被记录在事务日志中。</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">表名</span> <span style="color:#66d9ef">where</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">一行行删除</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> student <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">会删除</span> student <span style="color:#960050;background-color:#1e0010">表中的每一条记录，但不会删除表结构本身。本质是一行行删除。</span>
+</span></span></code></pre></div><p><strong>删除所有行</strong>：该语句会删除 <code>student</code> 表中的每一条记录，但不会删除表结构本身。</p>
+<p><strong>保留表结构</strong>：表的定义、列、约束（如主键、外键）以及索引等都会保留不变。</p>
+<p><img src="/post/before/image-20241224161100192.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224161100192"
+	
+	
+></p>
+<p><img src="/post/before/image-20241224161242949.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224161242949"
+	
+	
+></p>
+<h3 id="truncate-快速删除">TRUNCATE 快速删除
+</h3><p>TRUNCATE table 表名</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">表名</span> <span style="color:#960050;background-color:#1e0010">删除这张表，但是还是会创建一个和原始表结构一样的新表。相当于只删除表中的数据，保留表结构。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">TABLE</span> student;
+</span></span></code></pre></div><p><strong>区别</strong>：</p>
+<ol>
+<li><strong>性能</strong>：
+<ul>
+<li><code>TRUNCATE</code> 通常比 <code>DELETE</code> 更快，因为它不逐行删除，而是直接释放数据页。</li>
+</ul>
+</li>
+<li><strong>日志记录</strong>：
+<ul>
+<li><code>DELETE</code> 会为每一行删除操作记录日志，占用更多的事务日志空间。</li>
+<li><code>TRUNCATE</code> 记录的是页级别的操作，日志占用较少。</li>
+</ul>
+</li>
+<li><strong>触发器</strong>：
+<ul>
+<li><code>DELETE</code> 会触发与删除操作相关的触发器（<code>DELETE</code> 触发器）。</li>
+<li><code>TRUNCATE</code> 通常不会触发 <code>DELETE</code> 触发器，因为它不是逐行删除。</li>
+</ul>
+</li>
+<li><strong>条件删除</strong>：
+<ul>
+<li><code>DELETE</code> 可以使用 <code>WHERE</code> 子句指定条件删除部分记录。</li>
+<li><code>TRUNCATE</code> 无法使用 <code>WHERE</code> 子句，只能删除所有记录。</li>
+</ul>
+</li>
+</ol>
+<h3 id="drop---彻底删除这张表">drop&mdash;&gt;彻底删除这张表
+</h3><p><code>DROP TABLE</code> 会删除整个表，包括表结构、数据和相关的约束。</p>
+<p><img src="/post/before/image-20241224162116493.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241224162116493"
+	
+	
+></p>
+
+
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/sql%E8%AF%AD%E5%8F%A5/">Sql语句</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":"说点什么吧~~请填写正确的昵称和邮箱，方便接受评论回复信息"},"requiredMeta":["nick","mail","url"],"serverURL":"https://waline-poolbee.vercel.app"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 PoolBee的博客
+    </section>
+    
+    
+    <a href="https://github.com/PoolBee/PoolBee.github.io" target="_blank">
+        <img src="https://ghchart.rshah.org/poolbee" />
+    </a>
+    
+
+    <section class="powerby">
+         <br />
+        
+    </section>
+
+
+    <section class="count_info">
+    
+        <div>
+            在漫长的
+            <span id="ds" class="running-days"></span>
+            天
+            <span id="hs" class="running-days"></span>
+            小时
+            <span id="ms" class="running-days"></span>
+            分钟中
+        </div>
+
+    
+        <div>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+             
+             
+          
+            
+       
+            · 写下 19 篇文章、总计 8.73 k 字
+        </div> 
+
+    
+        <div>
+            <span id="busuanzi_container_site_pv">· 迎接<span id="busuanzi_value_site_pv"></span>次不期而遇。</span>
+        </div>
+        
+    </section>
+    
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+        
+
+
+    <script>
+        let s1 = '2023-6-09'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+        
+    </script>
+    
+</footer>
+<style>
+     
+.site-footer {
+    text-align: center;
+}
+</style>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            
+        </main>
+        
+    </div>
+
+    <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script><script type="text/javascript" src="/ts/custom.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+    
+    
+</body>
+</html>
