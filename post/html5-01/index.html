@@ -1,0 +1,2399 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<meta name='description' content="HTML5知识总结 HTML：超文本标记语言。 超文本：文字、图片、音频、视频、动画等。 1993-2013 2013年HTML5出现 HTML让浏览器之间让网页与电脑之间的交互进行了标准化。 HTML5是W3C和WHATWG合作的结果2006年开始决定创建HTML5。 Web Hypertext Application Technology Working Group（网络超文本应用技术工作组）：一个致力于开发和维护HTML和API等Web技术标准的组织 W3C的标准包括 结构、表现、行为标准：DOM文档对象模型、javascript。 HTML5 教程 | 菜鸟教程 一个HTML文件 doctype：告诉浏览器告诉我们要使用什么规范 html标签：总的标签，所有的代码都要写在这里面。 head：网页端头部 body：网页主体 title：网页端标题，就是浏览器上的 meta：描述性标签，用来描述我们网站的信息。 搜索的时候，网页的搜索就是对meta进行搜索的 做seo的时候可以用 content： 一、网页基本标签 历史： (1)标题标签h12345 br比较紧凑而p标签行之间有距离。 (2)段落标签p (3)换行标签br (4)水平线标签hr (5)字体样式标签srong、em (6)注释和特殊符号 使用转义字符表示 &lt;!-- 特殊符号 使用转义字符表示 --&gt; &lt;!-- 空格无论多少渲染出来只有一个格 --&gt; 空 格： 空&amp;nbsp;格 空&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;格 &lt;!-- 大于号 --&gt; &amp;gt; &lt;br/&gt; &lt;!-- 小于号 --&gt; &amp;lt; &lt;br/&gt; &lt;!-- 版权符号 --&gt; &amp;copy;版权所有 &lt;!-- 记忆方法 --&gt; &amp;g 根据代码提示即可 输入一个&amp;然后输入g提示；">
+
+
+
+<title>HTML5知识总结</title>
+
+
+<link rel='canonical' href='http://localhost:1313/post/html5-01/'>
+
+
+                                                          
+<link rel="stylesheet" href="/scss/partials/navbar.scss">
+
+
+<link rel="stylesheet" href="/scss/style.min.181973835010c8e02b5f9ae8cec748ae5985d79b2a50e665db98c46e31e96775.css"><meta property='og:title' content="HTML5知识总结">
+<meta property='og:description' content="HTML5知识总结 HTML：超文本标记语言。 超文本：文字、图片、音频、视频、动画等。 1993-2013 2013年HTML5出现 HTML让浏览器之间让网页与电脑之间的交互进行了标准化。 HTML5是W3C和WHATWG合作的结果2006年开始决定创建HTML5。 Web Hypertext Application Technology Working Group（网络超文本应用技术工作组）：一个致力于开发和维护HTML和API等Web技术标准的组织 W3C的标准包括 结构、表现、行为标准：DOM文档对象模型、javascript。 HTML5 教程 | 菜鸟教程 一个HTML文件 doctype：告诉浏览器告诉我们要使用什么规范 html标签：总的标签，所有的代码都要写在这里面。 head：网页端头部 body：网页主体 title：网页端标题，就是浏览器上的 meta：描述性标签，用来描述我们网站的信息。 搜索的时候，网页的搜索就是对meta进行搜索的 做seo的时候可以用 content： 一、网页基本标签 历史： (1)标题标签h12345 br比较紧凑而p标签行之间有距离。 (2)段落标签p (3)换行标签br (4)水平线标签hr (5)字体样式标签srong、em (6)注释和特殊符号 使用转义字符表示 &lt;!-- 特殊符号 使用转义字符表示 --&gt; &lt;!-- 空格无论多少渲染出来只有一个格 --&gt; 空 格： 空&amp;nbsp;格 空&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;格 &lt;!-- 大于号 --&gt; &amp;gt; &lt;br/&gt; &lt;!-- 小于号 --&gt; &amp;lt; &lt;br/&gt; &lt;!-- 版权符号 --&gt; &amp;copy;版权所有 &lt;!-- 记忆方法 --&gt; &amp;g 根据代码提示即可 输入一个&amp;然后输入g提示；">
+<meta property='og:url' content='http://localhost:1313/post/html5-01/'>
+<meta property='og:site_name' content='PoolBee的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='HTML5' /><meta property='article:published_time' content='2024-12-23T16:24:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-23T16:24:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/post/cover/html5-cover.png' />
+<meta name="twitter:site" content="@PoolBee">
+    <meta name="twitter:creator" content="@PoolBee"><meta name="twitter:title" content="HTML5知识总结">
+<meta name="twitter:description" content="HTML5知识总结 HTML：超文本标记语言。 超文本：文字、图片、音频、视频、动画等。 1993-2013 2013年HTML5出现 HTML让浏览器之间让网页与电脑之间的交互进行了标准化。 HTML5是W3C和WHATWG合作的结果2006年开始决定创建HTML5。 Web Hypertext Application Technology Working Group（网络超文本应用技术工作组）：一个致力于开发和维护HTML和API等Web技术标准的组织 W3C的标准包括 结构、表现、行为标准：DOM文档对象模型、javascript。 HTML5 教程 | 菜鸟教程 一个HTML文件 doctype：告诉浏览器告诉我们要使用什么规范 html标签：总的标签，所有的代码都要写在这里面。 head：网页端头部 body：网页主体 title：网页端标题，就是浏览器上的 meta：描述性标签，用来描述我们网站的信息。 搜索的时候，网页的搜索就是对meta进行搜索的 做seo的时候可以用 content： 一、网页基本标签 历史： (1)标题标签h12345 br比较紧凑而p标签行之间有距离。 (2)段落标签p (3)换行标签br (4)水平线标签hr (5)字体样式标签srong、em (6)注释和特殊符号 使用转义字符表示 &lt;!-- 特殊符号 使用转义字符表示 --&gt; &lt;!-- 空格无论多少渲染出来只有一个格 --&gt; 空 格： 空&amp;nbsp;格 空&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;格 &lt;!-- 大于号 --&gt; &amp;gt; &lt;br/&gt; &lt;!-- 小于号 --&gt; &amp;lt; &lt;br/&gt; &lt;!-- 版权符号 --&gt; &amp;copy;版权所有 &lt;!-- 记忆方法 --&gt; &amp;g 根据代码提示即可 输入一个&amp;然后输入g提示；"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/post/cover/html5-cover.png' />
+  
+
+
+
+
+    
+</head>
+
+<body class="
+    article-page
+    ">
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+        
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+            
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+            
+        }
+    })();
+</script>
+
+
+    <nav id="navbar" class="navbar--fixed-top">
+    <div class="container">
+        <a href="/" class="navbar-brand">
+            
+        </a>
+        <ul class="navbar-nav">
+            
+            <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/page/about/" class="nav-link" >关于我</a></li>
+            <li class="nav-item"><a href="/page/daily_info/" class="nav-link" target="_blank">走走停停</a></li>
+            <li class="nav-item"><a href="/page/blogroll/" class="nav-link" target="_blank">友链</a></li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    let lastScrollY = window.scrollY;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            
+            navbar.classList.add('navbar--hidden');
+        } else {
+            
+            navbar.classList.remove('navbar--hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === path) {
+                link.parentElement.classList.add('active'); 
+            }
+        });
+    });
+</script>
+
+    
+
+    <div class="container main-container flex on-phone--column extended">
+        <aside class="sidebar left-sidebar sticky compact">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hud111a09d55ebb32217e16308c85c65c5_4420_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🌏</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">PoolBee的博客</a></h1>
+            <h2 class="site-description">热爱生活，忠于记录</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/28343232'
+                        target="_blank"
+                        title="Blibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M665.056 123.904a32 32 0 0 1 49.824 40.192l-36.8 45.632c114.48 4.32 166 19.904 198.784 66.512C908.032 320.528 912 363.6 912 539.168 912 861.952 891.152 880 512 880 136.64 880 112.448 862.32 112 548.768v-25.216c0.272-160.224 4.864-201.984 34.4-245.072 32.832-47.904 85.664-64.112 201.504-68.752l-36.8-45.632a32 32 0 1 1 49.808-40.192l68.064 84.4 23.2-0.256h4.368l2.224-0.016h6.976l2.496-0.016L506.992 208h52.832l37.104 0.352zM559.52 272h-91.104l-9.344 0.032h-6.464l-77.504 0.864c-113.52 2.784-156.8 13.888-175.92 41.76-18.784 27.424-22.928 67.008-23.168 209.872v29.568c0.32 163.072 6.368 202.768 34.928 227.488C243.12 809.424 304.064 816 512 816c207.936 0 268.88-6.56 301.056-34.416C842.464 756.128 848 714.784 848 539.184c0-156.736-3.824-198.176-23.472-226.112-19.28-27.408-62.928-37.952-179.248-40.24L559.52 272z m-20.656 324.208c15.312 27.168 27.456 37.504 34.88 37.76 4 0.144 10.096-4.064 16.688-12.88a91.904 91.904 0 0 0 10.08-17.312 24 24 0 0 1 44.384 18.24 132 132 0 0 1-16 27.776c-15.04 20.16-33.6 32.96-56.832 32.16-19.184-0.688-36.896-10.944-53.504-30.528l-0.896-1.088-0.112 0.144c-15.68 17.92-32.688 27.792-51.04 29.392l-3.264 0.192c-23.024 0.768-42.368-11.008-58.736-29.808a132.88 132.88 0 0 1-18.176-26.576 24 24 0 1 1 42.88-21.552 94.16 94.16 0 0 0 11.488 16.608c7.84 8.992 15.312 13.536 20.96 13.36 8.64-0.288 20.736-10.08 35.408-35.936a24 24 0 0 1 41.792 0.048z m31.072-173.408a36.112 36.112 0 0 1 42.72-23.088l140.288 34.64a29.472 29.472 0 0 1 20.592 38.8 36.8 36.8 0 0 1-43.36 22.992l-139.264-34.496a29.84 29.84 0 0 1-20.96-38.848z m-115.616-0.032a30.032 30.032 0 0 1-21.168 38.88L294.4 496.064a37.136 37.136 0 0 1-43.68-22.944 29.296 29.296 0 0 1 20.384-38.784l140.8-34.72a35.76 35.76 0 0 1 42.4 23.136z"  /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:Cr8462643@163.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M777.1136 164.8128H262.2976a151.1424 151.1424 0 0 0-150.9888 150.9376v393.5232A151.1424 151.1424 0 0 0 262.2976 860.16h514.816a151.1424 151.1424 0 0 0 150.9888-150.9888V315.7504a150.3232 150.3232 0 0 0-150.9888-150.9376zM262.2976 224.1536h514.816a90.0096 90.0096 0 0 1 77.4144 43.8784l-296.96 241.3056a60.2624 60.2624 0 0 1-76.1344 0l-296.96-241.3056a92.8768 92.8768 0 0 1 77.824-43.8784z m514.816 576.768H262.2976a90.5728 90.5728 0 0 1-90.3168-90.3168V337.92l272.2304 220.6208a122.2144 122.2144 0 0 0 76.1344 27.0848 119.6032 119.6032 0 0 0 76.1344-27.0848L868.7104 337.92v372.8896a92.5696 92.5696 0 0 1-91.5968 90.112z" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/PoolBee/PoolBee.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1721529668393" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5378" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><path fill="currentColor" d="M822.514 74.129c10.466 0.815 19.898 5.47 26.913 13.047 9.015 9.737 12.574 21.584 13.722 36.348l0.088 1.208 0.096 1.514 0.055 1.015 0.049 1.02 0.021 0.512 0.054 1.547 0.027 1.04 0.028 1.577 0.01 1.063 0.003 1.073-0.009 1.63-0.015 1.102-0.022 1.115-0.029 1.128-0.036 1.143-0.043 1.158-0.078 1.767-0.06 1.198-0.106 1.832-0.12 1.875-0.138 1.92-0.208 2.633-0.115 1.35-0.122 1.375-0.197 2.106-0.213 2.164-0.31 2.977-0.251 2.307-0.268 2.371-0.383 3.27-0.412 3.395-0.442 3.528-0.595 4.607-0.64 4.836-0.547 4.041-2.52 18.408-0.813 6.102-0.572 4.412-0.495 3.963-0.291 2.423-0.422 3.713-0.253 2.397-0.222 2.265-0.142 1.556-0.177 2.113-0.049 0.622c-0.04 0.517-0.077 1.03-0.113 1.542l-0.063 0.92-0.098 1.535-0.067 1.154-0.056 1.115-0.046 1.073-0.037 1.033-0.027 0.99-0.018 0.95-0.008 0.906v0.437l0.005 0.84 0.014 0.798 0.024 0.752 0.039 0.851 0.957 1.205c34.772 44.068 53.83 94.986 54.229 148.28v1.683c0 83.459-38.319 163.265-106.095 214.099-28.706 21.533-63.37 38.442-102.552 50.635 10.739 21.22 16.366 41.779 16.543 61.802l0.005 0.974V918c0 17.673-14.327 32-32 32-17.497 0-31.714-14.042-31.996-31.47l-0.004-0.53V733.469c0-12.49-5.22-27.792-16.299-45.67l-0.886-1.418c-2.997-4.74-6.4-9.659-10.223-14.751l-0.786-1.04a31.773 31.773 0 0 1-4.814-8.452 31.8 31.8 0 0 1-1.858-7.435 31.836 31.836 0 0 1 2.911-17.872 31.755 31.755 0 0 1 4.673-7.107 31.848 31.848 0 0 1 12.357-8.768l0.18-0.07 0.156-0.06c0.14-0.055 0.281-0.108 0.422-0.16l0.041-0.014a31.69 31.69 0 0 1 4.88-1.361l-0.381 0.081c48.847-10.151 90.314-27.323 121.229-50.513C813.853 530.346 843 469.641 843 405.96c0-40.68-15.192-79.967-43.952-114.619-6.678-8.047-9.546-17.165-10.725-27.973-0.714-6.55-0.755-13.866-0.272-22.374l0.104-1.738 0.048-0.746c0.048-0.744 0.099-1.482 0.152-2.218l0.166-2.209 0.177-2.147 0.222-2.463 0.212-2.175 0.234-2.257 0.398-3.583 0.406-3.436 0.522-4.212 0.67-5.193 1.118-8.358 1.04-7.614 1.14-8.279 0.85-6.313 0.557-4.242 0.513-4.027 0.288-2.318 0.446-3.7 0.405-3.508 0.294-2.672 0.203-1.928 0.19-1.864 0.173-1.804 0.134-1.466-23.747 12.922-4.579 2.474-2.87 1.539-3.449 1.835-1.352 0.715-2.144 1.128-2.114 1.103-2.084 1.08-2.055 1.057-2.027 1.033-1.999 1.01-1.972 0.987-0.977 0.485-2.892 1.422-1.898 0.92c-0.314 0.153-0.627 0.303-0.94 0.453l-1.863 0.888-1.84 0.867c-0.916 0.428-1.823 0.848-2.723 1.26l-1.79 0.815-0.887 0.399-1.762 0.784-0.874 0.384-1.735 0.754-0.861 0.37-1.71 0.724-1.696 0.704-1.68 0.686c-0.558 0.226-1.114 0.448-1.668 0.667l-1.654 0.649c-0.55 0.213-1.097 0.423-1.642 0.63l-1.632 0.612-1.62 0.594-0.808 0.291-1.607 0.568-1.599 0.551-0.796 0.27c-22.154 7.432-41.43 9.635-59.205 4.372-36.56-10.827-75.79-16.47-116.138-16.47-34.516 0-68.229 4.129-100.183 12.116l-1.68 0.424c-23.136 5.893-46.24 3.314-70.526-5.913a210.629 210.629 0 0 1-9.102-3.693l-0.937-0.41-1.875-0.837-1.408-0.644-1.414-0.66-0.947-0.45-1.43-0.689-1.442-0.709-0.97-0.484-0.98-0.494-1.984-1.018-2.027-1.062-1.552-0.827-1.583-0.855-1.616-0.884-1.652-0.914-1.692-0.947-1.734-0.98-2.383-1.36-3.102-1.793-3.92-2.294-2.745-1.621-5.079-3.025-11.695-7.01-3.848-2.286-3.362-1.975-2.36-1.367-2.2-1.256-1.506-0.848-1.77-0.983-0.913-0.5-0.698-0.381-0.093 0.641-0.157 1.131-0.152 1.16-0.074 0.591-0.144 1.203-0.139 1.233-0.133 1.262-0.191 1.948-0.18 2.016-0.113 1.38-0.108 1.412-0.104 1.442-0.098 1.472-0.094 1.503-0.09 1.533-0.083 1.565-0.118 2.406-0.107 2.476-0.097 2.547-0.086 2.62-0.052 1.786-0.048 1.818-0.063 2.789-0.037 1.9-0.047 2.911-0.026 1.983-0.047 4.756-0.031 5.83-0.011 5.895-0.009 16.084-0.029 7.372-0.04 4.756-0.044 3.323-0.057 3.054-0.083 3.23-0.062 1.912-0.07 1.853-0.078 1.753-0.048 0.986-0.068 1.311-0.093 1.645-0.054 0.89c-0.407 6.486-1.021 12.005-1.966 16.903-1.642 8.513-4.148 15.463-9.436 22.014-27.505 34.082-42.002 72.494-42.002 112.238 0 60.104 33.061 122.348 87.13 162.901 35.686 26.767 81.861 45.038 136.312 54.205 1.759 0.281 3.5 0.712 5.205 1.29 0.03 0.012 0.06 0.022 0.09 0.032a24.393 24.393 0 0 1 0.738 0.263c0.128 0.047 0.254 0.095 0.38 0.143l0.04 0.017a31.932 31.932 0 0 1 15.38 12.568 31.865 31.865 0 0 1 4.624 22.577 31.851 31.851 0 0 1-8.318 16.704l0.436-0.485c-0.99 1.09-1.952 2.172-2.888 3.246l-1.11 1.285a172.775 172.775 0 0 0-6.593 8.172l-0.92 1.229c-11.637 15.725-17.087 29.595-17.225 41.55l-0.003 0.465 0.001 68.053a32.62 32.62 0 0 1 0 1.39l-0.001 116.434c0 17.673-14.327 32-32 32-17.496 0-31.713-14.042-31.996-31.471l-0.004-0.53v-85.132h-57.066c-20.435 0-40.2-6.64-59.18-18.52-15.106-9.457-29.484-22.078-43.365-37.311-10.958-12.025-21.228-25.257-30.997-39.436l-1.31-1.909-1.264-1.86-0.618-0.917-1.211-1.808-1.184-1.785-1.163-1.772-0.575-0.884-1.144-1.77-1.14-1.782-1.143-1.804-1.152-1.834-1.167-1.875-1.19-1.926-1.22-1.987-1.9-3.115-0.654-1.079c-3.988-6.579-9.336-9.967-18.662-11.201l-0.504-0.064c-17.542-2.145-30.024-18.105-27.88-35.648 2.146-17.542 18.105-30.024 35.648-27.88 28.696 3.51 51.659 17.747 66.127 41.617l1.47 2.415 1.455 2.373 0.723 1.171 1.436 2.313 1.426 2.274 1.417 2.237 1.409 2.202 1.403 2.169c9.808 15.063 19.297 27.759 30.87 40.459 0.415 0.455 0.829 0.906 1.243 1.353l1.24 1.327c0.825 0.877 1.648 1.736 2.468 2.578l1.23 1.251c18.202 18.36 35.137 28.209 48.605 28.425l0.453 0.004h57.066V732.12c0-19.062 5.12-37.964 15.008-56.731-43.866-12.305-82.781-30.747-115.558-55.331-69.74-52.308-112.728-133.24-112.728-214.1 0-52.686 18.239-103.12 51.91-146.985l0.987-1.278 0.079-0.608 0.09-0.762 0.086-0.816 0.084-0.87 0.081-0.924 0.116-1.484 0.036-0.52 0.1-1.572 0.092-1.649 0.101-2.105 0.1-2.587 0.053-1.711 0.063-2.558 0.044-2.377 0.046-3.489 0.042-5.52 0.026-9.886 0.01-16.233 0.03-6.683 0.035-4 0.036-3.107 0.029-2.08 0.034-2.05 0.038-2.023 0.042-1.994 0.047-1.966 0.079-2.897 0.09-2.836 0.101-2.778 0.074-1.819 0.079-1.793 0.129-2.644 0.14-2.588 0.102-1.696 0.107-1.673 0.113-1.649 0.119-1.626 0.19-2.399 0.135-1.571 0.14-1.55 0.148-1.53 0.154-1.51 0.161-1.488 0.168-1.47 0.087-0.726 0.178-1.44 0.186-1.422 0.193-1.403 0.2-1.385 0.207-1.368 0.216-1.35 0.223-1.334 0.23-1.317 0.24-1.302c0.04-0.215 0.08-0.43 0.122-0.644l0.25-1.278 0.26-1.263 0.267-1.249 0.276-1.234 0.285-1.22 0.293-1.207 0.302-1.194 0.31-1.181c3.806-14.18 9.58-25.536 19.415-33.946 14.031-11.999 32.335-13.9 49.522-6.514 6.255 2.688 12.625 5.804 19.407 9.44l0.977 0.525 1.909 1.035 1.408 0.773 2.711 1.51 2.682 1.522 2.475 1.427 1.874 1.093 4.109 2.423 6.295 3.756 8.096 4.858 4.623 2.754 4.268 2.515 2.85 1.66 2.17 1.25 1.567 0.895 2.014 1.139 1.459 0.814 1.879 1.035 0.913 0.497 1.339 0.721 1.732 0.918 1.263 0.657 1.234 0.631 0.406 0.205 0.764 0.383c4.302 2.143 8.157 3.847 12.115 5.386l0.7 0.27 0.35 0.134c12.877 4.892 22.978 6.02 32 3.721 37.628-9.584 77.224-14.52 117.66-14.52 46.478 0 91.829 6.524 134.31 19.103l0.22 0.056c0.12 0.026 0.259 0.05 0.413 0.071l0.332 0.038c0.118 0.01 0.243 0.02 0.376 0.028l0.422 0.018 0.227 0.005h0.488c0.085 0 0.172-0.002 0.261-0.004l0.555-0.019 0.295-0.015 0.622-0.041c0.43-0.033 0.89-0.077 1.38-0.132 4.038-0.462 9.105-1.68 15.084-3.687l1.174-0.4 1.19-0.417 1.207-0.434 1.223-0.45 1.24-0.47 1.258-0.486 0.635-0.25 1.285-0.513 1.304-0.531 1.323-0.55 1.342-0.567 1.363-0.587 1.384-0.605 0.7-0.31 1.416-0.633 1.439-0.653 1.46-0.673 1.484-0.691 1.507-0.712 1.532-0.731 1.556-0.752 1.581-0.772 1.607-0.792 1.633-0.813 1.659-0.833 1.686-0.855 1.714-0.876 1.742-0.897 2.667-1.386 2.733-1.434 3.063-1.624 2.538-1.356 4.733-2.55 22.134-12.071 5.8-3.137 1.96-1.05 2.76-1.471 1.788-0.946 1.748-0.919 2.55-1.33 2.472-1.275 1.607-0.82 1.577-0.798 2.314-1.157 1.51-0.746 1.486-0.727 1.466-0.708 1.446-0.691 1.429-0.674c0.236-0.111 0.472-0.222 0.708-0.331 7.914-3.687 16.048-5.558 24.572-4.893z" p-id="5379"></path></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://poolbee.github.io/page/links/'
+                        target="_blank"
+                        title="Wechat"
+                        rel="me"
+                    >
+                        
+                        
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="24px" height="24.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M767.818667 409.173333C867.338667 444.266667 938.666667 539.136 938.666667 650.666667c0 42.709333-10.496 83.978667-30.261334 120.842666-1.792 3.338667-4.992 8.928-9.696 16.96l14.613334 53.557334c6.506667 23.893333-15.402667 45.813333-39.296 39.296l-53.642667-14.634667-6.229333 3.669333A254.933333 254.933333 0 0 1 682.666667 906.666667c-77.994667 0-147.84-34.88-194.805334-89.888a352.608 352.608 0 0 1-56.64 4.554666c-63.338667 0-124.266667-16.853333-177.472-48.298666-1.834667-1.088-6.410667-3.733333-13.632-7.893334l-80.544 21.653334c-23.914667 6.432-45.76-15.573333-39.146666-39.434667l21.792-78.752a961.205333 961.205333 0 0 1-15.904-27.317333A336.384 336.384 0 0 1 85.333333 480c0-188.618667 154.965333-341.333333 345.888-341.333333 159.914667 0 297.984 108.010667 335.818667 259.296 0.949333 3.765333 1.173333 7.552 0.778667 11.2z m-68.106667-13.952C662.88 282.037333 555.178667 202.666667 431.221333 202.666667 275.434667 202.666667 149.333333 326.933333 149.333333 480c0 46.272 11.498667 90.837333 33.194667 130.698667 2.88 5.290667 10.176 17.706667 21.621333 36.746666a32 32 0 0 1 3.413334 25.013334l-10.517334 37.994666 39.232-10.549333a32 32 0 0 1 24.234667 3.146667c14.272 8.192 22.773333 13.098667 25.802667 14.890666A283.882667 283.882667 0 0 0 431.221333 757.333333c6.154667 0 12.288-0.192 18.389334-0.576A255.061333 255.061333 0 0 1 426.666667 650.666667c0-141.386667 114.613333-256 256-256 5.728 0 11.413333 0.192 17.045333 0.554666z m133.706667 397.056a32 32 0 0 1 3.338666-24.725333 996.672 996.672 0 0 0 15.242667-26.293333A190.997333 190.997333 0 0 0 874.666667 650.666667c0-106.037333-85.962667-192-192-192s-192 85.962667-192 192 85.962667 192 192 192a190.933333 190.933333 0 0 0 98.570666-27.2c2.208-1.322667 8.288-4.874667 18.517334-10.837334a32 32 0 0 1 24.522666-3.210666l12.565334 3.424-3.424-12.565334zM330.666667 426.666667a42.666667 42.666667 0 1 1 0-85.333334 42.666667 42.666667 0 0 1 0 85.333334z m192 0a42.666667 42.666667 0 1 1 0-85.333334 42.666667 42.666667 0 0 1 0 85.333334z m85.333333 202.666666a32 32 0 1 1 0-64 32 32 0 0 1 0 64z m149.333333 0a32 32 0 1 1 0-64 32 32 0 0 1 0 64z"  /></svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>首页&amp;文章</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于我 About me</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>分类</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/soft/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
+  <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
+</svg>
+
+
+
+                
+                <span>软件&amp;网站</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/share/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>日常分享</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+        
+
+                
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+                
+            </ol>
+        </li>
+    
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#历史">历史：</a></li>
+    <li><a href="#1标题标签h12345">(1)标题标签h12345</a></li>
+    <li><a href="#2段落标签p">(2)段落标签p</a></li>
+    <li><a href="#3换行标签br">(3)换行标签br</a></li>
+    <li><a href="#4水平线标签hr">(4)水平线标签hr</a></li>
+    <li><a href="#5字体样式标签srongem">(5)字体样式标签srong、em</a></li>
+    <li><a href="#6注释和特殊符号">(6)注释和特殊符号</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1文本超链接">(1)文本超链接</a></li>
+    <li><a href="#2图像超链接">(2)图像超链接</a>
+      <ul>
+        <li><a href="#1新标签打开">1.新标签打开</a></li>
+      </ul>
+    </li>
+    <li><a href="#3超链接">(3)超链接</a>
+      <ul>
+        <li><a href="#1页面间跳转链接">1.页面间跳转链接</a></li>
+        <li><a href="#15返回顶部">1.5返回顶部</a></li>
+        <li><a href="#2锚链接应用很多">2.锚链接：应用很多</a></li>
+        <li><a href="#3功能性链接这个我很常用">3.功能性链接：这个我很常用</a></li>
+      </ul>
+    </li>
+    <li><a href="#四概念行内元素和块元素">四、概念：行内元素和块元素</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#一列表">一、列表</a>
+      <ul>
+        <li><a href="#1无序列表">(1)无序列表</a></li>
+        <li><a href="#2有序列表">(2)有序列表</a></li>
+        <li><a href="#3自定义列表">(3)自定义列表</a></li>
+      </ul>
+    </li>
+    <li><a href="#二表格">二、表格</a>
+      <ul>
+        <li><a href="#课程表实践">课程表实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#三视频音频">三、视频音频</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#元素及描述表">元素及描述表</a></li>
+    <li><a href="#四iframe内联框架">四、iframe内联框架</a>
+      <ul>
+        <li><a href="#1一个网页中嵌套另一个网页">1.一个网页中嵌套另一个网页</a></li>
+        <li><a href="#2当做一个容器">2.当做一个容器：</a></li>
+      </ul>
+    </li>
+    <li><a href="#五表单">五、表单</a>
+      <ul>
+        <li><a href="#action向何处发送表单数据">action向何处发送表单数据</a></li>
+        <li><a href="#1input标签">(1)input标签</a></li>
+        <li><a href="#get不安全但高效">get：不安全、但高效</a></li>
+        <li><a href="#post相对安全">post：相对安全</a></li>
+        <li><a href="#重点审查元素中查看信息">【重点】审查元素中查看信息</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#2表单语法">(2)表单语法</a></li>
+        <li><a href="#表单元素属性及说明表">表单元素属性及说明表</a></li>
+        <li><a href="#1radio做复选和单选">1.radio：做复选和单选</a></li>
+        <li><a href="#2多选框">2.多选框</a></li>
+        <li><a href="#3按钮">3.按钮</a></li>
+        <li><a href="#4重置reset">4.重置reset</a></li>
+        <li><a href="#小总结">小总结</a></li>
+        <li><a href="#4下拉框">4.下拉框</a></li>
+        <li><a href="#5文本域">5.文本域</a></li>
+        <li><a href="#6文件域">6.文件域</a></li>
+        <li><a href="#带功能的">带功能的</a></li>
+        <li><a href="#7邮件url数字滑块搜索">7.邮件、url、数字、滑块、搜索</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#整个form表单中都需要name属性">整个form表单中都需要name属性</a></li>
+    <li><a href="#3表单的应用">(3)表单的应用</a>
+      <ul>
+        <li><a href="#只读--readonly">只读- readonly</a></li>
+        <li><a href="#禁用--disable">禁用- disable</a></li>
+        <li><a href="#隐藏域">隐藏域</a></li>
+      </ul>
+    </li>
+    <li><a href="#4表单初级验证">(4)表单初级验证</a>
+      <ul>
+        <li><a href="#常用方式">常用方式</a></li>
+        <li><a href="#1placeholder提示信息">1.placeholder：提示信息</a></li>
+        <li><a href="#2required-非空判断">2.required 非空判断</a></li>
+        <li><a href="#3pattern-正则表达式">3.pattern 正则表达式</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+            
+                
+<a id="back-to-top" href="#">
+    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="48px" height="48.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M526.848 202.24A20.48 20.48 0 0 0 512 196.096a19.68 19.68 0 0 0-14.848 6.144l-155.136 154.624a21.632 21.632 0 0 0 0 30.208 21.632 21.632 0 0 0 30.208 0L512 247.296l139.776 139.776a21.376 21.376 0 0 0 14.848 6.144 20.48 20.48 0 0 0 14.848-6.144 21.632 21.632 0 0 0 0-30.208L526.848 202.24zM116.224 595.968h90.624v231.936h42.496v-231.936h90.624v-42.496H115.712v42.496h0.512z m458.24-42.496h-112.64c-13.824 0-27.136 5.12-37.376 15.36-10.24 10.24-15.36 24.064-15.36 37.376v168.448c0 13.824 5.12 27.136 15.36 37.376 10.24 10.24 24.064 15.36 37.376 15.36h112.64c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-168.448c0-13.824-5.12-27.136-15.36-37.376-10.24-10.24-23.552-15.36-37.376-15.36z m10.752 221.696c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-112.64a10.688 10.688 0 0 1-7.68-3.072 10.688 10.688 0 0 1-3.072-7.68V606.72c0-2.048 0.512-5.12 3.072-7.68a10.688 10.688 0 0 1 7.68-3.072h112.64c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v168.448z m307.2-205.824a53.12 53.12 0 0 0-37.376-15.36h-145.408v274.432h42.496v-120.32h102.912c13.824 0 27.136-5.12 37.376-15.36 10.24-10.24 15.36-24.064 15.36-37.376v-48.128c0-14.336-5.12-27.648-15.36-37.888z m-27.136 84.992c0 2.048-0.512 5.12-3.072 7.68a10.688 10.688 0 0 1-7.68 3.072h-103.424v-69.12h103.936c2.048 0 5.12 0.512 7.68 3.072 2.56 2.56 3.072 5.632 3.072 7.68v47.616h-0.512z"  /></svg>
+</a>
+
+            
+        
+            
+                <form action="/page/search/" class="search-form widget" >
+        <p>
+            <label>搜索</label>
+            <input name="keyword" required placeholder="输入关键词..." />
+        
+            <button title="搜索">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+            </button>
+        </p>
+    </form>
+            
+        
+        <div style="height: 30%;width: 30%">
+            
+            <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=vWVduL3EI8o8M2YkHMyY1dtYyf7vfgNKC8KQ1ugXVMw"></script>
+        </div>
+    </aside>
+
+
+
+        
+
+
+
+        <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/html5-01/">
+                
+                    <img src="/post/cover/html5-cover.png" loading="lazy" alt="Featured image of post HTML5知识总结" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%89%8D%E7%AB%AF/" >
+                前端
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/html5-01/">HTML5知识总结</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 23, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 6 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="html5知识总结">HTML5知识总结
+</h1><p>HTML：超文本标记语言。</p>
+<p>超文本：文字、图片、音频、视频、动画等。</p>
+<p>1993-2013</p>
+<p><strong>2013年HTML5出现</strong></p>
+<p><img src="/post/before/image-20241225172510154.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225172510154"
+	
+	
+></p>
+<p>HTML让浏览器之间让网页与电脑之间的交互进行了标准化。</p>
+<p>HTML5是W3C和WHATWG合作的结果2006年开始决定创建HTML5。</p>
+<ul>
+<li>Web Hypertext Application Technology Working Group（<strong>网络超文本应用技术工作组</strong>）：一个致力于开发和维护HTML和API等Web技术标准的组织</li>
+</ul>
+<p>W3C的标准包括</p>
+<p><img src="/post/before/image-20241225161343536.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225161343536"
+	
+	
+></p>
+<p><strong>结构、表现、行为标准：DOM文档对象模型、javascript。</strong></p>
+<p><a class="link" href="https://www.runoob.com/html/html5-intro.html"  target="_blank" rel="noopener"
+    >HTML5 教程 | 菜鸟教程</a></p>
+<p>一个HTML文件</p>
+<p>doctype：告诉浏览器告诉我们要使用什么规范</p>
+<p>html标签：总的标签，所有的代码都要写在这里面。</p>
+<p>head：网页端头部</p>
+<p>body：网页主体</p>
+<p>title：网页端标题，就是浏览器上的</p>
+<p>meta：描述性标签，用来描述我们网站的信息。</p>
+<ul>
+<li>搜索的时候，网页的搜索就是对meta进行搜索的</li>
+<li>做seo的时候可以用</li>
+<li>content：</li>
+</ul>
+<h1 id="一网页基本标签">一、网页基本标签
+</h1><h2 id="历史">历史：
+</h2><h2 id="1标题标签h12345">(1)标题标签h12345
+</h2><p><strong>br比较紧凑</strong>而<strong>p标签行之间有距离。</strong></p>
+<p><img src="/post/before/image-20241225092407409.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225092407409"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225162631161.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225162631161"
+	
+	
+></p>
+<h2 id="2段落标签p">(2)段落标签p
+</h2><h2 id="3换行标签br">(3)换行标签br
+</h2><h2 id="4水平线标签hr">(4)水平线标签hr
+</h2><h2 id="5字体样式标签srongem">(5)字体样式标签srong、em
+</h2><h2 id="6注释和特殊符号">(6)注释和特殊符号
+</h2><p>使用转义字符表示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- 特殊符号 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    使用转义字符表示 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 空格无论多少渲染出来只有一个格 --&gt;</span>
+</span></span><span style="display:flex;"><span>    空        格：    
+</span></span><span style="display:flex;"><span>    空&amp;nbsp;格
+</span></span><span style="display:flex;"><span>    空&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;格
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 大于号 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &amp;gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 小于号 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &amp;lt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 版权符号 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &amp;copy;版权所有
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 记忆方法 --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">&amp;</span>g
+</span></span><span style="display:flex;"><span>根据代码提示即可
+</span></span></code></pre></div><p>输入一个&amp;然后输入g提示；</p>
+<p>随用随调用</p>
+<p><img src="/post/before/image-20241225093130276.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225093130276"
+	
+	
+></p>
+<h1 id="二图像标签">二、图像标签
+</h1><p>BMP是位图</p>
+<p>画图工具就能导出这些格式</p>
+<p><img src="/post/before/image-20241225093811825.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225093811825"
+	
+	
+></p>
+<p>alt图片不显示的时候用问题替代的alt属性</p>
+<p><img src="/post/before/image-20241225094229178.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225094144042"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;图像标签学习&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- img学习 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> src：相对路径和绝对路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 项目一般用相对路径--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ../代表上一级目录
+</span></span><span style="display:flex;"><span>alt：图片名字是必填的
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image2.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h1 id="三链接标签">三、链接标签
+</h1><p><img src="/post/before/image-20241225094458787.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225094458787"
+	
+	
+></p>
+<p>target是链接在哪个窗口打开</p>
+<h2 id="1文本超链接">(1)文本超链接
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.poolbee.top&#34;</span>&gt;我是文字链接点击我跳转&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h2 id="2图像超链接">(2)图像超链接
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载显示的文字&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225095244820.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225095244820"
+	
+	
+></p>
+<p>a标签内嵌图片后会出现手图像，表示点击图片能进行当前页面跳转。</p>
+<h3 id="1新标签打开">1.新标签打开
+</h3><p>2.默认为_self刷新本网页跳转。</p>
+<h2 id="3超链接">(3)超链接
+</h2><h3 id="1页面间跳转链接">1.页面间跳转链接
+</h3><p>从一个页面链接到另一个页面</p>
+<p>跳转url或者html页面都可以</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;www.poolbee.top&#34;</span>&gt;点击我跳转到博客&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;点击我跳转到页面一&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h3 id="15返回顶部">1.5返回顶部
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;顶部，我是锚标记&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#top&#34;</span>&gt;回到顶部&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h3 id="2锚链接应用很多">2.锚链接：应用很多
+</h3><h4 id="实现页面间指定位置跳转">实现页面间指定位置跳转
+</h4><p><img src="/post/before/image-20241225100350255.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225100350255"
+	
+	
+></p>
+<h5 id="down实现跳转到跳转到另一个页面中的底部默认跳转是到顶部的">down实现跳转到跳转到另一个页面中的底部，默认跳转是到顶部的。
+</h5><h5 id="heading">
+</h5><p>回到顶部和跳转到另一个页面底部代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;链接标签学习&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- a标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">href:必填,表示要跳转到哪个页面
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">target:表示窗口在哪里打开
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    _blank 在新标签中打开
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    _self 在自己的网页中打开
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;顶部，我是锚标记&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;www.poolbee.top&#34;</span>&gt;点击我跳转到博客&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;点击我跳转到页面一&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 内嵌图片 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">hr</span>/&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 锚链接 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">1.需要一个锚标记
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">2.跳转到锚标记 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 顶部设置a标签， --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 使用name进行标记 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">新版本：使用id进行标记 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#top&#34;</span>&gt;回到顶部&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;锚链接测试跳转到底部.html#down&#34;</span>&gt;跳转到目标网页底部&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p><strong>跳转记得带上目标页面的名称.html再加上你的#dwon</strong></p>
+<p>回到顶部不需要带上目标页面名称</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#top&#34;</span>&gt;回到顶部&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;锚链接测试跳转到底部.html#down&#34;</span>&gt;跳转到目标网页底部&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h5 id="锚连接到目标页面底部代码">锚连接到目标页面底部代码：
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;锚链接测试跳转到底部&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image2.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;图片未加载&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image2.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;海报图片&#34;</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;悬停的文字&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;300&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">br</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;down&#34;</span>&gt;我是目标页面底部&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h3 id="3功能性链接这个我很常用">3.功能性链接：这个我很常用
+</h3><h5 id="邮件链接">邮件链接
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 功能性链接 --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 邮件链接 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mailto:1066130@qq.com&#34;</span>&gt;点击联系我&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><h5 id="客服链接qq推广链接">客服链接，QQ推广链接
+</h5><p><a class="link" href="https://shang.qq.com/"  target="_blank" rel="noopener"
+    >QQ推广</a></p>
+<p>选择组件样式，粘贴到网页上即可。</p>
+<h2 id="四概念行内元素和块元素">四、概念：行内元素和块元素
+</h2><p><strong>块元素</strong></p>
+<ul>
+<li>无论内容多少，该元素独占一行</li>
+</ul>
+<p>段落标签p、标题标签h12345、等等</p>
+<p><strong>行内元素</strong></p>
+<ul>
+<li><strong>内容撑开宽度</strong>，左右都是行内元素的可以排在一行</li>
+</ul>
+<p>例如：字体样式标签strong，em，没有br就无法换行，那种。</p>
+<h1 id="问题css中也可以让行内元素和块元素相互转换">【问题】css中也可以让行内元素和块元素相互转换
+</h1><hr>
+<h1 id="其他标签">其他标签
+</h1><h2 id="一列表">一、列表
+</h2><h3 id="1无序列表">(1)无序列表
+</h3><h3 id="2有序列表">(2)有序列表
+</h3><h3 id="3自定义列表">(3)自定义列表
+</h3><p>应用</p>
+<p><img src="/post/before/image-20241225104122633.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225104122633"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Document&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 有序列表 --&gt;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">&lt;!-- order list --&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ol</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 子标签 list --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;Java&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;Python&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;前端&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;运维&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;C/c++&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ol</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- 无序列表 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    应用范围：导航，侧边栏
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    空心原点：可以用css美化出 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- unorder list --&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 子标签 list --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;Java&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;Python&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;前端&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;运维&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">li</span>&gt;C/c++&lt;/<span style="color:#f92672">li</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">ul</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- 自定义列表 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      definition list 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      --&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">      dl：标签
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        dt：列表名称
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        dd：列表内容
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">         
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    应用：公司网站底部
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    --&gt;</span>
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">dl</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">dt</span>&gt;JAVA&lt;/<span style="color:#f92672">dt</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">dd</span>&gt;PYTHON&lt;/<span style="color:#f92672">dd</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">dd</span>&gt;linux&lt;/<span style="color:#f92672">dd</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">dt</span>&gt;西安&lt;/<span style="color:#f92672">dt</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">dd</span>&gt;重庆&lt;/<span style="color:#f92672">dd</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">dd</span>&gt;新疆&lt;/<span style="color:#f92672">dd</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">dl</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><h2 id="二表格">二、表格
+</h2><p>为什么用</p>
+<ul>
+<li>结构稳定、简单通用</li>
+</ul>
+<p>基本结构</p>
+<ul>
+<li>单元格</li>
+<li>行列
+<ul>
+<li>跨行</li>
+<li>跨列</li>
+</ul>
+</li>
+</ul>
+<p><img src="/post/before/image-20241225110124856.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225110124856"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225110133480.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225110133480"
+	
+	
+></p>
+<p>跨四列</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 一行四列 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨四列 --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span>&gt;1-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;2-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;3-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">TABLE</span>/&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225110348163.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225110348163"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 一行四列 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨四列 --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span>&gt;1-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;1-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;1-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;1-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;2-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;3-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225110418293.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225110418293"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 一行四列 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨四列 --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;4&#34;</span>&gt;1-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨2行 --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">rowspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;2-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;2-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;&lt;<span style="color:#f92672">td</span>&gt;3-1&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-2&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;3-3&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    //    &lt;<span style="color:#f92672">td</span>&gt;3-4&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><p>3-4被挤出了</p>
+<p><img src="/post/before/image-20241225110701875.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225110701875"
+	
+	
+></p>
+<p>注释3-4</p>
+<p><img src="/post/before/image-20241225110824212.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225110824212"
+	
+	
+></p>
+<p>将td理解为列更好理解。</p>
+<h3 id="课程表实践">课程表实践
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 成绩表 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">table</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨3列 --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">colspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span>&gt;学生成绩&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨2行 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">           三行三列被挤出--&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">rowspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;小明&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;语文&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;100&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;数学&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;100&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- &lt;td&gt;3-3&lt;/td&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- 跨两行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">        5-3被挤出 --&gt;</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span> <span style="color:#a6e22e">rowspan</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span>&gt;小红&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;英语&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;100&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;化学&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">td</span>&gt;100&lt;/<span style="color:#f92672">td</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">&lt;!-- &lt;td&gt;5-3&lt;/td&gt; --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">tr</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">table</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225111746355.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225111746355"
+	
+	
+><img src="/post/before/image-20241225111747868.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225111747868"
+	
+	
+></p>
+<h2 id="三视频音频">三、视频音频
+</h2><p>如果没有控件，可以复制视频地址，然后打开下载该视频。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 音频和视频 --&gt;</span>
+</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">video</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/video/演示.mp4&#34;</span> &gt;&lt;/<span style="color:#f92672">video</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225112405020.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225112405020"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225112414764.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225112414764"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 音频和视频 --&gt;</span>
+</span></span><span style="display:flex;"><span>     &lt;<span style="color:#f92672">video</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/video/演示.mp4&#34;</span> <span style="color:#a6e22e">controls</span>&gt;&lt;/<span style="color:#f92672">video</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span></code></pre></div><p>不显示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span> &lt;<span style="color:#f92672">audio</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/video/音频.mp4&#34;</span> &gt;<span style="color:#960050;background-color:#1e0010">&lt;</span>/audio
+</span></span></code></pre></div><p>有control后会显示。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">audio</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/video/音频.mp4&#34;</span> <span style="color:#a6e22e">controls</span>&gt;&lt;/<span style="color:#f92672">audio</span>&gt;
+</span></span></code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<hr>
+<h1 id="基本页面结构分析">基本：页面结构分析
+</h1><h2 id="元素及描述表">元素及描述表
+</h2><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>元素名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>标题头部区域的内容（用于页面或页面中的一块区域）</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>标记脚部区域的内容（用于整个页面或页面的一块区域）</td>
+</tr>
+<tr>
+<td>section</td>
+<td>Web页面中的一块独立区域</td>
+</tr>
+<tr>
+<td>article</td>
+<td>独立的文章内容</td>
+</tr>
+<tr>
+<td><strong>aside</strong></td>
+<td>相关内容或应用（常用于侧边栏）</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>导航类辅助内容</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="四iframe内联框架">四、iframe内联框架
+</h2><p><img src="/post/before/image-20241225113251772.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225113251772"
+	
+	
+></p>
+<h3 id="1一个网页中嵌套另一个网页">1.一个网页中嵌套另一个网页
+</h3><h4 id="哔哩哔哩的视频引用">哔哩哔哩的视频引用
+</h4><p><img src="/post/before/image-20241225165548394.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225165548394"
+	
+	
+></p>
+<p>基本使用，直接显示网页</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.poolbee.top&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;800px&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span></code></pre></div><h3 id="2当做一个容器">2.当做一个容器：
+</h3><p>结合a标签的target和空irame对irame添加网页显示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1000px&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;800px&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">&lt;!-- 通过a标签的target和空的irame，对irame添加网页显示。--&gt;</span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.poolbee.top&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello&#34;</span>&gt;点击我跳转&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225114401169.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225114401169"
+	
+	
+><img src="/post/before/image-20241225114402360.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225114402360"
+	
+	
+></p>
+<h2 id="五表单">五、表单
+</h2><p><img src="/post/before/image-20241225114640086.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225114640086"
+	
+	
+></p>
+<h3 id="action向何处发送表单数据">action向何处发送表单数据
+</h3><p>可以是网站url、一个网页.html</p>
+<p>method：post，get 提交方式</p>
+<h3 id="1input标签">(1)input标签
+</h3><h4 id="养成好习惯每个input起一个name">养成好习惯，每个input起一个name
+</h4><h3 id="get不安全但高效">get：不安全、但高效
+</h3><hr>
+<p><img src="/post/before/image-20241225115207823.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225115207823"
+	
+	
+></p>
+<p><strong>type有自动的提示，可以选择是什么类型。</strong></p>
+<hr>
+<p><strong>get方式提交</strong>：我们可以在url中看到我们提交的信息，<strong>不安全，但是高效</strong>。</p>
+<ul>
+<li>在form表单中，可以用get方法，在input中用submit提交之后，会向别的网页发送表单数据，会在浏览器地址栏显现。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;get&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 文本输入框 input type=&#34;text&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;名字：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;密码：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 提交 --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 重置 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;reset&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225141406123.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225141406123"
+	
+	
+></p>
+<h4 id="点击提交后会出现input的name及表单传输的内容">点击提交后，会出现input的name及表单传输的内容。
+</h4><h5 id="image-20241225141158205postbeforeimage-20241225141158205png"><img src="/post/before/image-20241225141158205.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225141158205"
+	
+	
+>
+</h5><h3 id="post相对安全">post：相对安全
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;基本标签.html&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 文本输入框
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     input type=&#34;text&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;名字：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;密码：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 提交 --&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 重置 --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;reset&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><p>点击提交后，向基本标签.html发送了表单的数据。</p>
+<p><img src="/post/before/image-20241225143011074.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225143011074"
+	
+	
+></p>
+<p>但是在审查元素的负载中还是能看到From Data表单数据的信息。</p>
+<h3 id="重点审查元素中查看信息">【重点】审查元素中查看信息
+</h3><p>抓到post的包：当使用get/post进行发送数据的时候，填写时候在监听get/post请求，点击请求会有</p>
+<p>headers（标头）：</p>
+<ul>
+<li>
+<p>请求的网址（发送到数据的目标网址）</p>
+</li>
+<li>
+<p>状态码:200代表成功</p>
+</li>
+<li></li>
+</ul>
+<p><img src="/post/before/image-20241225143212147.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225143212147"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225143639411.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225143639411"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225143730572.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225143730572"
+	
+	
+></p>
+<p>这里可以看到post也不是绝对的安全**，这里的信息还是能在payload（负载）的formdata中看到。**</p>
+<h1 id="后续加密form表单的技术">【】后续加密form表单的技术？
+</h1><h3 id="2表单语法">(2)表单语法
+</h3><p><img src="/post/before/image-20241225144026397.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225144026397"
+	
+	
+></p>
+<hr>
+<h3 id="表单元素属性及说明表">表单元素属性及说明表
+</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>指定元素的类型。可选值包括 <code>text</code>、<code>password</code>、<code>checkbox</code>、<code>radio</code>、<code>submit</code>、<code>reset</code>、<code>file</code>、<code>hidden</code>、<code>image</code> 和 <code>button</code>，默认为 <code>text</code>。</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>指定表单元素的名称。</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>元素的初始值。当 <code>type</code> 为 <code>radio</code> 时必须指定一个值。</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>指定表单元素的初始宽度。当 <code>type</code> 为 <code>text</code> 或 <code>password</code> 时，表单元素的大小以字符为单位。对于其他类型，宽度以像素为单位。</td>
+</tr>
+<tr>
+<td><code>maxlength</code></td>
+<td>当 <code>type</code> 为 <code>text</code> 或 <code>password</code> 时，指定输入的最大字符数。</td>
+</tr>
+<tr>
+<td><code>checked</code></td>
+<td>当 <code>type</code> 为 <code>radio</code> 或 <code>checkbox</code> 时，指定按钮是否是被选中。</td>
+</tr>
+</tbody>
+</table></div>
+<p>name属性必填</p>
+<p>value=&ldquo;poolbee好帅&rdquo;：默认值</p>
+<p>size=”8“：文本框的长度</p>
+<p>maxlenth=&ldquo;8&quot;输入最多的字符</p>
+<p><img src="/post/before/image-20241225144342845.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225144342845"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span> &lt;<span style="color:#f92672">p</span>&gt;名字：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;poolbee好帅&#34;</span> <span style="color:#a6e22e">maxlength</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;8&#34;</span> <span style="color:#a6e22e">size</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;30&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;密码：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><h4 id="养成好习惯input记得闭合">养成好习惯input记得闭合
+</h4><h3 id="1radio做复选和单选">1.radio：做复选和单选
+</h3><p>input type = &ldquo;radio&rdquo;</p>
+<p>value：单选框的值</p>
+<p><strong>name：表示组</strong>（这个理解很棒）</p>
+<ul>
+<li>必须得有value，不然action向目标网页，发送<strong>表单传输数据没有值！</strong></li>
+</ul>
+<h4 id="复选因为没有name不算复选框">复选（因为没有name不算复选框）
+</h4><p>没有name属性或不是同一个组，那么原本就是复选框。</p>
+<p><img src="/post/before/image-20241225144848883.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225144848883"
+	
+	
+></p>
+<h4 id="单选分组的概念">单选（分组的概念）
+</h4><p><img src="/post/before/image-20241225144927317.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225144927317"
+	
+	
+></p>
+<p>name属性，指定同一个&quot;组&rdquo;</p>
+<p><img src="/post/before/image-20241225145500277.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225145500277"
+	
+	
+></p>
+<h5 id="再次强调radiovalue必须得有input一定要用name形成规范">再次强调：radio，value必须得有。input一定要用name形成规范
+</h5><h3 id="2多选框">2.多选框
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sleep&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;睡觉
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;code&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;敲代码
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chat&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;聊天
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;checkbox&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;game&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hobby&#34;</span>&gt;娱乐
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>还是一样get会在这里</p>
+<p>http://127.0.0.1:5500/demo/%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE.html?username=poolbee%E5%A5%BD%E5%B8%85&amp;pwd=&amp;hobby=sleep&amp;hobby=code&amp;hobby=chat&amp;hobby=game</p>
+<p><img src="/post/before/image-20241225150149391.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225150149391"
+	
+	
+></p>
+<p>多选框username是有值，pwd没有值，hobby为sleep，code，chat，game都是传的value。</p>
+<h4 id="一般用数组接收"><strong>一般用数组接收</strong>
+</h4><p>用post在审查元素中，还是可以看到发送的value。</p>
+<p><img src="/post/before/image-20241225150500940.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225150500940"
+	
+	
+></p>
+<h3 id="3按钮">3.按钮
+</h3><p>button</p>
+<p>input type = &ldquo;button&rdquo; name = &ldquo;btn1&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span> &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn1&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;点击变长&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span></code></pre></div><p><img src="/post/before/image-20241225150848842.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225150848842"
+	
+	
+></p>
+<h5 id="图片为按钮-会提交表单数据">图片为按钮-会提交表单数据
+</h5><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;../demo/resource/image.png&#34;</span> &gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>点击图片后，也会submit，提交表单的数据到目标的网页中。</p>
+<p>在早期 Web 开发或特殊场景中，开发者可通过判断用户点击的坐标位置来实现更进一步的交互，比如：</p>
+<ul>
+<li>在图片地图（image map）上点击不同区域跳转至不同页面。</li>
+<li>根据点击坐标执行相应的后台逻辑。</li>
+</ul>
+<p>浏览器会捕捉到你<strong>点击</strong>这张图片时的坐标位置（相对于<strong>图片左上角的像素坐标</strong>），并将这两个坐标值以 <code>x</code> 和 <code>y</code> 这两个参数的形式传递到 URL 中。这就是为什么你会在 URL 中看到类似 <code>x=332&amp;y=48</code> 这样的参数。</p>
+<p><img src="/post/before/image-20241225151615389.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225151615389"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225151617892.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225151617892"
+	
+	
+></p>
+<h3 id="4重置reset">4.重置reset
+</h3><p>与button的value一样，并不是作为vlaue随表单传输走了，而是按钮的字。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;reset&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;清空表单&#34;</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225151822421.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225151822421"
+	
+	
+></p>
+<h3 id="小总结">小总结
+</h3><h4 id="11--radio-checkbox两个value是提交表单的值">1.1  <strong>radio 、checkbox两个value是提交表单的值。</strong>
+</h4><p>input type = &ldquo;button&rdquo; 普通按钮</p>
+<p>input type  = &ldquo;image&rdquo; 图像按钮</p>
+<p>input type = &ldquo;submit&rdquo; 提交按钮</p>
+<p>input type = &ldquo;reset&rdquo; 重置按钮</p>
+<h4 id="12--buttonsubmitreset的value改变button的字">1.2  <strong>button、submit、reset的value改变button的字。</strong>
+</h4><h4 id="13--image的value实测无用">1.3  <strong>image的value实测无用</strong>
+</h4><p><img src="/post/before/image-20241225170613909.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225170613909"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225170645377.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225170645377"
+	
+	
+></p>
+<h4 id="补充默认值为checked默认选中">补充：默认值为checked，默认选中
+</h4><p>单选radio/多选框checkbox默认是checked</p>
+<h3 id="4下拉框">4.下拉框
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;国家：
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;列表名称&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;china&#34;</span>&gt;中国&lt;/<span style="color:#f92672">option</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;us&#34;</span>&gt;美国&lt;/<span style="color:#f92672">option</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eth&#34;</span> <span style="color:#a6e22e">selected</span>&gt;瑞士&lt;/<span style="color:#f92672">option</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yingdu&#34;</span>&gt;印度&lt;/<span style="color:#f92672">option</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">select</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225152835158.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225152835158"
+	
+	
+></p>
+<p>如果没有selected那么第一个就是默认，selected是默认选中</p>
+<p><img src="/post/before/image-20241225152439563.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225152439563"
+	
+	
+></p>
+<p>name列表的名称+option选项的vlaue值</p>
+<h3 id="5文本域">5.文本域
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;反馈：
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;textarea&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">cols</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;50&#34;</span> <span style="color:#a6e22e">rows</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>&gt;文本内容&lt;/<span style="color:#f92672">textarea</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><h4 id="这里的文本内容为默认">这里的文本内容为默认
+</h4><p><img src="/post/before/image-20241225153140056.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225153140056"
+	
+	
+></p>
+<h3 id="6文件域">6.文件域
+</h3><p><img src="/post/before/image-20241225153412528.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225153412528"
+	
+	
+></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 文件域 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;files&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- 一般设置一个button --&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;上传&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;upload&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225153443688.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225153443688"
+	
+	
+></p>
+<p>还是，input一定要有name，如果没有name属性，url中不会有内容。</p>
+<h3 id="带功能的">带功能的
+</h3><h3 id="7邮件url数字滑块搜索">7.邮件、url、数字、滑块、搜索
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 带验证性
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">默认是@前后有字符即可
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">--&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;邮件
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 网址验证 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;url
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 数字验证 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;num&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100&#34;</span> <span style="color:#a6e22e">min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">step</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;10&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 滑块 --&gt;</span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">p</span>&gt;音量
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;voice&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">min</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">max</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100&#34;</span>&gt;
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e">&lt;!-- 搜索 --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225153852918.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225153852918"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225153902679.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225153902679"
+	
+	
+></p>
+<p>商品数量，step步长设置为1</p>
+<p><img src="/post/before/image-20241225154104428.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154104428"
+	
+	
+><img src="/post/before/image-20241225154105350.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154105350"
+	
+	
+></p>
+<p>搜索</p>
+<p>自己带一个x，可以清空。</p>
+<p><img src="/post/before/image-20241225154142763.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154142763"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225154233128.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154233128"
+	
+	
+></p>
+<p>键值对的获取形式。</p>
+<h1 id="总结">总结：
+</h1><h2 id="整个form表单中都需要name属性">整个form表单中都需要name属性
+</h2><h2 id="3表单的应用">(3)表单的应用
+</h2><h3 id="只读--readonly">只读- readonly
+</h3><p>就无法填写这个，无法删除修改。没有任何作用。</p>
+<h3 id="禁用--disable">禁用- disable
+</h3><p>属性，更本无法使用了，禁用了。</p>
+<p><img src="/post/before/image-20241225155706619.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225155706619"
+	
+	
+></p>
+<p><img src="/post/before/image-20241225154644471.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154644471"
+	
+	
+></p>
+<h3 id="隐藏域">隐藏域
+</h3><p>hidden属性</p>
+<p><img src="/post/before/image-20241225154808520.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154808520"
+	
+	
+></p>
+<p>隐藏了密码的input，但是pwd这个name还是会作为表单发送。</p>
+<p><img src="/post/before/image-20241225154906260.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225154906260"
+	
+	
+></p>
+<p>那么这里可应用</p>
+<h4 id="1传输默认值">1.传输默认值
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span> &lt;<span style="color:#f92672">p</span>&gt;密码：&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pwd&#34;</span> <span style="color:#a6e22e">hidden</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;123456&#34;</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>虽然隐藏，但是可以给password设置vlaue，传输默认值<img src="/post/before/image-20241225155018666.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225155018666"
+	
+	
+></p>
+<h4 id="2增强鼠标可用性点击文字也可以实现选择该框">2.增强鼠标可用性（点击文字也可以实现选择该框）
+</h4><p>点击文字也会选中该框</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- 增强鼠标可用性 --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mark&#34;</span>&gt;点击我试试&lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;search&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mark&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p><img src="/post/before/image-20241225155446553.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225155446553"
+	
+	
+></p>
+<h2 id="4表单初级验证">(4)表单初级验证
+</h2><p>为什么要进行表单验证？</p>
+<p>减轻服务器的压力，例如：给提示信息。也可以保证数据安全性。</p>
+<h3 id="常用方式">常用方式
+</h3><ul>
+<li><strong>place</strong>holder 提示信息</li>
+<li>required 非空判断</li>
+<li><strong>pattern 正则表达式</strong></li>
+</ul>
+<h3 id="1placeholder提示信息">1.placeholder：提示信息
+</h3><p>所有输入框的控件都可用</p>
+<p><img src="/post/before/image-20241225160127972.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225160127972"
+	
+	
+></p>
+<p>区分input 的 value默认值</p>
+<p>删除默认值会出现<strong>提示信息</strong>。</p>
+<h3 id="2required-非空判断">2.required 非空判断
+</h3><p><img src="/post/before/image-20241225160338449.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20241225160338449"
+	
+	
+></p>
+<p>如果直接点击提交， 有required的标签，会有提示信息。</p>
+<h3 id="3pattern-正则表达式">3.pattern 正则表达式
+</h3><p>pattern属性</p>
+<h4 id="需要用什么查什么">需要用什么查什么
+</h4><h4 id="脚本之家">脚本之家
+</h4><p><a class="link" href="https://www.jb51.net/tools/regex.htm"  target="_blank" rel="noopener"
+    >常用的正则表达式_正则表达式大全_脚本之家</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;邮件
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;diyemail&#34;</span><span style="color:#a6e22e">pattern</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><h1 id="html大总结">HTML大总结：
+</h1><p><img src="/post/before/HTML%e5%a4%a7%e6%80%bb%e7%bb%93-HTML%e5%a4%a7%e6%80%bb%e7%bb%93.jpeg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="HTML大总结-HTML大总结"
+	
+	
+></p>
+
+
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/html5/">HTML5</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+        <div class="article-list--compact links">
+    
+        <article>
+            <a href="https://www.runoob.com/html/html5-intro.html" target="_blank" rel="noopener">
+                <div class="article-details">
+                    <h2 class="article-title">菜鸟教程</h2>
+                    <footer class="article-time">
+                        
+                            菜鸟教程提供了各种编程语言、框架、工具和技术的教程，帮助你从入门到进阶，学习不仅是技术，更是梦想。
+                        
+                    </footer>
+                </div>
+        
+                
+                    
+                    
+                    <div class="article-image">
+                        <img src="/post/logo/runoob-logo.jpg" loading="lazy">
+                    </div>
+                
+            </a>
+        </article>
+    
+</div>
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin","placeholder":"说点什么吧~~请填写正确的昵称和邮箱，方便接受评论回复信息"},"requiredMeta":["nick","mail","url"],"serverURL":"https://waline-poolbee.vercel.app"});
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 PoolBee的博客
+    </section>
+    
+    
+    <a href="https://github.com/PoolBee/PoolBee.github.io" target="_blank">
+        <img src="https://ghchart.rshah.org/poolbee" />
+    </a>
+    
+
+    <section class="powerby">
+         <br />
+        
+    </section>
+
+
+    <section class="count_info">
+    
+        <div>
+            在漫长的
+            <span id="ds" class="running-days"></span>
+            天
+            <span id="hs" class="running-days"></span>
+            小时
+            <span id="ms" class="running-days"></span>
+            分钟中
+        </div>
+
+    
+        <div>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+             
+             
+          
+            
+       
+            · 写下 21 篇文章、总计 9.85 k 字
+        </div> 
+
+    
+        <div>
+            <span id="busuanzi_container_site_pv">· 迎接<span id="busuanzi_value_site_pv"></span>次不期而遇。</span>
+        </div>
+        
+    </section>
+    
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+        
+
+
+    <script>
+        let s1 = '2023-6-09'; 
+        s1 = new Date(s1.replace(/-/g, "/"));
+        let s2 = new Date();
+        let timeDifference = s2.getTime() - s1.getTime();
+
+        let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('ds').innerHTML = days;
+        document.getElementById('hs').innerHTML = hours;
+        document.getElementById('ms').innerHTML = minutes;
+        
+    </script>
+    
+</footer>
+<style>
+     
+.site-footer {
+    text-align: center;
+}
+</style>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            
+        </main>
+        
+    </div>
+
+    <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script><script type="text/javascript" src="/ts/custom.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+
+<script
+    src="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/js/nprogress.min.js"
+    integrity="sha384-bHDlAEUFxsRI7JfULv3DTpL2IXbbgn4JHQJibgo5iiXSK6Iu8muwqHANhun74Cqg"
+    crossorigin="anonymous"
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/zhixuan2333/gh-blog@v0.1.0/css/nprogress.css"
+    integrity="sha384-KJyhr2syt5+4M9Pz5dipCvTrtvOmLk/olWVdfhAp858UCa64Ia5GFpTN7+G4BWpE"
+    crossorigin="anonymous"
+/>
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
+
+    
+    
+</body>
+</html>

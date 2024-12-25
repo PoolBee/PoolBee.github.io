@@ -23,6 +23,12 @@
     <loc>http://localhost:1313/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2024-12-23T17:36:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/html5/</loc>
+    <lastmod>2024-12-23T16:24:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/post/html5-01/</loc>
+    <lastmod>2024-12-23T16:24:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/mysql/</loc>
     <lastmod>2024-12-23T16:24:00+00:00</lastmod>
   </url><url>
@@ -30,6 +36,9 @@
     <lastmod>2024-12-23T16:24:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sql%E8%AF%AD%E5%8F%A5/</loc>
+    <lastmod>2024-12-23T16:24:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2024-12-23T16:24:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/java/</loc>
