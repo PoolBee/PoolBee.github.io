@@ -1,56 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>随笔 on PoolBee的博客</title>
-        <link>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</link>
-        <description>Recent content in 随笔 on PoolBee的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>随笔</title>
-        <link>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</guid>
-        <description>&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
-&lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
-&lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧&lt;/p&gt;
-&lt;h2 id=&#34;2-服务器&#34;&gt;2. 服务器
-&lt;/h2&gt;&lt;p&gt;腾讯云服务器，40G, 1M带宽，1核2G内存。&lt;/p&gt;
-&lt;h2 id=&#34;3-博客框架&#34;&gt;3. 博客框架
-&lt;/h2&gt;&lt;p&gt;暂时用的Hugo，建站很快。&lt;/p&gt;
-&lt;h4 id=&#34;历程&#34;&gt;历程
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;框架选来选去，之前用过Hexo主题,但是时间过于久远。这次想在云服务器上运行，遂重新开始。框架从Hexo到Halo到Hugo。&lt;/li&gt;
-&lt;li&gt;原本在Linux上安装Hexo得心应手，但这次在CentOS7.6并不支持Nodejs8,支持不了最新的Hexo主题,又转为Halo，&lt;/li&gt;
-&lt;li&gt;Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。&lt;/li&gt;
-&lt;li&gt;现在网站搭起来了，后续慢慢再更新文章~~。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
-        <title>随笔</title>
-        <link>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</guid>
-        <description>&lt;p&gt;Hugo主题配置记录&lt;/p&gt;
-&lt;h1 id=&#34;建站回顾&#34;&gt;建站回顾
-&lt;/h1&gt;&lt;h2 id=&#34;1-域名&#34;&gt;1. 域名
-&lt;/h2&gt;&lt;p&gt;正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧1111&lt;/p&gt;
-&lt;h2 id=&#34;2-服务器&#34;&gt;2. 服务器
-&lt;/h2&gt;&lt;p&gt;腾讯云服务器，40G, 1M带宽，1核2G内存。&lt;/p&gt;
-&lt;h2 id=&#34;3-博客框架&#34;&gt;3. 博客框架
-&lt;/h2&gt;&lt;p&gt;暂时用的Hugo，建站很快。&lt;/p&gt;
-&lt;h4 id=&#34;历程&#34;&gt;历程
-&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;框架选来选去，之前用过Hexo主题,但是时间过于久远。这次想在云服务器上运行，遂重新开始。框架从Hexo到Halo到Hugo。&lt;/li&gt;
-&lt;li&gt;原本在Linux上安装Hexo得心应手，但这次在CentOS7.6并不支持Nodejs8,支持不了最新的Hexo主题,又转为Halo，&lt;/li&gt;
-&lt;li&gt;Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。&lt;/li&gt;
-&lt;li&gt;现在网站搭起来了，后续慢慢再更新文章~~。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>随笔 on PoolBee的博客</title>
+    <link>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on PoolBee的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 19 Jul 2024 21:14:39 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>随笔</title>
+      <link>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/post1/%E9%9A%8F%E7%AC%94/</guid>
+      <description>建站回顾 1. 域名 正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧&#xA;2. 服务器 腾讯云服务器，40G, 1M带宽，1核2G内存。&#xA;3. 博客框架 暂时用的Hugo，建站很快。&#xA;历程 框架选来选去，之前用过Hexo主题,但是时间过于久远。这次想在云服务器上运行，遂重新开始。框架从Hexo到Halo到Hugo。 原本在Linux上安装Hexo得心应手，但这次在CentOS7.6并不支持Nodejs8,支持不了最新的Hexo主题,又转为Halo， Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。 现在网站搭起来了，后续慢慢再更新文章~~。 </description>
+    </item>
+    <item>
+      <title>随笔</title>
+      <link>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/post/%E9%9A%8F%E7%AC%94/</guid>
+      <description>Hugo主题配置记录&#xA;建站回顾 1. 域名 正在ICP备案,预计7个工作日后能拿到备案的域名。慢慢来吧1111&#xA;2. 服务器 腾讯云服务器，40G, 1M带宽，1核2G内存。&#xA;3. 博客框架 暂时用的Hugo，建站很快。&#xA;历程 框架选来选去，之前用过Hexo主题,但是时间过于久远。这次想在云服务器上运行，遂重新开始。框架从Hexo到Halo到Hugo。 原本在Linux上安装Hexo得心应手，但这次在CentOS7.6并不支持Nodejs8,支持不了最新的Hexo主题,又转为Halo， Halo苦于教程少啊,而且Hugo整体还是很方便,比较下来Hexo的教程&amp;gt;Hugo&amp;gt;Halo，最终确定了Hugo框架。 现在网站搭起来了，后续慢慢再更新文章~~。 </description>
+    </item>
+  </channel>
 </rss>

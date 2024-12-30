@@ -1,185 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Plugin on PoolBee的博客</title>
-        <link>http://localhost:1313/categories/plugin/</link>
-        <description>Recent content in Plugin on PoolBee的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Sat, 21 Sep 2024 01:47:30 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/plugin/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>auto-coder首次接触感想</title>
-        <link>http://localhost:1313/post/auto-coder/</link>
-        <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
-        
-        <guid>http://localhost:1313/post/auto-coder/</guid>
-        <description>&lt;img src="http://localhost:1313/post/cover/plugin_cover.jpg" alt="Featured image of post auto-coder首次接触感想" /&gt;&lt;h1 id=&#34;看完了auto-coder的教程&#34;&gt;看完了auto-coder的教程
-&lt;/h1&gt;&lt;p&gt;打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。&lt;/p&gt;
-&lt;h1 id=&#34;以下是几个让我印象深刻的点&#34;&gt;以下是几个让我印象深刻的点：
-&lt;/h1&gt;&lt;p&gt;1.能够让活跃的文件组成组——达到最佳手动效率的编程效果&lt;/p&gt;
-&lt;p&gt;2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改&lt;/p&gt;
-&lt;p&gt;3.直接使用auto-coder快速理解一个github的项目，非常方便&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/DeIfwUrO3iYMmwkOwBWc815fnjg?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;‌﻿﻿⁠⁠⁠⁠‍‌⁠‍⁠‬‌‬‬⁠‍⁠‍‍‬‍⁠‍022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。&lt;/p&gt;
-&lt;p&gt;5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改&lt;/p&gt;
-&lt;p&gt;6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程&lt;/p&gt;
-&lt;p&gt;7.人类模型模式，手动用大模型然后输出&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/GJjpwVLE8ixXTPkTazacGvFhnCw?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;‍‬‬﻿‍⁠⁠‬﻿‬‌﻿⁠﻿﻿‌‬﻿‌‬‍﻿⁠‬012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;其他：语音编程，多模态（图片）的编程，/design&lt;/p&gt;
-&lt;p&gt;文档详细，而且视频教程充足&lt;/p&gt;
-&lt;p&gt;8.byzer-llm（大模型友好库&lt;a class=&#34;link&#34; href=&#34;https://github.com/allwefantasy/llm_friendly_packages&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;allwefantasy/llm_friendly_packages (github.com)&lt;/a&gt;）&lt;/p&gt;
-&lt;p&gt;byzer-llm：byzer-llm 库是 LLM 友好型库 &lt;a class=&#34;link&#34; href=&#34;https://github.com/allwefantasy/byzer-llm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;byzer-llm&lt;/a&gt; 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。&lt;/p&gt;
-&lt;p&gt;项目：&lt;/p&gt;
-&lt;p&gt;提到的：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;最简RAG 10w文档以下的使用方式✓&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/BPgpwy2aUi0qSXkcjLRcW2w2nDb?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;‌⁠⁠⁠﻿‌‬﻿‬‬﻿﻿‌﻿⁠‍‌﻿⁠⁠‍﻿‬⁠‌‬auto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;如何自动化开发基于大模型的应用（个人觉得参考即可）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;哔哩哔哩视频翻译的简单demo✓&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;实践的时候可以参考&#34;&gt;实践的时候可以参考
-&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://uelng8wukz.feishu.cn/wiki/ErpcwV1Tiin8bbkm1ARcYzhknpf?fromScene=spaceOverview&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;‍﻿‬﻿﻿‍﻿‍⁠‌‍﻿﻿‌‬‌﻿‬015-编码实践推荐 - 飞书云文档 (feishu.cn)&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Echart使用及常见问题</title>
-        <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.26-2/</link>
-        <pubDate>Thu, 25 Jul 2024 23:50:28 +0000</pubDate>
-        
-        <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.26-2/</guid>
-        <description>&lt;img src="http://localhost:1313/post/cover/plugin_cover.jpg" alt="Featured image of post Echart使用及常见问题" /&gt;&lt;h1 id=&#34;echarts使用方法&#34;&gt;Echarts使用方法：
-&lt;/h1&gt;&lt;p&gt;官方教程：https://echarts.apache.org/handbook/zh/get-started/&lt;/p&gt;
-&lt;h2 id=&#34;1首先要提供一个容器并给定大小&#34;&gt;1.首先要提供一个容器，并给定大小
-&lt;/h2&gt;&lt;p&gt;例如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;box&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .&lt;span style=&#34;color:#a6e22e&#34;&gt;box&lt;/span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;width&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;height&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;background-color&lt;/span&gt;: rgb(&lt;span style=&#34;color:#ae81ff&#34;&gt;188&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;227&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;236&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2引入需要的js地图文件一般是而echartjs和一个地图js文件&#34;&gt;2.引入需要的js地图文件，一般是而echart.js和一个地图js文件
-&lt;/h2&gt;&lt;h3 id=&#34;1本地js文件引入&#34;&gt;(1)本地js文件引入
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/XXX/echarts.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/XXX/china.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;引入即可&lt;/p&gt;
-&lt;p&gt;但echart官网已经挂了，不提供地图js文件。自行网上查阅吧~&lt;/p&gt;
-&lt;h3 id=&#34;2cdn引入&#34;&gt;(2)CDN引入
-&lt;/h3&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!-- &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
-    &amp;lt;script src=&amp;#34;china.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;注意：如果用npm等包管理器安装过了echart，然后用webpack打包了。那么在&lt;!-- raw HTML omitted --&gt;中可以使用import语句进行引入&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        // import * as echarts from &amp;#39;echarts&amp;#39;;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;3实例化echarts对象&#34;&gt;3.实例化echarts对象
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;box&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;  var myChart = echarts.init(document.querySelector(&amp;#34;.box&amp;#34;));
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;4指定配置项和数据&#34;&gt;4.指定配置项和数据
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;option&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ECharts 入门示例&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;tooltip&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {},
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;legend&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;销量&amp;#39;&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;xAxis&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;衬衫&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;羊毛衫&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;雪纺衫&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;裤子&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;高跟鞋&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;袜子&amp;#34;&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;yAxis&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {},
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;series&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;销量&amp;#39;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;36&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;5将配置项设置给echarts实例对象使用刚指定的配置项和数据显示图表&#34;&gt;5.将配置项设置给echarts实例对象，使用刚指定的配置项和数据显示图表
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;myChart.setOption(option);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;完整代码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-HTML&#34; data-lang=&#34;HTML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt; /&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt; /&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document01&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        .&lt;span style=&#34;color:#a6e22e&#34;&gt;box&lt;/span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;width&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;height&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;px&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#66d9ef&#34;&gt;background-color&lt;/span&gt;: rgb(&lt;span style=&#34;color:#ae81ff&#34;&gt;188&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;227&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;236&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;style&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- 1..准备具有大小的DOM容器 --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;box&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- 2.方法一 、直接写路径--&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- 2.方法二、CDN引入--&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!-- &amp;lt;script src=&amp;#34;echarts.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;echarts.min.js&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;// import * as echarts from &amp;#39;echarts&amp;#39;;不行
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//3.初始化实例对象 echarts.init(dom容器)
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;myChart&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;echarts&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(document.&lt;span style=&#34;color:#a6e22e&#34;&gt;querySelector&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.box&amp;#34;&lt;/span&gt;));
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//4.指定配置项和数据
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;option&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ECharts 入门示例&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;tooltip&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {},
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;legend&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;销量&amp;#39;&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;xAxis&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;衬衫&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;羊毛衫&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;雪纺衫&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;裤子&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;高跟鞋&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;袜子&amp;#34;&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;yAxis&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {},
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#a6e22e&#34;&gt;series&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;销量&amp;#39;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;36&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            }]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        };
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;//5.将配置项设置给echarts实例对象，使用刚指定的配置项和数据显示图表。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;myChart&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;setOption&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;option&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;script&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;常见问题&#34;&gt;常见问题
-&lt;/h2&gt;&lt;h3 id=&#34;1下载地图js文件自行google&#34;&gt;1.下载地图.js文件，自行google。
-&lt;/h3&gt;&lt;h3 id=&#34;2下载的地图文件的geojson-数据为乱码&#34;&gt;2.下载的地图文件的GeoJSON 数据为乱码
-&lt;/h3&gt;&lt;h4 id=&#34;地图文件的geojson-乱码解决方法&#34;&gt;地图文件的GeoJSON 乱码解决方法：
-&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://datav.aliyun.com/portal/school/atlas/area_selector#&amp;amp;lat=33.50475906922609&amp;amp;lng=104.2822265625&amp;amp;zoom=4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;DataV.GeoAtlas&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/before/image-20240726232623226.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20240726232623226&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;添加在对应的geojson即可&#34;&gt;添加在对应的Geojson即可。
-&lt;/h3&gt;</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Plugin on PoolBee的博客</title>
+    <link>http://localhost:1313/categories/plugin/</link>
+    <description>Recent content in Plugin on PoolBee的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 21 Sep 2024 01:47:30 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/plugin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>auto-coder首次接触感想</title>
+      <link>http://localhost:1313/post/auto-coder/</link>
+      <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
+      <guid>http://localhost:1313/post/auto-coder/</guid>
+      <description>看完了auto-coder的教程 打算跟着哔哩哔哩视频跟着走一遍流程熟悉基本命令。&#xA;以下是几个让我印象深刻的点： 1.能够让活跃的文件组成组——达到最佳手动效率的编程效果&#xA;2.Autom group 能让prompt和文件组成一起，下次输入prompt能够直接按照这些文件和prompt进行修改&#xA;3.直接使用auto-coder快速理解一个github的项目，非常方便&#xA;‌﻿﻿⁠⁠⁠⁠‍‌⁠‍⁠‬‌‬‬⁠‍⁠‍‍‬‍⁠‍022-🌟当你看到一个github 项目后（auto-coder.chat 最简教程） - 飞书云文档 (feishu.cn)&#xA;4.切换到自然语言模式，ctrl+k，能让命令行变成warp，用自然语言处理问题，而且能检查确认。&#xA;5.对某个文件进行@强调，对某个文件特殊强调@@，对某行代码#注释进行强调修改&#xA;6.自己开发的大模型友好库，提供大模型理解某个lib的项目解释及最简示例，方便大模型理解文档，快速利用大模型进行编程&#xA;7.人类模型模式，手动用大模型然后输出&#xA;‍‬‬﻿‍⁠⁠‬﻿‬‌﻿⁠﻿﻿‌‬﻿‌‬‍﻿⁠‬012- 让你的 terminal 秒变warp 自带自然语言交互buff - 飞书云文档 (feishu.cn)&#xA;其他：语音编程，多模态（图片）的编程，/design&#xA;文档详细，而且视频教程充足&#xA;8.byzer-llm（大模型友好库allwefantasy/llm_friendly_packages (github.com)）&#xA;byzer-llm：byzer-llm 库是 LLM 友好型库 byzer-llm 的一个示例。该项目包括允许用户快速与大型语言模型交互的功能，并提供内置的混合向量/全文搜索引擎。我们可以使用此库快速开发基于 LLM 的应用程序。&#xA;项目：&#xA;提到的：&#xA;最简RAG 10w文档以下的使用方式✓ ‌⁠⁠⁠﻿‌‬﻿‬‬﻿﻿‌﻿⁠‍‌﻿⁠⁠‍﻿‬⁠‌‬auto-coder.chat： 如何自动化开发基于大模型的应用 - 飞书云文档 (feishu.cn)&#xA;如何自动化开发基于大模型的应用（个人觉得参考即可）&#xA;哔哩哔哩视频翻译的简单demo✓&#xA;实践的时候可以参考 ‍﻿‬﻿﻿‍﻿‍⁠‌‍﻿﻿‌‬‌﻿‬015-编码实践推荐 - 飞书云文档 (feishu.cn)</description>
+    </item>
+    <item>
+      <title>Echart使用及常见问题</title>
+      <link>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.26-2/</link>
+      <pubDate>Thu, 25 Jul 2024 23:50:28 +0000</pubDate>
+      <guid>http://localhost:1313/post/%E5%BB%BA%E7%AB%992024.07.26-2/</guid>
+      <description>Echarts使用方法： 官方教程：https://echarts.apache.org/handbook/zh/get-started/&#xA;1.首先要提供一个容器，并给定大小 例如：&#xA;&amp;lt;div class=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;style&amp;gt; .box{ width: 300px; height: 300px; background-color: rgb(188, 227, 236); } &amp;lt;/style&amp;gt; 2.引入需要的js地图文件，一般是而echart.js和一个地图js文件 (1)本地js文件引入 &amp;lt;script src=&amp;#34;/XXX/echarts.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;/XXX/china.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 引入即可&#xA;但echart官网已经挂了，不提供地图js文件。自行网上查阅吧~&#xA;(2)CDN引入 &amp;lt;!-- &amp;lt;script src=&amp;#34;https://cdn.jsdelivr.net/npm/echarts@latest/dist/echarts.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;&#xD;&amp;lt;script src=&amp;#34;china.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; --&amp;gt; 注意：如果用npm等包管理器安装过了echart，然后用webpack打包了。那么在中可以使用import语句进行引入&#xA;// import * as echarts from &amp;#39;echarts&amp;#39;; 3.实例化echarts对象 &amp;lt;div class=&amp;#34;box&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; var myChart = echarts.init(document.querySelector(&amp;#34;.box&amp;#34;)); 4.指定配置项和数据 var option = { title: { text: &amp;#39;ECharts 入门示例&amp;#39; }, tooltip: {}, legend: { data:[&amp;#39;销量&amp;#39;] }, xAxis: { data: [&amp;#34;衬衫&amp;#34;,&amp;#34;羊毛衫&amp;#34;,&amp;#34;雪纺衫&amp;#34;,&amp;#34;裤子&amp;#34;,&amp;#34;高跟鞋&amp;#34;,&amp;#34;袜子&amp;#34;] }, yAxis: {}, series: [{ name: &amp;#39;销量&amp;#39;, type: &amp;#39;bar&amp;#39;, data: [5, 20, 36, 10, 10, 20] }] }; 5.</description>
+    </item>
+  </channel>
 </rss>

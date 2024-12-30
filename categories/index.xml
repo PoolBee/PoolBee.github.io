@@ -1,115 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Categories on PoolBee的博客</title>
-        <link>http://localhost:1313/categories/</link>
-        <description>Recent content in Categories on PoolBee的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Mon, 23 Dec 2024 17:36:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>大模型</title>
-        <link>http://localhost:1313/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
-        <pubDate>Mon, 23 Dec 2024 17:36:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Mysql</title>
-        <link>http://localhost:1313/categories/mysql/</link>
-        <pubDate>Mon, 23 Dec 2024 16:24:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/mysql/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>前端</title>
-        <link>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</link>
-        <pubDate>Mon, 23 Dec 2024 16:24:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Java</title>
-        <link>http://localhost:1313/categories/java/</link>
-        <pubDate>Sun, 22 Dec 2024 15:15:30 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/java/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/java/archives-java.png" alt="Featured image of post Java" /&gt;</description>
-        </item>
-        <item>
-        <title>Vue</title>
-        <link>http://localhost:1313/categories/vue/</link>
-        <pubDate>Wed, 16 Oct 2024 23:39:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/vue/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Plugin</title>
-        <link>http://localhost:1313/categories/plugin/</link>
-        <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/plugin/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Llm</title>
-        <link>http://localhost:1313/categories/llm/</link>
-        <pubDate>Tue, 13 Aug 2024 19:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/llm/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>建站</title>
-        <link>http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/</link>
-        <pubDate>Wed, 07 Aug 2024 20:01:49 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/archives-jianzhan.png" alt="Featured image of post 建站" /&gt;</description>
-        </item>
-        <item>
-        <title>随笔</title>
-        <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AIGC</title>
-        <link>http://localhost:1313/categories/aigc/</link>
-        <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/aigc/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/aigc/archives-aigc.png" alt="Featured image of post AIGC" /&gt;</description>
-        </item>
-        <item>
-        <title>OpenCV</title>
-        <link>http://localhost:1313/categories/opencv/</link>
-        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/opencv/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/opencv/archives-opencv.png" alt="Featured image of post OpenCV" /&gt;</description>
-        </item>
-        <item>
-        <title>Python</title>
-        <link>http://localhost:1313/categories/python/</link>
-        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/python/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/python/archives-python.png" alt="Featured image of post Python" /&gt;</description>
-        </item>
-        <item>
-        <title>随笔</title>
-        <link>http://localhost:1313/categories/essay/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/categories/essay/</guid>
-        <description>&lt;img src="http://localhost:1313/categories/essay/archives-essay.png" alt="Featured image of post 随笔" /&gt;</description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Categories on PoolBee的博客</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on PoolBee的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Dec 2024 09:06:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>集成开发环境</title>
+      <link>http://localhost:1313/categories/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sun, 29 Dec 2024 09:06:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>前端</title>
+      <link>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Tue, 24 Dec 2024 17:33:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>大模型</title>
+      <link>http://localhost:1313/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 23 Dec 2024 17:36:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>http://localhost:1313/categories/mysql/</link>
+      <pubDate>Mon, 23 Dec 2024 16:24:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/categories/java/</link>
+      <pubDate>Sun, 22 Dec 2024 15:15:30 +0000</pubDate>
+      <guid>http://localhost:1313/categories/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vue</title>
+      <link>http://localhost:1313/categories/vue/</link>
+      <pubDate>Wed, 16 Oct 2024 23:39:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/vue/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Plugin</title>
+      <link>http://localhost:1313/categories/plugin/</link>
+      <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
+      <guid>http://localhost:1313/categories/plugin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Llm</title>
+      <link>http://localhost:1313/categories/llm/</link>
+      <pubDate>Tue, 13 Aug 2024 19:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/categories/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>建站</title>
+      <link>http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/</link>
+      <pubDate>Wed, 07 Aug 2024 20:01:49 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E5%BB%BA%E7%AB%99/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>随笔</title>
+      <link>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AIGC</title>
+      <link>http://localhost:1313/categories/aigc/</link>
+      <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
+      <guid>http://localhost:1313/categories/aigc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenCV</title>
+      <link>http://localhost:1313/categories/opencv/</link>
+      <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/categories/opencv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/categories/python/</link>
+      <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>随笔</title>
+      <link>http://localhost:1313/categories/essay/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/essay/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

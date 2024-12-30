@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDEA on PoolBee的博客</title>
+    <link>http://localhost:1313/tags/idea/</link>
+    <description>Recent content in IDEA on PoolBee的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Dec 2024 09:06:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDEA创建的java项目的5种类型</title>
+      <link>http://localhost:1313/post/idea01/</link>
+      <pubDate>Sun, 29 Dec 2024 09:06:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/idea01/</guid>
+      <description>IDEA创建的5种类型（暂时4种） IDEA创建项目的5种方法 Java开发就5种 一、普通java项目 学习语法，只能在控制台输出 一路next-next，输入项目名称，finish即可。&#xA;就这样是普通java项目&#xA;二、普通Javaweb项目 后端jdbc 前端html任何都行 一般只用Servlet项目，实际工作中比较少 创建步骤：&#xA;JDK选择1.8&#xA;选择Java EE 8企业版8&#xA;选择你的tomcat目录，tomcat解压后的目录。&#xA;3.选择Web Application 出现项目结构&#xA;项目结构设置 点击右上角项目结构设置&#xA;设置Language level为JDK8&#xA;JDK 8 的新特性：Lambdas，type annotation etc. 可以根据需要为每个模块配置模块特定的语言级别。这里设置为：JDK8&#xA;项目结构里的Facets&#xA;Idea中的facets和artifacts的介绍_idea facets是什么-CSDN博客&#xA;Facets（方面）这里，查看web项目的web.xml路径&#xA;及项目部署的根目录是不是在web下。&#xA;Artifats这里war包也要使用&#xA;打开你的web.xml文件&#xA;如果没有需要新建Web.xml文件&#xA;复制tomcat目录D:\tomcat\apache-tomcat-8.5.57\apache-tomcat-8.5.57\webapps下的web.xml内容&#xA;粘贴到项目的WEB-INF的web.xml中&#xA;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE file distributed with this work for additional information regarding copyright ownership.</description>
+    </item>
+  </channel>
+</rss>

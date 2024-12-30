@@ -1,115 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Tags on PoolBee的博客</title>
-        <link>http://localhost:1313/tags/</link>
-        <description>Recent content in Tags on PoolBee的博客</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language>
-        <lastBuildDate>Mon, 23 Dec 2024 17:36:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>AI辅助编程</title>
-        <link>http://localhost:1313/tags/ai%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/</link>
-        <pubDate>Mon, 23 Dec 2024 17:36:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/ai%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>HTML5</title>
-        <link>http://localhost:1313/tags/html5/</link>
-        <pubDate>Mon, 23 Dec 2024 16:24:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/html5/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Sql语句</title>
-        <link>http://localhost:1313/tags/sql%E8%AF%AD%E5%8F%A5/</link>
-        <pubDate>Mon, 23 Dec 2024 16:24:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/sql%E8%AF%AD%E5%8F%A5/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Vue3基础</title>
-        <link>http://localhost:1313/tags/vue3%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Wed, 16 Oct 2024 23:39:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/vue3%E5%9F%BA%E7%A1%80/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Auto-Coder</title>
-        <link>http://localhost:1313/tags/auto-coder/</link>
-        <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/auto-coder/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Datawhale</title>
-        <link>http://localhost:1313/tags/datawhale/</link>
-        <pubDate>Mon, 02 Sep 2024 03:27:30 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/datawhale/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>RAG</title>
-        <link>http://localhost:1313/tags/rag/</link>
-        <pubDate>Tue, 13 Aug 2024 19:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/rag/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Hugo</title>
-        <link>http://localhost:1313/tags/hugo/</link>
-        <pubDate>Wed, 07 Aug 2024 20:01:49 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/hugo/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Js插件</title>
-        <link>http://localhost:1313/tags/js%E6%8F%92%E4%BB%B6/</link>
-        <pubDate>Thu, 25 Jul 2024 23:50:28 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/js%E6%8F%92%E4%BB%B6/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>随笔</title>
-        <link>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</link>
-        <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Stable Diffusion</title>
-        <link>http://localhost:1313/tags/stable-diffusion/</link>
-        <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/stable-diffusion/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>OpenCV</title>
-        <link>http://localhost:1313/tags/opencv/</link>
-        <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/opencv/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Java其他</title>
-        <link>http://localhost:1313/tags/java%E5%85%B6%E4%BB%96/</link>
-        <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/java%E5%85%B6%E4%BB%96/</guid>
-        <description></description>
-        </item>
-        
-    </channel>
+  <channel>
+    <title>Tags on PoolBee的博客</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on PoolBee的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Dec 2024 09:06:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IDEA</title>
+      <link>http://localhost:1313/tags/idea/</link>
+      <pubDate>Sun, 29 Dec 2024 09:06:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/idea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTML5</title>
+      <link>http://localhost:1313/tags/html5/</link>
+      <pubDate>Tue, 24 Dec 2024 17:33:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/html5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI辅助编程</title>
+      <link>http://localhost:1313/tags/ai%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Mon, 23 Dec 2024 17:36:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ai%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql语句</title>
+      <link>http://localhost:1313/tags/sql%E8%AF%AD%E5%8F%A5/</link>
+      <pubDate>Mon, 23 Dec 2024 16:24:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql%E8%AF%AD%E5%8F%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vue3基础</title>
+      <link>http://localhost:1313/tags/vue3%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Wed, 16 Oct 2024 23:39:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vue3%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Auto-Coder</title>
+      <link>http://localhost:1313/tags/auto-coder/</link>
+      <pubDate>Sat, 21 Sep 2024 01:47:30 +0000</pubDate>
+      <guid>http://localhost:1313/tags/auto-coder/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Datawhale</title>
+      <link>http://localhost:1313/tags/datawhale/</link>
+      <pubDate>Mon, 02 Sep 2024 03:27:30 +0000</pubDate>
+      <guid>http://localhost:1313/tags/datawhale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>http://localhost:1313/tags/rag/</link>
+      <pubDate>Tue, 13 Aug 2024 19:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/tags/hugo/</link>
+      <pubDate>Wed, 07 Aug 2024 20:01:49 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Js插件</title>
+      <link>http://localhost:1313/tags/js%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Thu, 25 Jul 2024 23:50:28 +0000</pubDate>
+      <guid>http://localhost:1313/tags/js%E6%8F%92%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>随笔</title>
+      <link>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Fri, 19 Jul 2024 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stable Diffusion</title>
+      <link>http://localhost:1313/tags/stable-diffusion/</link>
+      <pubDate>Sun, 09 Jun 2024 11:54:39 +0000</pubDate>
+      <guid>http://localhost:1313/tags/stable-diffusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenCV</title>
+      <link>http://localhost:1313/tags/opencv/</link>
+      <pubDate>Mon, 06 Nov 2023 21:14:39 +0000</pubDate>
+      <guid>http://localhost:1313/tags/opencv/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java其他</title>
+      <link>http://localhost:1313/tags/java%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Tue, 28 Mar 2023 11:08:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/java%E5%85%B6%E4%BB%96/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>
